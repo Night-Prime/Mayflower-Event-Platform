@@ -6,7 +6,8 @@ module.exports = {
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
         Allura: ["Allura", "cursive"],
-        Inter: ["Inter", "sans-serif"]
+        Inter: ["Inter", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"]
       },
     },
   },
