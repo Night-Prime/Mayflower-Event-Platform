@@ -1,15 +1,13 @@
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
+
+import { Landingpage } from "./page/Landingpage";
+
 
 
 
 function App() {
   return (
-    <div className=" bg-[#212121]">
-     <Navbar/>
-     <Hero/>
-     <About/> 
+    <div>
+     <Landingpage/>
     </div>
   );
 }
