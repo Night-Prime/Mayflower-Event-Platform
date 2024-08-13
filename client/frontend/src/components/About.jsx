@@ -2,8 +2,8 @@ import React from "react";
 import drumer from "../Images/drumer.png";
 import medusa from "../Images/medusa.png";
 import laugh from "../Images/laugh.png";
-import LeftIcon from "../components/leftIcon";
-import RightIcon from "../components/rightIcon";
+import LeftIcon from "./LeftIcon";
+import RightIcon from "./RightIcon";
 
 export const About = () => {
   return (
