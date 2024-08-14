@@ -24,25 +24,32 @@ const Booking = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    eventId: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
+    },
+    eventTitle: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    eventDescription: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     eventDate: {
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    eventId: {
-      type: DataTypes.UUID,
+    eventTime: {
+      type: DataTypes.TIME,
       allowNull: false,
-      references: {
-        model: "Events",
-        key: "id",
-      },
-      onUpdate: "CASCADE",
-      onDelete: "CASCADE",
     },
     packageId: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "Packages",
+        model: "packages",
         key: "id",
       },
       onUpdate: "CASCADE",

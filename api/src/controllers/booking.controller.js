@@ -1,26 +1,31 @@
 const { Booking, Event, Package } = require("../models");
 const { successResponse, errorResponse } = require("../helper/response");
+const { UUIDGenerator } = require("../helper");
+const { validationResult } = require("express-validator");
 
 // Create a new booking
 exports.createBooking = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const {
-      eventId,
+      eventTitle,
+      eventDescription,
+      eventDate,
+      eventTime,
       packageId,
       clientName,
       clientEmail,
       clientPhone,
-      eventDate,
     } = req.body;
-
-    // Check if the event exists
-    const event = await Event.findByPk(eventId);
-    if (!event) {
-      return errorResponse(res, {
-        statusCode: 404,
-        message: "Event not found.",
-      });
-    }
 
     // Check if the package exists
     const pkg = await Package.findByPk(packageId);
@@ -31,13 +36,18 @@ exports.createBooking = async (req, res) => {
       });
     }
 
+    const event = UUIDGenerator();
+
     const newBooking = await Booking.create({
-      eventId,
+      eventId: event,
+      eventTitle,
+      eventDescription,
+      eventDate,
+      eventTime,
       packageId,
       clientName,
       clientEmail,
       clientPhone,
-      eventDate,
     });
 
     return successResponse(res, {
@@ -58,10 +68,7 @@ exports.createBooking = async (req, res) => {
 exports.getAllBookings = async (req, res) => {
   try {
     const bookings = await Booking.findAll({
-      include: [
-        { model: Event, as: "event" },
-        { model: Package, as: "package" },
-      ],
+      include: [{ model: Package, as: "packages" }],
     });
 
     return successResponse(res, {
@@ -80,13 +87,20 @@ exports.getAllBookings = async (req, res) => {
 
 // Get a single booking by ID
 exports.getBookingById = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const { id } = req.body;
     const booking = await Booking.findByPk(id, {
-      include: [
-        { model: Event, as: "event" },
-        { model: Package, as: "package" },
-      ],
+      include: [{ model: Package, as: "packages" }],
     });
 
     if (!booking) {
@@ -112,17 +126,30 @@ exports.getBookingById = async (req, res) => {
 
 // Update a booking
 exports.updateBooking = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const {
       id,
-      eventId,
       packageId,
       clientName,
       clientEmail,
       clientPhone,
       eventDate,
+      eventTitle,
+      eventDescription,
+      eventTime,
     } = req.body;
 
+    // Find the booking by ID
     const booking = await Booking.findByPk(id);
     if (!booking) {
       return errorResponse(res, {
@@ -131,17 +158,21 @@ exports.updateBooking = async (req, res) => {
       });
     }
 
-    if (eventId) {
-      const event = await Event.findByPk(eventId);
-      if (!event) {
-        return errorResponse(res, {
-          statusCode: 404,
-          message: "Event not found.",
-        });
-      }
-      booking.eventId = eventId;
+    // Update event fields if provided
+    if (eventTitle) {
+      booking.eventTitle = eventTitle;
+    }
+    if (eventDescription) {
+      booking.eventDescription = eventDescription;
+    }
+    if (eventDate) {
+      booking.eventDate = eventDate;
+    }
+    if (eventTime) {
+      booking.eventTime = eventTime;
     }
 
+    // Update package if provided
     if (packageId) {
       const pkg = await Package.findByPk(packageId);
       if (!pkg) {
@@ -153,11 +184,12 @@ exports.updateBooking = async (req, res) => {
       booking.packageId = packageId;
     }
 
+    // Update client fields
     booking.clientName = clientName || booking.clientName;
     booking.clientEmail = clientEmail || booking.clientEmail;
     booking.clientPhone = clientPhone || booking.clientPhone;
-    booking.eventDate = eventDate || booking.eventDate;
 
+    // Save updated booking
     await booking.save();
 
     return successResponse(res, {
@@ -176,6 +208,16 @@ exports.updateBooking = async (req, res) => {
 
 // Delete a booking
 exports.deleteBooking = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const { id } = req.body;
 
@@ -190,7 +232,6 @@ exports.deleteBooking = async (req, res) => {
     await booking.destroy();
 
     return successResponse(res, {
-      data: booking,
       statusCode: 204,
       message: "Booking deleted successfully.",
     });

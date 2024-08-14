@@ -21,14 +21,11 @@ const Package = sequelize.define(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    additionalServices: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: true,
-    },
   },
   {
     timestamps: true,
     paranoid: true,
+    tableName: "packages",
   }
 );
 

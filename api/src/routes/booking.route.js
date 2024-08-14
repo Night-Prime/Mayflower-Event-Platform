@@ -1,12 +1,17 @@
 const express = require("express");
 const bookingController = require("../controllers/booking.controller");
+const {
+  createBookingValidation,
+  getIdValidation,
+  updateBookingValidation,
+} = require("../middleware/validator");
 
 const router = express.Router();
 
-router.post("/", bookingController.createBooking);
 router.get("/all", bookingController.getAllBookings);
-router.get("/id", bookingController.getBookingById);
-router.patch("/", bookingController.updateBooking);
-router.delete("/", bookingController.deleteBooking);
+router.post("/", createBookingValidation, bookingController.createBooking);
+router.get("/id", getIdValidation, bookingController.getBookingById);
+router.patch("/", updateBookingValidation, bookingController.updateBooking);
+router.delete("/", getIdValidation, bookingController.deleteBooking);
 
 module.exports = router;
