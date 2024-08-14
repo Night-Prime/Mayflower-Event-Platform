@@ -1,16 +1,26 @@
 const { Package } = require("../models");
 const { successResponse, errorResponse } = require("../helper/response");
+const { validationResult } = require("express-validator");
 
 // Create a new package
 exports.createPackage = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
-    const { name, description, price, additionalServices } = req.body;
+    const { name, description, price } = req.body;
 
     const newPackage = await Package.create({
       name,
       description,
       price,
-      additionalServices,
     });
 
     return successResponse(res, {
@@ -48,6 +58,16 @@ exports.getAllPackages = async (req, res) => {
 
 // Get a single package by ID
 exports.getPackageById = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const { id } = req.body;
     const package = await Package.findByPk(id);
@@ -75,6 +95,16 @@ exports.getPackageById = async (req, res) => {
 
 // Update a package
 exports.updatePackage = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const { id, name, description, price, additionalServices } = req.body;
 
@@ -89,8 +119,6 @@ exports.updatePackage = async (req, res) => {
     package.name = name || package.name;
     package.description = description || package.description;
     package.price = price || package.price;
-    package.additionalServices =
-      additionalServices || package.additionalServices;
 
     await package.save();
 
@@ -110,6 +138,16 @@ exports.updatePackage = async (req, res) => {
 
 // Delete a package
 exports.deletePackage = async (req, res) => {
+  // set up validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return errorResponse(res, {
+      statusCode: 400,
+      message: "Validation error:",
+      errors: errors.array(),
+    });
+  }
+
   try {
     const { id } = req.body;
 
