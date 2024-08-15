@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
-import selfie from "../Images/selfie.png";
-import tree from "../Images/tree.png";
-import laughing from "../Images/laughing.png";
-import drinks from "../Images/drinks.png";
-import concert from "../Images/concert.png";
-import dinner from "../Images/dinner.png";
-import wedding from "../Images/wedding.png";
+import selfie from "../assets/Images/selfie.png";
+import tree from "../assets/Images/tree.png";
+import laughing from "../assets/Images/laughing.png";
+import drinks from "../assets/Images/drinks.png";
+import concert from "../assets/Images/concert.png";
+import dinner from "../assets/Images/dinner.png";
+import wedding from "../assets/Images/wedding.png";
 import { Right } from "../icons/Right";
 
 export const Events = () => {

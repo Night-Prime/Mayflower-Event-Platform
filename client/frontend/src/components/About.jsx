@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import drumer from "../Images/drumer.png";
-import medusa from "../Images/medusa.png";
-import laugh from "../Images/laugh.png";
-import LeftIcon from "./LeftIcon";
-import RightIcon from "./RightIcon";
+import drumer from "../assets/Images/drumer.png";
+import medusa from "../assets/Images/medusa.png";
+import laugh from "../assets/Images/laugh.png";
+import LeftIcon from "./leftIcon";
+import RightIcon from "./rightIcon";
 
 export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0); 
@@ -130,7 +130,7 @@ export const About = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-5 mb-10 sm:mx-6 lg:mx-[30px] mt-[100px] sm:mt-[150px] lg:mt-[270px] bg-white rounded-[32px] text-black py-8 lg:py-10">
+    <div className="flex flex-col items-center gap-5 mb-10 sm:mx-6 lg:mx-[30px] sm:mt-[150px] lg:mt-[100px] bg-white rounded-[32px] text-black py-8 lg:py-10">
       <div className="w-full bg-[#212121] text-white py-2">
         <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair px-4 lg:px-10 text-center">
           {slides[currentSlide].title}

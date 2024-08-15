@@ -9,9 +9,9 @@ const {
 const router = express.Router();
 
 router.get("/all", bookingController.getAllBookings);
-router.post("/", createBookingValidation, bookingController.createBooking);
-router.get("/id", getIdValidation, bookingController.getBookingById);
+router.post("/:id", createBookingValidation, bookingController.createBooking);
+router.get("/id", bookingController.getBookingById);
 router.patch("/", updateBookingValidation, bookingController.updateBooking);
-router.delete("/", getIdValidation, bookingController.deleteBooking);
+router.delete("/:id", bookingController.deleteBooking);
 
 module.exports = router;
