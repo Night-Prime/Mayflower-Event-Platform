@@ -1,7 +1,7 @@
 import React from "react";
-import drumer from "../Images/drumer.png";
-import medusa from "../Images/medusa.png";
-import laugh from "../Images/laugh.png";
+import drumer from "../assets/Images/drumer.png";
+import medusa from "../assets/Images/medusa.png";
+import laugh from "../assets/Images/laugh.png";
 import LeftIcon from "./LeftIcon";
 import RightIcon from "./RightIcon";
 

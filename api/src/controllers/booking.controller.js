@@ -87,18 +87,8 @@ exports.getAllBookings = async (req, res) => {
 
 // Get a single booking by ID
 exports.getBookingById = async (req, res) => {
-  // set up validation
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return errorResponse(res, {
-      statusCode: 400,
-      message: "Validation error:",
-      errors: errors.array(),
-    });
-  }
-
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     const booking = await Booking.findByPk(id, {
       include: [{ model: Package, as: "packages" }],
     });
@@ -208,18 +198,8 @@ exports.updateBooking = async (req, res) => {
 
 // Delete a booking
 exports.deleteBooking = async (req, res) => {
-  // set up validation
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return errorResponse(res, {
-      statusCode: 400,
-      message: "Validation error:",
-      errors: errors.array(),
-    });
-  }
-
   try {
-    const { id } = req.body;
+    const { id } = req.params;
 
     const booking = await Booking.findByPk(id);
     if (!booking) {
