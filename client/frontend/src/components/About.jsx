@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import drumer from "../assets/Images/drumer.png";
 import medusa from "../assets/Images/medusa.png";
 import laugh from "../assets/Images/laugh.png";
-import LeftIcon from "./leftIcon";
-import RightIcon from "./rightIcon";
+import Lefticon from "./Lefticon";
+import Righticon from "./Righticon";
 
 export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0); 
@@ -153,10 +153,10 @@ export const About = () => {
       </div>
       <div className="flex gap-4 sm:gap-6 lg:gap-10 justify-center mt-6 sm:mt-8 lg:mt-10">
         <button onClick={handlePreviousSlide}>
-          <LeftIcon />
+          <Lefticon />
         </button>
         <button onClick={handleNextSlide}>
-          <RightIcon />
+          <Righticon />
         </button>
       </div>
     </div>
