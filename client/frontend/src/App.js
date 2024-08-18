@@ -1,20 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { LandingPage } from "./page/LandingPage";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import AdminPage from "./page/AdminPage";
+import Dashboard from "./page/Dashboard";
+import PageNotFound from "./page/PageNotFound";
+import StoreTokenForm from "./helper/StoreToken";
 
 function App() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Routes>
-          <Route path="/">
+          <Route exact path="/">
             <Route index element={<LandingPage />} />
           </Route>
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

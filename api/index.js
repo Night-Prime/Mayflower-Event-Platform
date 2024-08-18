@@ -31,10 +31,12 @@ app.use(
 
 app.use(
   cors({
-    credentials: true,
     origin: process.env.CLIENT_URL,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
   })
 );
+
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
 app.use(helmet());

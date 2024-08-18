@@ -2,10 +2,13 @@ import React from "react";
 import { Hero } from "../components/Hero";
 import { About } from "../components/About";
 import { Events } from "../components/Events";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 
 export const LandingPage = () => {
   return (
     <div className="bg-[#212121]">
+      <Navbar />
       <section id="home">
         <Hero />
       </section>
@@ -15,6 +18,7 @@ export const LandingPage = () => {
       <section id="events">
         <Events />
       </section>
+      <Footer />
     </div>
   );
 };
