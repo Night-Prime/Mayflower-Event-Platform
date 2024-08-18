@@ -1,9 +1,11 @@
 const express = require("express");
-const passport = require("passport");
+const passport = require("../config/auth");
 
 const router = express.Router();
 
-// Google OAuth Routes
+/**
+ * Google OAuth Routes - handles the authentitcation & authorization
+ */
 
 router.get(
   "/google",
@@ -12,10 +14,14 @@ router.get(
 
 router.get(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/login" }),
+  passport.authenticate("google", {
+    failureRedirect: `${process.env.CLIENT_URL}/admin`,
+  }),
   (req, res) => {
-    console.log("Result: ", res);
-    res.redirect("/dashboard");
+    console.log("Result: ", req.authInfo.accessToken);
+    res.redirect(
+      `${process.env.CLIENT_REDIRECT_URL}?token=${req.authInfo.accessToken}`
+    );
   }
 );
 
@@ -25,7 +31,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect("/");
+    res.redirect("process.env.CLIENT_URL");
   });
 });
 
