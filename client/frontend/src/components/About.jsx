@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import drumer from "../assets/Images/drumer.png";
 import medusa from "../assets/Images/medusa.png";
 import laugh from "../assets/Images/laugh.png";
-import LeftIcon from "./leftIcon";
-import RightIcon from "./rightIcon";
+import LeftIcon from "./LeftIcon";
+import RightIcon from "./RightIcon";
 
 export const About = () => {
-  const [currentSlide, setCurrentSlide] = useState(0); 
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState("");
 
   const slides = [
@@ -124,9 +124,7 @@ export const About = () => {
 
   const handlePreviousSlide = () => {
     setDirection("left");
-    setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   return (
@@ -142,10 +140,7 @@ export const About = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full"
-            >
+            <div key={index} className="flex-shrink-0 w-full">
               {slide.content}
             </div>
           ))}
