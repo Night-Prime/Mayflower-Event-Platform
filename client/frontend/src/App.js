@@ -1,22 +1,29 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { LandingPage } from "./page/LandingPage";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import { Landingpage } from "./page/Landingpage";
 import { Booking } from "./page/Booking";
+import { Gallery } from "./components/Gallery";
+import AdminPage from "./page/AdminPage";
+import Dashboard from "./page/Dashboard";
+import PageNotFound from "./page/PageNotFound";
+import StoreTokenForm from "./helper/StoreToken";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div>
-        <Navbar />
+        <ScrollToTop />
         <Routes>
-          <Route path="/">
-            <Route index element={<LandingPage />} />
+          <Route exact path="/">
+            <Route index element={<Landingpage />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Route>
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

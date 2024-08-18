@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import selfie from "../assets/Images/selfie.png";
 import tree from "../assets/Images/tree.png";
 import laughing from "../assets/Images/laughing.png";
@@ -31,10 +32,12 @@ export const Events = () => {
             <img src={drinks} alt="Drinks" className="w-full md:w-[24%]" />
           </div>
           <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px]  mt-4 sm:mt-8 ">
-            View Gallery{" "}
-            <span className="ml-2">
-              <Right />
-            </span>
+            <RouterLink to="/gallery" className=" flex items-center justify-center">
+              View Gallery{" "}
+              <span className="ml-2">
+                <Right />
+              </span>
+            </RouterLink>
           </button>
         </div>
       ),
@@ -110,10 +113,12 @@ export const Events = () => {
             </div>
           </div>
           <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] font-bold font-Inter w-[259px] mt-4 sm:mt-8 lg:mt-10">
-            Select your bookings{" "}
-            <span className="ml-2">
-              <Right />
-            </span>
+            <RouterLink to="/booking" className=" flex gap-[2px]">
+              Select your bookings{" "}
+              <span className="ml-2">
+                <Right />
+              </span>
+            </RouterLink>
           </button>
         </div>
       ),

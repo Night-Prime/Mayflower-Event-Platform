@@ -1,4 +1,6 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+
 import videoBg from "../assets/video/background.mp4";
 
 export const Hero = () => {
@@ -21,7 +23,7 @@ export const Hero = () => {
           Mayflower Gardens: Your Garden of Possibilities.
         </p>
         <button className="bg-[#CC5500] py-[12px] px-[20px] sm:py-[14px] sm:px-[22px] lg:py-[16px] lg:px-[24px] rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Inter w-[160px] sm:w-[180px] lg:w-[222px] mt-6 sm:mt-8 lg:mt-10">
-          Book Now
+          <RouterLink to="/booking">Book Now</RouterLink>
         </button>
       </div>
     </div>

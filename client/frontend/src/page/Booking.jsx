@@ -10,10 +10,13 @@ import glasses from "../assets/Images/glasses.png";
 import concert from "../assets/Images/concert.png";
 import dinner from "../assets/Images/dinner.png";
 import wedding from "../assets/Images/wedding.png";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 
 export const Booking = () => {
   return (
     <div className=" w-full flex flex-col justify-center items-center">
+      <Navbar />
       <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-start">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -54,9 +57,9 @@ export const Booking = () => {
           </div>
         </div>
         <div className=" w-full flex justify-center items-center flex-col gap-8">
-        <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair  text-center text-black ">
-              Book a tour
-            </p>
+          <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair  text-center text-black ">
+            Book a tour
+          </p>
           <div className=" w-full flex flex-wrap justify-center items-center gap-6">
             <img
               src={threeselfie}
@@ -110,7 +113,7 @@ export const Booking = () => {
                       Card title
                     </p>
                     <p className="text-[18px] font-Montserrat font-normal text-start">
-                    Curabitur
+                      Curabitur
                     </p>
                   </div>
                 </div>
@@ -127,7 +130,7 @@ export const Booking = () => {
                       Card title
                     </p>
                     <p className="text-[18px] font-Montserrat font-normal text-start">
-                    Eget
+                      Eget
                     </p>
                   </div>
                 </div>
@@ -144,7 +147,7 @@ export const Booking = () => {
                       Card title
                     </p>
                     <p className="text-[18px] font-Montserrat font-normal text-start">
-                    Sem
+                      Sem
                     </p>
                   </div>
                 </div>
@@ -153,6 +156,7 @@ export const Booking = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

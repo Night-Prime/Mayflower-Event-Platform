@@ -1,37 +1,32 @@
 const passport = require("passport");
-const { Strategy, GoogleStrategy } = require("passport-google-oauth20");
-const { pool } = require("./db");
+const { Strategy: GoogleStrategy } = require("passport-google-oauth20");
 const User = require("../models/User");
 require("dotenv").config();
 
-/**
- * @description Setting up the Google OAuth system
- */
-
 passport.use(
-  new GoogleStrategy(),
-  {
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: process.env.CLIENT_CALLBACK_URL,
-  },
-  async (accessToken, refreshToken, profile, done) => {
-    console.log(accessToken, refreshToken, profile);
-    try {
-      let user = await User.findOne({ where: { googleId: profile.id } });
-
-      if (!user) {
-        user = await User.create({
-          googleId: profile.id,
-          email: profile.emails[0].value,
-          name: profile.displayName,
-        });
+  new GoogleStrategy(
+    {
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      callbackURL: "http://localhost:5000/api/v1/auth/google/callback",
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        let user = await User.findOne({ where: { googleId: profile.id } });
+        if (!user) {
+          user = await User.create({
+            googleId: profile.id,
+            email: profile.emails[0].value,
+            name: profile.displayName,
+          });
+        }
+        return done(null, user, { accessToken });
+      } catch (error) {
+        console.error("Error creating user:", error);
+        return done(error, null);
       }
-      return done(null, user);
-    } catch (error) {
-      return done(err, null);
     }
-  }
+  )
 );
 
 passport.serializeUser((user, done) => {
@@ -46,3 +41,5 @@ passport.deserializeUser(async (id, done) => {
     done(err, null);
   }
 });
+
+module.exports = passport;
