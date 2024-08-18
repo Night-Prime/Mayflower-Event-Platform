@@ -1,10 +1,10 @@
 import React from "react";
-import { Instagram } from "../icons/instagram";
-import { Facebook } from "../icons/facebook";
-import { Linkedin } from "../icons/linkedin";
-import { Phone } from "../icons/phone";
-import { Email } from "../icons/email";
-import { Location } from "../icons/location";
+import { Instagram } from "../icons/Instagram";
+import { Facebook } from "../icons/Facebook";
+import { Linkedin } from "../icons/Linkedin";
+import { Phone } from "../icons/Phone";
+import { Email } from "../icons/Email";
+import { Location } from "../icons/Location";
 import { X } from "../icons/X";
 import { Right } from "../icons/Right";
 
@@ -128,3 +128,4 @@ export const Footer = () => {
     </div>
   );
 };
+
