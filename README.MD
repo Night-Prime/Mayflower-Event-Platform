@@ -52,6 +52,7 @@ This project is a comprehensive Event Management and Booking Service System desi
 2. **Frontend Setup:**
 
    ```bash
+   cd client
    cd frontend
    npm install
    npm start
