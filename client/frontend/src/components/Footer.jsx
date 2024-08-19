@@ -1,4 +1,6 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+
 import { Instagram } from "../icons/Instagram";
 import { Facebook } from "../icons/Facebook";
 import { Linkedin } from "../icons/Linkedin";
@@ -54,9 +56,9 @@ export const Footer = () => {
               <h4 className="font-Playfair text-[18px] mb-4">Company</h4>
               <ul className="font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px]">
                 <li className="mb-2">
-                  <a href="#home" className="hover:text-gray-400">
+                <RouterLink to="/">
                     Home
-                  </a>
+                  </RouterLink>
                 </li>
                 <li className="mb-2">
                   <a href="#about" className="hover:text-gray-400">
@@ -74,20 +76,20 @@ export const Footer = () => {
               <h4 className="font-Playfair text-[18px] mb-4">Events</h4>
               <ul className="font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px]">
                 <li className="mb-2">
-                  <a href="#gallery" className="hover:text-gray-400">
+                <RouterLink to="/gallery">
                     Gallery
-                  </a>
+                  </RouterLink>
                 </li>
                 <li>
-                  <a href="#booking" className="hover:text-gray-400">
-                    Event booking
-                  </a>
+                <RouterLink to="/booking">
+                    Event Booking
+                  </RouterLink>
                 </li>
               </ul>
             </div>
             <div className="flex-1">
               <h4 className="font-Playfair text-[18px] mb-4">Contact</h4>
-              <ul className="font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px] flex flex-col justify-center items-start">
+              <ul className=" w-44 font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px] flex flex-col justify-center items-start">
                 <li className="mb-2 flex items-center justify-center lg:justify-start">
                   <span className="mr-2">
                     <Phone />

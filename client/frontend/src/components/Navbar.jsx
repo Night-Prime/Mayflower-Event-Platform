@@ -11,36 +11,21 @@ export const Navbar = () => {
       <div className="font-Playfair">
         <ul className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 tracking-wide text-[#c8c8c8]">
           <li className="relative pb-1 sm:pb-2">
-            <Link
-              to="home"
-              smooth={true}
-              duration={500}
-              offset={-70}
-            >
+            <RouterLink to="/">
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Home
               </span>
-            </Link>
+            </RouterLink>
           </li>
           <li className="relative pb-1 sm:pb-2">
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              offset={-70}
-            >
+            <Link to="about" smooth={true} duration={500} offset={-70}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 About
               </span>
             </Link>
           </li>
           <li className="relative pb-1 sm:pb-2">
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              offset={-70}
-            >
+            <Link to="contact" smooth={true} duration={500} offset={-70}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Contact Us
               </span>
@@ -49,7 +34,7 @@ export const Navbar = () => {
           <li className="relative pb-1 sm:pb-2">
             <RouterLink to="/booking">
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
-                Booking
+                Events
               </span>
             </RouterLink>
           </li>

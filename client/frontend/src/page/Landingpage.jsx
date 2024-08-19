@@ -5,7 +5,7 @@ import { Events } from "../components/Events";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
-export const LandingPage = () => {
+export const Landingpage = () => {
   return (
     <div className="bg-[#212121]">
       <Navbar />
