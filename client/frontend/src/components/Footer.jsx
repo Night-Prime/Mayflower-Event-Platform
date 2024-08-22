@@ -56,9 +56,7 @@ export const Footer = () => {
               <h4 className="font-Playfair text-[18px] mb-4">Company</h4>
               <ul className="font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px]">
                 <li className="mb-2">
-                <RouterLink to="/">
-                    Home
-                  </RouterLink>
+                  <RouterLink to="/">Home</RouterLink>
                 </li>
                 <li className="mb-2">
                   <a href="#about" className="hover:text-gray-400">
@@ -76,14 +74,10 @@ export const Footer = () => {
               <h4 className="font-Playfair text-[18px] mb-4">Events</h4>
               <ul className="font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px]">
                 <li className="mb-2">
-                <RouterLink to="/gallery">
-                    Gallery
-                  </RouterLink>
+                  <RouterLink to="/gallery">Gallery</RouterLink>
                 </li>
                 <li>
-                <RouterLink to="/booking">
-                    Event Booking
-                  </RouterLink>
+                  <RouterLink to="/booking">Event Booking</RouterLink>
                 </li>
               </ul>
             </div>
@@ -130,4 +124,3 @@ export const Footer = () => {
     </div>
   );
 };
-

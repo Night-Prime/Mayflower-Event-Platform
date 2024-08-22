@@ -21,7 +21,7 @@ const Dashboard = () => {
       if (!token) {
         // If still no token, navigate to the /admin page
         console.log("No token found, navigating to /admin");
-        // navigate("/admin", { replace: true });
+        navigate("/admin", { replace: true });
       }
     }
   }, [navigate]);

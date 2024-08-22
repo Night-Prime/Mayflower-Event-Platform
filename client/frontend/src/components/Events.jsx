@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import selfie from "../assets/Images/selfie.png";
 import tree from "../assets/Images/tree.png";
@@ -16,132 +16,128 @@ import { Star } from "../icons/Star";
 import { Right } from "../icons/Right";
 
 export const Events = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
     {
       content: (
-        <div className="shared-container w-full flex flex-col pb-14 justify-center rounded-tl-[32px] rounded-bl-[32px] items-center bg-[#4E4E4E] text-white">
-          <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-8 text-center">
-            Events
-          </p>
-          <div className="flex w-full justify-center items-center px-4 gap-4 ">
-            <img src={selfie} alt="Selfie" className="w-full md:w-[24%]" />
-            <img src={tree} alt="Tree" className="w-full md:w-[24%]" />
-            <img src={laughing} alt="Laughing" className="w-full md:w-[24%]" />
-            <img src={drinks} alt="Drinks" className="w-full md:w-[24%]" />
+        <div className="h-full w-full">
+          <div className="flex flex-col justify-center items-center gap-2 py-8">
+            <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-2 text-center">
+              Event Showcase
+            </p>
+
+            <div className="flex w-full justify-center items-center px-2 gap-2 ">
+              <img src={selfie} alt="Selfie" className="w-full md:w-[24%]" />
+              <img src={tree} alt="Tree" className="w-full md:w-[24%]" />
+              <img
+                src={laughing}
+                alt="Laughing"
+                className="w-full md:w-[24%]"
+              />
+              <img src={drinks} alt="Drinks" className="w-full md:w-[24%]" />
+            </div>
+
+            <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px]  mt-4 sm:mt-8 ">
+              <RouterLink
+                to="/gallery"
+                className=" flex items-center justify-center"
+              >
+                View Gallery{" "}
+                <span className="ml-2">
+                  <Right />
+                </span>
+              </RouterLink>
+            </button>
           </div>
-          <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px]  mt-4 sm:mt-8 ">
-            <RouterLink to="/gallery" className=" flex items-center justify-center">
-              View Gallery{" "}
-              <span className="ml-2">
-                <Right />
-              </span>
-            </RouterLink>
-          </button>
         </div>
       ),
     },
     {
       content: (
-        <div className=" shared-container flex flex-col bg-white items-center justify-center">
-          <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-8 text-center text-black ">
-            Book with us
-          </p>
-          <div className=" flex-wrap flex justify-center items-center gap-8 bg-white">
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-              <img src={dinner} alt="Dinner" className=" rounded-t-2xl" />
-              <div className=" flex flex-col gap-4 justify-start items-start px-4">
-                <div className="flex flex-col gap-1 justify-start items-start text-black">
-                  <p className="text-[24px] font-Playfair font-bold">
-                    Card title
+        <div className=" w-full ">
+          <div className="flex flex-col items-center px-2 justify-center h-full">
+            <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-8 text-center text-white ">
+              Explore Our Tailored Event Packages
+            </p>
+
+            <div className="container w-[95%] h-3/4 flex flex-row justify-between items-center gap-8">
+              <div className="flex-col shadow-2xl gap-4 justiify-start items-start bg-white rounded-2xl w-[30%] h-5/6">
+                <img src={dinner} alt="Dinner" className=" rounded-t-2xl" />
+                <div className="w-full flex flex-col items-start justify-center p-2">
+                  <p className="text-black text-2xl font-Playfair font-bold">
+                    Card Title
                   </p>
-                  <p className="text-[18px] font-Montserrat font-normal text-start">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    purus tellus arcu sit nibh consectetur.
+                  <p className="text-black font-Montserrat text-justify">
+                    Lorem ipsum dolor sit amet, consectetur <br /> adipiscing
+                    elit. At purus tellus arcu
+                    <br /> sit nibh consectetur.
                   </p>
                 </div>
-
-                <button className="py-4 px-6 bg-[#CC5500] rounded-lg font-Montserrat font-bold text-[18px] mb-4">
+                <button className="ml-2 p-2 bg-[#CC5500] rounded-lg font-Montserrat font-semibold text-sm mb-4">
                   Button
                 </button>
               </div>
-            </div>
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start  bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-              <img
-                src={wedding}
-                alt="Dinner"
-                className="w-full h-auto rounded-t-2xl"
-              />
-              <div className=" flex flex-col gap-4 justify-start items-start px-4">
-                <div className="flex flex-col gap-1 justify-start items-start text-black">
-                  <p className="text-[24px] font-Playfair font-bold">
-                    Card title
+              <div className="flex-col shadow-2xl gap-4 justiify-start items-start bg-white rounded-2xl w-[30%] h-5/6">
+                <img
+                  src={wedding}
+                  alt="Dinner"
+                  className="w-full h-auto rounded-t-2xl"
+                />
+                <div className="w-full flex flex-col items-start justify-center p-2">
+                  <p className="text-black text-2xl font-Playfair font-bold">
+                    Card Title
                   </p>
-                  <p className="text-[18px] font-Montserrat font-normal text-start">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    purus tellus arcu sit nibh consectetur.
+                  <p className="text-black text-md text font-Montserrat text-justify">
+                    Lorem ipsum dolor sit amet, consectetur <br /> adipiscing
+                    elit. At purus tellus arcu
+                    <br /> sit nibh consectetur.
                   </p>
                 </div>
-
-                <button className="py-4 px-6 bg-[#CC5500] rounded-lg font-Montserrat font-bold text-[18px] mb-4">
+                <button className="ml-2 p-2 bg-[#CC5500] rounded-lg font-Montserrat font-semibold text-sm mb-4">
                   Button
                 </button>
               </div>
-            </div>
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start  bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-              <img
-                src={concert}
-                alt="Dinner"
-                className="w-full h-auto rounded-t-2xl"
-              />
-              <div className=" flex flex-col gap-4 justify-start items-start px-4">
-                <div className="flex flex-col gap-1 justify-start items-start text-black">
-                  <p className="text-[24px] font-Playfair font-bold">
-                    Card title
+              <div className="flex-col shadow-2xl gap-4 justiify-start items-start bg-white rounded-2xl w-[30%] h-5/6">
+                <img
+                  src={concert}
+                  alt="Dinner"
+                  className="w-full h-auto rounded-t-2xl"
+                />
+                <div className="w-full flex flex-col items-start justify-center p-2">
+                  <p className="text-black text-2xl font-Playfair font-bold">
+                    Card Title
                   </p>
-                  <p className="text-[18px] font-Montserrat font-normal text-start">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                    purus tellus arcu sit nibh consectetur.
+                  <p className="text-black font-Montserrat text-justify">
+                    Lorem ipsum dolor sit amet, consectetur <br /> adipiscing
+                    elit. At purus tellus arcu
+                    <br /> sit nibh consectetur.
                   </p>
                 </div>
-
-                <button className="py-4 px-6 bg-[#CC5500] rounded-lg font-Montserrat font-bold text-[18px] mb-4">
+                <button className="ml-2 p-2 bg-[#CC5500] rounded-lg font-Montserrat font-semibold text-sm mb-4">
                   Button
                 </button>
               </div>
             </div>
           </div>
-          <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] font-bold font-Inter w-[259px] mt-4 sm:mt-8 lg:mt-10">
-            <RouterLink to="/booking" className=" flex gap-[2px]">
-              Select your bookings{" "}
-              <span className="ml-2">
-                <Right />
-              </span>
-            </RouterLink>
-          </button>
         </div>
       ),
     },
     {
       content: (
-        <>
-          <div className=" w-full shared-container flex flex-col gap-24 bg-[#4E4E4E] justify-center items-center">
-            <div className=" w-full flex flex-col items-center justify-center mt-20">
-              <p className="text-[60px] sm:text-[36px] lg:text-[60px] w-[814px] font-Playfair py-2 text-center text-[#EDEDED]">
-                Heres what they are saying about us
+        <div className="h-full w-full">
+          <div className="flex flex-col gap-24 justify-center items-center">
+            <div className=" w-full flex flex-col items-center justify-center mt-16">
+              <p className="text-6xl font-Playfair py-8 text-center text-[#EDEDED]">
+                Client Success Stories
               </p>
               <p className="text-[24px] sm:text-[30px] lg:text-[24px] font-greatVibes text-center pt-2 text-[#EDEDED]">
-                Id ac sem in nec lorem tincidunt hac aenean. Magna amet pretium
-                nibh pellentesque.
+                Hear from Our Satisfied Clients.
               </p>
             </div>
-            <div className=" flex justify-center items-end pb-40 w-full px-10 gap-6">
+
+            <div className=" flex flex-wrap justify-center items-end pb-40 w-full px-10 gap-6">
               <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-2xl ">
                 <p className=" font-Montserrat text-[18px]">
-                  Posuere ultrices amet diam erat in amet nulla tellus nibh.
-                  Vulputate cras nunc lectus facilisis. Sapien tempus
-                  pellentesque in tellus at. A blandit nullam orci sed eget.
+                  Posuere ultrices amet diam erat
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
@@ -159,8 +155,7 @@ export const Events = () => {
               </div>
               <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-2xl ">
                 <p className=" font-Montserrat text-[18px]">
-                  Vulputate volutpat viverra interdum et. Fusce sit habitant
-                  mauris arcu pretium.
+                  Vulputate volutpat viverra interdum et.
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
@@ -178,10 +173,7 @@ export const Events = () => {
               </div>
               <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-2xl ">
                 <p className=" font-Montserrat text-[18px]">
-                  Faucibus nisl turpis orci quis eu morbi pharetra etiam amet.
-                  Massa elit pellentesque et aliquet consectetur ornare sed
-                  interdum. Tincidunt proin at viverra rutrum et facilisis neque
-                  et. Eget quam adipiscing nulla maecenas eget elementum.
+                  Faucibus nisl turpis orci quis eu
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
@@ -199,8 +191,7 @@ export const Events = () => {
               </div>
               <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-2xl ">
                 <p className=" font-Montserrat text-[18px]">
-                  Feugiat sed urna gravida nibh ipsum euismod orci. Dictum urna
-                  tellus purus praesent.
+                  Feugiat sed urna gravida.
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
@@ -218,124 +209,21 @@ export const Events = () => {
               </div>
             </div>
           </div>
-        </>
-      ),
-    },
-    {
-      content: (
-        <div className="flex shared-container h-full px-4 gap-[147px] items-center bg-white justify-between w-full ">
-          <div className="w-[589px] space-y-4">
-            <h2 className="text-4xl font-semibold font-Playfair text-gray-800">
-              Contact Us
-            </h2>
-            <p className="text-black font-Montserrat text-[18px] font-normal">
-              Velit viverra eget faucibus vel fusce convallis molestie viverra
-              tempor. Dignissim vitae accumsan sem pellentesque. Nisl rhoncus
-              sapien nulla dignissim semper eu ipsum.
-            </p>
-            <form className="space-y-4">
-              <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-                <p>Name</p>
-                <input
-                  type="text"
-                  className="w-full p-2 bg-[#EDEDED] rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-              <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-                <p>Email</p>
-                <input
-                  type="email"
-                  className="w-full p-2 bg-[#EDEDED] rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-              <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-                <p>Subject</p>
-                <input
-                  type="text"
-                  className="w-full p-2 bg-[#EDEDED] rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-              <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-                <p>Message</p>
-                <textarea className="w-full p-2 bg-[#EDEDED] focus:outline-none resize-none focus:ring-2 focus:ring-orange-500 h-32" />
-              </div>
-              <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] font-bold font-Inter w-44 mt-4 sm:mt-8 lg:mt-10">
-                Submit{" "}
-                <span className="ml-2">
-                  <Right />
-                </span>
-              </button>
-            </form>
-          </div>
-          <div className="w-full md:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[600px]">
-            <iframe
-              className="w-full h-full rounded-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.023074653898!2d-122.41941648531302!3d37.77492977975995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f99e98f1%3A0x4f8ffb46f0ec735b!2sGoogle!5e0!3m2!1sen!2sus!4v1617743606371!5m2!1sen!2sus"
-              loading="lazy"
-              title="Googles Maps"
-              allowFullScreen
-            ></iframe>
-          </div>
         </div>
       ),
     },
   ];
-
-  const handleSlideChange = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
-    <div className="flex flex-col w-full bg-transparent">
-      <div className="relative w-full h-[100vh] overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out h-full"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full h-full flex justify-center items-center"
-            >
-              {slide.content}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="font-Montserrat text-[16px] sm:text-[18px] font-bold tracking-[-1%] flex flex-wrap justify-center lg:justify-between text-white px-3 bg-[#212121] w-full items-center py-4">
-        <button
-          className={`w-[160px] sm:w-[180px] py-3 px-4 flex items-center justify-center cursor-pointer ${
-            currentSlide === 0 ? "text-[#CC5500]" : ""
-          }`}
-          onClick={() => handleSlideChange(0)}
-        >
-          Events
-        </button>
-        <button
-          className={`w-[160px] sm:w-[180px] py-3 px-4 flex items-center justify-center cursor-pointer ${
-            currentSlide === 1 ? "text-[#CC5500]" : ""
-          }`}
-          onClick={() => handleSlideChange(1)}
-        >
-          Booking
-        </button>
-        <button
-          className={`w-[160px] sm:w-[180px] py-3 px-4 flex items-center justify-center cursor-pointer ${
-            currentSlide === 2 ? "text-[#CC5500]" : ""
-          }`}
-          onClick={() => handleSlideChange(2)}
-        >
-          Testimonials
-        </button>
-        <button
-          className={`w-[160px] sm:w-[180px] py-3 px-4 flex items-center justify-center cursor-pointer ${
-            currentSlide === 3 ? "text-[#CC5500]" : ""
-          }`}
-          onClick={() => handleSlideChange(3)}
-        >
-          Contact us
-        </button>
+    <div className="flex flex-col w-full h-lvh bg-transparent">
+      <div className="relative bg-[#4E4E4E] text-white overflow-x-auto overflow-y-hidden whitespace-nowrap">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className="inline-block w-full h-lvh justify-center items-center"
+          >
+            {slide.content}
+          </div>
+        ))}
       </div>
     </div>
   );
