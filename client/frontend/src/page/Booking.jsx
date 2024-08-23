@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Calendar } from "../icons/Calendar";
 import { Right } from "../icons/Right";
 import threeselfie from "../assets/Images/threeselfie.png";
@@ -12,8 +12,15 @@ import dinner from "../assets/Images/dinner.png";
 import wedding from "../assets/Images/wedding.png";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import GoogleCalendar from "../components/GoogleCalendar";
 
 export const Booking = () => {
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const handleClick = () => {
+    setShowCalendar(!showCalendar);
+  }
+
   return (
     <div className=" w-full flex flex-col justify-center items-center">
       <Navbar />
@@ -35,9 +42,11 @@ export const Booking = () => {
         <div className="flex items-center border border-orange-400 rounded-lg p-2 w-full">
           <Calendar className="text-gray-500 mr-2" />
           <input
-            type="date"
-            className="w-full border-none focus:ring-0 focus:outline-none text-[#212121]"
+            type="email"
+            className="w-full border-none focus:ring-0 focus:outline-none text-[#212121] cursor-pointer"
             placeholder="Dates"
+            disabled={true}
+            onClick={handleClick}
           />
           <div className="ml-2">
             <svg
@@ -46,6 +55,7 @@ export const Booking = () => {
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
+              onClick={handleClick}
             >
               <path
                 strokeLinecap="round"
@@ -55,6 +65,7 @@ export const Booking = () => {
               ></path>
             </svg>
           </div>
+          {showCalendar && <GoogleCalendar />}
         </div>
         <div className=" w-full flex justify-center items-center flex-col gap-8">
           <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair  text-center text-black ">
