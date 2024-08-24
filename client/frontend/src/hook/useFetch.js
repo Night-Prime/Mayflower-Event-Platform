@@ -1,5 +1,9 @@
-import { useState, useEffect } from "react";
-import { makeRequest } from "../helper/makeRequest";
+import {
+  useEffect,
+  useState,
+} from 'react';
+
+import { adminMakeRequest } from '../helper/makeRequest';
 
 /**
  * @description reusable logic for fetching data from Mayflower API
@@ -16,7 +20,7 @@ const useFetch = (url) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const res = await makeRequest.get(url);
+        const res = await adminMakeRequest.get(url);
         setData(res.data.data);
       } catch (err) {
         console.log(err);
