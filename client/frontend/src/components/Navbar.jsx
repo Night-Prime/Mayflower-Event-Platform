@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <div className="sticky top-0 z-10 w-full justify-between items-center flex py-6 px-6  sm:px-8lg:px-12">
+    <div className="sticky top-0 z-50 w-full justify-between items-center flex py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
       <p className="font-Playfair font-bold text-[20px] sm:text-[24px] lg:text-[32px] cursor-pointer">
         <RouterLink to="/">Mayflower</RouterLink>
       </p>
@@ -31,7 +31,6 @@ export const Navbar = () => {
               </span>
             </RouterLink>
           </li>
-
           <li className="relative">
             <Link to="tour" smooth={true} duration={500} offset={-70}>
               <button className="bg-transparent border-[2px] border-[#CC5500] py-[6px] px-[10px] sm:py-[8px] sm:px-[10px] lg:py-[10px] lg:px-[12px] rounded-lg text-[16px] sm:text-[12px] lg:text-[16px] font-semibold font-Inter w-[70px] sm:w-[70px] lg:w-[120px]">

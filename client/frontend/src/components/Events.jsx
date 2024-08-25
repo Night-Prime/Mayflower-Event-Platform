@@ -20,19 +20,15 @@ export const Events = () => {
     {
       content: (
         <div className="h-full w-full">
-          <div className="flex flex-col justify-center items-center gap-2 py-8">
-            <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-2 text-center">
+          <div className="flex flex-col justify-center items-center gap-2 mb-8">
+            <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-3 text-center">
               Event Showcase
             </p>
 
             <div className="flex w-full justify-center items-center px-2 gap-2 ">
               <img src={selfie} alt="Selfie" className="w-full md:w-[24%]" />
               <img src={tree} alt="Tree" className="w-full md:w-[24%]" />
-              <img
-                src={laughing}
-                alt="Laughing"
-                className="w-full md:w-[24%]"
-              />
+              <img src={laughing} alt="Laughing" className="w-full md:w-[24%]" /> 
               <img src={drinks} alt="Drinks" className="w-full md:w-[24%]" />
             </div>
 
@@ -54,12 +50,12 @@ export const Events = () => {
     {
       content: (
         <div className=" w-full ">
-          <div className="flex flex-col items-center px-2 justify-center h-full">
+          <div className="flex flex-col items-center ga-4 px-2 justify-center h-full">
             <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair py-8 text-center text-white ">
               Explore Our Tailored Event Packages
             </p>
 
-            <div className="container w-[95%] h-3/4 flex flex-row justify-between items-center gap-8">
+            <div className="container w-[95%] flex flex-row justify-between items-center gap-8">
               <div className="flex-col shadow-2xl gap-4 justiify-start items-start bg-white rounded-2xl w-[30%] h-5/6">
                 <img src={dinner} alt="Dinner" className=" rounded-t-2xl" />
                 <div className="w-full flex flex-col items-start justify-center p-2">
