@@ -2,6 +2,8 @@ const { Booking, Event, Package } = require("../models");
 const { successResponse, errorResponse } = require("../helper/response");
 const { UUIDGenerator } = require("../helper");
 const { validationResult } = require("express-validator");
+const nodemailer = require('nodemailer');
+const {google} = require('googleapis');
 
 // Create a new booking
 exports.createBooking = async (req, res) => {
@@ -49,6 +51,36 @@ exports.createBooking = async (req, res) => {
       clientEmail,
       clientPhone,
     });
+
+    // send mail
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        type: 'OAuth2',
+        user: process.env.CLIENT_GMAIL,
+        pass: process.env.CLIENT_PASSWORD,
+        clientId: process.env.AUTH_SECRET_ID,
+        clientSecret: process.env.AUTH_SECRET_TOKEN,
+        refreshToken: process.env.AUTH_REFRESH_TOKEN,
+        accessToken:process.env.AUTH_ACCESS_TOKEN
+      }
+    });
+
+    const mailOptions = {
+      from: clientEmail,
+      to: `danielabatibabatunde1@gmail.com`,
+      subject: 'New Booking Created',
+      text: `A new booking has been created for ${eventTitle} on ${eventDate} at ${eventTime}.`,
+      html: `<p>A new booking has been created for ${eventTitle} on ${eventDate} at ${eventTime}.</p>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if(error) {
+        console.log("Error Sending mail: ", error);
+      } else {
+        console.log("Email sent: ", info.response);
+      }
+    })
 
     return successResponse(res, {
       data: newBooking,
