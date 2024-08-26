@@ -1,15 +1,17 @@
+import '../assets/styles/calendar.css';
+
 import React from 'react';
-import FullCalendar from '@fullcalendar/react';
+
 import dayGridPlugin from '@fullcalendar/daygrid';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import '../assets/styles/calendar.css';
+import FullCalendar from '@fullcalendar/react';
 
 const GoogleCalendar = () => {
   return (
     <FullCalendar
       plugins={[dayGridPlugin, googleCalendarPlugin]}
       initialView="dayGridMonth"
-      googleCalendarApiKey="AIzaSyCyVfgfKWEag8Jcw_6zrwUsI1U6quKtGrw"
+      googleCalendarApiKey={`${process.env.REACT_APP_GOOGLR_API_KEY}`}
       events={{
         googleCalendarId: "danielabatibabatunde1@gmail.com",
       }}

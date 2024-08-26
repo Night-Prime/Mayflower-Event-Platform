@@ -2,6 +2,9 @@ const { Booking, Event, Package } = require("../models");
 const { successResponse, errorResponse } = require("../helper/response");
 const { UUIDGenerator } = require("../helper");
 const { validationResult } = require("express-validator");
+const nodemailer = require('nodemailer');
+const {google} = require('googleapis');
+const { sendMail } = require("../helper/sendMail");
 
 // Create a new booking
 exports.createBooking = async (req, res) => {
@@ -50,6 +53,8 @@ exports.createBooking = async (req, res) => {
       clientPhone,
     });
 
+    // send mail
+    await sendMail(clientEmail,eventTitle, eventDate, eventTime);
     return successResponse(res, {
       data: newBooking,
       statusCode: 201,

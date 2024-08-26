@@ -9,7 +9,7 @@ Package.belongsTo(User, { foreignKey: 'userId', as: 'user' });
 
 // Correctly define relationships for other models
 Package.hasMany(Booking, { foreignKey: 'packageId', as: 'bookings' });
-Booking.belongsTo(Package, { foreignKey: 'packageId', as: 'package' });
+Booking.belongsTo(Package, { foreignKey: 'packageId', as: 'packages' });
 
 
 module.exports = {

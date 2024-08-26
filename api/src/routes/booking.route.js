@@ -5,11 +5,12 @@ const {
   getIdValidation,
   updateBookingValidation,
 } = require("../middleware/validator");
+const isAuth = require("../middleware/authenticator");
 
 const router = express.Router();
 
-router.get("/all", bookingController.getAllBookings);
-router.post("/:id", createBookingValidation, bookingController.createBooking);
+router.get("/all", isAuth, bookingController.getAllBookings);
+router.post("/", createBookingValidation, bookingController.createBooking);
 router.get("/id", bookingController.getBookingById);
 router.patch("/", updateBookingValidation, bookingController.updateBooking);
 router.delete("/:id", bookingController.deleteBooking);

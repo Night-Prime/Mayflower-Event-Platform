@@ -1,7 +1,12 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
+import useFetch from '../hook/useFetch';
 
 const Dashboard = () => {
+  const {data, error, loading} = useFetch('/booking/all');
+  console.log('Result:', data);
   const navigate = useNavigate();
 
   useEffect(() => {
