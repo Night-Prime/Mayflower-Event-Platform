@@ -20,10 +20,9 @@ const GoogleCalendar = () => {
         center: "title",
         right: "next",
       }}
-      height="auto"
-      contentHeight="auto"
+      height="550px"
+      contentHeight="550px"
       aspectRatio={1.5}
-    //   dayHeaderFormat={{ weekday: "short" }}
     />
   )
 }
