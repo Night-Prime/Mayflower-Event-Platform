@@ -19,7 +19,7 @@ export const Booking = () => {
 
   const handleClick = () => {
     setShowCalendar(!showCalendar);
-  }
+  };
 
   return (
     <div className=" w-full flex flex-col justify-center items-center">
@@ -38,24 +38,22 @@ export const Booking = () => {
           </h1>
         </div>
       </div>
-      <div className=" w-full flex flex-col pb-[79px] justify-center items-center gap-8 bg-white rounded-tl-[60px] rounded-tr-[60px] p-8">
-        <div className="flex items-center border border-orange-400 rounded-lg p-2 w-full">
-          <Calendar className="text-gray-500 mr-2" />
-          <input
-            type="email"
-            className="w-full border-none focus:ring-0 focus:outline-none text-[#212121] cursor-pointer"
-            placeholder="Dates"
-            disabled={true}
+      <div className="relative w-full flex flex-col items-center gap-8 bg-white p-8">
+        <div className="relative w-full">
+          <div
+            className="flex items-center border border-orange-400 rounded-lg p-2 cursor-pointer"
             onClick={handleClick}
-          />
-          <div className="ml-2">
+          >
+            <Calendar className="text-gray-500 mr-2" />
+            <span>Select Date</span>
             <svg
-              className="w-4 h-4 text-gray-500"
+              className={`w-4 h-4 ml-auto transform transition-transform ${
+                showCalendar ? "rotate-180" : ""
+              }`}
               fill="none"
-              stroke="currentColor"
+              stroke="black"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              onClick={handleClick}
             >
               <path
                 strokeLinecap="round"
@@ -65,8 +63,14 @@ export const Booking = () => {
               ></path>
             </svg>
           </div>
-          {showCalendar && <GoogleCalendar />}
+
+          {showCalendar && (
+            <div className="absolute top-full left-[200px] h-64 mt-2 w-full max-w-3xl bg-white border border-black rounded-lg shadow-lg z-10">
+              <GoogleCalendar />
+            </div>
+          )}
         </div>
+
         <div className=" w-full flex justify-center items-center flex-col gap-8">
           <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair  text-center text-black ">
             Book a tour
