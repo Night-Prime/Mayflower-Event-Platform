@@ -34,7 +34,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="bg-[#212121] w-full lg:w-1/2 flex flex-col gap-12 p-6 text-white">
+        <div className="bg-[#212121] w-full lg:w-1/2 flex flex-col lg:gap-32 text-white">
           {/* Email Subscription */}
           <div className="flex w-full  lg:flex-row  border-4 rounded-full border-[#CC5500] p-1">
             <input

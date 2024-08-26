@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
+import { Right } from "../icons/Right";
 
 export const Navbar = () => {
   return (
@@ -31,12 +32,18 @@ export const Navbar = () => {
               </span>
             </RouterLink>
           </li>
-          <li className="relative">
-            <Link to="tour" smooth={true} duration={500} offset={-70}>
-              <button className="bg-transparent border-[2px] border-[#CC5500] py-[6px] px-[10px] sm:py-[8px] sm:px-[10px] lg:py-[10px] lg:px-[12px] rounded-lg text-[16px] sm:text-[12px] lg:text-[16px] font-semibold font-Inter w-[70px] sm:w-[70px] lg:w-[120px]">
-                <RouterLink to="/booking">Book a tour</RouterLink>
-              </button>
-            </Link>
+          <li className="relative pb-1 sm:pb-2">
+            <button className="bg-transparent border-[2px] border-[#CC5500] text-[#CC5500]  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4">
+              <RouterLink
+                to="/gallery"
+                className=" flex items-center justify-center"
+              >
+                Book a tour
+                <span className=" text-[#CC5500] ml-2">
+                  <Right />
+                </span>
+              </RouterLink>
+            </button>
           </li>
         </ul>
       </div>
