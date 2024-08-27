@@ -1,25 +1,27 @@
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
-import selfie from "../assets/Images/selfie.png";
-import tree from "../assets/Images/tree.png";
-import laughing from "../assets/Images/laughing.png";
-import drinks from "../assets/Images/drinks.png";
-import concert from "../assets/Images/concert.png";
-import dinner from "../assets/Images/dinner.png";
-import wedding from "../assets/Images/wedding.png";
-import circle1 from "../assets/Images/circle1.png";
-import circle2 from "../assets/Images/circle2.png";
-import circle3 from "../assets/Images/circle3.png";
-import circle4 from "../assets/Images/circle4.png";
-import { Littleloca } from "../icons/Littleloca";
-import { Star } from "../icons/Star";
-import { Right } from "../icons/Right";
+import React from 'react';
+
+import { Link as RouterLink } from 'react-router-dom';
+
+import circle1 from '../assets/Images/circle1.png';
+import circle2 from '../assets/Images/circle2.png';
+import circle3 from '../assets/Images/circle3.png';
+import circle4 from '../assets/Images/circle4.png';
+import concert from '../assets/Images/concert.png';
+import dinner from '../assets/Images/dinner.png';
+import drinks from '../assets/Images/drinks.png';
+import laughing from '../assets/Images/laughing.png';
+import selfie from '../assets/Images/selfie.png';
+import tree from '../assets/Images/tree.png';
+import wedding from '../assets/Images/wedding.png';
+import { Littleloca } from '../icons/Littleloca.jsx';
+import { Right } from '../icons/Right.jsx';
+import { Star } from '../icons/Star.jsx';
 
 export const Events = () => {
   const slides = [
     {
       content: (
-        <div className="w-full h-full shared-container flex flex-col bg-[#4e4e4e] items-center gap-20  ">
+        <div className="w-full h-full shared-container flex flex-col bg-[#4e4e4e] items-center gap-16  ">
           <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair text-center mt-8 ">
             Event Showcase
           </p>
@@ -213,7 +215,7 @@ export const Events = () => {
     },
   ];
   return (
-    <div className=" flex h-full snap-x snap-mandatory bg-transparent flex-col relative w-full  overflow-y-hidden overflow-x-auto">
+    <div className=" flex h-full snap-x snap-mandatory bg-transparent flex-col relative w-full  overflow-y-hidden overflow-x-auto scrollbar-hidden">
       <div className="flex transition-transform duration-500 ease-in-out">
         {slides.map((slide, index) => (
           <div

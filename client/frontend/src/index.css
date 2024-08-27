@@ -11,4 +11,11 @@ body {
   color: #ffffff;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 
+/* For Firefox */
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
