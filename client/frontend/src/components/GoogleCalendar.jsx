@@ -20,7 +20,7 @@ const GoogleCalendar = () => {
         center: "title",
         right: "next",
       }}
-      height="550px"
+      height="600px"
       contentHeight="550px"
       aspectRatio={1.5}
     />

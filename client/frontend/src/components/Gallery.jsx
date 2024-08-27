@@ -1,24 +1,25 @@
-import React from "react";
-import image1 from "../assets/Images/image1.png";
-import image2 from "../assets/Images/image2.png";
-import image3 from "../assets/Images/image3.png";
-import image4 from "../assets/Images/image4.png";
-import image5 from "../assets/Images/image5.png";
-import image6 from "../assets/Images/image6.png";
-import image7 from "../assets/Images/image7.png";
-import image8 from "../assets/Images/image8.png";
-import image9 from "../assets/Images/image9.png";
-import image10 from "../assets/Images/image10.png";
-import image11 from "../assets/Images/image11.png";
-import image12 from "../assets/Images/image12.png";
-import image13 from "../assets/Images/image13.png";
-import image14 from "../assets/Images/image14.png";
-import image15 from "../assets/Images/image15.png";
-import image16 from "../assets/Images/image16.png";
-import image17 from "../assets/Images/image17.png";
-import image18 from "../assets/Images/image18.png";
-import { Navbar } from "./Navbar";
-import { Footer } from "./Footer";
+import React from 'react';
+
+import image1 from '../assets/Images/image1.png';
+import image10 from '../assets/Images/image10.png';
+import image11 from '../assets/Images/image11.png';
+import image12 from '../assets/Images/image12.png';
+import image13 from '../assets/Images/image13.png';
+import image14 from '../assets/Images/image14.png';
+import image15 from '../assets/Images/image15.png';
+import image16 from '../assets/Images/image16.png';
+import image17 from '../assets/Images/image17.png';
+import image18 from '../assets/Images/image18.png';
+import image2 from '../assets/Images/image2.png';
+import image3 from '../assets/Images/image3.png';
+import image4 from '../assets/Images/image4.png';
+import image5 from '../assets/Images/image5.png';
+import image6 from '../assets/Images/image6.png';
+import image7 from '../assets/Images/image7.png';
+import image8 from '../assets/Images/image8.png';
+import image9 from '../assets/Images/image9.png';
+import { Footer } from './Footer.jsx';
+import { Navbar } from './Navbar.jsx';
 
 export const Gallery = () => {
   return (

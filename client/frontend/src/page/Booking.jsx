@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import { Calendar } from "../icons/Calendar";
-import { Right } from "../icons/Right";
-import threeselfie from "../assets/Images/threeselfie.png";
-import dinner2 from "../assets/Images/dinner2.png";
-import dinner3 from "../assets/Images/dinner3.png";
-import dj from "../assets/Images/dj.png";
-import gradient2 from "../assets/Images/gradient2.png";
-import glasses from "../assets/Images/glasses.png";
-import concert from "../assets/Images/concert.png";
-import dinner from "../assets/Images/dinner.png";
-import wedding from "../assets/Images/wedding.png";
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
-import GoogleCalendar from "../components/GoogleCalendar";
+import React, { useState } from 'react';
+
+import concert from '../assets/Images/concert.png';
+import dinner from '../assets/Images/dinner.png';
+import dinner2 from '../assets/Images/dinner2.png';
+import dinner3 from '../assets/Images/dinner3.png';
+import dj from '../assets/Images/dj.png';
+import glasses from '../assets/Images/glasses.png';
+import gradient2 from '../assets/Images/gradient2.png';
+import threeselfie from '../assets/Images/threeselfie.png';
+import wedding from '../assets/Images/wedding.png';
+import { Footer } from '../components/Footer.jsx';
+import GoogleCalendar from '../components/GoogleCalendar.jsx';
+import { Navbar } from '../components/Navbar';
+import { Calendar } from '../icons/Calendar.jsx';
+import { Right } from '../icons/Right.jsx';
 
 export const Booking = () => {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -65,7 +66,7 @@ export const Booking = () => {
           </div>
 
           {showCalendar && (
-            <div className="absolute top-full left-[200px] h-64 mt-2 w-full max-w-3xl bg-white border border-black rounded-lg shadow-lg z-10">
+            <div className="absolute top-full left-[200px] h-64 w-full max-w-4xl bg-white border border-black rounded-lg shadow-lg z-10">
               <GoogleCalendar />
             </div>
           )}
