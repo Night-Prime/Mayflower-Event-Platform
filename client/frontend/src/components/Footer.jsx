@@ -1,14 +1,15 @@
-import React from "react";
-import { Link as RouterLink } from "react-router-dom";
+import React from 'react';
 
-import { Instagram } from "../icons/Instagram";
-import { Facebook } from "../icons/Facebook";
-import { Linkedin } from "../icons/Linkedin";
-import { Phone } from "../icons/Phone";
-import { Email } from "../icons/Email";
-import { Location } from "../icons/Location";
-import { X } from "../icons/X";
-import { Right } from "../icons/Right";
+import { Link as RouterLink } from 'react-router-dom';
+
+import { Email } from '../icons/Email.jsx';
+import { Facebook } from '../icons/Facebook.jsx';
+import { Instagram } from '../icons/Instagram.jsx';
+import { Linkedin } from '../icons/Linkedin.jsx';
+import { Location } from '../icons/Location.jsx';
+import { Phone } from '../icons/Phone.jsx';
+import { Right } from '../icons/Right.jsx';
+import { X } from '../icons/X.jsx';
 
 export const Footer = () => {
   return (
