@@ -5,8 +5,6 @@ import threeselfie from "../assets/Images/threeselfie.png";
 import dinner2 from "../assets/Images/dinner2.png";
 import dinner3 from "../assets/Images/dinner3.png";
 import dj from "../assets/Images/dj.png";
-import gradient2 from "../assets/Images/gradient2.png";
-import glasses from "../assets/Images/glasses.png";
 import concert from "../assets/Images/concert.png";
 import dinner from "../assets/Images/dinner.png";
 import wedding from "../assets/Images/wedding.png";
@@ -38,7 +36,7 @@ export const Booking = () => {
           </h1>
         </div>
       </div>
-      <div className="relative w-full flex flex-col items-center gap-8 bg-white p-8">
+      <div className=" w-full flex flex-col items-center gap-8 bg-white p-8 rounded-t-3xl">
         <div className="relative w-full">
           <div
             className="flex items-center border border-orange-400 rounded-lg p-2 cursor-pointer"
@@ -75,38 +73,63 @@ export const Booking = () => {
           <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair  text-center text-black ">
             Book a tour
           </p>
-          <div className=" w-full flex flex-wrap justify-center items-center gap-6">
+          <div className=" w-full flex lg:items-center lg:justify-center gap-8 lg:flex-row md:flex-col md:justify-center md:items-center ">
             <img
               src={threeselfie}
               alt="three guys taking selfie"
-              className=" w-[310px]"
+              className=" lg:w-[24%] "
             />
-            <img src={dinner3} alt="dinner table" className=" w-[305px]" />
-            <img src={dinner2} alt="dinner" className=" w-[305px]" />
-            <img src={dj} alt="a dj" className=" w-[305px]" />
+            <img
+              src={dinner3}
+              alt="dinner table"
+              className=" lg:w-[24%] "
+            />
+
+            <img src={dinner2} alt="dinner" className=" lg:w-[24%] " />
+            <img src={dj} alt="a dj" className=" lg:w-[24%] " />
           </div>
-          <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
-            <img src={gradient2} alt="book a tour" />
-            <div className="lg:w-1/2 bg-[#212121] text-white flex flex-col gap-[120px] justify-center items-start pl-[145px] ">
-              <div className=" w-full flex flex-col justify-start items-start">
+          <div className=" flex w-full rounded-lg md:flex-col lg:flex-row sm:flex-row lg:justify-center ">
+            <div
+              className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(204, 85, 0, 1), rgba(204, 85, 0, 0)), url('/book.jpeg')`,
+              }}
+            >
+              <h1 className="text-[56px] font-Playfair italic leading-[84px] font-semibold text-white">
+                BOOK A TOUR <br />
+                AT <br />
+                MAYGARDENS
+              </h1>
+            </div>
+
+            <div className="lg:w-1/2 md:w-full bg-[#212121] text-white flex flex-col gap-10 p-6 justify-center items-center">
+              <div className="w-full flex flex-col justify-center items-center ">
                 <h3 className="text-[40px] font-Playfair font-bold mb-4">
                   Unveil the Magic:
                 </h3>
-                <p className="text-xl font-medium mb-6 font-Montserrat">
+                <p className="text-xl font-medium mb-6 font-Montserrat text-center md:text-center">
                   Book Your Mayflower Gardens Tour Today
                 </p>
               </div>
-              <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg  text-[16px] sm:text-[18px] ] font-bold font-Montserrat w-[222px]   ">
-                Fill our form{" "}
+
+              <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] font-bold font-Montserrat w-[222px]">
+                Fill our form
                 <span className="ml-2">
                   <Right />
                 </span>
               </button>
             </div>
           </div>
+
           <div className="flex flex-col lg:flex-row w-full h-full rounded-lg">
-            <img src={glasses} alt="book a tour" />
-            <div className="w-full bg-[#CC5500] rounded-tr-lg rounded-br-lg p-8 text-white flex flex-col justify-center items-start ">
+          <div
+              className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
+              }}
+            >
+            </div>
+            <div className="lg:w-1/2 bg-[#CC5500] p-8 text-white flex flex-col justify-center items-start ">
               <h3 className="text-[40px] font-Playfair font-bold mb-4">
                 Offers
               </h3>
