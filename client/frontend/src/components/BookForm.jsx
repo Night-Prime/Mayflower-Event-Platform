@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import dinner from "../assets/Images/dinner.png";
 import dinner3 from "../assets/Images/dinner3.png";
 import threeSelfie from "../assets/Images/threeselfie.png";
 import GoogleCalendar from "./GoogleCalendar";
-import { Calendar } from "../icons/Calendar";
+
 import { Right } from "../icons/Right";
 
 const BookForm = () => {
@@ -28,19 +27,9 @@ const BookForm = () => {
     setShowCalendar(!showCalendar);
   };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
-    <div className="bg-[#212121] text-white min-h-screen flex items-center justify-center p-6 rounded-xl w-full">
-      <div className="bg-transparent p-8 rounded-lg shadow-lg w-full">
+    <div className="bg-transparent text-white min-h-screen flex items-center justify-center p-6 rounded-xl w-full">
+      <div className="bg-transparent p-8 rounded-lg  w-full">
         <h2 className="text-3xl font-semibold mb-8 text-center">Book a tour</h2>
 
         <div className="flex justify-between mb-6">
