@@ -1,10 +1,10 @@
-import '../assets/styles/calendar.css';
+import "../assets/styles/calendar.css";
 
-import React from 'react';
+import React from "react";
 
-import dayGridPlugin from '@fullcalendar/daygrid';
-import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from "@fullcalendar/daygrid";
+import googleCalendarPlugin from "@fullcalendar/google-calendar";
+import FullCalendar from "@fullcalendar/react";
 
 const GoogleCalendar = () => {
   return (
@@ -24,8 +24,7 @@ const GoogleCalendar = () => {
       contentHeight="400px"
       aspectRatio={1.5}
     />
-  )
-}
+  );
+};
 
-
-export default GoogleCalendar
+export default GoogleCalendar;
