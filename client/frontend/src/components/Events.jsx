@@ -1,41 +1,49 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from "react-router-dom";
 
-import circle1 from '../assets/Images/circle1.png';
-import circle2 from '../assets/Images/circle2.png';
-import circle3 from '../assets/Images/circle3.png';
-import circle4 from '../assets/Images/circle4.png';
-import concert from '../assets/Images/concert.png';
-import dinner from '../assets/Images/dinner.png';
-import drinks from '../assets/Images/drinks.png';
-import laughing from '../assets/Images/laughing.png';
-import selfie from '../assets/Images/selfie.png';
-import tree from '../assets/Images/tree.png';
-import wedding from '../assets/Images/wedding.png';
-import { Littleloca } from '../icons/Littleloca.jsx';
-import { Right } from '../icons/Right.jsx';
-import { Star } from '../icons/Star.jsx';
+import circle1 from "../assets/Images/circle1.png";
+import circle2 from "../assets/Images/circle2.png";
+import circle3 from "../assets/Images/circle3.png";
+import circle4 from "../assets/Images/circle4.png";
+import concert from "../assets/Images/concert.png";
+import dinner from "../assets/Images/dinner.png";
+import drinks from "../assets/Images/drinks.png";
+import laughing from "../assets/Images/laughing.png";
+import selfie from "../assets/Images/selfie.png";
+import tree from "../assets/Images/tree.png";
+import wedding from "../assets/Images/wedding.png";
+import { Littleloca } from "../icons/Littleloca.jsx";
+import { Right } from "../icons/Right.jsx";
+import { Star } from "../icons/Star.jsx";
 
 export const Events = () => {
   const slides = [
     {
       content: (
-        <div className="w-full h-full shared-container flex flex-col bg-[#4e4e4e] items-center gap-16  ">
+        <div className="w-full h-full shared-container flex flex-col items-center gap-16  ">
           <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair text-center mt-8 ">
             Event Showcase
           </p>
 
-          <div className="flex flex-col w-full h-full items-center px-2 gap-12 ">
+          <div className="flex flex-col w-full h-full items-center px-2 ">
             <div className="flex justify-center items-center">
-              <img src={selfie} alt="Selfie" className="w-full md:w-[20%]" />
-              <img src={tree} alt="Tree" className="w-full md:w-[20%]" />
+              <img
+                src={selfie}
+                alt="Selfie"
+                className="img w-full md:w-[20%]"
+              />
+              <img src={tree} alt="Tree" className="img w-full md:w-[20%]" />
               <img
                 src={laughing}
                 alt="Laughing"
-                className="w-full md:w-[20%]"
+                className="img w-full md:w-[20%]"
               />
-              <img src={drinks} alt="Drinks" className="w-full md:w-[20%]" />
+              <img
+                src={drinks}
+                alt="Drinks"
+                className="img w-full md:w-[20%]"
+              />
             </div>
             <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px] mt-4 ">
               <RouterLink
@@ -54,7 +62,7 @@ export const Events = () => {
     },
     {
       content: (
-        <div className="w-full h-full shared-container flex flex-col bg-[#4e4e4e] gap-20 items-center  ">
+        <div className="w-full h-full shared-container flex flex-col gap-10 items-center  ">
           <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair text-center text-white mt-8 ">
             Explore Our Tailored Event Packages
           </p>
@@ -119,13 +127,13 @@ export const Events = () => {
     {
       content: (
         <>
-          <div className=" w-full shared-container flex flex-col gap-20 bg-[#4E4E4E] justify-center items-center">
+          <div className=" w-full shared-container flex flex-col gap-20 justify-center items-center">
             <div className=" w-full flex flex-col items-center justify-center">
-              <p className="sm:text-[36px] lg:text-[50px] w-[700px] font-Playfair py-2 mt-8 text-center text-[#EDEDED]">
-              Client Success Stories
+              <p className="sm:text-[36px] lg:text-[50px] w-[700px] font-Playfair mt-8 text-center text-[#EDEDED]">
+                Client Success Stories
               </p>
               <p className="text-[24px] sm:text-[30px] lg:text-[24px] font-greatVibes text-center pt-2 text-[#EDEDED]">
-              Hear from Our Satisfied Clients.
+                Hear from Our Satisfied Clients.
               </p>
             </div>
             <div className=" flex justify-center items-end pb-40 w-full px-10 gap-6">
@@ -214,13 +222,57 @@ export const Events = () => {
       ),
     },
   ];
+  const slideRefs = useRef([]);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: containerRef.current,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        } else {
+          entry.target.classList.remove("in-view");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    slideRefs.current.forEach((slide) => {
+      if (slide) {
+        observer.observe(slide);
+      }
+    });
+
+    return () => {
+      slideRefs.current.forEach((slide) => {
+        if (slide) {
+          observer.unobserve(slide);
+        }
+      });
+    };
+  }, []);
+
   return (
-    <div className=" flex h-full snap-x snap-mandatory bg-transparent flex-col relative w-full  overflow-y-hidden overflow-x-auto scrollbar-hidden">
-      <div className="flex transition-transform duration-500 ease-in-out">
+    <div
+      ref={containerRef}
+      className="bg-[#4e4e4e] flex h-full snap-x snap-mandatory flex-col relative w-full  overflow-y-hidden overflow-x-auto scrollbar-hidden"
+    >
+      <div className="slide-container flex my-auto transition-transform duration-500 ease-in-out">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className=" snap-start flex-shrink-0 w-full h-full flex justify-center items-center"
+            ref={(el) => (slideRefs.current[index] = el)}
+            className="snap-start flex-shrink-0 w-full h-full flex justify-center items-center opacity-0"
           >
             {slide.content}
           </div>

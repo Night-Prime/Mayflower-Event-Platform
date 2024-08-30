@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from "react-router-dom";
 
-import { Email } from '../icons/Email.jsx';
-import { Facebook } from '../icons/Facebook.jsx';
-import { Instagram } from '../icons/Instagram.jsx';
-import { Linkedin } from '../icons/Linkedin.jsx';
-import { Location } from '../icons/Location.jsx';
-import { Phone } from '../icons/Phone.jsx';
-import { Right } from '../icons/Right.jsx';
-import { X } from '../icons/X.jsx';
+import { Email } from "../icons/Email.jsx";
+import { Facebook } from "../icons/Facebook.jsx";
+import { Instagram } from "../icons/Instagram.jsx";
+import { Linkedin } from "../icons/Linkedin.jsx";
+import { Location } from "../icons/Location.jsx";
+import { Phone } from "../icons/Phone.jsx";
+import { Right } from "../icons/Right.jsx";
+import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full flex flex-col px-6 mt-20">
+    <div className="w-full flex flex-col px-10 mt-20">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-20">
         <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/2">
           <div className="flex flex-col font-Playfair gap-4">
@@ -111,7 +111,7 @@ export const Footer = () => {
 
       <div className="mt-12 lg:mt-[80px] flex flex-col lg:flex-row justify-between border-t border-t-white py-8">
         <div className="flex flex-col lg:flex-row gap-2 lg:gap-3 text-[16px] lg:text-[18px] font-Montserrat">
-          <p>&copy; 20??</p>
+          <p>&copy; 2024</p>
           <p className="font-bold">Mayflower Events Gardens</p>
           <p>All rights reserved</p>
         </div>
