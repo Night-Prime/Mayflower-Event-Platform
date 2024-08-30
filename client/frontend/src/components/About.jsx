@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import drumer from "../assets/Images/drumer.png";
-import medusa from "../assets/Images/medusa.png";
-import laugh from "../assets/Images/laugh.png";
-import LeftIcon from "./LeftIcon";
-import RightIcon from "./RightIcon";
+import React, { useState } from 'react';
+
+import drumer from '../assets/Images/drumer.png';
+import laugh from '../assets/Images/laugh.png';
+import medusa from '../assets/Images/medusa.png';
+import LeftIcon from './LeftIcon.jsx';
+import RightIcon from './RightIcon.jsx';
 
 export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

@@ -11,12 +11,24 @@ import wedding from "../assets/Images/wedding.png";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import GoogleCalendar from "../components/GoogleCalendar";
+import BookForm from "../components/BookForm";
+// import Modal from "../components/Modal";
 
 export const Booking = () => {
   const [showCalendar, setShowCalendar] = useState(false);
 
   const handleClick = () => {
     setShowCalendar(!showCalendar);
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -42,7 +54,7 @@ export const Booking = () => {
             className="flex items-center border border-orange-400 rounded-lg p-2 cursor-pointer"
             onClick={handleClick}
           >
-            <Calendar className="text-gray-500 mr-2" />
+            <Calendar className="text-[#4e4e4e] mr-2" />
             <span>Select Date</span>
             <svg
               className={`w-4 h-4 ml-auto transform transition-transform ${
@@ -63,7 +75,7 @@ export const Booking = () => {
           </div>
 
           {showCalendar && (
-            <div className="absolute top-full left-[200px] h-64 mt-2 w-full max-w-3xl bg-white border border-black rounded-lg shadow-lg z-10">
+            <div className="absolute top-full left-[24%] h-64 w-full max-w-xl bg-white border border-black rounded-lg shadow-lg z-10">
               <GoogleCalendar />
             </div>
           )}
@@ -79,11 +91,7 @@ export const Booking = () => {
               alt="three guys taking selfie"
               className=" lg:w-[24%] "
             />
-            <img
-              src={dinner3}
-              alt="dinner table"
-              className=" lg:w-[24%] "
-            />
+            <img src={dinner3} alt="dinner table" className=" lg:w-[24%] " />
 
             <img src={dinner2} alt="dinner" className=" lg:w-[24%] " />
             <img src={dj} alt="a dj" className=" lg:w-[24%] " />
@@ -112,23 +120,41 @@ export const Booking = () => {
                 </p>
               </div>
 
-              <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] font-bold font-Montserrat w-[222px]">
+              <button
+                className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] font-bold font-Montserrat w-[222px]"
+                onClick={openModal}
+              >
                 Fill our form
                 <span className="ml-2">
                   <Right />
                 </span>
               </button>
+              {isModalOpen && (
+                <div
+                  className="absolute w-[60%] bg-inherit flex justify-center items-center text-white rounded-lg shadow-lg z-10"
+                  style={{ top: "210%", left: "30%" }}
+                >
+                  <div>
+                    <button
+                      className="text-white text-right text-xl"
+                      onClick={closeModal}
+                    >
+                      &times;
+                    </button>
+                    <BookForm />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
           <div className="flex flex-col lg:flex-row w-full h-full rounded-lg">
-          <div
+            <div
               className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
               }}
-            >
-            </div>
+            ></div>
             <div className="lg:w-1/2 bg-[#CC5500] p-8 text-white flex flex-col justify-center items-start ">
               <h3 className="text-[40px] font-Playfair font-bold mb-4">
                 Offers

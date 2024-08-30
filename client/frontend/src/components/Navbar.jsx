@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
-import { Right } from "../icons/Right";
+import React from 'react';
+
+import { Link as RouterLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
+
+import { Right } from '../icons/Right.jsx';
 
 export const Navbar = () => {
   return (

@@ -1,11 +1,12 @@
-import React from "react";
-import { Hero } from "../components/Hero";
-import { Events } from "../components/Events";
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
-import SubHero from "../components/SubHero";
-import History from "../components/History";
-import Mission from "../components/Mission";
+import React from 'react';
+
+import { Events } from '../components/Events.jsx';
+import { Footer } from '../components/Footer.jsx';
+import { Hero } from '../components/Hero.jsx';
+import History from '../components/History.jsx';
+import Mission from '../components/Mission.jsx';
+import { Navbar } from '../components/Navbar.jsx';
+import SubHero from '../components/SubHero.jsx';
 
 export const Landingpage = () => {
   return (
