@@ -1,18 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { Link as RouterLink } from "react-router-dom";
-
-import circle1 from "../assets/Images/circle1.png";
-import circle2 from "../assets/Images/circle2.png";
-import circle3 from "../assets/Images/circle3.png";
-import circle4 from "../assets/Images/circle4.png";
-import concert from "../assets/Images/concert.png";
-import dinner from "../assets/Images/dinner.png";
-import drinks from "../assets/Images/drinks.png";
-import laughing from "../assets/Images/laughing.png";
-import selfie from "../assets/Images/selfie.png";
-import tree from "../assets/Images/tree.png";
-import wedding from "../assets/Images/wedding.png";
 import { Littleloca } from "../icons/Littleloca.jsx";
 import { Right } from "../icons/Right.jsx";
 import { Star } from "../icons/Star.jsx";
@@ -29,18 +17,22 @@ export const Events = () => {
           <div className="flex flex-col w-full h-full items-center px-2 ">
             <div className="flex justify-center items-center">
               <img
-                src={selfie}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/selfie.png?updatedAt=1725131446084"
                 alt="Selfie"
                 className="img w-full md:w-[20%]"
               />
-              <img src={tree} alt="Tree" className="img w-full md:w-[20%]" />
               <img
-                src={laughing}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/tree.png?updatedAt=1725131405421"
+                alt="Tree"
+                className="img w-full md:w-[20%]"
+              />
+              <img
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/laughing.png?updatedAt=1725131406021"
                 alt="Laughing"
                 className="img w-full md:w-[20%]"
               />
               <img
-                src={drinks}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/drinks.png?updatedAt=1725131445657"
                 alt="Drinks"
                 className="img w-full md:w-[20%]"
               />
@@ -69,7 +61,7 @@ export const Events = () => {
           <div className=" flex-wrap flex justify-center items-center gap-8 mb-10 ">
             <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl sm:w-[30%] lg:w-[25%]">
               <img
-                src={wedding}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/wedding.png?updatedAt=1725131443945"
                 alt="wedding-like"
                 className=" rounded-t-2xl"
               />
@@ -87,7 +79,11 @@ export const Events = () => {
               </div>
             </div>
             <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl sm:w-[30%] lg:w-[25%]">
-              <img src={dinner} alt="Dinner" className=" rounded-t-2xl" />
+              <img
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner.png?updatedAt=1725131402076"
+                alt="Dinner"
+                className=" rounded-t-2xl"
+              />
               <div className=" flex flex-col gap-4 justify-start items-start px-4">
                 <div className="flex flex-col gap-1 justify-start items-start text-black">
                   <p className="text-2xl font-Playfair font-bold">Card title</p>
@@ -103,7 +99,7 @@ export const Events = () => {
             </div>
             <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl sm:w-[30%] lg:w-[25%]">
               <img
-                src={concert}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/concert.png?updatedAt=1725131399684"
                 alt="concert-like"
                 className=" rounded-t-2xl"
               />
@@ -145,7 +141,10 @@ export const Events = () => {
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
-                    <img src={circle1} alt="1" />
+                    <img
+                      src="https://ik.imagekit.io/tsfcuw1ce/Images/circle1.png?updatedAt=1725131398528"
+                      alt="1"
+                    />
                     <div className=" flex flex-col font-kanit text-[16px]">
                       <p className=" text-[#EDEDED]">Lomo</p>
                       <div className=" flex justify-start items-center gap-[2px]">
@@ -164,7 +163,10 @@ export const Events = () => {
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
-                    <img src={circle2} alt="1" />
+                    <img
+                      src="https://ik.imagekit.io/tsfcuw1ce/Images/circle2.png?updatedAt=1725131401455"
+                      alt="1"
+                    />
                     <div className=" flex flex-col font-kanit text-[16px]">
                       <p className=" text-[#EDEDED]">Lomo</p>
                       <div className=" flex justify-start items-center gap-[2px]">
@@ -185,7 +187,10 @@ export const Events = () => {
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
-                    <img src={circle3} alt="1" />
+                    <img
+                      src="https://ik.imagekit.io/tsfcuw1ce/Images/circle3.png?updatedAt=1725131398921"
+                      alt="1"
+                    />
                     <div className=" flex flex-col font-kanit text-[16px]">
                       <p className=" text-[#EDEDED]">Lomo</p>
                       <div className=" flex justify-start items-center gap-[2px]">
@@ -204,7 +209,10 @@ export const Events = () => {
                 </p>
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
-                    <img src={circle4} alt="1" />
+                    <img
+                      src="https://ik.imagekit.io/tsfcuw1ce/Images/circle4.png?updatedAt=1725131398924"
+                      alt="1"
+                    />
                     <div className=" flex flex-col font-kanit text-[16px]">
                       <p className=" text-[#EDEDED]">Lomo</p>
                       <div className=" flex justify-start items-center gap-[2px]">

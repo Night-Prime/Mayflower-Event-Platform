@@ -1,8 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const clientMakeRequest = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  withCredentials: true,
 });
 
 export const adminMakeRequest = axios.create({
@@ -12,10 +11,10 @@ export const adminMakeRequest = axios.create({
 
 adminMakeRequest.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('accessToken');
-    
-    if(token) {
-      config.headers["Authorization"] = `Bearer ${token}`
+    const token = localStorage.getItem("accessToken");
+
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
     }
     console.log("Values: ", config, token);
     return config;
@@ -24,4 +23,4 @@ adminMakeRequest.interceptors.request.use(
     console.log("Error: ", error);
     return Promise.reject(error);
   }
-)
+);

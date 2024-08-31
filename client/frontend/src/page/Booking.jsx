@@ -1,19 +1,14 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import gsap from "gsap";
 import { Calendar } from "../icons/Calendar";
 import { Right } from "../icons/Right";
-import threeselfie from "../assets/Images/threeselfie.png";
-import dinner2 from "../assets/Images/dinner2.png";
-import dinner3 from "../assets/Images/dinner3.png";
-import dj from "../assets/Images/dj.png";
-import concert from "../assets/Images/concert.png";
-import dinner from "../assets/Images/dinner.png";
-import wedding from "../assets/Images/wedding.png";
+import PackageCard from "../components/PackageCard";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ScrollTrigger } from "gsap/all";
 import GoogleCalendar from "../components/GoogleCalendar";
 import BookForm from "../components/BookForm";
+import { clientMakeRequest } from "../helper/makeRequest";
 // import Modal from "../components/Modal";
 
 export const Booking = () => {
@@ -34,6 +29,8 @@ export const Booking = () => {
   };
   // set up element reference
   const app = useRef(null);
+
+  const [packages, setPackages] = useState([]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -59,6 +56,16 @@ export const Booking = () => {
         );
       }
     }, app);
+
+    clientMakeRequest
+      .get("/package/all")
+      .then((res) => {
+        const item = res.data.data;
+        setPackages(item);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
     return () => ctx.revert();
   }, []);
@@ -97,7 +104,7 @@ export const Booking = () => {
           >
             <Calendar className="text-[#4e4e4e] mr-2" />
             <span className="w-full text-black text-center">
-              <p>Check Calendar</p>
+              <p>Check Availability</p>
             </span>
             <svg
               className={`w-4 h-4 ml-auto transform transition-transform ${
@@ -145,7 +152,7 @@ export const Booking = () => {
                   Unveil the Magic:
                 </h3>
                 <p className="text-xl font-medium mb-6 font-Montserrat text-center md:text-center">
-                  Book Your Mayflower Gardens Tour Today
+                  Book Your May Gardens Tour Today
                 </p>
               </div>
               <button
@@ -158,18 +165,9 @@ export const Booking = () => {
                 </span>
               </button>
               {isModalOpen && (
-                <div
-                  className="absolute w-[60%] bg-inherit flex justify-center items-center text-white rounded-lg shadow-lg z-10"
-                  style={{ top: "155%", left: "20%" }}
-                >
-                  <div className="p-0 m-0">
-                    <button
-                      className="text-white text-right ml-10 mt-10 text-xl"
-                      onClick={closeModal}
-                    >
-                      &times;
-                    </button>
-                    <BookForm />
+                <div className="fixed inset-0 bg-white bg-opacity-50 flex justify-center items-center z-50">
+                  <div className="p-0 m-0 w-full h-full">
+                    <BookForm closeModal={closeModal} />
                   </div>
                 </div>
               )}
@@ -192,55 +190,11 @@ export const Booking = () => {
               </p>
             </div>
           </div>
-          <div className=" shared-container flex flex-col bg-white items-center justify-center">
-            <div className=" flex-wrap flex justify-center items-center gap-8 bg-white">
-              <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-                <img src={dinner} alt="Dinner" className=" rounded-t-2xl" />
-                <div className=" flex flex-col gap-4 justify-start items-start px-4 pb-6">
-                  <div className="flex flex-col gap-1 justify-start items-start text-black">
-                    <p className="text-[24px] font-Playfair font-bold text-[#CC5500]">
-                      Gold Standard
-                    </p>
-                    <p className="text-[18px] font-Montserrat font-normal text-start">
-                      Curabitur
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col shadow-2xl gap-4 justify-start items-start  bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-                <img
-                  src={wedding}
-                  alt="Dinner"
-                  className="w-full h-auto rounded-t-2xl"
-                />
-                <div className=" flex flex-col gap-4 justify-start items-start px-4 pb-6">
-                  <div className="flex flex-col gap-1 justify-start items-start text-black">
-                    <p className="text-[24px] font-Playfair font-bold text-[#CC5500]">
-                      Diamond Service
-                    </p>
-                    <p className="text-[18px] font-Montserrat font-normal text-start">
-                      Eget
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col shadow-2xl gap-4 justify-start items-start  bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-                <img
-                  src={concert}
-                  alt="Dinner"
-                  className="w-full h-auto rounded-t-2xl"
-                />
-                <div className=" flex flex-col gap-4 justify-start items-start px-4 pb-6">
-                  <div className="flex flex-col gap-1 justify-start items-start text-black">
-                    <p className="text-[24px] font-Playfair font-bold text-[#CC5500]">
-                      Platinum Experience
-                    </p>
-                    <p className="text-[18px] font-Montserrat font-normal text-start">
-                      Sem
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="shared-container flex flex-col bg-white items-center justify-center">
+            <div className="flex-wrap flex justify-between items-center gap-8 bg-white">
+              {packages.map((packageDetails, index) => (
+                <PackageCard key={index} packageDetails={packageDetails} />
+              ))}
             </div>
           </div>
         </div>

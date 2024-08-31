@@ -1,5 +1,5 @@
 const passport = require("passport");
-const BearerStrategy = require('passport-http-bearer').Strategy;
+const BearerStrategy = require("passport-http-bearer").Strategy;
 const { Strategy: GoogleStrategy } = require("passport-google-oauth20");
 const User = require("../models/User");
 require("dotenv").config();
@@ -15,11 +15,11 @@ passport.use(
       try {
         let user = await User.findOne({ where: { googleId: profile.id } });
         if (!user) {
-            user = await User.create({
-              googleId: profile.id,
-              email: profile.emails[0] ? profile.emails[0].value : null,
-              name: profile.displayName || null,
-            });
+          user = await User.create({
+            googleId: profile.id,
+            email: profile.emails[0] ? profile.emails[0].value : null,
+            name: profile.displayName || null,
+          });
         }
         return done(null, user, { accessToken });
       } catch (error) {
@@ -30,27 +30,29 @@ passport.use(
 );
 
 // For bearer tokens
-passport.use(new BearerStrategy(async (token, done) => {
-  try {
-    // Verify the token by making an API request to Google
-    const response = await axios.get(process.env.CLIENT_VERIFY_URL, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+passport.use(
+  new BearerStrategy(async (token, done) => {
+    try {
+      // Verify the token by making an API request to Google
+      const response = await axios.get(process.env.CLIENT_VERIFY_URL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    console.log("Response: ", response);
+      console.log("Response: ", response);
 
-    const user = await User.findOne({ where: { accessToken: token } });
-    if (!user) {
-      return done(null, false);
+      const user = await User.findOne({ where: { accessToken: token } });
+      if (!user) {
+        return done(null, false);
+      }
+
+      return done(null, user);
+    } catch (err) {
+      return done(err);
     }
-
-    return done(null, user);
-  } catch (err) {
-    return done(err);
-  }
-}));
+  })
+);
 
 passport.serializeUser((user, done) => {
   done(null, user.id);

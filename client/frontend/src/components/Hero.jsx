@@ -3,9 +3,6 @@ import { Link as RouterLink } from "react-router-dom";
 import gsap from "gsap";
 import videoBg from "../assets/video/background.mp4";
 import { Events } from "./Events";
-import drumer from "../assets/Images/drumer.png";
-import medusa from "../assets/Images/medusa.png";
-import laugh from "../assets/Images/laugh.png";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 export const Hero = () => {
@@ -79,17 +76,17 @@ export const Hero = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mx-2">
             <img
-              src={drumer}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
               className="img w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
             <img
-              src={medusa}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
               alt="Medusa's hair"
               className="img w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
             <img
-              src={laugh}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
               alt="Someone laughing"
               className="img w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
@@ -109,7 +106,7 @@ export const Hero = () => {
           <div className="flex h-1/3 flex-row w-full">
             <div className="flex-1 flex justify-start items-center">
               <img
-                src={drumer}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
                 alt="Someone drumming"
                 className="w-2/3 object-contain rounded-lg "
               />
@@ -129,7 +126,7 @@ export const Hero = () => {
           <div className="flex h-1/3 flex-row-reverse w-full">
             <div className="flex-1 flex justify-end items-center">
               <img
-                src={drumer}
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
                 alt="Someone drumming"
                 className="w-2/3 object-contain rounded-lg "
               />
@@ -150,17 +147,17 @@ export const Hero = () => {
             <div className="flex-1">
               <div className="flex-col ml-10 relative">
                 <img
-                  src={drumer}
+                  src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
                   alt="Someone drumming"
                   className="w-1/2 object-cover rounded-lg"
                 />
                 <img
-                  src={medusa}
+                  src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
                   alt="Medusa's hair"
                   className="w-[55%] object-cover rounded-lg absolute top-20 left-20 transform rotate-[-10deg]"
                 />
                 <img
-                  src={laugh}
+                  src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
                   alt="Someone laughing"
                   className="w-1/2 object-cover rounded-lg transform rotate-[10deg]"
                 />
