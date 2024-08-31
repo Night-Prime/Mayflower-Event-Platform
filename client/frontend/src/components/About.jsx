@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import drumer from '../assets/Images/drumer.png';
-import laugh from '../assets/Images/laugh.png';
-import medusa from '../assets/Images/medusa.png';
-import LeftIcon from './LeftIcon.jsx';
-import RightIcon from './RightIcon.jsx';
+import drumer from "../assets/Images/drumer.png";
+import laugh from "../assets/Images/laugh.png";
+import medusa from "../assets/Images/medusa.png";
+import LeftIcon from "./LeftIcon.jsx";
+import RightIcon from "./RightIcon.jsx";
 
 export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,7 +17,7 @@ export const About = () => {
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mx-2">
             <img
-              src={drumer}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
               className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
@@ -52,7 +52,7 @@ export const About = () => {
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mx-2">
             <img
-              src={drumer}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
               className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />

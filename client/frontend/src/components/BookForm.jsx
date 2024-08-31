@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
-import dinner from "../assets/Images/dinner.png";
-import dinner3 from "../assets/Images/dinner3.png";
-import threeSelfie from "../assets/Images/threeselfie.png";
 import { Right } from "../icons/Right";
 import { clientMakeRequest } from "../helper/makeRequest";
 import { ToastContainer, toast } from "react-toastify";
@@ -48,9 +45,21 @@ const BookForm = ({ closeModal }) => {
         <h2 className="text-3xl font-semibold mb-8 text-center">Book a tour</h2>
 
         <div className="flex justify-between mb-6">
-          <img src={dinner} alt="Tour 1" className="rounded-lg w-1/3" />
-          <img src={dinner3} alt="Tour 2" className="rounded-lg w-1/3 mx-2" />
-          <img src={threeSelfie} alt="Tour 3" className="rounded-lg w-1/3" />
+          <img
+            src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner.png?updatedAt=1725131402076"
+            alt="Tour 1"
+            className="rounded-lg w-1/3"
+          />
+          <img
+            src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner3.png?updatedAt=1725131405226"
+            alt="Tour 2"
+            className="rounded-lg w-1/3 mx-2"
+          />
+          <img
+            src="https://ik.imagekit.io/tsfcuw1ce/Images/threeselfie.png?updatedAt=1725131393769"
+            alt="Tour 3"
+            className="rounded-lg w-1/3"
+          />
         </div>
 
         <Formik

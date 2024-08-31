@@ -1,5 +1,4 @@
 import React from "react";
-import admin from "../assets/Images/admin.png";
 
 const AdminLogin = () => {
   const handleClick = async () => {
@@ -19,7 +18,7 @@ const AdminLogin = () => {
       <div className=" w-full flex justify-between gap-8 max-h-screen items-center">
         <div className="w-[60%] flex flex-col items-start justify-start">
           <img
-            src={admin}
+            src="https://ik.imagekit.io/tsfcuw1ce/Images/admin.png?updatedAt=1725131441143"
             alt="admin"
             className="object-contain w-full h-full"
           />
