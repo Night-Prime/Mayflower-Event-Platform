@@ -37,7 +37,7 @@ export const Navbar = () => {
           <li className="relative pb-1 sm:pb-2">
             <button className="bg-transparent border-[2px] border-[#CC5500] text-[#CC5500]  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4">
               <RouterLink
-                to="/gallery"
+                to="/booking"
                 className=" flex items-center justify-center"
               >
                 Book a tour
