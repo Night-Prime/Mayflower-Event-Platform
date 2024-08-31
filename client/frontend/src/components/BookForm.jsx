@@ -1,35 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
 import dinner from "../assets/Images/dinner.png";
 import dinner3 from "../assets/Images/dinner3.png";
 import threeSelfie from "../assets/Images/threeselfie.png";
-import GoogleCalendar from "./GoogleCalendar";
-
 import { Right } from "../icons/Right";
+import { clientMakeRequest } from "../helper/makeRequest";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const BookForm = () => {
+const BookForm = ({ closeModal }) => {
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
-    email: Yup.string()
-      .email("Invalid email address")
+    clientName: Yup.string().required("Name is required"),
+    clientEmail: Yup.string()
+      .email("Invalid clientEmail address")
       .required("Email is required"),
-    phone: Yup.string().required("Phone number is required"),
-    arrivalDate: Yup.date().required("Date of arrival is required"),
-    participants: Yup.number()
-      .min(1, "At least one participant is required")
-      .required("Number of participants is required"),
+    clientPhone: Yup.string().required("Phone number is required"),
+    eventTitle: Yup.string().required("Title of the Event is required"),
+    eventDate: Yup.date().required("Date of event is required"),
+    packageId: Yup.mixed().required("Select a package"),
   });
 
-  const [showCalendar, setShowCalendar] = useState(false);
-  const handleClick = () => {
-    setShowCalendar(!showCalendar);
-  };
+  const [packages, setPackages] = useState([]);
+
+  useEffect(() => {
+    clientMakeRequest
+      .get("/package/all")
+      .then((res) => {
+        const item = res.data.data;
+        setPackages(item);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
-    <div className="bg-transparent text-white min-h-screen flex items-center justify-center p-6 rounded-xl w-full">
-      <div className="bg-transparent p-8 rounded-lg  w-full">
+    <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-6">
+      <div className="bg-white p-8 rounded-lg w-[60%] h-full overflow-y-scroll">
+        <button
+          onClick={closeModal}
+          className=" text-black text-right text-2xl"
+        >
+          &times;
+        </button>
         <h2 className="text-3xl font-semibold mb-8 text-center">Book a tour</h2>
 
         <div className="flex justify-between mb-6">
@@ -40,19 +55,32 @@ const BookForm = () => {
 
         <Formik
           initialValues={{
-            name: "",
-            email: "",
-            phone: "",
-            arrivalDate: "",
-            participants: "",
+            eventTitle: "",
+            eventDescription: "",
+            packageId: "",
+            eventTime: "",
+            clientName: "",
+            clientEmail: "",
+            clientPhone: "",
+            eventDate: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              console.log("Form data:", values);
-              setSubmitting(false);
-              // You can also add code here to send the form data to a server, etc.
-            }, 400);
+          onSubmit={async (values, { setSubmitting }) => {
+            console.log("Form data:", values);
+            setSubmitting(false);
+            try {
+              const result = await clientMakeRequest.post("/booking", values);
+              if (result.data.status === "success") {
+                console.log("Result: ", result.data);
+                toast.success(`${result.data.message}`, {
+                  position: toast.POSITION.TOP_RIGHT,
+                });
+              }
+            } catch (error) {
+              toast.error("Error! Try again", {
+                position: toast.POSITION.TOP_RIGHT,
+              });
+            }
           }}
         >
           {({ isSubmitting }) => (
@@ -60,18 +88,79 @@ const BookForm = () => {
               <div className="mb-4">
                 <label
                   className="block text-sm font-medium mb-1"
-                  htmlFor="name"
+                  htmlFor="eventTitle"
+                >
+                  Event Title
+                </label>
+                <Field
+                  type="text"
+                  name="eventTitle"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  placeholder="What's the name of your Event"
+                />
+                <ErrorMessage
+                  name="eventTitle"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-sm font-medium mb-1"
+                  htmlFor="eventDescription"
+                >
+                  Event Description
+                </label>
+                <Field
+                  type="text"
+                  name="eventDescription"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  placeholder="Describe your Event"
+                />
+                <ErrorMessage
+                  name="eventDescription"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <Field
+                  component="select"
+                  name="packageId"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                >
+                  <option value="">Select a package</option>
+                  {packages && packages.length > 0 ? (
+                    packages.map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.name}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="">No packages available</option>
+                  )}
+                </Field>
+                <ErrorMessage
+                  name="packageId"
+                  component="div"
+                  className="text-red-500 text-sm mt-1"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-sm font-medium mb-1"
+                  htmlFor="clientName"
                 >
                   Name
                 </label>
                 <Field
                   type="text"
-                  name="name"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-md"
+                  name="clientName"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
                   placeholder="Enter your name"
                 />
                 <ErrorMessage
-                  name="name"
+                  name="clientName"
                   component="div"
                   className="text-red-500 text-sm mt-1"
                 />
@@ -80,18 +169,18 @@ const BookForm = () => {
               <div className="mb-4">
                 <label
                   className="block text-sm font-medium mb-1"
-                  htmlFor="email"
+                  htmlFor="clientEmail"
                 >
                   Email address
                 </label>
                 <Field
-                  type="email"
-                  name="email"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-md"
-                  placeholder="Enter your email address"
+                  type="clientEmail"
+                  name="clientEmail"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  placeholder="Enter your Email address"
                 />
                 <ErrorMessage
-                  name="email"
+                  name="clientEmail"
                   component="div"
                   className="text-red-500 text-sm mt-1"
                 />
@@ -100,13 +189,13 @@ const BookForm = () => {
               <div className="mb-4">
                 <label
                   className="block text-sm font-medium mb-1"
-                  htmlFor="phone"
+                  htmlFor="clientPhone"
                 >
                   Phone number
                 </label>
                 <div className="flex gap-4">
                   <select
-                    className="bg-transparent text-white border-[#4E4E4E] rounded-md border-[2px] pr-2 focus:outline-none"
+                    className="bg-transparent text-black border-[#4E4E4E] rounded-md border-[2px] pr-2 focus:outline-none"
                     style={{ width: "20%" }}
                   >
                     <option value="+234">🇳🇬 +234</option>
@@ -114,13 +203,13 @@ const BookForm = () => {
                   </select>
                   <Field
                     type="text"
-                    name="phone"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-md"
-                    placeholder="Enter your phone number"
+                    name="clientPhone"
+                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                    placeholder="Enter your Phone number"
                   />
                 </div>
                 <ErrorMessage
-                  name="phone"
+                  name="clientPhone"
                   component="div"
                   className="text-red-500 text-sm mt-1"
                 />
@@ -129,42 +218,22 @@ const BookForm = () => {
                 <div className="mb-4 flex flex-col w-[70%]">
                   <label
                     className="block text-sm font-medium mb-1"
-                    htmlFor="arrivalDate"
+                    htmlFor="eventDate"
                   >
                     Date of arrival
                   </label>
 
-                  <div
-                    className="flex items-center relative w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-md cursor-pointer"
-                    onClick={handleClick}
-                  >
-                    <span>Select Date</span>
-                    <svg
-                      className={`w-4 h-4 ml-auto transform transition-transform ${
-                        showCalendar ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="#4e4e4e"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      ></path>
-                    </svg>
-
-                    {showCalendar && (
-                      <div className="absolute top-full left-[10%] h-64 w-full max-w-4xl bg-white border border-black rounded-lg shadow-lg z-10">
-                        <GoogleCalendar />
-                      </div>
-                    )}
+                  <div className="flex items-center relative w-full bg-transparent">
+                    <Field
+                      type="date"
+                      name="eventDate"
+                      className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                      placeholder="Select Date"
+                    />
                   </div>
 
                   <ErrorMessage
-                    name="arrivalDate"
+                    name="eventDate"
                     component="div"
                     className="text-red-500 text-sm mt-1"
                   />
@@ -173,22 +242,22 @@ const BookForm = () => {
                 <div className="mb-4 flex w-[30%] flex-col">
                   <label
                     className="block text-sm font-medium mb-1"
-                    htmlFor="participants"
+                    htmlFor="eventTime"
                   >
-                    Number of participants
+                    Time
                   </label>
                   <Field
-                    type="number"
-                    name="participants"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-md"
+                    type="time"
+                    name="eventTime"
+                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
                     style={{
                       WebkitAppearance: "none",
                       MozAppearance: "textfield",
                     }}
-                    placeholder="Value"
+                    placeholder="Time of Event"
                   />
                   <ErrorMessage
-                    name="participants"
+                    name="eventTime"
                     component="div"
                     className="text-red-500 text-sm mt-1"
                   />
@@ -196,11 +265,11 @@ const BookForm = () => {
               </div>
               <button
                 type="submit"
-                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-white p-2 rounded-md mt-4"
+                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-black p-2 rounded-md mt-4"
                 disabled={isSubmitting}
               >
                 Submit
-                <span className=" text-white ml-2">
+                <span className=" text-black ml-2">
                   <Right />
                 </span>
               </button>

@@ -18,7 +18,10 @@ router.get(
     failureRedirect: `${process.env.CLIENT_URL}/admin`,
   }),
   (req, res) => {
+    const accessToken = req.authInfo.accessToken;
+    const refreshToken = req.authInfo.refreshToken;
     console.log("Result: ", req.authInfo.accessToken);
+    const storedRefreshToken = refreshToken;
     res.redirect(
       `${process.env.CLIENT_REDIRECT_URL}?token=${req.authInfo.accessToken}`
     );
