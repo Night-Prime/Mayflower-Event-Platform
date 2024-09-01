@@ -9,16 +9,18 @@ import { ScrollTrigger } from "gsap/all";
 import GoogleCalendar from "../components/GoogleCalendar";
 import BookForm from "../components/BookForm";
 import { clientMakeRequest } from "../helper/makeRequest";
-// import Modal from "../components/Modal";
 
 export const Booking = () => {
   const [showCalendar, setShowCalendar] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [packages, setPackages] = useState([]);
+
+  // set up element reference
+  const app = useRef(null);
 
   const handleClick = () => {
     setShowCalendar(!showCalendar);
   };
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -27,10 +29,6 @@ export const Booking = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  // set up element reference
-  const app = useRef(null);
-
-  const [packages, setPackages] = useState([]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -88,7 +86,10 @@ export const Booking = () => {
             Unforgettable Moments Await: <br />
             Book Your Space
           </h1>
-          <button className="bounce text bg-[#CC5500] mt-4 py-3 px-6 flex items-center justify-center rounded-lg  text-[16px] sm:text-[18px] ] font-bold font-Montserrat w-[222px]   ">
+          <button
+            onClick={openModal}
+            className="bounce text bg-[#CC5500] mt-4 py-3 px-6 flex items-center justify-center rounded-lg  text-[16px] sm:text-[18px] ] font-bold font-Montserrat w-[222px]   "
+          >
             Schedule Now
             <span className="ml-2">
               <Right />

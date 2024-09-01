@@ -4,8 +4,7 @@ import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
 import { Right } from "../icons/Right";
 import { clientMakeRequest } from "../helper/makeRequest";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 const BookForm = ({ closeModal }) => {
   const validationSchema = Yup.object({
@@ -81,13 +80,30 @@ const BookForm = ({ closeModal }) => {
               const result = await clientMakeRequest.post("/booking", values);
               if (result.data.status === "success") {
                 console.log("Result: ", result.data);
-                toast.success(`${result.data.message}`, {
-                  position: toast.POSITION.TOP_RIGHT,
+                Swal.fire({
+                  text: `${result.data.message}`,
+                  icon: "success",
+                  iconColor: "#fff",
+                  toast: true,
+                  position: "top-right",
+                  showConfirmButton: false,
+                  timer: 2000,
+                  background: "#cc5500",
+                  color: "#fff",
                 });
+                closeModal();
               }
             } catch (error) {
-              toast.error("Error! Try again", {
-                position: toast.POSITION.TOP_RIGHT,
+              Swal.fire({
+                text: `Unsucessful, Try Again!`,
+                icon: "error",
+                iconColor: "#fff",
+                toast: true,
+                position: "top-right",
+                showConfirmButton: false,
+                timer: 2000,
+                background: "#ff8323",
+                color: "red",
               });
             }
           }}
@@ -274,11 +290,11 @@ const BookForm = ({ closeModal }) => {
               </div>
               <button
                 type="submit"
-                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-black p-2 rounded-md mt-4"
+                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-white p-2 rounded-md mt-4"
                 disabled={isSubmitting}
               >
                 Submit
-                <span className=" text-black ml-2">
+                <span className=" text-white ml-2">
                   <Right />
                 </span>
               </button>
