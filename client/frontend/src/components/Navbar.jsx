@@ -13,24 +13,24 @@ export const Navbar = () => {
       </p>
       <div className="font-Playfair">
         <ul className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 tracking-wide text-[#c8c8c8]">
-          {/* <li className="relative pb-1 sm:pb-2">
+          <li className="relative pb-1 sm:pb-2">
             <RouterLink to="/">
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Home
               </span>
             </RouterLink>
-          </li> */}
-          <li className="relative pb-1 sm:pb-2">
+          </li>
+          {/* <li className="relative pb-1 sm:pb-2">
             <RouterLink to="/booking">
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Events
               </span>
             </RouterLink>
-          </li>
+          </li> */}
           <li className="relative pb-1 sm:pb-2">
             <RouterLink to="/gallery" smooth={true} duration={500} offset={-70}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
-                Gallery
+                Events
               </span>
             </RouterLink>
           </li>
