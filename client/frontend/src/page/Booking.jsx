@@ -1,29 +1,78 @@
-import React, { useState } from 'react';
-
-import concert from '../assets/Images/concert.png';
-import dinner from '../assets/Images/dinner.png';
-import dinner2 from '../assets/Images/dinner2.png';
-import dinner3 from '../assets/Images/dinner3.png';
-import dj from '../assets/Images/dj.png';
-import glasses from '../assets/Images/glasses.png';
-import gradient2 from '../assets/Images/gradient2.png';
-import threeselfie from '../assets/Images/threeselfie.png';
-import wedding from '../assets/Images/wedding.png';
-import { Footer } from '../components/Footer.jsx';
-import GoogleCalendar from '../components/GoogleCalendar.jsx';
-import { Navbar } from '../components/Navbar';
-import { Calendar } from '../icons/Calendar.jsx';
-import { Right } from '../icons/Right.jsx';
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import gsap from "gsap";
+import { Calendar } from "../icons/Calendar";
+import { Right } from "../icons/Right";
+import PackageCard from "../components/PackageCard";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { ScrollTrigger } from "gsap/all";
+import GoogleCalendar from "../components/GoogleCalendar";
+import BookForm from "../components/BookForm";
+import { clientMakeRequest } from "../helper/makeRequest";
 
 export const Booking = () => {
   const [showCalendar, setShowCalendar] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [packages, setPackages] = useState([]);
+
+  // set up element reference
+  const app = useRef(null);
 
   const handleClick = () => {
     setShowCalendar(!showCalendar);
   };
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      // Use the ref to access the container element
+      const container = app.current;
+      // Ensure container is valid and use GSAP to animate
+      if (container) {
+        gsap.fromTo(
+          container.querySelectorAll(".text"),
+          {
+            y: 0,
+            opacity: 0,
+            ease: "power2.in",
+          },
+          {
+            y: -15,
+            opacity: 1,
+            ease: "cubic-bezier(0.280, 0.840, 0.420, 1)",
+            duration: 0.5,
+            stagger: 0.5,
+          }
+        );
+      }
+    }, app);
+
+    clientMakeRequest
+      .get("/package/all")
+      .then((res) => {
+        const item = res.data.data;
+        setPackages(item);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className=" w-full flex flex-col justify-center items-center">
+    <div
+      ref={app}
+      className=" w-full flex flex-col justify-center items-center"
+    >
       <Navbar />
       <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-start">
         <div
@@ -37,16 +86,27 @@ export const Booking = () => {
             Unforgettable Moments Await: <br />
             Book Your Space
           </h1>
+          <button
+            onClick={openModal}
+            className="bounce text bg-[#CC5500] mt-4 py-3 px-6 flex items-center justify-center rounded-lg  text-[16px] sm:text-[18px] ] font-bold font-Montserrat w-[222px]   "
+          >
+            Schedule Now
+            <span className="ml-2">
+              <Right />
+            </span>
+          </button>
         </div>
       </div>
-      <div className="relative w-full flex flex-col items-center gap-8 bg-white p-8">
+      <div className=" w-full flex flex-col items-center gap-8 bg-white p-8 rounded-t-4xl">
         <div className="relative w-full">
           <div
-            className="flex items-center border border-orange-400 rounded-lg p-2 cursor-pointer"
+            className="flex items-center border border-[#cc5500] rounded-lg p-2 cursor-pointer"
             onClick={handleClick}
           >
-            <Calendar className="text-gray-500 mr-2" />
-            <span>Select Date</span>
+            <Calendar className="text-[#4e4e4e] mr-2" />
+            <span className="w-full text-black text-center">
+              <p>Check Availability</p>
+            </span>
             <svg
               className={`w-4 h-4 ml-auto transform transition-transform ${
                 showCalendar ? "rotate-180" : ""
@@ -66,48 +126,63 @@ export const Booking = () => {
           </div>
 
           {showCalendar && (
-            <div className="absolute top-full left-[200px] h-64 w-full max-w-4xl bg-white border border-black rounded-lg shadow-lg z-10">
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 h-64 w-full max-w-5xl mx-auto bg-white border rounded-lg shadow-lg z-10">
               <GoogleCalendar />
             </div>
           )}
         </div>
 
         <div className=" w-full flex justify-center items-center flex-col gap-8">
-          <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair  text-center text-black ">
-            Book a tour
-          </p>
-          <div className=" w-full flex flex-wrap justify-center items-center gap-6">
-            <img
-              src={threeselfie}
-              alt="three guys taking selfie"
-              className=" w-[310px]"
-            />
-            <img src={dinner3} alt="dinner table" className=" w-[305px]" />
-            <img src={dinner2} alt="dinner" className=" w-[305px]" />
-            <img src={dj} alt="a dj" className=" w-[305px]" />
-          </div>
           <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
-            <img src={gradient2} alt="book a tour" />
-            <div className="lg:w-1/2 bg-[#212121] text-white flex flex-col gap-[120px] justify-center items-start pl-[145px] ">
-              <div className=" w-full flex flex-col justify-start items-start">
+            <div
+              className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(204, 85, 0, 1), rgba(204, 85, 0, 0)), url('/book.jpeg')`,
+              }}
+            >
+              <h1 className="text-[56px] font-Playfair italic leading-[84px] font-semibold text-white">
+                BOOK A TOUR <br />
+                AT <br />
+                MAYGARDENS
+              </h1>
+            </div>
+
+            <div className="lg:w-1/2 md:w-full bg-[#212121] text-white flex flex-col gap-10 p-6 justify-center items-center">
+              <div className="w-full flex flex-col justify-center items-center ">
                 <h3 className="text-[40px] font-Playfair font-bold mb-4">
                   Unveil the Magic:
                 </h3>
-                <p className="text-xl font-medium mb-6 font-Montserrat">
-                  Book Your Mayflower Gardens Tour Today
+                <p className="text-xl font-medium mb-6 font-Montserrat text-center md:text-center">
+                  Book Your May Gardens Tour Today
                 </p>
               </div>
-              <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg  text-[16px] sm:text-[18px] ] font-bold font-Montserrat w-[222px]   ">
-                Fill our form{" "}
+              <button
+                className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] font-bold font-Montserrat w-[222px]"
+                onClick={openModal}
+              >
+                Fill our form
                 <span className="ml-2">
                   <Right />
                 </span>
               </button>
+              {isModalOpen && (
+                <div className="fixed inset-0 bg-white bg-opacity-50 flex justify-center items-center z-50">
+                  <div className="p-0 m-0 w-full h-full">
+                    <BookForm closeModal={closeModal} />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row w-full h-full rounded-lg">
-            <img src={glasses} alt="book a tour" />
-            <div className="w-full bg-[#CC5500] rounded-tr-lg rounded-br-lg p-8 text-white flex flex-col justify-center items-start ">
+
+          <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
+            <div
+              className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
+              }}
+            ></div>
+            <div className="lg:w-1/2 bg-[#CC5500] p-8 text-white flex flex-col justify-center items-start ">
               <h3 className="text-[40px] font-Playfair font-bold mb-4">
                 Offers
               </h3>
@@ -116,58 +191,11 @@ export const Booking = () => {
               </p>
             </div>
           </div>
-          <div className=" shared-container flex flex-col bg-white items-center justify-center">
-            <p className="text-[40px] sm:text-[36px] font-semibold font-Playfair py-8 text-center text-black ">
-              Our packages
-            </p>
-            <div className=" flex-wrap flex justify-center items-center gap-8 bg-white">
-              <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-                <img src={dinner} alt="Dinner" className=" rounded-t-2xl" />
-                <div className=" flex flex-col gap-4 justify-start items-start px-4 pb-6">
-                  <div className="flex flex-col gap-1 justify-start items-start text-black">
-                    <p className="text-[24px] font-Playfair font-bold text-[#CC5500]">
-                      Card title
-                    </p>
-                    <p className="text-[18px] font-Montserrat font-normal text-start">
-                      Curabitur
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col shadow-2xl gap-4 justify-start items-start  bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-                <img
-                  src={wedding}
-                  alt="Dinner"
-                  className="w-full h-auto rounded-t-2xl"
-                />
-                <div className=" flex flex-col gap-4 justify-start items-start px-4 pb-6">
-                  <div className="flex flex-col gap-1 justify-start items-start text-black">
-                    <p className="text-[24px] font-Playfair font-bold text-[#CC5500]">
-                      Card title
-                    </p>
-                    <p className="text-[18px] font-Montserrat font-normal text-start">
-                      Eget
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col shadow-2xl gap-4 justify-start items-start  bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
-                <img
-                  src={concert}
-                  alt="Dinner"
-                  className="w-full h-auto rounded-t-2xl"
-                />
-                <div className=" flex flex-col gap-4 justify-start items-start px-4 pb-6">
-                  <div className="flex flex-col gap-1 justify-start items-start text-black">
-                    <p className="text-[24px] font-Playfair font-bold text-[#CC5500]">
-                      Card title
-                    </p>
-                    <p className="text-[18px] font-Montserrat font-normal text-start">
-                      Sem
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="shared-container flex flex-col bg-white items-center justify-center">
+            <div className="flex-wrap flex justify-between items-center gap-8 bg-white">
+              {packages.map((packageDetails, index) => (
+                <PackageCard key={index} packageDetails={packageDetails} />
+              ))}
             </div>
           </div>
         </div>
