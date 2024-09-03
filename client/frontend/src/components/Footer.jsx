@@ -13,7 +13,7 @@ import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-lvh">
       <div className="h-full flex flex-col px-10 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-20">
           <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/2">
@@ -37,7 +37,6 @@ export const Footer = () => {
           </div>
 
           <div className="bg-[#212121] w-full lg:w-1/2 flex flex-col lg:gap-32 text-white">
-            {/* Email Subscription */}
             <div className="flex w-full  lg:flex-row  border-4 rounded-full border-[#CC5500] p-1">
               <input
                 type="email"
@@ -52,7 +51,6 @@ export const Footer = () => {
               </button>
             </div>
 
-            {/* Footer Links */}
             <div className="flex flex-wrap gap-12 text-center lg:text-left">
               <div className="flex-1">
                 <h4 className="font-Playfair text-[18px] mb-4">Company</h4>
