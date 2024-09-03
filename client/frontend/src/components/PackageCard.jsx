@@ -5,7 +5,7 @@ const PackageCard = ({ packageDetails }) => {
   const { name, description } = packageDetails;
 
   return (
-    <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%]">
+    <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-xl w-full sm:w-[48%] lg:w-[30%]">
       <img
         src="https://ik.imagekit.io/tsfcuw1ce/Images/concert.png?updatedAt=1725131399684"
         alt={name}
