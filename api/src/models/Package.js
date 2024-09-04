@@ -17,6 +17,10 @@ const Package = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    capacity: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
     price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
