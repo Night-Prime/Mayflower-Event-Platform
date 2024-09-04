@@ -13,10 +13,9 @@ router.get("/all", packageController.getAllPackages);
 router.get("/id", getIdValidation, packageController.getPackageById);
 router.patch(
   "/",
-  isAuth,
   updatePackageValidation,
   packageController.updatePackage
 );
-router.delete("/", isAuth, getIdValidation, packageController.deletePackage);
+router.delete("/", getIdValidation, packageController.deletePackage);
 
 module.exports = router;
