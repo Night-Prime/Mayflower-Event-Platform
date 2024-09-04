@@ -27,7 +27,7 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col font-Playfair gap-4">
               <p className="text-[28px] lg:text-[32px] font-normal">
-                Mayflower Event Gardens
+                May Gardens
               </p>
               <p className="text-[16px] lg:text-[18px] font-normal">
                 Where a harmonious blend of nature's beauty and elegant design
@@ -76,6 +76,9 @@ export const Footer = () => {
                   <li className="mb-2">
                     <RouterLink to="/gallery">Gallery</RouterLink>
                   </li>
+                  <li className="mb-2">
+                    <RouterLink to="/faq">FAQ</RouterLink>
+                  </li>
                   <li>
                     <RouterLink to="/booking">Event Booking</RouterLink>
                   </li>
@@ -111,7 +114,7 @@ export const Footer = () => {
         <div className="mt-12 lg:mt-[80px] flex flex-col lg:flex-row justify-between border-t border-t-white py-8">
           <div className="flex flex-col lg:flex-row gap-2 lg:gap-3 text-[16px] lg:text-[18px] font-Montserrat">
             <p>&copy; 2024</p>
-            <p className="font-bold">Mayflower Events Gardens</p>
+            <p className="font-bold">May Gardens</p>
             <p>All rights reserved</p>
           </div>
           <div className="flex gap-6 lg:gap-[60px] mt-4 lg:mt-0">

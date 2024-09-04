@@ -7,6 +7,7 @@ import Dashboard from "./page/Dashboard";
 import PageNotFound from "./page/PageNotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import AdminLogin from "./page/AdminLogin";
+import Faq from "./page/Faq";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route index element={<Landingpage />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/faq" element={<Faq />} />
           </Route>
           <Route path="/admin" element={<AdminLogin />} />
           <Route path="/dashboard" element={<Dashboard />} />

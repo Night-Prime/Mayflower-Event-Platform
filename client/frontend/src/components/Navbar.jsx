@@ -30,7 +30,7 @@ export const Navbar = () => {
           <li className="relative pb-1 sm:pb-2">
             <RouterLink to="/gallery" smooth={true} duration={500} offset={-70}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
-                Events
+                Gallery
               </span>
             </RouterLink>
           </li>
