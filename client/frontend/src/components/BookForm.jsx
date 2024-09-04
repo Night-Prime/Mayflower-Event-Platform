@@ -34,7 +34,7 @@ const BookForm = ({ closeModal }) => {
 
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-6">
-      <div className="bg-white p-8 rounded-lg w-[60%] h-full overflow-y-scroll">
+      <div className="animate-fade-in bg-white p-8 rounded-lg w-[60%] h-full overflow-y-scroll">
         <button
           onClick={closeModal}
           className=" text-black text-right text-2xl"
@@ -120,7 +120,7 @@ const BookForm = ({ closeModal }) => {
                 <Field
                   type="text"
                   name="eventTitle"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="What's the name of your Event"
                 />
                 <ErrorMessage
@@ -139,7 +139,7 @@ const BookForm = ({ closeModal }) => {
                 <Field
                   type="text"
                   name="eventDescription"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Describe your Event"
                 />
                 <ErrorMessage
@@ -152,13 +152,13 @@ const BookForm = ({ closeModal }) => {
                 <Field
                   component="select"
                   name="packageId"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                 >
                   <option value="">Select a package</option>
                   {packages && packages.length > 0 ? (
                     packages.map((item) => (
                       <option key={item.id} value={item.id}>
-                        {item.name}
+                        {item.name} - ({item.capacity})
                       </option>
                     ))
                   ) : (
@@ -181,7 +181,7 @@ const BookForm = ({ closeModal }) => {
                 <Field
                   type="text"
                   name="clientName"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Enter your name"
                 />
                 <ErrorMessage
@@ -201,7 +201,7 @@ const BookForm = ({ closeModal }) => {
                 <Field
                   type="clientEmail"
                   name="clientEmail"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Enter your Email address"
                 />
                 <ErrorMessage
@@ -220,7 +220,7 @@ const BookForm = ({ closeModal }) => {
                 </label>
                 <div className="flex gap-4">
                   <select
-                    className="bg-transparent text-black border-[#4E4E4E] rounded-md border-[2px] pr-2 focus:outline-none"
+                    className="bg-transparent text-black border-[#4E4E4E] rounded-lg border-[2px] pr-2 focus:outline-none"
                     style={{ width: "20%" }}
                   >
                     <option value="+234">🇳🇬 +234</option>
@@ -229,7 +229,7 @@ const BookForm = ({ closeModal }) => {
                   <Field
                     type="text"
                     name="clientPhone"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                     placeholder="Enter your Phone number"
                   />
                 </div>
@@ -252,7 +252,7 @@ const BookForm = ({ closeModal }) => {
                     <Field
                       type="date"
                       name="eventDate"
-                      className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                      className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                       placeholder="Select Date"
                     />
                   </div>
@@ -274,7 +274,7 @@ const BookForm = ({ closeModal }) => {
                   <Field
                     type="time"
                     name="eventTime"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-md"
+                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                     style={{
                       WebkitAppearance: "none",
                       MozAppearance: "textfield",
@@ -290,7 +290,7 @@ const BookForm = ({ closeModal }) => {
               </div>
               <button
                 type="submit"
-                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-white p-2 rounded-md mt-4"
+                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                 disabled={isSubmitting}
               >
                 Submit

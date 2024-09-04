@@ -192,7 +192,7 @@ export const Booking = () => {
             </div>
           </div>
           <div className="shared-container flex flex-col bg-white items-center justify-center">
-            <div className="flex-wrap flex justify-between items-center gap-8 bg-white">
+            <div className="flex-wrap flex justify-between items-center gap-5 bg-white">
               {packages.map((packageDetails, index) => (
                 <PackageCard key={index} packageDetails={packageDetails} />
               ))}
