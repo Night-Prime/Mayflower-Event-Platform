@@ -59,11 +59,11 @@ export const Events = () => {
             Explore Our Tailored Event Packages
           </p>
           <div className=" flex-wrap flex justify-center items-center gap-8 mb-10 ">
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-xl sm:w-[30%] lg:w-[25%]">
+            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
               <img
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/wedding.png?updatedAt=1725131443945"
                 alt="wedding-like"
-                className=" rounded-t-2xl"
+                className=" rounded-t-lg"
               />
               <div className=" flex flex-col gap-4 justify-start items-start px-4">
                 <div className="flex flex-col gap-1 justify-start items-start text-black">
@@ -78,11 +78,11 @@ export const Events = () => {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-xl sm:w-[30%] lg:w-[25%]">
+            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
               <img
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner.png?updatedAt=1725131402076"
                 alt="Dinner"
-                className=" rounded-t-2xl"
+                className=" rounded-t-lg"
               />
               <div className=" flex flex-col gap-4 justify-start items-start px-4">
                 <div className="flex flex-col gap-1 justify-start items-start text-black">
@@ -97,11 +97,11 @@ export const Events = () => {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-xl sm:w-[30%] lg:w-[25%]">
+            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
               <img
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/concert.png?updatedAt=1725131399684"
                 alt="concert-like"
-                className=" rounded-t-2xl"
+                className=" rounded-t-lg"
               />
               <div className=" flex flex-col gap-4 justify-start items-start px-4">
                 <div className="flex flex-col gap-1 justify-start items-start text-black">
@@ -133,7 +133,7 @@ export const Events = () => {
               </p>
             </div>
             <div className=" flex justify-center items-end pb-40 w-full px-10 gap-6">
-              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-xl ">
+              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-lg ">
                 <p className=" font-Montserrat text-md">
                   Posuere ultrices amet diam erat in amet nulla tellus nibh.
                   Vulputate cras nunc lectus facilisis. Sapien tempus
@@ -156,7 +156,7 @@ export const Events = () => {
                   <Star />
                 </div>
               </div>
-              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-xl ">
+              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-lg ">
                 <p className=" font-Montserrat text-md">
                   Vulputate volutpat viverra interdum et. Fusce sit habitant
                   mauris arcu pretium.
@@ -178,7 +178,7 @@ export const Events = () => {
                   <Star />
                 </div>
               </div>
-              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-xl ">
+              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-lg ">
                 <p className=" font-Montserrat text-md">
                   Faucibus nisl turpis orci quis eu morbi pharetra etiam amet.
                   Massa elit pellentesque et aliquet consectetur ornare sed
@@ -202,7 +202,7 @@ export const Events = () => {
                   <Star />
                 </div>
               </div>
-              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-xl ">
+              <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-lg ">
                 <p className=" font-Montserrat text-md">
                   Feugiat sed urna gravida nibh ipsum euismod orci. Dictum urna
                   tellus purus praesent.

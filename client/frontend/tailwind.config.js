@@ -14,7 +14,7 @@ module.exports = {
       animation: {
         "fade-in-left": "fade-in-left 0.25s ease-out",
         "fade-in-right": "fade-in-right 0.25s ease-out",
-        "fade-in": "fade-in-bottom 0.25s ease-out",
+        "fade-in": "fade-in-bottom 0.3s ease-in",
       },
       keyframes: {
         "fade-in-left": {
@@ -40,11 +40,15 @@ module.exports = {
         "fade-in-bottom": {
           "0%": {
             opacity: 0,
-            transform: "scale(0, 0) translateY(100%)",
+            transform: "translateY(100%)",
           },
+          // "50%": {
+          //   opacity: 0.5,
+          //   transform: "translateY(50%)",
+          // },
           "100%": {
             opacity: 1,
-            transform: "scale(1, 1) translateY(0)",
+            transform: "translateY(20%)",
           },
         },
       },
