@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Link as RouterLink } from "react-router-dom";
-
 import { Email } from "../icons/Email.jsx";
 import { Facebook } from "../icons/Facebook.jsx";
 import { Instagram } from "../icons/Instagram.jsx";
