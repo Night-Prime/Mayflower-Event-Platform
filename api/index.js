@@ -10,6 +10,8 @@ const models = require("./src/models");
 const routeHandler = require("./src/routes");
 const passport = require("passport");
 const session = require("express-session");
+const RedisStore = require("connect-redis").default;
+const redisClient = require("./src/config/redis");
 
 dotenv.config();
 
@@ -18,6 +20,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   session({
+    store: new RedisStore({ client: redisClient }),
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: false,

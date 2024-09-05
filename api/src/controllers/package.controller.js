@@ -17,6 +17,9 @@ exports.createPackage = async (req, res) => {
   try {
     const { name, description, price, capacity } = req.body;
 
+    req.session.packageData = { name, description, price, capacity };
+    console.log("Session: ", req.session);
+
     const newPackage = await Package.create({
       name,
       description,
