@@ -16,21 +16,26 @@ export const Navbar = () => {
         <RouterLink to="/">May Gardens</RouterLink>
       </p>
 
-      <div className="sm:hidden z-50">
+      <div className="md:hidden z-50">
         {menuOpen ? (
           <X onClick={toggleMenu} className="text-[#c8c8c8] cursor-pointer" />
         ) : (
-          <Menu onClick={toggleMenu} className="text-[#c8c8c8] cursor-pointer" />
+          <Menu
+            onClick={toggleMenu}
+            className="text-[#c8c8c8] cursor-pointer"
+          />
         )}
       </div>
 
       <div
-        className={`fixed inset-y-0 right-0 w-3/4 sm:bg-[#212121] lg:bg-transparent  transform ${
+        className={`fixed inset-y-0 right-0 xl:w-3/4 sm:w-1/3 ${
+          menuOpen ? "bg-[#212121] h-screen" : "bg-transparent"
+        }  ${
           menuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out sm:static sm:w-auto sm:flex sm:transform-none`}
+        } transition-transform duration-300 ease-in-out md:static md:w-auto md:flex md:transform-none z-40`}
       >
-        <ul className="flex flex-col sm:flex-row items-center gap-5 tracking-wide text-[#c8c8c8] p-6 sm:p-0">
-          <li className="relative pb-1 sm:pb-2">
+        <ul className="flex flex-col md:flex-row items-center gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0">
+          <li className="relative pb-1 md:pb-2">
             <RouterLink to="/" onClick={toggleMenu}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Home

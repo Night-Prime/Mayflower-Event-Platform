@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { Calendar } from "../icons/Calendar";
 import { Right } from "../icons/Right";
@@ -71,7 +71,7 @@ export const Booking = () => {
   return (
     <div
       ref={app}
-      className=" w-full flex flex-col justify-center items-center"
+      className=" w-full flex flex-col justify-center items-center h-max scroll-snap-align-start"
     >
       <Navbar />
       <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-start">
@@ -133,9 +133,9 @@ export const Booking = () => {
         </div>
 
         <div className=" w-full flex justify-center items-center flex-col gap-8">
-          <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
+          <div className="flex flex-row  w-full h-full rounded-lg overflow-hidden">
             <div
-              className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+              className="hidden md:flex lg:justify-center lg:items-center lg:w-1/2 md:w-full lg:p-6 inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `linear-gradient(to bottom, rgba(204, 85, 0, 1), rgba(204, 85, 0, 0)), url('/book.jpeg')`,
               }}
@@ -177,7 +177,7 @@ export const Booking = () => {
 
           <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
             <div
-              className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+              className=" hidden md:flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
               }}
