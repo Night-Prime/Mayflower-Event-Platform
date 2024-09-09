@@ -12,6 +12,7 @@ const PackageCard = ({ packageDetails }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
+          loading="lazy"
           src="https://ik.imagekit.io/tsfcuw1ce/Images/concert.png?updatedAt=1725131399684"
           alt={name}
           className={`w-full h-auto rounded-t-lg ${

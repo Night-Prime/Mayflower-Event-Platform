@@ -15,6 +15,7 @@ const Mission = ({ leave }) => {
         </button>
         <div className="flex-1 flex flex-row">
           <img
+            loading="lazy"
             src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
             alt="Someone drumming"
             className="w-full object-contain rounded-lg mx-auto "
