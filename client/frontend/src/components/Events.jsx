@@ -17,21 +17,25 @@ export const Events = () => {
           <div className="flex flex-col w-full h-full items-center px-2 ">
             <div className="flex justify-center items-center">
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/selfie.png?updatedAt=1725131446084"
                 alt="Selfie"
                 className="img w-full md:w-[20%]"
               />
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/tree.png?updatedAt=1725131405421"
                 alt="Tree"
                 className="img w-full md:w-[20%]"
               />
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/laughing.png?updatedAt=1725131406021"
                 alt="Laughing"
                 className="img w-full md:w-[20%]"
               />
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/drinks.png?updatedAt=1725131445657"
                 alt="Drinks"
                 className="img w-full md:w-[20%]"
@@ -61,6 +65,7 @@ export const Events = () => {
           <div className=" flex-wrap flex justify-center items-center gap-8 mb-10 ">
             <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/wedding.png?updatedAt=1725131443945"
                 alt="wedding-like"
                 className=" rounded-t-lg"
@@ -80,6 +85,7 @@ export const Events = () => {
             </div>
             <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner.png?updatedAt=1725131402076"
                 alt="Dinner"
                 className=" rounded-t-lg"
@@ -99,6 +105,7 @@ export const Events = () => {
             </div>
             <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
               <img
+                loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/concert.png?updatedAt=1725131399684"
                 alt="concert-like"
                 className=" rounded-t-lg"
@@ -142,6 +149,7 @@ export const Events = () => {
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/circle1.png?updatedAt=1725131398528"
                       alt="1"
                     />
@@ -164,6 +172,7 @@ export const Events = () => {
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/circle2.png?updatedAt=1725131401455"
                       alt="1"
                     />
@@ -188,6 +197,7 @@ export const Events = () => {
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/circle3.png?updatedAt=1725131398921"
                       alt="1"
                     />
@@ -210,6 +220,7 @@ export const Events = () => {
                 <div className="flex gap-2 justify-between items-center w-full">
                   <div className=" flex gap-2 justify-start items-center text-black">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/circle4.png?updatedAt=1725131398924"
                       alt="1"
                     />
