@@ -41,7 +41,9 @@ const BookForm = ({ closeModal }) => {
         >
           &times;
         </button>
-        <h2 className="text-3xl font-semibold mb-8 text-center">Book a tour</h2>
+        <h2 className="text-3xl font-semibold mb-8 text-center border-b-2 border-black">
+          Book a tour
+        </h2>
 
         <div className="flex justify-between mb-6">
           <img
