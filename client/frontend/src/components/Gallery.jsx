@@ -5,7 +5,7 @@ import { Navbar } from "./Navbar.jsx";
 const INITIAL_DATES = [2022, 2023, 2024];
 const BUFFER_SIZE = 3;
 
-export const Gallery = () => {
+const Gallery = () => {
   const [dates, setDates] = useState([
     ...Array(BUFFER_SIZE).fill(INITIAL_DATES).flat(),
   ]);
@@ -106,6 +106,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-1">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image10.png?updatedAt=1725131402063"
               alt="7"
               className="w-full h-full object-cover"
@@ -113,6 +114,7 @@ const Content = ({ date }) => {
           </div>
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image11.png?updatedAt=1725131399391"
               alt="8"
               className="w-full h-full object-cover"
@@ -120,6 +122,7 @@ const Content = ({ date }) => {
           </div>
           <div className="col-span-4 row-span-1">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image12.png?updatedAt=1725131399443"
               alt="9"
               className="w-full h-full object-cover"
@@ -130,6 +133,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
               alt="1"
               className="w-full h-full object-cover"
@@ -139,6 +143,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image14.png?updatedAt=1725131393740"
                   alt="2"
                   className="w-full h-full object-cover"
@@ -146,6 +151,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image15.png?updatedAt=1725131393433"
                   alt="3"
                   className="w-full h-full object-cover"
@@ -153,6 +159,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-2">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image16.png?updatedAt=1725131393483"
                   alt="4"
                   className="w-full h-full object-cover"
@@ -163,6 +170,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image17.png?updatedAt=1725131393931"
                   alt="5"
                   className="w-full h-full object-cover"
@@ -170,6 +178,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image18.png?updatedAt=1725131405300"
                   alt="6"
                   className="w-full h-full object-cover"
@@ -182,6 +191,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
               alt="1"
               className="w-full h-full object-cover"
@@ -191,6 +201,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image14.png?updatedAt=1725131393740"
                   alt="2"
                   className="w-full h-full object-cover"
@@ -198,6 +209,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image15.png?updatedAt=1725131393433"
                   alt="3"
                   className="w-full h-full object-cover"
@@ -205,6 +217,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-2">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image16.png?updatedAt=1725131393483"
                   alt="4"
                   className="w-full h-full object-cover"
@@ -215,6 +228,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image17.png?updatedAt=1725131393931"
                   alt="5"
                   className="w-full h-full object-cover"
@@ -222,6 +236,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image18.png?updatedAt=1725131405300"
                   alt="6"
                   className="w-full h-full object-cover"
@@ -241,6 +256,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
               alt="1"
               className="w-full h-full object-cover"
@@ -250,6 +266,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image14.png?updatedAt=1725131393740"
                   alt="2"
                   className="w-full h-full object-cover"
@@ -257,6 +274,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image15.png?updatedAt=1725131393433"
                   alt="3"
                   className="w-full h-full object-cover"
@@ -264,6 +282,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-2">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image16.png?updatedAt=1725131393483"
                   alt="4"
                   className="w-full h-full object-cover"
@@ -274,6 +293,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image17.png?updatedAt=1725131393931"
                   alt="5"
                   className="w-full h-full object-cover"
@@ -281,6 +301,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image18.png?updatedAt=1725131405300"
                   alt="6"
                   className="w-full h-full object-cover"
@@ -292,6 +313,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-1">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image10.png?updatedAt=1725131402063"
               alt="7"
               className="w-full h-full object-cover"
@@ -299,6 +321,7 @@ const Content = ({ date }) => {
           </div>
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image11.png?updatedAt=1725131399391"
               alt="8"
               className="w-full h-full object-cover"
@@ -306,6 +329,7 @@ const Content = ({ date }) => {
           </div>
           <div className="col-span-4 row-span-1">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image12.png?updatedAt=1725131399443"
               alt="9"
               className="w-full h-full object-cover"
@@ -316,6 +340,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
               alt="1"
               className="w-full h-full object-cover"
@@ -325,6 +350,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image14.png?updatedAt=1725131393740"
                   alt="2"
                   className="w-full h-full object-cover"
@@ -332,6 +358,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image15.png?updatedAt=1725131393433"
                   alt="3"
                   className="w-full h-full object-cover"
@@ -339,6 +366,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-2">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image16.png?updatedAt=1725131393483"
                   alt="4"
                   className="w-full h-full object-cover"
@@ -349,6 +377,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image17.png?updatedAt=1725131393931"
                   alt="5"
                   className="w-full h-full object-cover"
@@ -356,6 +385,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image18.png?updatedAt=1725131405300"
                   alt="6"
                   className="w-full h-full object-cover"
@@ -375,6 +405,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
               alt="1"
               className="w-full h-full object-cover"
@@ -384,6 +415,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image14.png?updatedAt=1725131393740"
                   alt="2"
                   className="w-full h-full object-cover"
@@ -391,6 +423,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image15.png?updatedAt=1725131393433"
                   alt="3"
                   className="w-full h-full object-cover"
@@ -398,6 +431,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-4 row-span-2">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image16.png?updatedAt=1725131393483"
                   alt="4"
                   className="w-full h-full object-cover"
@@ -408,6 +442,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image17.png?updatedAt=1725131393931"
                   alt="5"
                   className="w-full h-full object-cover"
@@ -415,6 +450,7 @@ const Content = ({ date }) => {
               </div>
               <div className="col-span-2 row-span-1">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image18.png?updatedAt=1725131405300"
                   alt="6"
                   className="w-full h-full object-cover"
@@ -425,6 +461,7 @@ const Content = ({ date }) => {
             <div className=" w-full flex gap-6">
               <div className="col-span-4 row-span-2">
                 <img
+                  loading="lazy"
                   src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
                   alt="1"
                   className="w-full h-full object-cover"
@@ -434,6 +471,7 @@ const Content = ({ date }) => {
                 <div className=" w-full flex gap-6">
                   <div className="col-span-4 row-span-1">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/image14.png?updatedAt=1725131393740"
                       alt="2"
                       className="w-full h-full object-cover"
@@ -441,6 +479,7 @@ const Content = ({ date }) => {
                   </div>
                   <div className="col-span-4 row-span-1">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/image15.png?updatedAt=1725131393433"
                       alt="3"
                       className="w-full h-full object-cover"
@@ -448,6 +487,7 @@ const Content = ({ date }) => {
                   </div>
                   <div className="col-span-4 row-span-2">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/image16.png?updatedAt=1725131393483"
                       alt="4"
                       className="w-full h-full object-cover"
@@ -458,6 +498,7 @@ const Content = ({ date }) => {
                 <div className=" w-full flex gap-6">
                   <div className="col-span-2 row-span-1">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/image17.png?updatedAt=1725131393931"
                       alt="5"
                       className="w-full h-full object-cover"
@@ -465,6 +506,7 @@ const Content = ({ date }) => {
                   </div>
                   <div className="col-span-2 row-span-1">
                     <img
+                      loading="lazy"
                       src="https://ik.imagekit.io/tsfcuw1ce/Images/image18.png?updatedAt=1725131405300"
                       alt="6"
                       className="w-full h-full object-cover"
@@ -478,6 +520,7 @@ const Content = ({ date }) => {
         <div className=" w-full flex gap-6">
           <div className="col-span-4 row-span-1">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image10.png?updatedAt=1725131402063"
               alt="7"
               className="w-full h-full object-cover"
@@ -485,6 +528,7 @@ const Content = ({ date }) => {
           </div>
           <div className="col-span-4 row-span-2">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image11.png?updatedAt=1725131399391"
               alt="8"
               className="w-full h-full object-cover"
@@ -492,6 +536,7 @@ const Content = ({ date }) => {
           </div>
           <div className="col-span-4 row-span-1">
             <img
+              loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image12.png?updatedAt=1725131399443"
               alt="9"
               className="w-full h-full object-cover"
@@ -503,3 +548,5 @@ const Content = ({ date }) => {
   }
   return null;
 };
+
+export default Gallery;
