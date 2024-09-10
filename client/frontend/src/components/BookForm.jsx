@@ -6,7 +6,7 @@ import { Right } from "../icons/Right";
 import { clientMakeRequest } from "../helper/makeRequest";
 import Swal from "sweetalert2";
 
-const BookForm = ({ closeModal }) => {
+const BookForm = ({ closeModal, item }) => {
   const validationSchema = Yup.object({
     clientName: Yup.string().required("Name is required"),
     clientEmail: Yup.string()
@@ -18,19 +18,9 @@ const BookForm = ({ closeModal }) => {
     packageId: Yup.mixed().required("Select a package"),
   });
 
-  const [packages, setPackages] = useState([]);
-
   useEffect(() => {
-    clientMakeRequest
-      .get("/package/all")
-      .then((res) => {
-        const item = res.data.data;
-        setPackages(item);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    console.log(item);
+  });
 
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-6">
@@ -160,8 +150,8 @@ const BookForm = ({ closeModal }) => {
                   className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                 >
                   <option value="">Select a package</option>
-                  {packages && packages.length > 0 ? (
-                    packages.map((item) => (
+                  {item && item.length > 0 ? (
+                    item.map((item) => (
                       <option key={item.id} value={item.id}>
                         {item.name} - ({item.capacity})
                       </option>

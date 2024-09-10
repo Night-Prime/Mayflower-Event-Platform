@@ -45,6 +45,10 @@ const Booking = sequelize.define(
       type: DataTypes.TIME,
       allowNull: false,
     },
+    scheduled: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     packageId: {
       type: DataTypes.UUID,
       allowNull: false,

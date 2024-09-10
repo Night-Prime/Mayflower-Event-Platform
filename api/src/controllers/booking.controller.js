@@ -202,6 +202,38 @@ exports.updateBooking = async (req, res) => {
   }
 };
 
+// schedule event
+exports.createEvents = async (req, res) => {
+  try {
+    const { id, scheduled } = req.body;
+
+    // Find the booking by ID
+    const booking = await Booking.findByPk(id);
+    if (!booking) {
+      return errorResponse(res, {
+        statusCode: 404,
+        message: "Booking not found.",
+      });
+    }
+    if (scheduled) {
+      booking.scheduled = scheduled;
+      console.log("Booking details: ", booking);
+      // triggering created event
+    }
+    return successResponse(res, {
+      data: booking,
+      statusCode: 200,
+      message: "Event Scheduled successfully.",
+    });
+  } catch (error) {
+    console.error("Error updating booking:", error);
+    return errorResponse(res, {
+      statusCode: 500,
+      message: "An error occurred while scheduling event for this booking",
+    });
+  }
+};
+
 // Delete a booking
 exports.deleteBooking = async (req, res) => {
   try {
