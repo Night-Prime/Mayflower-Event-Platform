@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Calendar } from "../icons/Calendar";
 import { Right } from "../icons/Right";
@@ -80,7 +80,7 @@ const Booking = () => {
       ) : (
         <div
           ref={app}
-          className=" w-full flex flex-col justify-center items-center"
+          className=" h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory"
         >
           <Navbar />
           <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-start">

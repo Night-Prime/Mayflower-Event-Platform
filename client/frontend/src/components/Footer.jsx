@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Link as RouterLink } from "react-router-dom";
-
 import { Email } from "../icons/Email.jsx";
 import { Facebook } from "../icons/Facebook.jsx";
 import { Instagram } from "../icons/Instagram.jsx";
@@ -13,7 +11,7 @@ import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-lvh">
+    <div className="w-full h-auto">
       <div className="h-full flex flex-col px-10 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-20">
           <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/2">
