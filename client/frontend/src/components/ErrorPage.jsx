@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Right } from "../icons/Right.jsx";
 import { Navbar } from "../components/Navbar.jsx";
 
-const PageNotFound = () => {
+const ErrorPage = () => {
   return (
     <>
       <Navbar />
@@ -12,11 +12,10 @@ const PageNotFound = () => {
           <div className="flex flex-col gap-y-8">
             <h1 className="text-8xl font-semibold text-[#CC5500]">Oops!</h1>
 
-            <h3 className="text-4xl font-thin">Page not found</h3>
+            <h3 className="text-4xl font-thin">Error has occured!</h3>
 
             <h5 className="text-2xl">
-              The page you are looking for doesn't exist <br /> Or an error
-              occured, go back to home page
+              An Error has occured for which we are ateending to at the moment.
             </h5>
 
             <button className="bg-[#CC5500] border-[2px] border-[#CC5500] text-white  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 p-2">
@@ -31,8 +30,8 @@ const PageNotFound = () => {
           <div className="h-full flex flex-col items-center justify-center gap-2">
             <img
               className="rounded-lg object-contain"
-              src="https://ik.imagekit.io/0y99xuz0yp/page-not-found-error-404--interface-page-not-found-error-404-1.png?updatedAt=1725925544623"
-              alt="404"
+              src="https://ik.imagekit.io/0y99xuz0yp/Group.png?updatedAt=1725927423990"
+              alt="Error"
             />
           </div>
         </div>
@@ -41,4 +40,4 @@ const PageNotFound = () => {
   );
 };
 
-export default PageNotFound;
+export default ErrorPage;

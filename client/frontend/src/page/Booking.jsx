@@ -177,7 +177,7 @@ const Booking = () => {
                   {isModalOpen && (
                     <div className="fixed inset-0 bg-white bg-opacity-50 flex justify-center items-center z-50">
                       <div className="p-0 m-0 w-full h-full">
-                        <BookForm closeModal={closeModal} />
+                        <BookForm closeModal={closeModal} item={packages} />
                       </div>
                     </div>
                   )}
