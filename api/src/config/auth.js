@@ -40,8 +40,6 @@ passport.use(
         },
       });
 
-      console.log("Response: ", response);
-
       const user = await User.findOne({ where: { accessToken: token } });
       if (!user) {
         return done(null, false);

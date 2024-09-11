@@ -61,7 +61,6 @@ exports.createBooking = async (req, res) => {
       message: "Booking created successfully.",
     });
   } catch (error) {
-    console.error("Error creating booking:", error);
     return errorResponse(res, {
       statusCode: 500,
       message: "An error occurred while creating the booking.",
@@ -227,15 +226,17 @@ exports.createEvents = async (req, res) => {
       // Trigger the createEvent function
       await createEvent(booking);
       booking.scheduled = scheduled;
+      await booking.save();
+
       return successResponse(res, {
         data: booking,
-        statusCode: 200,
+        statusCode: 201,
         message,
       });
     } else {
-      // await booking.destroy();
+      await booking.destroy();
       return errorResponse(res, {
-        statusCode: 500,
+        statusCode: 201,
         message: "Event Not Scheduled successfully.",
       });
     }

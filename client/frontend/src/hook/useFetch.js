@@ -1,9 +1,6 @@
-import {
-  useEffect,
-  useState,
-} from 'react';
+import { useEffect, useState } from "react";
 
-import { adminMakeRequest } from '../helper/makeRequest';
+import { adminMakeRequest } from "../helper/makeRequest";
 
 /**
  * @description reusable logic for fetching data from Mayflower API
@@ -16,23 +13,24 @@ const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const res = await adminMakeRequest.get(url);
-        setData(res.data.data);
-      } catch (err) {
-        console.log(err);
-        setError(true);
-      }
-      setLoading(false);
-    };
+  // Function to fetch data
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const res = await adminMakeRequest.get(url);
+      setData(res.data.data);
+    } catch (err) {
+      setError(true);
+    }
+    setLoading(false);
+  };
 
+  useEffect(() => {
     fetchData();
   }, [url]);
 
-  return { loading, data, error };
+  // Return data, loading, error, and refetch function
+  return { loading, data, error, refetch: fetchData };
 };
 
 export default useFetch;
