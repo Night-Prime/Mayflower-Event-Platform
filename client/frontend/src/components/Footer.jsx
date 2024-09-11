@@ -11,8 +11,8 @@ import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-auto">
-      <div className="h-full flex flex-col px-10 justify-end">
+    <div className="w-full h-auto bg-[#212121] mt-4">
+      <div className="h-full flex flex-col px-10 mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-20">
           <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/2">
             <div className="flex flex-col font-Playfair gap-4">
@@ -34,8 +34,8 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="bg-[#212121] w-full lg:w-1/2 flex flex-col lg:gap-32 text-white">
-            <div className="flex w-full  lg:flex-row  border-4 rounded-full border-[#CC5500] p-1">
+          <div className="flex flex-col lg:gap-28 sm:gap-12 mt-4 lg:w-1/2 text-white">
+            <div className="flex lg:flex-row border-4 rounded-full border-[#CC5500] p-1">
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -84,20 +84,20 @@ export const Footer = () => {
               </div>
               <div className="flex-1">
                 <h4 className="font-Playfair text-[18px] mb-4">Contact</h4>
-                <ul className=" w-44 font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px] flex flex-col justify-center items-start">
-                  <li className="mb-2 flex items-center justify-center lg:justify-start">
+                <ul className=" w-44 font-Montserrat font-medium text-[#AEAEAE] text-[16px] lg:text-[18px] flex flex-col justify-center items-center">
+                  <li className="mb-2 flex items-center lg:justify-center">
                     <span className="mr-2">
                       <Phone />
                     </span>{" "}
                     (Number here)
                   </li>
-                  <li className="mb-2 flex items-center justify-center lg:justify-start">
+                  <li className="mb-2 flex items-center lg:justify-center">
                     <span className="mr-2">
                       <Email />
                     </span>{" "}
                     (Email)
                   </li>
-                  <li className="flex items-center justify-center lg:justify-start">
+                  <li className="mb-2 flex items-center lg:justify-center">
                     <span className="mr-2">
                       <Location />
                     </span>{" "}
@@ -109,13 +109,13 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 lg:mt-[80px] flex flex-col lg:flex-row justify-between border-t border-t-white py-8">
-          <div className="flex flex-col lg:flex-row gap-2 lg:gap-3 text-[16px] lg:text-[18px] font-Montserrat">
+        <div className="mt-12 lg:mt-[80px] flex lg:flex-row md:items-center justify-between border-t border-t-white py-8">
+          <div className="flex lg:flex-row lg:gap-3 md:gap-2 sm:gap-1 md:flex-col sm:flex-col lg:text-lg md:text-md sm:text-sm font-Montserrat">
             <p>&copy; 2024</p>
             <p className="font-bold">May Gardens</p>
             <p>All rights reserved</p>
           </div>
-          <div className="flex gap-6 lg:gap-[60px] mt-4 lg:mt-0">
+          <div className="flex lg:gap-16 md:gap-12 sm:gap-10 mt-4 lg:mt-0">
             <Instagram />
             <Facebook />
             <Linkedin />

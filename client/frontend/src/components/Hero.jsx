@@ -53,7 +53,6 @@ export const Hero = () => {
 
   return (
     <div ref={containerRef} className="flex flex-col">
-      {/* Hero Section */}
       <div
         ref={app}
         className="relative h-screen w-full flex items-center justify-center"
@@ -82,10 +81,8 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Mission and Vision Section */}
       <div className="w-full flex items-center justify-center">
         <div className="grid md:grid-cols-3 gap-4 mx-10 my-10">
-          {/* Mission */}
           <div className="relative">
             <img
               loading="lazy"
@@ -105,7 +102,7 @@ export const Hero = () => {
               <Mission leave={missionMouseLeave} />
             </div>
           )}
-          {/* Middle Image */}
+
           <img
             loading="lazy"
             src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
@@ -113,7 +110,6 @@ export const Hero = () => {
             className="img w-full object-cover rounded-lg"
           />
 
-          {/* Values */}
           <div className="relative">
             <img
               loading="lazy"
@@ -134,21 +130,14 @@ export const Hero = () => {
             <Vision leave={valueMouseLeave} />
           </div>
         )}
-
-        {/* Text Description */}
         <p className="text-white text-center w-full max-w-4xl mx-10 mt-6 leading-relaxed font-Montserrat">
           At May Gardens Event Center, we are your intimate escape for life’s
           most cherished celebrations...
         </p>
       </div>
-
-      {/* Events Component */}
       <Events />
-
-      {/* Property Section */}
-      <div className="w-full h-auto">
+      <div className="w-full h-auto my-10">
         <div className="mx-10 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-          {/* Images Section */}
           <div className="flex flex-col items-center relative">
             <img
               loading="lazy"
@@ -170,7 +159,6 @@ export const Hero = () => {
             />
           </div>
 
-          {/* Property Description */}
           <div className="flex-1">
             <h2 className="text-[24px] lg:text-[40px] font-Playfair leading-tight mb-4">
               The Property

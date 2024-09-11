@@ -91,13 +91,13 @@ const Booking = () => {
               }}
             ></div>
             <div className="relative z-10 p-8 lg:p-12">
-              <h1 className="text-[56px] font-Playfair leading-[84px] font-normal text-white max-w-[835px]">
+              <h1 className="text-5xl font-Playfair leading-[84px] font-normal text-white max-w-[835px]">
                 Unforgettable Moments Await: <br />
                 Book Your Space
               </h1>
               <button
                 onClick={openModal}
-                className="bounce text bg-[#CC5500] mt-4 py-3 px-6 flex items-center justify-center rounded-lg  text-[16px] sm:text-[18px] ] font-bold font-Montserrat w-[222px]   "
+                className="bounce text bg-[#CC5500] mt-4 py-3 px-6 flex items-center justify-center rounded-lg  text-md md:text-sm font-bold font-Montserrat lg:w-52 md:w-48   "
               >
                 Schedule Now
                 <span className="ml-2">
@@ -149,7 +149,7 @@ const Booking = () => {
                     backgroundImage: `linear-gradient(to bottom, rgba(204, 85, 0, 1), rgba(204, 85, 0, 0)), url('/book.jpeg')`,
                   }}
                 >
-                  <h1 className="text-[56px] font-Playfair italic leading-[84px] font-semibold text-white">
+                  <h1 className="text-5xl font-Playfair italic leading-[84px] font-semibold text-white">
                     BOOK A TOUR <br />
                     AT <br />
                     MAYGARDENS
@@ -158,15 +158,15 @@ const Booking = () => {
 
                 <div className="lg:w-1/2 md:w-full bg-[#212121] text-white flex flex-col gap-10 p-6 justify-center items-center">
                   <div className="w-full flex flex-col justify-center items-center ">
-                    <h3 className="text-[40px] font-Playfair font-bold mb-4">
+                    <h3 className="text-4xl font-Playfair font-bold mb-4">
                       Unveil the Magic:
                     </h3>
-                    <p className="text-xl font-medium mb-6 font-Montserrat text-center md:text-center">
+                    <p className="text-md font-medium mb-6 font-Montserrat text-center md:text-center">
                       Book Your May Gardens Tour Today
                     </p>
                   </div>
                   <button
-                    className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] font-bold font-Montserrat w-[222px]"
+                    className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-md font-bold font-Montserrat w-[222px]"
                     onClick={openModal}
                   >
                     Fill our form
@@ -186,16 +186,16 @@ const Booking = () => {
 
               <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
                 <div
-                  className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+                  className="hidden lg:flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
                   }}
                 ></div>
                 <div className="lg:w-1/2 bg-[#CC5500] p-8 text-white flex flex-col justify-center items-start ">
-                  <h3 className="text-[40px] font-Playfair font-bold mb-4">
+                  <h3 className="text-3xl font-Playfair font-bold mb-4">
                     Offers
                   </h3>
-                  <p className="text-[24px] leading-[33.6px] font-medium mb-6 font-Montserrat">
+                  <p className="text-lg  font-medium mb-6 font-Montserrat">
                     Promotion, deals and special offers for you
                   </p>
                 </div>

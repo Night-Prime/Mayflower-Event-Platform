@@ -34,14 +34,14 @@ const BookForm = ({ closeModal }) => {
 
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-6">
-      <div className="animate-fade-in bg-white p-8 rounded-lg w-[60%] h-full overflow-y-scroll">
+      <div className="animate-fade-in bg-white p-8 rounded-lg font-Montserrat w-[70%] h-full overflow-y-scroll">
         <button
           onClick={closeModal}
           className=" text-black text-right text-2xl"
         >
           &times;
         </button>
-        <h2 className="text-3xl font-semibold mb-8 text-center border-b-2 border-black">
+        <h2 className="text-3xl font-semibold font-Playfair mb-8 text-center border-b-2 border-black">
           Book a tour
         </h2>
 
@@ -295,7 +295,7 @@ const BookForm = ({ closeModal }) => {
               </div>
               <button
                 type="submit"
-                className="w-[25%] bg-[#cc5500] flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                className="w-[25%] bg-[#cc5500] text-md sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                 disabled={isSubmitting}
               >
                 Submit

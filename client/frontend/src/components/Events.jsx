@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Littleloca } from "../icons/Littleloca.jsx";
 import { Right } from "../icons/Right.jsx";
@@ -7,9 +7,22 @@ import { RightA } from "../icons/RightA.jsx";
 import { LeftA } from "../icons/LeftA.jsx";
 
 export const Events = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+
   const slideRefs = useRef([]);
-  const totalSlides = 3;
+  
+  const slideContainerRef = useRef(null);
+
+  const nextSlide = () => {
+    const container = slideContainerRef.current;
+    const slideWidth = container.clientWidth;
+    container.scrollLeft += slideWidth;
+  };
+
+  const prevSlide = () => {
+    const container = slideContainerRef.current;
+    const slideWidth = container.clientWidth;
+    container.scrollLeft -= slideWidth;
+  };
 
   const slides = [
     {
@@ -141,7 +154,7 @@ export const Events = () => {
             </p>
           </div>
           <div className=" flex justify-center items-end pb-40 w-full px-10 gap-6">
-            <div className="flex flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-lg hidden lg:block ">
+            <div className=" flex-col w-[344px] gap-4 justify-start items-start p-3 bg-[#212121] rounded-lg hidden lg:block ">
               <p className=" font-Montserrat text-md">
                 Posuere ultrices amet diam erat in amet nulla tellus nibh.
                 Vulputate cras nunc lectus facilisis. Sapien tempus pellentesque
@@ -242,50 +255,34 @@ export const Events = () => {
     },
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
-  };
-
-  // useEffect(() => {
-  //   // Auto-slide functionality
-  //   const interval = setInterval(nextSlide, 5000); // Adjust the time as needed
-  //   return () => clearInterval(interval);
-  // }, []);
-
   return (
     <div className="bg-[#4e4e4e] relative w-full h-auto overflow-hidden">
       <div
-        className="slide-container flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        className="slide-container flex transition-transform duration-500 ease-in-out overflow-x-scroll scroll-smooth"
+        ref={slideContainerRef}
+        style={{ scrollSnapType: "x mandatory" }}
       >
         {slides.map((slide, index) => (
           <div
             key={index}
             ref={(el) => (slideRefs.current[index] = el)}
             className="w-full h-auto flex-shrink-0 flex justify-center items-center"
+            style={{ scrollSnapAlign: "center" }}
           >
             {slide.content}
           </div>
         ))}
       </div>
-
-      {/* Left/Right navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 p-2 rounded-full z-10"
+        className="absolute top-1/2 left-4 bg-[#212121] p-3 rounded-full z-10"
       >
-        {/* Replace with your left icon */}
-        <LeftA className="rotate-180" />
+        <LeftA />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 p-2 rounded-full z-10"
+        className="absolute top-1/2 right-4 bg-[#212121] p-3 rounded-full z-10"
       >
-        {/* Right icon */}
         <RightA />
       </button>
     </div>
