@@ -38,25 +38,25 @@ export const Events = () => {
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/selfie.png?updatedAt=1725131446084"
                 alt="Selfie"
-                className="img lg:w-[20%] hidden lg:block"
+                className="img lg:w-[17%] hidden lg:block"
               />
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/tree.png?updatedAt=1725131405421"
                 alt="Tree"
-                className="img lg:w-[20%] sm:w-[30%]"
+                className="img lg:w-[17%] sm:w-[30%]"
               />
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/laughing.png?updatedAt=1725131406021"
                 alt="Laughing"
-                className="img lg:w-[20%] hidden lg:block"
+                className="img lg:w-[17%] hidden lg:block"
               />
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/drinks.png?updatedAt=1725131445657"
                 alt="Drinks"
-                className="img lg:w-[20%] sm:w-[30%]"
+                className="img lg:w-[17%] sm:w-[30%]"
               />
             </div>
             <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px] mt-4">
@@ -144,7 +144,7 @@ export const Events = () => {
     },
     {
       content: (
-        <div className="w-full h-auto shared-container flex flex-col gap-20 justify-center items-center">
+        <div className="w-full h-full shared-container flex flex-col justify-between items-center">
           <div className=" w-full flex flex-col items-center justify-center">
             <p className="sm:text-[36px] lg:text-[50px] w-[700px] font-Playfair mt-8 text-center text-[#EDEDED]">
               Client Success Stories
@@ -256,9 +256,9 @@ export const Events = () => {
   ];
 
   return (
-    <div className="bg-[#4e4e4e] relative w-full h-auto overflow-hidden">
+    <div className="bg-[#4e4e4e] relative w-full h-[550px] overflow-hidden">
       <div
-        className="slide-container flex transition-transform duration-500 ease-in-out overflow-x-scroll scroll-smooth"
+        className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
         ref={slideContainerRef}
         style={{ scrollSnapType: "x mandatory" }}
       >
@@ -266,7 +266,7 @@ export const Events = () => {
           <div
             key={index}
             ref={(el) => (slideRefs.current[index] = el)}
-            className="w-full h-auto flex-shrink-0 flex justify-center items-center"
+            className="w-full h-[550px] flex-shrink-0 flex justify-center items-center"
             style={{ scrollSnapAlign: "center" }}
           >
             {slide.content}
