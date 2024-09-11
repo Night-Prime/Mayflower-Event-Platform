@@ -15,12 +15,13 @@ exports.createPackage = async (req, res) => {
   }
 
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, capacity } = req.body;
 
     const newPackage = await Package.create({
       name,
       description,
       price,
+      capacity,
     });
 
     return successResponse(res, {
