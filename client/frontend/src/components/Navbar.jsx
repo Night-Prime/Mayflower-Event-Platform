@@ -35,9 +35,9 @@ export const Navbar = () => {
           menuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out md:static md:w-auto md:flex md:transform-none z-40`}
       >
-        <ul className="flex flex-col md:flex-row items-center gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0">
+        <ul className="flex flex-col md:flex-row items-center justify-end gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0 w-full">
           <li className="relative pb-1 md:pb-2">
-            <RouterLink to="/"  onClick={() => menuOpen && toggleMenu()}>
+            <RouterLink to="/" onClick={() => menuOpen && toggleMenu()}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Home
               </span>
