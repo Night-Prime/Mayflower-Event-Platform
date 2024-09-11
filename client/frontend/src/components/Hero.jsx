@@ -81,7 +81,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full lg:h-lvh flex flex-col items-center justify-center">
         <div className="grid md:grid-cols-3 gap-4 mx-10 my-10">
           <div className="relative">
             <img
@@ -130,13 +130,21 @@ export const Hero = () => {
             <Vision leave={valueMouseLeave} />
           </div>
         )}
-        <p className="text-white text-center w-full max-w-4xl mx-10 mt-6 leading-relaxed font-Montserrat">
-          At May Gardens Event Center, we are your intimate escape for life’s
-          most cherished celebrations...
-        </p>
+        <div className="w-11/12">
+          <p className="text-center">
+            At May Gardens Event Center, we are your intimate escape for life’s
+            most cherished celebrations. Our facilities are maintained to the
+            highest standards to ensure that every event is a massive success.
+            Working closely with top event planners and vendors alike, we ensure
+            that your ideas are valid and your vision for your event is brought
+            to life. From our breathtaking space to our exceptional hospitality,
+            your guests will have stories of your event on their lips for years
+            to come.
+          </p>
+        </div>
       </div>
       <Events />
-      <div className="w-full h-auto my-10">
+      <div className="w-full h-auto lg:h-lvh my-10 flex items-center justify-center">
         <div className="mx-10 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
           <div className="flex flex-col items-center relative">
             <img
@@ -165,7 +173,14 @@ export const Hero = () => {
             </h2>
             <p className="text-white text-justify leading-relaxed font-Montserrat">
               May Event Garden is an event center with a natural garden-like
-              setting that accommodates up to 350 guests...
+              setting that accommodates up to 350 guests. The innovative
+              fiberglass roofing allows guests to see and feel the sky, adding a
+              unique element to your event. Inside the venue, you will find
+              top-quality, imported facilities, a waterfall, and 360 rotators
+              that make the atmosphere vibrant. We’ve spared no expense in
+              ensuring the highest standards of comfort and luxury. With
+              excellent power supply, impeccable conditioning, and tight
+              security, your event will run smoothly from start to finish.
             </p>
           </div>
         </div>

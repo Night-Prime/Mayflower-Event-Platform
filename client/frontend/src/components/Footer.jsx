@@ -11,7 +11,7 @@ import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-auto bg-[#212121] mt-4">
+    <div className="w-full h-auto lg:h-lvh bg-[#212121] mt-4">
       <div className="h-full flex flex-col px-10 mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-20">
           <div className="flex flex-col gap-12 lg:gap-20 w-full lg:w-1/2">

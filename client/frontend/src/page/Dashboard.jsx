@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hook/useFetch";
 import PackageModal from "../components/PackageModal";
+import Preloader from "../components/Preloader";
+import ErrorPage from "../components/ErrorPage";
+import { adminMakeRequest } from "../helper/makeRequest";
 
 const Dashboard = () => {
   const { data: bookings, error, loading } = useFetch("/booking/all");
   const { data: packagesData } = useFetch("package/all");
-
   const [showModal, setShowModal] = useState(false);
-
   const navigate = useNavigate();
 
   const handleCreatePackage = () => {
@@ -27,12 +28,22 @@ const Dashboard = () => {
     console.log("Deleting the Package");
   };
 
-  const acceptBookings = () => {
-    console.log("Create Event");
+  const acceptBookings = async (id) => {
+    const payload = {
+      id: id,
+      scheduled: true,
+    };
+    console.log("Booking: ", payload);
+    const result = await adminMakeRequest.put("booking/event", payload);
+    console.log("Result: ", result);
   };
 
-  const declineBookings = () => {
-    console.log("Delete Bookings");
+  const declineBookings = (id) => {
+    const payload = {
+      id: id,
+      scheduled: false,
+    };
+    console.log("Booking: ", payload);
   };
 
   useEffect(() => {
@@ -56,6 +67,14 @@ const Dashboard = () => {
       }
     }
   }, [navigate]);
+
+  if (error) {
+    return <ErrorPage />;
+  }
+
+  if (loading) {
+    return <Preloader />;
+  }
 
   return (
     <div className="w-full h-full">
@@ -146,28 +165,24 @@ const Dashboard = () => {
             <table className="w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
                     Client Name
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
                     Client Email
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
-                    Client Phone
-                  </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
                     Event Title
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
                     Event Date
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
-                    Event Time
-                  </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+
+                  <th className="px-64py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
                     Event Description
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider"></th>
+                  <th className="px-2 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider"></th>
                 </tr>
               </thead>
               <tbody className="bg-transparent divide-y divide-[#CC5500]">
@@ -180,18 +195,14 @@ const Dashboard = () => {
                         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           {booking.clientEmail}
                         </td>
-                        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                          {booking.clientPhone}
-                        </td>
+
                         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           {booking.eventTitle}
                         </td>
                         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           {booking.eventDate}
                         </td>
-                        <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                          {booking.eventTime}
-                        </td>
+
                         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           {booking.eventDescription}
                         </td>
@@ -199,13 +210,13 @@ const Dashboard = () => {
                           <div className="px-6 flex justify-between gap-2">
                             <button
                               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                              onClick={acceptBookings}
+                              onClick={() => acceptBookings(booking.id)}
                             >
                               <i className="fas fa-edit mr-2"></i>Accept
                             </button>
                             <button
                               className="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
-                              onClick={declineBookings}
+                              onClick={() => declineBookings(booking.id)}
                             >
                               <i className="fas fa-trash-alt mr-2"></i>Decline
                             </button>
