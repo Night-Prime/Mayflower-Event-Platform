@@ -2,9 +2,8 @@ const { Booking, Event, Package } = require("../models");
 const { successResponse, errorResponse } = require("../helper/response");
 const { UUIDGenerator } = require("../helper");
 const { validationResult } = require("express-validator");
-const nodemailer = require("nodemailer");
-const { google } = require("googleapis");
 const { sendMail } = require("../helper/sendMail");
+const { createEvent } = require("../helper/createEvent");
 
 // Create a new booking
 exports.createBooking = async (req, res) => {
@@ -74,6 +73,7 @@ exports.createBooking = async (req, res) => {
 exports.getAllBookings = async (req, res) => {
   try {
     const bookings = await Booking.findAll({
+      where: { scheduled: false },
       include: [{ model: Package, as: "packages" }],
     });
 
@@ -198,6 +198,52 @@ exports.updateBooking = async (req, res) => {
     return errorResponse(res, {
       statusCode: 500,
       message: "An error occurred while updating the booking.",
+    });
+  }
+};
+
+// schedule event
+exports.createEvents = async (req, res) => {
+  try {
+    const { id, scheduled } = req.body;
+    console.log("Request: ", req.body);
+
+    // Find the booking by ID
+    const booking = await Booking.findByPk(id);
+    if (!booking) {
+      return errorResponse(res, {
+        statusCode: 404,
+        message: "Booking not found.",
+      });
+    }
+
+    const message =
+      scheduled === true
+        ? "Event Scheduled successfully."
+        : "Event Not Scheduled successfully.";
+
+    if (scheduled === true) {
+      console.log("Booking details: ", booking);
+      // Trigger the createEvent function
+      await createEvent(booking);
+      booking.scheduled = scheduled;
+      return successResponse(res, {
+        data: booking,
+        statusCode: 200,
+        message,
+      });
+    } else {
+      // await booking.destroy();
+      return errorResponse(res, {
+        statusCode: 500,
+        message: "Event Not Scheduled successfully.",
+      });
+    }
+  } catch (error) {
+    console.error("Error updating booking:", error);
+    return errorResponse(res, {
+      statusCode: 500,
+      message: "An error occurred while scheduling event for this booking",
     });
   }
 };

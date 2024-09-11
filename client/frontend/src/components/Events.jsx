@@ -32,31 +32,31 @@ export const Events = () => {
             Event Showcase
           </p>
           <div className="flex flex-col w-full h-full items-center px-2">
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-4">
               {/* Conditional rendering for images */}
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/selfie.png?updatedAt=1725131446084"
                 alt="Selfie"
-                className="img lg:w-[17%] hidden lg:block"
+                className=" hidden w-[30%] lg:w-[20%] lg:block"
               />
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/tree.png?updatedAt=1725131405421"
                 alt="Tree"
-                className="img lg:w-[17%] sm:w-[30%]"
+                className=" w-[50%] lg:w-[20%]"
               />
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/laughing.png?updatedAt=1725131406021"
                 alt="Laughing"
-                className="img lg:w-[17%] hidden lg:block"
+                className=" hidden w-[30%] lg:w-[20%] lg:block"
               />
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/drinks.png?updatedAt=1725131445657"
                 alt="Drinks"
-                className="img lg:w-[17%] sm:w-[30%]"
+                className=" w-[50%] lg:w-[20%]"
               />
             </div>
             <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px] mt-4">
@@ -81,7 +81,7 @@ export const Events = () => {
             Explore Our Tailored Event Packages
           </p>
           <div className="flex-wrap flex justify-center items-center gap-8 mb-10">
-            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg sm:w-[30%] lg:w-[25%]">
+            <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg w-[12%] lg:w-[25%]">
               <img
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/wedding.png?updatedAt=1725131443945"

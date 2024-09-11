@@ -12,6 +12,7 @@ const router = express.Router();
 router.get("/all", isAuth, bookingController.getAllBookings);
 router.post("/", createBookingValidation, bookingController.createBooking);
 router.get("/id", bookingController.getBookingById);
+router.put("/event", bookingController.createEvents);
 router.patch("/", updateBookingValidation, bookingController.updateBooking);
 router.delete("/:id", bookingController.deleteBooking);
 

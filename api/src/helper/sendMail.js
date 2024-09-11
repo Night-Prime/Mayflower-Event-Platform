@@ -8,7 +8,7 @@ const sendMail = async (clientEmail, eventTitle, eventDate, eventTime) => {
   const auth = new google.auth.OAuth2(
     process.env.AUTH_SECRET_ID,
     process.env.AUTH_SECRET_TOKEN,
-    "https://oauth2.googleapis.com/token"
+    "https://developers.google.com/oauthplayground"
   );
 
   auth.setCredentials({
