@@ -19,7 +19,6 @@ adminMakeRequest.interceptors.request.use(
     return config;
   },
   (error) => {
-    console.log("Error: ", error);
     return Promise.reject(error);
   }
 );
