@@ -123,13 +123,13 @@ export const Footer = () => {
         </div>
 
         {/* Footer Bottom Section */}
-        <div className="mt-6 sm:mt-8 lg:mt-[80px] flex flex-col md:flex-row md:items-center justify-between border-t border-t-white py-4 sm:py-6">
-          <div className="flex lg:flex-row lg:gap-3 md:gap-2 sm:gap-1 flex-col text-xs sm:text-sm lg:text-lg font-Montserrat">
+        <div className=" w-full mt-6 lg:mt-2xl flex flex-col md:flex-row md:items-center justify-between border-t border-t-white py-4 sm:py-6">
+          <div className="flex w-full lg:gap-3 gap-4 md:justify-start justify-center text-xs sm:text-sm lg:text-lg font-Montserrat">
             <p>&copy; 2024</p>
             <p className="font-bold">May Gardens</p>
             <p>All rights reserved</p>
           </div>
-          <div className="flex gap-6 sm:gap-8 lg:gap-16 mt-4 lg:mt-0">
+          <div className="flex w-full md:justify-end justify-center gap-10 mt-4 lg:mt-0">
             <Instagram />
             <Facebook />
             <Linkedin />

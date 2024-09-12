@@ -10,6 +10,7 @@ import GoogleCalendar from "../components/GoogleCalendar";
 import BookForm from "../components/BookForm";
 import { clientMakeRequest } from "../helper/makeRequest";
 import Preloader from "../components/Preloader";
+import { Events } from "../components/Events";
 
 const Booking = () => {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -24,6 +25,7 @@ const Booking = () => {
   };
 
   const openModal = () => {
+    console.log('true')
     setIsModalOpen(true);
   };
 
