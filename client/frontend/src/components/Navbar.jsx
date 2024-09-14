@@ -11,7 +11,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
+    <div className="sticky top-0 z-50 w-full h-20 flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
       <p className="font-Playfair font-bold text-[20px] sm:text-[24px] lg:text-[32px] cursor-pointer">
         <RouterLink to="/">May Gardens</RouterLink>
       </p>

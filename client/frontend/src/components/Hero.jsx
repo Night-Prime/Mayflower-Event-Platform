@@ -218,7 +218,7 @@ export const Hero = () => {
 
       <Events />
 
-      <div className="w-full h-auto lg:h-lvh my-2 p-2 flex items-center justify-center">
+      <div className="w-full h-auto  my-2 p-2 flex items-center justify-center">
         <div className="mx-4 sm:mx-6 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
           <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Playfair leading-tight mb-4">
             The Property
