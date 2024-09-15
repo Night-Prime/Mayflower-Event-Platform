@@ -17,11 +17,12 @@ const Booking = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [packages, setPackages] = useState([]);
 
-  // set up element reference
-  const app = useRef(null);
+  const calendarRef = useRef(null); 
+  const buttonRef = useRef(null); 
 
-  const handleClick = () => {
-    setShowCalendar(!showCalendar);
+  const handleClick = (e) => {
+    e.stopPropagation(); 
+    setShowCalendar((prev) => !prev);
   };
 
   const openModal = () => {
@@ -32,30 +33,50 @@ const Booking = () => {
     setIsModalOpen(false);
   };
 
+  const handleClickOutside = (event) => {
+    if (
+      calendarRef.current &&
+      !calendarRef.current.contains(event.target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target)
+    ) {
+      setShowCalendar(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showCalendar) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showCalendar]);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      // Use the ref to access the container element
-      const container = app.current;
-      // Ensure container is valid and use GSAP to animate
-      if (container) {
-        gsap.fromTo(
-          container.querySelectorAll(".text"),
-          {
-            y: 0,
-            opacity: 0,
-            ease: "power2.in",
-          },
-          {
-            y: -15,
-            opacity: 1,
-            ease: "cubic-bezier(0.280, 0.840, 0.420, 1)",
-            duration: 0.5,
-            stagger: 0.5,
-          }
-        );
-      }
-    }, app);
+    const container = calendarRef.current;
+
+    if (container) {
+      gsap.fromTo(
+        container.querySelectorAll(".text"),
+        {
+          y: 0,
+          opacity: 0,
+          ease: "power2.in",
+        },
+        {
+          y: -15,
+          opacity: 1,
+          ease: "cubic-bezier(0.280, 0.840, 0.420, 1)",
+          duration: 0.5,
+          stagger: 0.5,
+        }
+      );
+    }
 
     clientMakeRequest
       .get("/package/all")
@@ -68,8 +89,6 @@ const Booking = () => {
       .catch((error) => {
         setIsLoading(false);
       });
-
-    return () => ctx.revert();
   }, []);
 
   return (
@@ -77,10 +96,7 @@ const Booking = () => {
       {isLoading ? (
         <Preloader />
       ) : (
-        <div
-          ref={app}
-          className=" h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory"
-        >
+        <div className="h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
           <Navbar />
           <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-start">
             <div
@@ -89,14 +105,14 @@ const Booking = () => {
                 backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/gradient.png')`,
               }}
             ></div>
-            <div className="relative z-10 p-8 lg:p-12">
-              <h1 className="text-5xl font-Playfair leading-[84px] font-normal text-white max-w-[835px]">
+            <div className="relative z-10 p-4 sm:p-6 lg:p-12">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-Playfair leading-tight lg:leading-[84px] font-normal text-white max-w-full lg:max-w-[835px]">
                 Unforgettable Moments Await: <br />
                 Book Your Space
               </h1>
               <button
                 onClick={openModal}
-                className="bounce text bg-[#CC5500] mt-4 py-3 px-6 flex items-center justify-center rounded-lg  text-md md:text-sm font-bold font-Montserrat lg:w-52 md:w-48   "
+                className="bg-[#CC5500] mt-4 py-2 px-4 sm:py-3 sm:px-5 flex items-center justify-center rounded-lg text-xs sm:text-sm lg:text-md font-bold font-Montserrat lg:w-52 sm:w-48"
               >
                 Schedule Now
                 <span className="ml-2">
@@ -105,14 +121,16 @@ const Booking = () => {
               </button>
             </div>
           </div>
-          <div className=" w-full flex flex-col items-center gap-8 bg-white p-8 rounded-t-4xl">
+
+          <div className="w-full flex flex-col items-center gap-4 sm:gap-8 bg-white p-4 sm:p-8 rounded-t-3xl">
             <div className="relative w-full">
               <div
                 className="flex items-center border border-[#cc5500] rounded-lg p-2 cursor-pointer"
-                onClick={handleClick}
+                onClick={handleClick} 
+                ref={buttonRef} 
               >
                 <Calendar className="text-[#4e4e4e] mr-2" />
-                <span className="w-full text-black text-center">
+                <span className="w-full text-black text-center text-xs sm:text-sm">
                   <p>Check Availability</p>
                 </span>
                 <svg
@@ -134,38 +152,41 @@ const Booking = () => {
               </div>
 
               {showCalendar && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 h-64 w-full max-w-5xl mx-auto bg-white border rounded-lg shadow-lg z-10">
+                <div
+                  ref={calendarRef} 
+                  className="absolute top-full left-1/2 transform -translate-x-1/2 h-64 w-full max-w-xs sm:max-w-5xl mx-auto bg-white border rounded-lg shadow-lg z-10"
+                >
                   <GoogleCalendar />
                 </div>
               )}
             </div>
 
-            <div className=" w-full flex justify-center items-center flex-col gap-8">
-              <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
+            <div className="w-full flex flex-col justify-center items-center gap-4 sm:gap-8">
+              <div className="flex flex-col md:flex-row w-full h-full rounded-lg overflow-hidden">
                 <div
-                  className=" flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+                  className="flex justify-center items-center md:w-1/2 w-full p-6 bg-cover bg-center"
                   style={{
                     backgroundImage: `linear-gradient(to bottom, rgba(204, 85, 0, 1), rgba(204, 85, 0, 0)), url('/book.jpeg')`,
                   }}
                 >
-                  <h1 className="text-5xl font-Playfair italic leading-[84px] font-semibold text-white">
+                  <h1 className="text-3xl lg:text-5xl font-Playfair italic leading-tight lg:leading-[84px] font-semibold text-white text-left">
                     BOOK A TOUR <br />
                     AT <br />
                     MAYGARDENS
                   </h1>
                 </div>
 
-                <div className="lg:w-1/2 md:w-full bg-[#212121] text-white flex flex-col gap-10 p-6 justify-center items-center">
-                  <div className="w-full flex flex-col justify-center items-center ">
-                    <h3 className="text-4xl font-Playfair font-bold mb-4">
+                <div className="md:w-1/2 w-full bg-[#212121] text-white flex flex-col gap-6 p-4 sm:p-6 justify-center md:items-start items-center">
+                  <div className="w-full flex flex-col justify-center md:items-start items-center">
+                    <h3 className="text-2xl lg:text-4xl font-Playfair font-bold mb-4">
                       Unveil the Magic:
                     </h3>
-                    <p className="text-md font-medium mb-6 font-Montserrat text-center md:text-center">
+                    <p className="text-sm lg:text-lg font-medium font-Montserrat text-center">
                       Book Your May Gardens Tour Today
                     </p>
                   </div>
                   <button
-                    className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-md font-bold font-Montserrat w-[222px]"
+                    className="bg-[#CC5500] py-2 px-4 sm:py-3 sm:px-6 flex items-center justify-center rounded-lg text-sm sm:text-md font-bold font-Montserrat"
                     onClick={openModal}
                   >
                     Fill our form
@@ -185,20 +206,21 @@ const Booking = () => {
 
               <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
                 <div
-                  className="hidden lg:flex justify-center items-center lg:w-1/2 md:w-full p-6 inset-0 bg-cover bg-center"
+                  className="hidden lg:flex justify-center items-center lg:w-1/2 bg-cover bg-center"
                   style={{
                     backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
                   }}
                 ></div>
-                <div className="lg:w-1/2 bg-[#CC5500] p-8 text-white flex flex-col justify-center items-start ">
-                  <h3 className="text-3xl font-Playfair font-bold mb-4">
+                <div className="lg:w-1/2 bg-[#CC5500] p-4 sm:p-8 text-white flex flex-col justify-center items-start">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-Playfair font-bold mb-4">
                     Offers
                   </h3>
-                  <p className="text-lg  font-medium mb-6 font-Montserrat">
+                  <p className="text-sm sm:text-lg font-medium font-Montserrat">
                     Promotion, deals and special offers for you
                   </p>
                 </div>
               </div>
+
               <div className="shared-container flex flex-col bg-white items-center justify-center">
                 <div className="flex-wrap flex justify-between items-center gap-5 bg-white">
                   {packages.map((packageDetails, index) => (
