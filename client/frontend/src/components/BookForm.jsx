@@ -18,10 +18,6 @@ const BookForm = ({ closeModal, item }) => {
     packageId: Yup.mixed().required("Select a package"),
   });
 
-  useEffect(() => {
-    console.log(item);
-  });
-
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-4 sm:p-6">
       <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-full max-w-lg h-full overflow-y-auto">
@@ -69,12 +65,10 @@ const BookForm = ({ closeModal, item }) => {
           }}
           validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting }) => {
-            console.log("Form data:", values);
             setSubmitting(false);
             try {
               const result = await clientMakeRequest.post("/booking", values);
               if (result.data.status === "success") {
-                console.log("Result: ", result.data);
                 Swal.fire({
                   text: `${result.data.message}`,
                   icon: "success",

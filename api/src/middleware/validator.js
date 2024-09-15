@@ -1,4 +1,4 @@
-const { body } = require("express-validator");
+const { body, param } = require("express-validator");
 
 exports.createBookingValidation = [
   body("packageId").isUUID().notEmpty().withMessage("Package ID is required"),
@@ -19,7 +19,7 @@ exports.createBookingValidation = [
 ];
 
 exports.getIdValidation = [
-  body("id").isUUID().notEmpty().withMessage("Please provide an ID"),
+  param("id").isUUID().notEmpty().withMessage("Please provide an ID"),
 ];
 
 exports.updateBookingValidation = [

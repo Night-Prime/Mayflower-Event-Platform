@@ -5,13 +5,21 @@ import PackageModal from "../components/PackageModal";
 import Preloader from "../components/Preloader";
 import ErrorPage from "../components/ErrorPage";
 import { adminMakeRequest } from "../helper/makeRequest";
+import Swal from "sweetalert2";
 
 const Dashboard = () => {
-  const { data: bookings, error, loading } = useFetch("/booking/all");
-  const { data: packagesData } = useFetch("package/all");
-  const [showModal, setShowModal] = useState(false);
-  const navigate = useNavigate();
+  const { data: bookings, error, loading, refetch } = useFetch("/booking/all");
+  const {
+    data: packagesData,
+    loading: packageLoad,
+    error: packageError,
+    refetch: packageRefetch,
+  } = useFetch("package/all");
 
+  const [showModal, setShowModal] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
   const handleCreatePackage = () => {
     setShowModal(true);
   };
@@ -24,26 +32,148 @@ const Dashboard = () => {
     console.log("Editing Package");
   };
 
-  const deletePackage = () => {
-    console.log("Deleting the Package");
+  const deletePackage = async (id) => {
+    setLoading(true);
+    try {
+      const response = await adminMakeRequest.delete(`/package/${id}`);
+      if (response.status === 204) {
+        Swal.fire({
+          text: "Package Deleted Successfully",
+          icon: "success",
+          iconColor: "#fff",
+          toast: true,
+          position: "top-right",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#cc5500",
+          color: "#fff",
+        });
+        packageRefetch();
+      } else {
+        Swal.fire({
+          text: "Unsuccessful!, Try again!",
+          icon: "error",
+          iconColor: "#fff",
+          toast: true,
+          position: "top-right",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#ff8323",
+          color: "#fff",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        text: "An unexpected error occurred",
+        icon: "error",
+        iconColor: "#fff",
+        toast: true,
+        position: "top-right",
+        showConfirmButton: false,
+        timer: 2000,
+        background: "#ff8323",
+        color: "#fff",
+      });
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const acceptBookings = async (id) => {
-    const payload = {
-      id: id,
-      scheduled: true,
-    };
-    console.log("Booking: ", payload);
-    const result = await adminMakeRequest.put("booking/event", payload);
-    console.log("Result: ", result);
+    const payload = { id, scheduled: true };
+    try {
+      setLoading(true);
+      const response = await adminMakeRequest.put("booking/event", payload);
+      if (response.status === 200) {
+        refetch();
+        Swal.fire({
+          text: response.data.message,
+          icon: "success",
+          iconColor: "#fff",
+          toast: true,
+          position: "top-right",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#cc5500",
+          color: "#fff",
+        });
+      } else {
+        Swal.fire({
+          text: "Unsuccessful, Try Again!",
+          icon: "error",
+          iconColor: "#fff",
+          toast: true,
+          position: "top-right",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#ff8323",
+          color: "#fff",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        text: "An unexpected error occurred",
+        icon: "error",
+        iconColor: "#fff",
+        toast: true,
+        position: "top-right",
+        showConfirmButton: false,
+        timer: 2000,
+        background: "#ff8323",
+        color: "#fff",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const declineBookings = (id) => {
-    const payload = {
-      id: id,
-      scheduled: false,
-    };
-    console.log("Booking: ", payload);
+  const declineBookings = async (id) => {
+    const payload = { id, scheduled: false };
+    try {
+      setLoading(true);
+      const response = await adminMakeRequest.put("booking/event", payload);
+      if (response.status === 200) {
+        refetch();
+        Swal.fire({
+          text: response.data.message,
+          icon: "success",
+          iconColor: "#fff",
+          toast: true,
+          position: "top-right",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#cc5500",
+          color: "#fff",
+        });
+      } else {
+        Swal.fire({
+          text: "Unsuccessful, Try Again!",
+          icon: "error",
+          iconColor: "#fff",
+          toast: true,
+          position: "top-right",
+          showConfirmButton: false,
+          timer: 2000,
+          background: "#ff8323",
+          color: "#fff",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        text: "An unexpected error occurred",
+        icon: "error",
+        iconColor: "#fff",
+        toast: true,
+        position: "top-right",
+        showConfirmButton: false,
+        timer: 2000,
+        background: "#ff8323",
+        color: "#fff",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -61,18 +191,16 @@ const Dashboard = () => {
       token = localStorage.getItem("accessToken");
 
       if (!token) {
-        // If still no token, navigate to the /admin page
-        console.log("No token found, navigating to /admin");
         navigate("/admin", { replace: true });
       }
     }
   }, [navigate]);
 
-  if (error) {
+  if (error || packageError) {
     return <ErrorPage />;
   }
 
-  if (loading) {
+  if (loading || isLoading || packageLoad) {
     return <Preloader />;
   }
 
@@ -93,7 +221,7 @@ const Dashboard = () => {
         {showModal && (
           <div className="fixed inset-0 bg-white bg-opacity-50 flex justify-center items-center z-50">
             <div className="p-0 m-0 w-full h-full">
-              <PackageModal close={closeModal} />
+              <PackageModal close={closeModal} refetch={packageRefetch} />
             </div>
           </div>
         )}
@@ -137,15 +265,15 @@ const Dashboard = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                           <div className="px-6 flex justify-between gap-2">
-                            <button
+                            {/* <button
                               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded"
                               onClick={handleEditPackage}
                             >
                               <i className="fa fa-edit mr-2"></i>Edit
-                            </button>
+                            </button> */}
                             <button
                               className="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-2 rounded"
-                              onClick={deletePackage}
+                              onClick={() => deletePackage(packageItem.id)}
                             >
                               <i className="fa fa-trash-alt mr-2"></i>Delete
                             </button>
