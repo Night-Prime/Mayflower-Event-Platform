@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
@@ -10,7 +10,7 @@ const BookForm = ({ closeModal, item }) => {
   const validationSchema = Yup.object({
     clientName: Yup.string().required("Name is required"),
     clientEmail: Yup.string()
-      .email("Invalid clientEmail address")
+      .email("Invalid email address")
       .required("Email is required"),
     clientPhone: Yup.string().required("Phone number is required"),
     eventTitle: Yup.string().required("Title of the Event is required"),
@@ -19,36 +19,36 @@ const BookForm = ({ closeModal, item }) => {
   });
 
   return (
-    <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-6">
-      <div className="animate-fade-in bg-white p-8 rounded-lg font-Montserrat w-[70%] h-full overflow-y-scroll">
+    <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-4 sm:p-6">
+      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-full max-w-lg h-full overflow-y-auto">
         <button
           onClick={closeModal}
-          className=" text-black text-right text-2xl"
+          className="text-black text-5xl text-right p-1"
         >
           &times;
         </button>
-        <h2 className="text-3xl font-semibold font-Playfair mb-8 text-center border-b-2 border-black">
+        <h2 className="text-2xl sm:text-3xl font-semibold font-Playfair mb-6 text-center border-b-2 border-black">
           Book a tour
         </h2>
 
-        <div className="flex justify-between mb-6">
+        <div className="flex sm:flex-row gap-2 sm:gap-4 mb-6">
           <img
             loading="lazy"
             src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner.png?updatedAt=1725131402076"
             alt="Tour 1"
-            className="rounded-lg w-1/3"
+            className="rounded-lg w-[30%] object-cover"
           />
           <img
             loading="lazy"
             src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner3.png?updatedAt=1725131405226"
             alt="Tour 2"
-            className="rounded-lg w-1/3 mx-2"
+            className="rounded-lg w-[30%] object-cover mx-0 sm:mx-2"
           />
           <img
             loading="lazy"
             src="https://ik.imagekit.io/tsfcuw1ce/Images/threeselfie.png?updatedAt=1725131393769"
             alt="Tour 3"
-            className="rounded-lg w-1/3"
+            className="rounded-lg w-[30%] object-cover"
           />
         </div>
 
@@ -84,7 +84,7 @@ const BookForm = ({ closeModal, item }) => {
               }
             } catch (error) {
               Swal.fire({
-                text: `Unsucessful, Try Again!`,
+                text: `Unsuccessful, Try Again!`,
                 icon: "error",
                 iconColor: "#fff",
                 toast: true,
@@ -101,7 +101,7 @@ const BookForm = ({ closeModal, item }) => {
             <Form>
               <div className="mb-4">
                 <label
-                  className="block text-sm font-medium mb-1"
+                  className="block text-xs sm:text-sm font-medium mb-1"
                   htmlFor="eventTitle"
                 >
                   Event Title
@@ -115,12 +115,12 @@ const BookForm = ({ closeModal, item }) => {
                 <ErrorMessage
                   name="eventTitle"
                   component="div"
-                  className="text-red-500 text-sm mt-1"
+                  className="text-red-500 text-xs sm:text-sm mt-1"
                 />
               </div>
               <div className="mb-4">
                 <label
-                  className="block text-sm font-medium mb-1"
+                  className="block text-xs sm:text-sm font-medium mb-1"
                   htmlFor="eventDescription"
                 >
                   Event Description
@@ -134,7 +134,7 @@ const BookForm = ({ closeModal, item }) => {
                 <ErrorMessage
                   name="eventDescription"
                   component="div"
-                  className="text-red-500 text-sm mt-1"
+                  className="text-red-500 text-xs sm:text-sm mt-1"
                 />
               </div>
               <div className="mb-4">
@@ -157,12 +157,12 @@ const BookForm = ({ closeModal, item }) => {
                 <ErrorMessage
                   name="packageId"
                   component="div"
-                  className="text-red-500 text-sm mt-1"
+                  className="text-red-500 text-xs sm:text-sm mt-1"
                 />
               </div>
               <div className="mb-4">
                 <label
-                  className="block text-sm font-medium mb-1"
+                  className="block text-xs sm:text-sm font-medium mb-1"
                   htmlFor="clientName"
                 >
                   Name
@@ -176,19 +176,19 @@ const BookForm = ({ closeModal, item }) => {
                 <ErrorMessage
                   name="clientName"
                   component="div"
-                  className="text-red-500 text-sm mt-1"
+                  className="text-red-500 text-xs sm:text-sm mt-1"
                 />
               </div>
 
               <div className="mb-4">
                 <label
-                  className="block text-sm font-medium mb-1"
+                  className="block text-xs sm:text-sm font-medium mb-1"
                   htmlFor="clientEmail"
                 >
                   Email address
                 </label>
                 <Field
-                  type="clientEmail"
+                  type="email"
                   name="clientEmail"
                   className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Enter your Email address"
@@ -196,21 +196,21 @@ const BookForm = ({ closeModal, item }) => {
                 <ErrorMessage
                   name="clientEmail"
                   component="div"
-                  className="text-red-500 text-sm mt-1"
+                  className="text-red-500 text-xs sm:text-sm mt-1"
                 />
               </div>
 
               <div className="mb-4">
                 <label
-                  className="block text-sm font-medium mb-1"
+                  className="block text-xs sm:text-sm font-medium mb-1"
                   htmlFor="clientPhone"
                 >
                   Phone number
                 </label>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <select
                     className="bg-transparent text-black border-[#4E4E4E] rounded-lg border-[2px] pr-2 focus:outline-none"
-                    style={{ width: "20%" }}
+                    style={{ width: "100%", maxWidth: "100px" }}
                   >
                     <option value="+234">🇳🇬 +234</option>
                     {/* Add more country codes as needed */}
@@ -225,37 +225,34 @@ const BookForm = ({ closeModal, item }) => {
                 <ErrorMessage
                   name="clientPhone"
                   component="div"
-                  className="text-red-500 text-sm mt-1"
+                  className="text-red-500 text-xs sm:text-sm mt-1"
                 />
               </div>
-              <div className=" flex w-full items-center justify-center gap-4">
-                <div className="mb-4 flex flex-col w-[70%]">
+              <div className="flex flex-col sm:flex-row w-full gap-4">
+                <div className="mb-4 flex-1">
                   <label
-                    className="block text-sm font-medium mb-1"
+                    className="block text-xs sm:text-sm font-medium mb-1"
                     htmlFor="eventDate"
                   >
                     Date of arrival
                   </label>
 
-                  <div className="flex items-center relative w-full bg-transparent">
-                    <Field
-                      type="date"
-                      name="eventDate"
-                      className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
-                      placeholder="Select Date"
-                    />
-                  </div>
-
+                  <Field
+                    type="date"
+                    name="eventDate"
+                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                    placeholder="Select Date"
+                  />
                   <ErrorMessage
                     name="eventDate"
                     component="div"
-                    className="text-red-500 text-sm mt-1"
+                    className="text-red-500 text-xs sm:text-sm mt-1"
                   />
                 </div>
 
-                <div className="mb-4 flex w-[30%] flex-col">
+                <div className="mb-4 flex-1">
                   <label
-                    className="block text-sm font-medium mb-1"
+                    className="block text-xs sm:text-sm font-medium mb-1"
                     htmlFor="eventTime"
                   >
                     Time
@@ -273,17 +270,18 @@ const BookForm = ({ closeModal, item }) => {
                   <ErrorMessage
                     name="eventTime"
                     component="div"
-                    className="text-red-500 text-sm mt-1"
+                    className="text-red-500 text-xs sm:text-sm mt-1"
                   />
                 </div>
               </div>
               <button
                 type="submit"
-                className="w-[25%] bg-[#cc5500] lg:text-md md:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                className="w-full sm:w-[25%] bg-[#cc5500] text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                 disabled={isSubmitting}
+                onClick={closeModal}
               >
                 Submit
-                <span className=" text-white ml-2">
+                <span className="text-white ml-2">
                   <Right />
                 </span>
               </button>

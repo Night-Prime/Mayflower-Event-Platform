@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
-
 import { Right } from "../icons/Right.jsx";
 import { Menu, X } from "react-feather"; // Using X icon from react-feather
 
@@ -12,7 +11,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
+    <div className="sticky top-0 z-50 w-full h-20 flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
       <p className="font-Playfair font-bold text-[20px] sm:text-[24px] lg:text-[32px] cursor-pointer">
         <RouterLink to="/">May Gardens</RouterLink>
       </p>
@@ -44,7 +43,7 @@ export const Navbar = () => {
             </RouterLink>
           </li>
           <li className="relative pb-1 sm:pb-2">
-            <RouterLink to="/gallery" onClick={() => menuOpen && toggleMenu()}>
+            <RouterLink to="/gallery" onClick={toggleMenu}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Gallery
               </span>
@@ -55,7 +54,7 @@ export const Navbar = () => {
               <RouterLink
                 to="/booking"
                 className="flex items-center justify-center"
-                onClick={() => menuOpen && toggleMenu()}
+                onClick={toggleMenu}
               >
                 Book a tour
                 <span className="text-[#CC5500] ml-2">
