@@ -10,12 +10,7 @@ const isAuth = require("../middleware/authenticator");
 const router = express.Router();
 
 router.get("/all", isAuth, bookingController.getAllBookings);
-router.post(
-  "/",
-  isAuth,
-  createBookingValidation,
-  bookingController.createBooking
-);
+router.post("/", createBookingValidation, bookingController.createBooking);
 router.get("/:id", isAuth, bookingController.getBookingById);
 router.put("/event", bookingController.createEvents);
 router.patch(

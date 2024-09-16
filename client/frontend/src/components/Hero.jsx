@@ -97,18 +97,18 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full md:flex flex-col hidden items-center my-6 justify-center ">
+      <div className="w-full h-screen md:flex flex-col hidden items-center my-6 justify-center ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4 sm:mx-6 my-6">
           <div className="relative">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
-              className="img w-[80%] sm:w-[60%] object-cover rounded-lg mx-auto"
+              className="img w-[80%] object-cover rounded-lg mx-auto"
             />
             <div
-              onMouseOutCapture={missionMouseEnter}
-              className="absolute top-[70%] left-[54.5%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer"
+              onClick={missionMouseEnter}
+              className="absolute top-[70%] left-[62.5%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
             >
               <h1 className="text-white text-xs lg:text-lg font-bold">
                 Mission
@@ -125,7 +125,7 @@ export const Hero = () => {
             loading="lazy"
             src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
             alt="Medusa's hair"
-            className="img w-[80%] sm:w-[60%] object-cover rounded-lg mx-auto"
+            className="img w-[80%] object-cover rounded-lg mx-auto"
           />
 
           <div className="relative">
@@ -133,11 +133,11 @@ export const Hero = () => {
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
               alt="Someone laughing"
-              className="img w-[80%] sm:w-[60%] object-cover rounded-lg mx-auto"
+              className="img w-[80%] object-cover rounded-lg mx-auto"
             />
             <div
-              onMouseOutCapture={valueMouseEnter}
-              className="absolute top-[70%] left-[54.5%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer"
+              onClick={valueMouseEnter}
+              className="absolute top-[70%] left-[62.5%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
             >
               <h1 className="text-white text-xs lg:text-lg font-bold">
                 Values
@@ -164,6 +164,7 @@ export const Hero = () => {
         </div>
       </div>
 
+      {/* Mobile Screen */}
       <div className="w-full h-auto md:hidden block py-3">
         <div className=" flex flex-col justify-center items-center gap-5">
           <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2">
@@ -217,51 +218,6 @@ export const Hero = () => {
       </div>
 
       <Events />
-
-      <div className="w-full h-auto  my-2 p-2 flex items-center justify-center">
-        <div className="mx-4 sm:mx-6 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-          <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Playfair leading-tight mb-4">
-            The Property
-          </h2>
-          <div className="flex lg:flex-col lg:w-2/5 w-[70%] flex-row lg:justify-center justify-center items-center relative">
-            <img
-              loading="lazy"
-              src="https://ik.imagekit.io/seun/images/drum.jpg?updatedAt=1726144549834"
-              alt="Someone drumming"
-              className="md:w-[45%] w-[55%] rounded-lg object-cover translate-x-12 relative lg:top-0 top-[30px] z-10 lg:rotate-0 transform -rotate-12  "
-            />
-            <img
-              loading="lazy"
-              src="https://ik.imagekit.io/seun/images/laugh.jpg?updatedAt=1726144551189"
-              alt="Medusa's hair"
-              className="md:w-[45%] w-[55%] rounded-lg object-cover lg:absolute relative lg:top-[25%] lg:left-15 lg:rotate-[-10deg] rotate-0 z-20 "
-            />
-            <img
-              loading="lazy"
-              src="https://ik.imagekit.io/seun/images/chris.jpg?updatedAt=1726144549869"
-              alt="Someone laughing"
-              className="md:w-[45%] w-[55%] rounded-lg object-cover lg:rotate-[10deg] relative lg:top-0 top-[30px] -translate-x-12 lg:z-20 z-10 rotate-12"
-            />
-          </div>
-
-          <div className="flex-1 mt-8 lg:mt-0 w-[90%]">
-            <h2 className="text-[20px] sm:text-[28px] lg:text-[40px] font-Playfair lg:block hidden leading-tight mb-4">
-              The Property
-            </h2>
-            <p className="text-xs w-full lg:text-lg text-justify leading-relaxed font-Montserrat text-white">
-              May Event Garden is an event center with a natural garden-like
-              setting that accommodates up to 350 guests. The innovative
-              fiberglass roofing allows guests to see and feel the sky, adding a
-              unique element to your event. Inside the venue, you will find
-              top-quality, imported facilities, a waterfall, and 360 rotators
-              that make the atmosphere vibrant. We’ve spared no expense in
-              ensuring the highest standards of comfort and luxury. With
-              excellent power supply, impeccable conditioning, and tight
-              security, your event will run smoothly from start to finish.
-            </p>
-          </div>
-        </div>
-      </div>
 
       <div className="w-full h-auto md:hidden block py-3 bg-[#4e4e4e]">
         <div className=" flex flex-col justify-center items-center gap-5">
@@ -349,7 +305,6 @@ export const Hero = () => {
             </p>
           </div>
           <div className=" flex justify-center items-end  w-full px-10 gap-6">
-            
             <div className="flex flex-col w-[80%] h-auto gap-8 justify-start items-start p-3 bg-[#212121] rounded-xl ">
               <p className=" font-Montserrat text-xs">
                 Vulputate volutpat viverra interdum et. Fusce sit habitant
