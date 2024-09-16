@@ -20,7 +20,7 @@ const BookForm = ({ closeModal, item }) => {
 
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-4 sm:p-6">
-      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-full max-w-lg h-full overflow-y-auto">
+      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-[60%] h-full overflow-y-auto">
         <button
           onClick={closeModal}
           className="text-black text-5xl text-right p-1"
@@ -278,7 +278,6 @@ const BookForm = ({ closeModal, item }) => {
                 type="submit"
                 className="w-full sm:w-[25%] bg-[#cc5500] text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                 disabled={isSubmitting}
-                onClick={closeModal}
               >
                 Submit
                 <span className="text-white ml-2">
