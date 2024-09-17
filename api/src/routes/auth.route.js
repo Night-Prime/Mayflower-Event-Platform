@@ -19,23 +19,28 @@ router.get(
   }),
   (req, res) => {
     const accessToken = req.authInfo.accessToken;
-    const refreshToken = req.authInfo.refreshToken;
-    console.log("Result: ", req.authInfo.accessToken);
-    const storedRefreshToken = refreshToken;
-    res.redirect(
-      `${process.env.CLIENT_REDIRECT_URL}?token=${req.authInfo.accessToken}`
-    );
+
+    // Set the access token in an HttpOnly cookie
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true, // Prevent JavaScript access (mitigates XSS attacks)
+      secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
+      sameSite: "Strict", // Prevent CSRF (Cross-Site Request Forgery)
+      maxAge: 60 * 60 * 1000, // 1 hour expiration
+    });
+
+    // Redirect the user to the frontend, no need to pass the token in the URL
+    res.redirect(`${process.env.CLIENT_URL}/dashboard`);
   }
 );
 
 // Logout route
 router.get("/logout", (req, res) => {
-  req.logout((err) => {
-    if (err) {
-      return next(err);
-    }
-    res.redirect(process.env.CLIENT_URL);
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
   });
+  res.redirect(process.env.CLIENT_URL);
 });
 
 module.exports = router;

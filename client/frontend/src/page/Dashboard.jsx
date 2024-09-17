@@ -176,26 +176,6 @@ const Dashboard = () => {
     }
   };
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    let token = params.get("token");
-
-    if (token) {
-      // If a token is found in the URL, store it in localStorage
-      localStorage.setItem("accessToken", token);
-
-      // Clear the URL parameters after storing the token
-      window.history.replaceState({}, document.title, "/dashboard");
-    } else {
-      // If no token in URL, attempt to retrieve it from localStorage
-      token = localStorage.getItem("accessToken");
-
-      if (!token) {
-        navigate("/admin", { replace: true });
-      }
-    }
-  }, [navigate]);
-
   if (error || packageError) {
     return <ErrorPage />;
   }
