@@ -8,28 +8,32 @@ import { adminMakeRequest } from "../helper/makeRequest";
  */
 
 const useFetch = (url) => {
-  // setting states
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
 
-  // Function to fetch data
   const fetchData = async () => {
     try {
       setLoading(true);
+      setError(null);
+
       const res = await adminMakeRequest.get(url);
+      if (res.status < 200 || res.status >= 300) {
+        throw new Error(`Error: ${res.statusText}`);
+      }
       setData(res.data.data);
     } catch (err) {
-      setError(true);
+      console.error("Fetch error:", err);
+      setError(err.message || "An error occurred while fetching data.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, [url]);
 
-  // Return data, loading, error, and refetch function
   return { loading, data, error, refetch: fetchData };
 };
 

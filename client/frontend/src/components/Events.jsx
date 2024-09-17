@@ -51,6 +51,10 @@ export const Events = () => {
       });
   }, []);
 
+  if (isLoading) {
+    return <Preloader />;
+  }
+
   const slides = [
     {
       content: (
@@ -286,45 +290,39 @@ export const Events = () => {
   ];
 
   return (
-    <>
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[90vh] overflow-hidden md:block hidden">
+    <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[90vh] overflow-hidden md:block hidden">
+      <div
+        className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
+        ref={slideContainerRef}
+        style={{ scrollSnapType: "x mandatory" }}
+      >
+        {slides.map((slide, index) => (
           <div
-            className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
-            ref={slideContainerRef}
-            style={{ scrollSnapType: "x mandatory" }}
+            key={index}
+            ref={(el) => (slideRefs.current[index] = el)}
+            className="w-full h-full flex-shrink-0 flex justify-center items-center"
+            style={{ scrollSnapAlign: "center" }}
           >
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                ref={(el) => (slideRefs.current[index] = el)}
-                className="w-full h-full flex-shrink-0 flex justify-center items-center"
-                style={{ scrollSnapAlign: "center" }}
-              >
-                {slide.content}
-              </div>
-            ))}
+            {slide.content}
           </div>
+        ))}
+      </div>
 
-          {/* Button container with better positioning */}
-          <div className="absolute bottom-6 flex w-[80%] justify-between mt-2">
-            <button
-              onClick={prevSlide}
-              className=" bg-[#CC5500] p-3 rounded-full z-10"
-            >
-              <ChevronLeft />
-            </button>
-            <button
-              onClick={nextSlide}
-              className=" bg-[#CC5500] p-3 rounded-full z-10"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-        </div>
-      )}
-    </>
+      {/* Button container with better positioning */}
+      <div className="absolute bottom-6 flex w-[80%] justify-between mt-2">
+        <button
+          onClick={prevSlide}
+          className=" bg-[#CC5500] p-3 rounded-full z-10"
+        >
+          <ChevronLeft />
+        </button>
+        <button
+          onClick={nextSlide}
+          className=" bg-[#CC5500] p-3 rounded-full z-10"
+        >
+          <ChevronRight />
+        </button>
+      </div>
+    </div>
   );
 };
