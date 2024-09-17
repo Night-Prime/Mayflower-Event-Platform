@@ -1,17 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Littleloca } from "../icons/Littleloca.jsx";
 import { Right } from "../icons/Right.jsx";
 import { Star } from "../icons/Star.jsx";
-import { RightA } from "../icons/RightA.jsx";
-import { LeftA } from "../icons/LeftA.jsx";
-import tea from "../assets/images/tea.png";
-import dinner0 from "../assets/images/dinner0.png";
 import BookForm from "./BookForm.jsx";
+import { ChevronLeft, ChevronRight } from "react-feather";
+import { clientMakeRequest } from "../helper/makeRequest.js";
+import Preloader from "./Preloader.jsx";
 
 export const Events = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [packages, setPackages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -36,10 +36,24 @@ export const Events = () => {
     container.scrollLeft -= slideWidth;
   };
 
+  useEffect(() => {
+    clientMakeRequest
+      .get("/package/all")
+      .then((res) => {
+        setIsLoading(true);
+        const item = res.data.data;
+        setPackages(item);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+      });
+  }, []);
+
   const slides = [
     {
       content: (
-        <div className="w-full h-auto shared-container flex flex-col items-center gap-16">
+        <div className="w-full h-5/6 shared-container flex flex-col items-center justify-center gap-16">
           <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair text-center mt-8">
             Event Showcase
           </p>
@@ -87,28 +101,28 @@ export const Events = () => {
     },
     {
       content: (
-        <div className="w-full h-auto shared-container flex flex-col gap-10 items-center">
+        <div className="w-full h-5/6 shared-container flex flex-col gap-10 items-center justify-center">
           <div className="flex flex-col gap-6 items-center justify-center">
-            <p className="text-4xl font-normal  font-Playfair text-center my-2 text-white">
+            <p className="text-4xl font-normal  font-Playfair text-center text-white">
               Book a Tour
             </p>
             <div className="flex gap-6 items-center justify-center">
               <img
-                src={tea}
+                src="https://ik.imagekit.io/seun/images/tea.png?updatedAt=1726558041845"
                 alt="drinking tea"
                 className=" lg:w-[22%] w-[20%]"
               />
               <img
-                src={dinner0}
+                src="https://ik.imagekit.io/seun/images/dinner0.png?updatedAt=1726558041641"
                 alt="A dinner"
                 className=" lg:w-[22%] w-[20%]"
               />
-              <div className="lg:w-[70%] lg:h-[320px] h-[270px] bg-[#212121] text-white flex flex-col gap-6 p-4  justify-center items-start rounded-xl">
-                <div className="w-full flex flex-col justify-center items-start">
-                  <h3 className="text-xl lg:text-4xl font-Playfair font-bold mb-4">
+              <div className="lg:w-[70%] h-[270px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
+                <div className="w-full flex flex-col justify-center items-center gap-2">
+                  <h3 className="text-xl lg:text-4xl font-Playfair font-bold">
                     Unveil the Magic:
                   </h3>
-                  <p className="text-sm sm:text-md lg:text-lg font-medium font-Montserrat text-center">
+                  <p className="text-sm sm:text-md lg:text-lg font-medium font-Montserrat">
                     Book Your May Gardens Tour Today
                   </p>
                 </div>
@@ -136,7 +150,7 @@ export const Events = () => {
     },
     {
       content: (
-        <div className="w-full h-full shared-container gap-40 flex flex-col justify-between items-center">
+        <div className="w-full h-3/4 shared-container gap-10 flex flex-col justify-between items-center">
           <div className=" w-full flex flex-col items-center justify-center">
             <p className="text-3xl md:text-4xl font-Playfair mt-8 text-center text-[#EDEDED]">
               Client Success Stories
@@ -220,43 +234,96 @@ export const Events = () => {
         </div>
       ),
     },
+    {
+      content: (
+        <div className="w-5/6 h-5/6 flex items-center justify-center align-items-center justify-content-center">
+          <div className="mx-4 sm:mx-6 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
+            <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Playfair leading-tight mb-4">
+              The Property
+            </h2>
+            <div className="flex lg:flex-col lg:w-2/5 w-[70%] flex-row lg:justify-center justify-center items-center relative">
+              <img
+                loading="lazy"
+                src="https://ik.imagekit.io/seun/images/drum.jpg?updatedAt=1726144549834"
+                alt="Someone drumming"
+                className="md:w-[45%] w-[55%] rounded-2xl object-cover translate-x-12 relative lg:top-0 top-[30px] z-10 lg:rotate-0 transform -rotate-12  "
+              />
+              <img
+                loading="lazy"
+                src="https://ik.imagekit.io/seun/images/laugh.jpg?updatedAt=1726144551189"
+                alt="Medusa's hair"
+                className="md:w-[45%] w-[55%] rounded-2xl object-cover lg:absolute relative lg:top-[25%] lg:left-15 lg:rotate-[-10deg] rotate-0 z-20 "
+              />
+              <img
+                loading="lazy"
+                src="https://ik.imagekit.io/seun/images/chris.jpg?updatedAt=1726144549869"
+                alt="Someone laughing"
+                className="md:w-[45%] w-[55%] rounded-2xl object-cover lg:rotate-[10deg] relative lg:top-0 top-[30px] -translate-x-12 lg:z-20 z-10 rotate-12"
+              />
+            </div>
+
+            <div className="flex-1 mt-8 lg:mt-0 w-[75%]">
+              <h2 className="text-[20px] sm:text-[28px] lg:text-[40px] font-Playfair lg:block hidden leading-tight mb-4">
+                The Property
+              </h2>
+              <p className="text-xs w-full lg:text-lg text-justify leading-relaxed font-Montserrat text-white">
+                May Event Garden is an event center with a natural garden-like
+                setting that accommodates up to 350 guests. The innovative
+                fiberglass roofing allows guests to see and feel the sky, adding
+                a unique element to your event. Inside the venue, you will find
+                top-quality, imported facilities, a waterfall, and 360 rotators
+                that make the atmosphere vibrant. We’ve spared no expense in
+                ensuring the highest standards of comfort and luxury. With
+                excellent power supply, impeccable conditioning, and tight
+                security, your event will run smoothly from start to finish.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
   ];
 
   return (
-    <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[83vh] overflow-hidden md:block hidden">
-  <div
-    className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
-    ref={slideContainerRef}
-    style={{ scrollSnapType: "x mandatory" }}
-  >
-    {slides.map((slide, index) => (
-      <div
-        key={index}
-        ref={(el) => (slideRefs.current[index] = el)}
-        className="w-full h-[500px] flex-shrink-0 flex justify-center items-center"
-        style={{ scrollSnapAlign: "center" }}
-      >
-        {slide.content}
-      </div>
-    ))}
-  </div>
+    <>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[90vh] overflow-hidden md:block hidden">
+          <div
+            className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
+            ref={slideContainerRef}
+            style={{ scrollSnapType: "x mandatory" }}
+          >
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                ref={(el) => (slideRefs.current[index] = el)}
+                className="w-full h-full flex-shrink-0 flex justify-center items-center"
+                style={{ scrollSnapAlign: "center" }}
+              >
+                {slide.content}
+              </div>
+            ))}
+          </div>
 
-  {/* Button container with better positioning */}
-  <div className="absolute bottom-4 md:left-[45%] flex w-[10%] gap-4 justify-center mt-2">
-    <button
-      onClick={prevSlide}
-      className=" bg-[#212121] p-3 rounded-full z-10"
-    >
-      <LeftA />
-    </button>
-    <button
-      onClick={nextSlide}
-      className=" bg-[#212121] p-3 rounded-full z-10"
-    >
-      <RightA />
-    </button>
-  </div>
-</div>
-
+          {/* Button container with better positioning */}
+          <div className="absolute bottom-6  flex w-[80%] mx-20 justify-between items-center mt-2">
+            <button
+              onClick={prevSlide}
+              className=" bg-[#CC5500] p-3 rounded-full z-10"
+            >
+              <ChevronLeft />
+            </button>
+            <button
+              onClick={nextSlide}
+              className=" bg-[#CC5500] p-3 rounded-full z-10"
+            >
+              <ChevronRight />
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
