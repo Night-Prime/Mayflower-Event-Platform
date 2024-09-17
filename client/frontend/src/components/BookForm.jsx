@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
@@ -16,10 +16,6 @@ const BookForm = ({ closeModal, item }) => {
     eventTitle: Yup.string().required("Title of the Event is required"),
     eventDate: Yup.date().required("Date of event is required"),
     packageId: Yup.mixed().required("Select a package"),
-  });
-
-  useEffect(() => {
-    console.log(item);
   });
 
   return (
@@ -69,12 +65,10 @@ const BookForm = ({ closeModal, item }) => {
           }}
           validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting }) => {
-            console.log("Form data:", values);
             setSubmitting(false);
             try {
               const result = await clientMakeRequest.post("/booking", values);
               if (result.data.status === "success") {
-                console.log("Result: ", result.data);
                 Swal.fire({
                   text: `${result.data.message}`,
                   icon: "success",

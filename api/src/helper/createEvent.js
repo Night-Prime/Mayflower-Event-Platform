@@ -7,49 +7,53 @@ const { OAuth2 } = google.auth;
 
 const createEvent = async (booking) => {
   try {
-    const oauth2Client = new OAuth2(
-      process.env.CLIENT_ID,
-      process.env.CLIENT_SECRET,
-      process.env.REDIRECT_URL
+    const oauth2Client = new google.auth.OAuth2(
+      process.env.AUTH_SECRET_ID,
+      process.env.AUTH_SECRET_TOKEN,
+      "https://developers.google.com/oauthplayground"
     );
 
+    // Set credentials with the refresh token
     oauth2Client.setCredentials({
-      access_token: process.env.ACCESS_TOKEN, // Access token obtained from Google OAuth
-      refresh_token: process.env.REFRESH_TOKEN, // Refresh token obtained from Google OAuth
+      refresh_token: process.env.AUTH_REFRESH_TOKEN,
     });
 
-    // Create a calendar client with the authenticated OAuth2 client
+    // Get a new access token
+    const { token } = await oauth2Client.getAccessToken();
+
+    // Set the access token explicitly
+    oauth2Client.setCredentials({
+      access_token: token,
+      refresh_token: process.env.AUTH_REFRESH_TOKEN,
+    });
+
     const calendar = google.calendar({ version: "v3", auth: oauth2Client });
 
-    // Extract event details from the booking object
     const { eventDate, eventTitle, eventDescription, eventTime } = booking;
     console.log("Booking: ", booking);
 
-    // Create a new event object with the extracted details
     const event = {
       summary: `Event: ${eventTitle}`,
-      location: "", // Add a default location or make it optional
+      location: "",
       description: eventDescription,
       start: {
-        dateTime: eventDate + "T" + eventTime, // Format: YYYY-MM-DDTHH:MM:SS
-        timeZone: "Africa/Lagos", // Set a default time zone or make it optional
+        dateTime: eventDate + "T" + eventTime,
+        timeZone: "Africa/Lagos",
       },
       end: {
-        dateTime: eventDate + "T" + eventTime, // Format: YYYY-MM-DDTHH:MM:SS
-        timeZone: "Africa/Lagos", // Set a default time zone or make it optional
+        dateTime: eventDate + "T" + eventTime,
+        timeZone: "Africa/Lagos",
       },
     };
-    console.log("Event: ", event);
 
-    // Create the event on the calendar
     const response = await calendar.events.insert({
-      calendarId: "primary", // Use the primary calendar or specify a different one
+      calendarId: "primary",
       resource: event,
     });
 
     console.log(`Event created: ${response.data.htmlLink}`);
   } catch (error) {
-    console.error(`Error creating event: ${error}`);
+    console.error(`Error creating event: ${error.message}`);
   }
 };
 

@@ -1,10 +1,12 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import React from "react";
+import React, { useState } from "react";
 import { adminMakeRequest } from "../helper/makeRequest";
 import Swal from "sweetalert2";
 
-const PackageModal = ({ close }) => {
+const PackageModal = ({ close, refetch }) => {
+  const [loading, setLoading] = useState(false);
+
   const validationSchema = Yup.object({
     name: Yup.string().required("Package name is required"),
     description: Yup.string().required("Package Description is required"),
@@ -31,8 +33,8 @@ const PackageModal = ({ close }) => {
               }}
               validationSchema={validationSchema}
               onSubmit={async (values, { setSubmitting }) => {
-                console.log("Form Data: ", values);
                 setSubmitting(false);
+                setLoading(true);
                 try {
                   const result = await adminMakeRequest.post(
                     "/package",
@@ -50,6 +52,7 @@ const PackageModal = ({ close }) => {
                       background: "#cc5500",
                       color: "#fff",
                     });
+                    setLoading(false);
                     close();
                   }
                 } catch (error) {
@@ -64,6 +67,10 @@ const PackageModal = ({ close }) => {
                     background: "#ff8323",
                     color: "red",
                   });
+                  setLoading(false);
+                } finally {
+                  setLoading(false);
+                  refetch();
                 }
               }}
             >
