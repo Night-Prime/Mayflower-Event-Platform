@@ -150,7 +150,7 @@ exports.deletePackage = async (req, res) => {
   }
 
   try {
-    const { id } = req.body;
+    const { id } = req.params;
 
     const package = await Package.findByPk(id);
     if (!package) {

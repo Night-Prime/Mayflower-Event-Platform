@@ -8,14 +8,20 @@ const {
 const isAuth = require("../middleware/authenticator");
 
 const router = express.Router();
-router.post("/", createPackageValidation, packageController.createPackage);
+router.post(
+  "/",
+  isAuth,
+  createPackageValidation,
+  packageController.createPackage
+);
 router.get("/all", packageController.getAllPackages);
-router.get("/id", getIdValidation, packageController.getPackageById);
+router.get("/:id", isAuth, getIdValidation, packageController.getPackageById);
 router.patch(
   "/",
+  isAuth,
   updatePackageValidation,
   packageController.updatePackage
 );
-router.delete("/", getIdValidation, packageController.deletePackage);
+router.delete("/:id", isAuth, getIdValidation, packageController.deletePackage);
 
 module.exports = router;

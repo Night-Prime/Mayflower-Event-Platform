@@ -15,7 +15,7 @@ const ErrorPage = () => {
             <h3 className="text-4xl font-thin">Error has occured!</h3>
 
             <h5 className="text-2xl">
-              An Error has occured for which we are ateending to at the moment.
+              An Error has occured for which we are attending to at the moment.
             </h5>
 
             <button className="bg-[#CC5500] border-[2px] border-[#CC5500] text-white  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 p-2">

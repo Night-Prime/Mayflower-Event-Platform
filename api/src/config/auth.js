@@ -1,4 +1,5 @@
 const passport = require("passport");
+const jwt = require("jsonwebtoken");
 const BearerStrategy = require("passport-http-bearer").Strategy;
 const { Strategy: GoogleStrategy } = require("passport-google-oauth20");
 const User = require("../models/User");
@@ -9,7 +10,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/api/v1/auth/google/callback",
+      callbackURL: `${process.env.URL}/api/v1/auth/google/callback`,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
@@ -33,20 +34,11 @@ passport.use(
 passport.use(
   new BearerStrategy(async (token, done) => {
     try {
-      // Verify the token by making an API request to Google
-      const response = await axios.get(process.env.CLIENT_VERIFY_URL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      console.log("Response: ", response);
-
-      const user = await User.findOne({ where: { accessToken: token } });
+      const decoded = jwt.verify(token, process.env.COOKIE_SECRET);
+      const user = await User.findOne({ where: { id: decoded.id } });
       if (!user) {
         return done(null, false);
       }
-
       return done(null, user);
     } catch (err) {
       return done(err);
