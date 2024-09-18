@@ -12,7 +12,6 @@ export const Events = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [packages, setPackages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -112,16 +111,16 @@ export const Events = () => {
               Book a Tour
             </p>
             <div className="flex gap-6 items-center justify-center">
-              {/* <img
-                src={tea}
+              <img
+                src="https://ik.imagekit.io/seun/images/tea.png?updatedAt=1726558041845"
                 alt="drinking tea"
                 className=" lg:w-[22%] w-[20%]"
               />
               <img
-                src={dinner0}
+                src="https://ik.imagekit.io/seun/images/dinner0.png?updatedAt=1726558041641"
                 alt="A dinner"
                 className=" lg:w-[22%] w-[20%]"
-              /> */}
+              />
               <div className="lg:w-[70%] h-[270px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
                 <div className="w-full flex flex-col justify-center items-center gap-2">
                   <h3 className="text-xl lg:text-4xl font-Playfair font-bold">
@@ -309,7 +308,7 @@ export const Events = () => {
       </div>
 
       {/* Button container with better positioning */}
-      <div className="absolute bottom-6 flex w-[80%] justify-between mt-2">
+      <div className="absolute bottom-6  flex w-[80%] mx-20 justify-between items-center mt-2">
         <button
           onClick={prevSlide}
           className=" bg-[#CC5500] p-3 rounded-full z-10"

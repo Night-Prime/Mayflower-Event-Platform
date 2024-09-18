@@ -85,7 +85,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const response = await adminMakeRequest.put("booking/event", payload);
-      if (response.status === 200) {
+      if (response.status === 201) {
         refetch();
         Swal.fire({
           text: response.data.message,

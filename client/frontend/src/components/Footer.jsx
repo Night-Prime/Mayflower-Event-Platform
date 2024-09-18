@@ -15,7 +15,7 @@ export const Footer = () => {
       <div className="h-full flex flex-col px-4 sm:px-6 lg:px-10 mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-20">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
-            {/* Newsletter Section */}
+            
             <div className="flex flex-col font-Playfair gap-1 sm:gap-2">
               <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 Join our newsletter
@@ -24,7 +24,7 @@ export const Footer = () => {
                 Insider Tips for Planning Your Event
               </p>
             </div>
-            {/* May Gardens Info Section */}
+            
             <div className="flex flex-col font-Playfair gap-1 sm:gap-2">
               <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 May Gardens
@@ -34,9 +34,7 @@ export const Footer = () => {
                 come together to create extraordinary events.
               </p>
             </div>
-          </div>
-
-          {/* Email Submission Section */}
+          </div> 
           <div className="flex flex-col lg:gap-20 sm:gap-10 mt-4 lg:w-1/2 text-white">
             <div className="flex lg:flex-row border-2 rounded-full border-[#CC5500] p-1">
               <input
@@ -51,10 +49,8 @@ export const Footer = () => {
                 </span>
               </button>
             </div>
-
-            {/* Links Section */}
             <div className="flex flex-wrap gap-6 sm:gap-8 lg:gap-12 text-center lg:text-left">
-              {/* Company Section */}
+              
               <div className="flex-1">
                 <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
                   Company
@@ -75,7 +71,7 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-              {/* Events Section */}
+              
               <div className="flex-1">
                 <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
                   Events
@@ -92,7 +88,7 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-              {/* Contact Section */}
+              
               <div className="flex-1">
                 <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
                   Contact
@@ -121,10 +117,9 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-
         {/* Footer Bottom Section */}
-        <div className=" w-full mt-6 lg:mt-2xl flex flex-col md:flex-row md:items-center justify-between border-t border-t-white py-4 sm:py-6">
-          <div className="flex w-full lg:gap-3 gap-4 md:justify-start justify-center text-xs sm:text-sm lg:text-lg font-Montserrat">
+        <div className=" w-full mt-6 lg:mt-2xl flex flex-col md:flex-row md:items-center justify-between border-t border-t-white py-4 ">
+          <div className="flex w-full lg:gap-3 gap-4 md:justify-start justify-center text-sm lg:text-lg font-Montserrat">
             <p>&copy; 2024</p>
             <p className="font-bold">May Gardens</p>
             <p>All rights reserved</p>

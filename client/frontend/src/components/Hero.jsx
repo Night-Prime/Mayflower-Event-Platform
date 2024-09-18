@@ -331,52 +331,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-
-      <div className="w-full h-auto md:hidden block py-3 bg-[#ffffff]">
-        <div className="w-full flex flex-col justify-center items-start px-4 space-y-4">
-          <h2 className="text-2xl font-semibold font-Playfair text-gray-800">
-            Contact Us
-          </h2>
-          <p className="text-black font-Montserrat text-sm font-normal">
-            Velit viverra eget faucibus vel fusce convallis molestie viverra
-            tempor. Dignissim vitae accumsan sem pellentesque. Nisl rhoncus
-            sapien nulla dignissim semper eu ipsum.
-          </p>
-          <form className="space-y-4 w-full">
-            <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-              <p>Name</p>
-              <input
-                type="text"
-                className="w-full p-2 bg-[#EDEDED] rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-            </div>
-            <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-              <p>Email</p>
-              <input
-                type="email"
-                className="w-full p-2 bg-[#EDEDED] rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-            </div>
-            <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-              <p>Subject</p>
-              <input
-                type="text"
-                className="w-full p-2 bg-[#EDEDED] rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-            </div>
-            <div className=" flex flex-col justify-start items-start gap-[2px] text-black">
-              <p>Message</p>
-              <textarea className="w-full p-2 rounded-lg bg-[#EDEDED] focus:outline-none resize-none focus:ring-2 focus:ring-orange-500 h-32" />
-            </div>
-            <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg mb-8 text-[16px] font-bold font-Inter w-44 mt-4 sm:mt-8 lg:mt-10">
-              Submit{" "}
-              <span className="ml-2">
-                <Right />
-              </span>
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   );
 };

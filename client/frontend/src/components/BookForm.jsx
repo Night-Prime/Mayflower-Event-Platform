@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
@@ -20,7 +20,7 @@ const BookForm = ({ closeModal, item }) => {
 
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-4 sm:p-6">
-      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-[60%] h-full overflow-y-auto">
+      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-[65%] h-full overflow-y-auto">
         <button
           onClick={closeModal}
           className="text-black text-5xl text-right p-1"
