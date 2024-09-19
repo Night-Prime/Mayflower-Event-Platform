@@ -117,7 +117,7 @@ export const Events = () => {
                 alt="A dinner"
                 className=" lg:w-[22%] w-[20%]"
               />
-              <div className="lg:w-[70%] h-[270px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
+              <div className="lg:w-[70%] lg:h-[320px] h-[260px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
                 <div className="w-full flex flex-col justify-center items-center gap-2">
                   <h3 className="text-xl lg:text-4xl font-Playfair font-bold">
                     Unveil the Magic:
