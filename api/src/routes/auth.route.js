@@ -19,23 +19,26 @@ router.get(
   }),
   (req, res) => {
     const accessToken = req.authInfo.accessToken;
-    const refreshToken = req.authInfo.refreshToken;
-    console.log("Result: ", req.authInfo.accessToken);
-    const storedRefreshToken = refreshToken;
-    res.redirect(
-      `${process.env.CLIENT_REDIRECT_URL}?token=${req.authInfo.accessToken}`
-    );
+
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "Strict",
+      maxAge: 60 * 60 * 1000,
+    });
+
+    res.redirect(`${process.env.CLIENT_URL}/dashboard`);
   }
 );
 
 // Logout route
 router.get("/logout", (req, res) => {
-  req.logout((err) => {
-    if (err) {
-      return next(err);
-    }
-    res.redirect(process.env.CLIENT_URL);
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
   });
+  res.redirect(process.env.CLIENT_URL);
 });
 
 module.exports = router;

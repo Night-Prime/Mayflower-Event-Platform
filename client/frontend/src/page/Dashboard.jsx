@@ -85,7 +85,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const response = await adminMakeRequest.put("booking/event", payload);
-      if (response.status === 200) {
+      if (response.status === 201) {
         refetch();
         Swal.fire({
           text: response.data.message,
@@ -175,26 +175,6 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    let token = params.get("token");
-
-    if (token) {
-      // If a token is found in the URL, store it in localStorage
-      localStorage.setItem("accessToken", token);
-
-      // Clear the URL parameters after storing the token
-      window.history.replaceState({}, document.title, "/dashboard");
-    } else {
-      // If no token in URL, attempt to retrieve it from localStorage
-      token = localStorage.getItem("accessToken");
-
-      if (!token) {
-        navigate("/admin", { replace: true });
-      }
-    }
-  }, [navigate]);
 
   if (error || packageError) {
     return <ErrorPage />;
