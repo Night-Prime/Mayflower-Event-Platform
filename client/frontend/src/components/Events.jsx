@@ -50,9 +50,9 @@ export const Events = () => {
       });
   }, []);
 
-  if (isLoading) {
-    return <Preloader />;
-  }
+  // if (isLoading) {
+  //   return <Preloader />;
+  // }
 
   const slides = [
     {

@@ -10,6 +10,7 @@ const Gallery = lazy(() => import("./components/Gallery"));
 const Dashboard = lazy(() => import("./page/Dashboard"));
 const AdminLogin = lazy(() => import("./page/AdminLogin"));
 const Faq = lazy(() => import("./page/Faq"));
+const About = lazy(() => import("./components/About"));
 const PageNotFound = lazy(() => import("./page/PageNotFound"));
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route index element={<Landingpage />} />
                 <Route path="booking" element={<Booking />} />
                 <Route path="gallery" element={<Gallery />} />
+                <Route path="about" element={<About />} />
                 <Route path="faq" element={<Faq />} />
               </Route>
               <Route path="/admin" element={<AdminLogin />} />
