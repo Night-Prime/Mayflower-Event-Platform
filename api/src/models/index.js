@@ -12,7 +12,6 @@ Package.hasMany(Booking, { foreignKey: "packageId", as: "bookings" });
 Booking.belongsTo(Package, { foreignKey: "packageId", as: "packages" });
 
 module.exports = {
-  Event,
   Booking,
   Package,
   User,

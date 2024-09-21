@@ -71,9 +71,9 @@ exports.getPackageById = async (req, res) => {
 
   try {
     const { id } = req.body;
-    const package = await Package.findByPk(id);
+    const _package = await Package.findByPk(id);
 
-    if (!package) {
+    if (!_package) {
       return errorResponse(res, {
         statusCode: 404,
         message: "Package not found.",
@@ -81,7 +81,7 @@ exports.getPackageById = async (req, res) => {
     }
 
     return successResponse(res, {
-      data: package,
+      data: _package,
       statusCode: 200,
       message: "Package retrieved successfully.",
     });
@@ -109,22 +109,22 @@ exports.updatePackage = async (req, res) => {
   try {
     const { id, name, description, price, additionalServices } = req.body;
 
-    const package = await Package.findByPk(id);
-    if (!package) {
+    const _package = await Package.findByPk(id);
+    if (!_package) {
       return errorResponse(res, {
         statusCode: 404,
         message: "Package not found.",
       });
     }
 
-    package.name = name || package.name;
-    package.description = description || package.description;
-    package.price = price || package.price;
+    _package.name = name || _package.name;
+    _package.description = description || _package.description;
+    _package.price = price || _package.price;
 
-    await package.save();
+    await _package.save();
 
     return successResponse(res, {
-      data: package,
+      data: _package,
       statusCode: 200,
       message: "Package updated successfully.",
     });
@@ -152,18 +152,18 @@ exports.deletePackage = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const package = await Package.findByPk(id);
-    if (!package) {
+    const _package = await Package.findByPk(id);
+    if (!_package) {
       return errorResponse(res, {
         statusCode: 404,
         message: "Package not found.",
       });
     }
 
-    await package.destroy();
+    await _package.destroy();
 
     return successResponse(res, {
-      data: package,
+      data: _package,
       statusCode: 204,
       message: "Package deleted successfully.",
     });

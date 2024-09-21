@@ -1,5 +1,11 @@
 const express = require("express");
-const packageController = require("../controllers/package.controller");
+const {
+  getPackageById,
+  getAllPackages,
+  updatePackage,
+  deletePackage,
+  createPackage,
+} = require("../controllers/package.controller");
 const {
   createPackageValidation,
   getIdValidation,
@@ -8,20 +14,10 @@ const {
 const isAuth = require("../middleware/authenticator");
 
 const router = express.Router();
-router.post(
-  "/",
-  isAuth,
-  createPackageValidation,
-  packageController.createPackage
-);
-router.get("/all", packageController.getAllPackages);
-router.get("/:id", isAuth, getIdValidation, packageController.getPackageById);
-router.patch(
-  "/",
-  isAuth,
-  updatePackageValidation,
-  packageController.updatePackage
-);
-router.delete("/:id", isAuth, getIdValidation, packageController.deletePackage);
+router.post("/", isAuth, createPackageValidation, createPackage);
+router.get("/all", getAllPackages);
+router.get("/:id", isAuth, getIdValidation, getPackageById);
+router.patch("/", isAuth, updatePackageValidation, updatePackage);
+router.delete("/:id", isAuth, getIdValidation, deletePackage);
 
 module.exports = router;
