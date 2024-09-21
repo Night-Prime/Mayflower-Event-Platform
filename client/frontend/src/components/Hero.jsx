@@ -82,35 +82,35 @@ export const Hero = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative text-center text-white p-4 sm:p-6 lg:p-10">
-          <p className=" text-5xl lg:text-7xl mb-8 font-bold tracking-wide">
+        <div className="relative text-center text-white p-4 lg:p-10">
+          <p className=" text-5xl lg:text-7xl font-Quicksand mb-8 font-bold tracking-wide">
             May Gardens
           </p>
-          <p className="text font-Allura text-[16px] sm:text-[22px] lg:text-[32px]">
+          <p className="font-Allura text-lg lg:text-xl">
             A Place To Cultivate Memorable Experiences.
           </p>
           <div className="flex justify-center items-center">
-            <button className="bg-[#CC5500] py-3 px-6 lg:py-3 lg:px-8 rounded-lg text-md lg:text-lg font-bold mt-6 lg:mt-8">
+            <button className="bg-[#CC5500] py-3 px-6 lg:py-3 lg:px-8 font-Lato rounded-lg text-md lg:text-lg font-bold mt-6 lg:mt-8">
               <RouterLink to="/booking">Schedule Now</RouterLink>
             </button>
           </div>
         </div>
       </div>
 
-      <div className="w-full h-screen md:flex flex-col hidden items-center my-6 justify-center ">
+      <div className="w-full h-screen md:flex flex-col hidden items-center  justify-center ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-4 sm:mx-6 my-6">
           <div className="relative">
             <img
               loading="lazy"
-              src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
+              src="https://ik.imagekit.io/seun/images/drum0.png?updatedAt=1726848114328"
               alt="Someone drumming"
-              className="img w-[80%] object-cover rounded-lg mx-auto"
+              className="img w-[70%] object-cover rounded-lg mx-auto"
             />
             <div
               onClick={missionMouseEnter}
-              className="absolute top-[70%] left-[62.5%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
+              className="absolute top-[70%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
             >
-              <h1 className="text-white text-xs lg:text-lg font-bold">
+              <h1 className="text-white text-xs font-Quicksand lg:text-lg font-bold">
                 Mission
               </h1>
             </div>
@@ -123,23 +123,23 @@ export const Hero = () => {
 
           <img
             loading="lazy"
-            src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
+            src="https://ik.imagekit.io/seun/images/medusa.png?updatedAt=1726847722951"
             alt="Medusa's hair"
-            className="img w-[80%] object-cover rounded-lg mx-auto"
+            className="img w-[70%] object-cover rounded-lg mx-auto"
           />
 
           <div className="relative">
             <img
               loading="lazy"
-              src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
+              src="https://ik.imagekit.io/seun/images/chris.png?updatedAt=1726848114345"
               alt="Someone laughing"
-              className="img w-[80%] object-cover rounded-lg mx-auto"
+              className="img w-[70%] object-cover rounded-lg mx-auto"
             />
             <div
               onClick={valueMouseEnter}
-              className="absolute top-[70%] left-[62.5%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
+              className="absolute top-[70%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
             >
-              <h1 className="text-white text-xs lg:text-lg font-bold">
+              <h1 className="text-white font-Quicksand text-xs lg:text-lg font-bold">
                 Values
               </h1>
             </div>
@@ -151,7 +151,7 @@ export const Hero = () => {
           </div>
         )}
         <div className="w-11/12">
-          <p className="text-xs sm:text-base lg:text-lg text-center">
+          <p className="text-xs sm:text-base font-Lato lg:text-lg text-center">
             At May Gardens Event Center, we are your intimate escape for life’s
             most cherished celebrations. Our facilities are maintained to the
             highest standards to ensure that every event is a massive success.
@@ -165,12 +165,12 @@ export const Hero = () => {
       </div>
 
       {/* Mobile Screen */}
-      <div className="w-full h-auto md:hidden block py-3">
-        <div className=" flex flex-col justify-center items-center gap-5">
-          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2">
+      <div className="w-full h-auto md:hidden block py-3 bg-[#4e4e4e]">
+        <div className=" flex flex-col justify-center items-center gap-5 my-8">
+          <p className="text-2xl sm:text-4xl font-normal leading-[36px] font-Quicksand text-center my-2">
             Our Mission
           </p>
-          <div className=" lg:w-0 w-[85%]">
+          <div className=" sm:w-[60%] w-[80%]">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/seun/images/drumWide.jpg?updatedAt=1726153566059"
@@ -178,8 +178,8 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <div className=" flex flex-col w-[90%] justify-center items-center px-4">
-            <p className="text-white w-full text-sm font-normal text-justify  font-Montserrat">
+          <div className=" flex flex-col sm:w-[70%] w-[80%] justify-center items-center px-4">
+            <p className="text-white w-full text-sm font-Lato font-normal text-justify font-Montserrat">
               You probably don’t remember your first walk, but you will always
               remember your first event with us, and this is our mission; to
               make every event an unforgettable and memorable experience. For
@@ -190,12 +190,14 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-auto md:hidden block py-3 bg-[#4e4e4e]">
+      <div className="w-full h-auto md:hidden block py-3 bg-[#212121]">
         <div className=" flex flex-col justify-center items-center gap-5">
-          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2">
+          <p
+            className="text-2xl sm:text-4xl font-Quicksand font-normal leading-[36px] text-center my-2"
+          >
             Our Vision
           </p>
-          <div className=" lg:w-0 w-[85%]">
+          <div className=" sm:w-[60%] w-[80%]">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/seun/images/laughWide.png?updatedAt=1726153566273"
@@ -203,7 +205,7 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <div className=" flex flex-col w-[90%] justify-center items-center px-4">
+          <div className=" flex flex-col sm:w-[70%] w-[80%] justify-center items-center px-4">
             <p className="text-white w-full text-sm font-normal text-justify  font-Montserrat">
               With creativity and excellence at the forefront, we turn your
               events into unforgettable experiences because ordinary just
@@ -221,10 +223,10 @@ export const Hero = () => {
 
       <div className="w-full h-auto md:hidden block py-3 bg-[#4e4e4e]">
         <div className=" flex flex-col justify-center items-center gap-5">
-          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2">
+          <p className="text-2xl sm:text-4xl font-Quicksand font-normal leading-[36px] text-center my-2">
             Events
           </p>
-          <div className=" lg:w-0 w-[85%]">
+          <div className=" sm:w-[60%] w-[80%]">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/seun/images/drinks.jpg?updatedAt=1726155155381"
@@ -232,7 +234,7 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <button className="bg-[#CC5500] py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Montserrat">
+          <button className="bg-[#CC5500] py-2 px-3 sm:py-2 sm:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Quicksand">
             <RouterLink
               to="/gallery"
               className="flex items-center justify-center"
@@ -248,10 +250,10 @@ export const Hero = () => {
 
       <div className="w-full h-auto md:hidden block py-3 bg-[#ffffff]">
         <div className=" flex flex-col justify-center items-center gap-5">
-          <p className="text-2xl font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2 text-black">
+          <p className="text-2xl sm:text-4xl font-Quicksand font-normal text-center my-2 text-black">
             Book Tour
           </p>
-          <div className=" lg:w-0 w-[40%] flex justify-center items-center gap-4">
+          <div className=" sm:w-[60%] w-[80%] flex justify-center items-center gap-4">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/seun/images/selfie.jpg?updatedAt=1726155519971"
@@ -265,17 +267,17 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <div className="w-[85%] h-auto bg-[#212121] text-white flex flex-col gap-6 p-4  justify-center items-center rounded-xl">
+          <div className="sm:w-[60%] w-[80%]  h-auto bg-[#212121] text-white flex flex-col gap-6 p-4  justify-center items-center rounded-xl">
             <div className="w-full flex flex-col justify-center items-center">
-              <h3 className="text-3xl lg:text-4xl font-Playfair font-bold mb-4">
+              <h3 className="text-3xl lg:text-4xl font-Quicksand font-bold mb-4">
                 Unveil the Magic:
               </h3>
-              <p className="text-sm  font-medium font-Montserrat text-center">
+              <p className="text-sm  font-medium font-Lato text-center">
                 Book Your May Gardens Tour Today
               </p>
             </div>
             <button
-              className="bg-[#CC5500] py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Montserrat"
+              className="bg-[#CC5500] py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Quicksand"
               onClick={openModal}
             >
               Fill our form
@@ -297,16 +299,16 @@ export const Hero = () => {
       <div className="w-full h-auto md:hidden block py-3 bg-[#4e4e4e]">
         <div className=" flex flex-col gap-8">
           <div className=" w-full flex flex-col items-center justify-center">
-            <p className="text-2xl font-Playfair mt-8 text-center text-[#EDEDED]">
+            <p className="text-2xl font-Quicksand mt-8 text-center text-[#EDEDED]">
               Client Success Stories
             </p>
-            <p className="text-lg font-greatVibes text-center pt-2 text-[#EDEDED]">
+            <p className="text-lg font-Allura text-center pt-2 text-[#EDEDED]">
               Hear from Our Satisfied Clients.
             </p>
           </div>
           <div className=" flex justify-center items-end  w-full px-10 gap-6">
             <div className="flex flex-col w-[80%] h-auto gap-8 justify-start items-start p-3 bg-[#212121] rounded-xl ">
-              <p className=" font-Montserrat text-xs">
+              <p className=" font-Lato text-xs">
                 Vulputate volutpat viverra interdum et. Fusce sit habitant
                 mauris arcu pretium.
               </p>

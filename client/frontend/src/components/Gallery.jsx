@@ -87,7 +87,7 @@ const Gallery = () => {
           </div>
         </div>
         <div className="w-[75%] h-full overflow-y-scroll">
-          <div className=" w-full flex flex-col gap-6 p-8 mt-20 animate-fade-in">
+          <div className=" w-full flex flex-col gap-6 p-8 font-Quicksand mt-20 animate-fade-in">
             <Content date={date} />
           </div>
         </div>
@@ -100,7 +100,7 @@ const Content = ({ date }) => {
   if (date === "2024") {
     return (
       <div className="h-full flex flex-col gap-6 animate-fade-in">
-        <p className=" font-Playfair font-bold text-[32px] leading-[38.4px]">
+        <p className=" font-Quicksand font-bold text-[32px] leading-[38.4px]">
           Wedding Events
         </p>
         <div className=" w-full flex gap-6">
@@ -250,7 +250,7 @@ const Content = ({ date }) => {
   } else if (date === "2023") {
     return (
       <div className="h-full flex flex-col gap-6 animate-fade-in">
-        <p className=" font-Playfair font-bold text-[32px] leading-[38.4px]">
+        <p className=" font-Quicksand font-bold text-[32px] leading-[38.4px]">
           Birthday Parties
         </p>
         <div className=" w-full flex gap-6">
@@ -399,7 +399,7 @@ const Content = ({ date }) => {
   } else if (date === "2022") {
     return (
       <div className="h-full flex flex-col gap-6 animate-fade-in">
-        <p className=" font-Playfair font-bold text-[32px] leading-[38.4px]">
+        <p className=" font-Quicksand font-bold text-[32px] leading-[38.4px]">
           Tech Events
         </p>
         <div className=" w-full flex gap-6">

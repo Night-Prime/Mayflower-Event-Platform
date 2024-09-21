@@ -27,7 +27,7 @@ const BookForm = ({ closeModal, item }) => {
         >
           &times;
         </button>
-        <h2 className="text-2xl sm:text-3xl font-semibold font-Playfair mb-6 text-center border-b-2 border-black">
+        <h2 className="text-2xl sm:text-3xl font-semibold font-Quicksand mb-6 text-center border-b-2 border-black">
           Book a tour
         </h2>
 
@@ -98,7 +98,7 @@ const BookForm = ({ closeModal, item }) => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form>
+            <Form className="font-Quicksand">
               <div className="mb-4">
                 <label
                   className="block text-xs sm:text-sm font-medium mb-1"

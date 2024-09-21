@@ -22,10 +22,10 @@ const Mission = ({ leave }) => {
           />
         </div>
         <div className="flex-1 flex flex-col justify-center items-start px-4">
-          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2">
+          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Quicksand text-center my-2">
             Our Drive
           </p>
-          <p className="text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-start font-Montserrat">
+          <p className="text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-start font-Lato">
             You probably don’t remember your first walk, but you will always
             remember your first event with us, and this is our mission; to make
             every event an unforgettable and memorable experience. For your
