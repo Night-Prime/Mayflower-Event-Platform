@@ -6,10 +6,8 @@ module.exports = {
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
         Allura: ["Allura", "cursive"],
-        Inter: ["Inter", "sans-serif"],
-        Montserrat: ["Montserrat", "sans-serif"],
-        greatVibes: ["Great Vibes", "cursive"],
-        kanit: ["Kanit", "sans-serif"],
+        Lato: ["Lato", "sans-serif"],
+        Quicksand: ["Quicksand", "sans-serif"],
       },
       animation: {
         "fade-in-left": "fade-in-left 0.25s ease-out",
