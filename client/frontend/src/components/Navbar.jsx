@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   return (
     <div className="sticky top-0 z-50 w-full h-20 flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
-      <p className="font-Playfair font-bold text-[20px] sm:text-[24px] lg:text-[32px] cursor-pointer">
+      <p className="font-Quicksand font-bold text-xl lg:text-3xl cursor-pointer">
         <RouterLink to="/">May Gardens</RouterLink>
       </p>
 
@@ -34,7 +34,7 @@ export const Navbar = () => {
           menuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out md:static md:w-auto md:flex md:transform-none z-40`}
       >
-        <ul className="flex flex-col md:flex-row items-center justify-end gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0 w-full">
+        <ul className="flex flex-col md:flex-row items-center font-Quicksand justify-end gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0 w-full">
           <li className="relative pb-1 md:pb-2">
             <RouterLink to="/" onClick={() => menuOpen && toggleMenu()}>
               <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
@@ -50,7 +50,7 @@ export const Navbar = () => {
             </RouterLink>
           </li>
           <li className="relative pb-1 sm:pb-2">
-            <button className="bg-transparent border-[2px] border-[#CC5500] text-[#CC5500] flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4">
+            <button className="bg-transparent border-[2px] border-[#CC5500] text-[#CC5500] flex items-center justify-center rounded-lg text-md font-semibold w-44 py-2 px-4">
               <RouterLink
                 to="/booking"
                 className="flex items-center justify-center"

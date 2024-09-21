@@ -58,7 +58,7 @@ export const Events = () => {
     {
       content: (
         <div className="w-full h-5/6 shared-container flex flex-col items-center justify-center gap-16">
-          <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Playfair text-center mt-8">
+          <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Quicksand text-center mt-2">
             Event Showcase
           </p>
           <div className="flex flex-col w-full h-full items-center px-2">
@@ -73,7 +73,7 @@ export const Events = () => {
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/tree.png?updatedAt=1725131405421"
                 alt="Tree"
-                className=" w-[30%] lg:w-[18%]"
+                className=" w-[25%] lg:w-[18%]"
               />
               <img
                 loading="lazy"
@@ -85,10 +85,10 @@ export const Events = () => {
                 loading="lazy"
                 src="https://ik.imagekit.io/tsfcuw1ce/Images/drinks.png?updatedAt=1725131445657"
                 alt="Drinks"
-                className=" w-[30%] lg:w-[18%]"
+                className=" w-[25%] lg:w-[18%]"
               />
             </div>
-            <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Montserrat w-[220px] mt-4">
+            <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Quicksand w-[220px] mt-4">
               <RouterLink
                 to="/gallery"
                 className="flex items-center justify-center"
@@ -105,28 +105,28 @@ export const Events = () => {
     },
     {
       content: (
-        <div className="w-full h-5/6 shared-container flex flex-col gap-10 items-center justify-center">
-          <div className="flex flex-col gap-6 items-center justify-center">
-            <p className="text-4xl font-normal  font-Playfair text-center text-white">
+        <div className="w-full h-5/6 shared-container flex flex-col items-center justify-center">
+          <div className="flex flex-col gap-10 items-center justify-center">
+            <p className="text-4xl font-normal  font-Quicksand text-center text-white">
               Book a Tour
             </p>
             <div className="flex gap-6 items-center justify-center">
               <img
                 src="https://ik.imagekit.io/seun/images/tea.png?updatedAt=1726558041845"
                 alt="drinking tea"
-                className=" lg:w-[22%] w-[20%]"
+                className=" lg:w-[20%] w-[18%]"
               />
               <img
                 src="https://ik.imagekit.io/seun/images/dinner0.png?updatedAt=1726558041641"
                 alt="A dinner"
-                className=" lg:w-[22%] w-[20%]"
+                className=" lg:w-[20%] w-[18%]"
               />
-              <div className="lg:w-[70%] h-[270px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
-                <div className="w-full flex flex-col justify-center items-center gap-2">
-                  <h3 className="text-xl lg:text-4xl font-Playfair font-bold">
+              <div className="lg:w-[60%] lg:h-[285px] h-[235px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
+                <div className="w-full flex flex-col justify-center items-start gap-2">
+                  <h3 className="text-xl lg:text-4xl font-Quicksand font-bold">
                     Unveil the Magic:
                   </h3>
-                  <p className="text-sm sm:text-md lg:text-lg font-medium font-Montserrat">
+                  <p className="text-sm md:text-lg font-medium font-Lato">
                     Book Your May Gardens Tour Today
                   </p>
                 </div>
@@ -156,16 +156,16 @@ export const Events = () => {
       content: (
         <div className="w-full h-3/4 shared-container gap-10 flex flex-col justify-between items-center">
           <div className=" w-full flex flex-col items-center justify-center">
-            <p className="text-3xl md:text-4xl font-Playfair mt-8 text-center text-[#EDEDED]">
+            <p className="text-3xl md:text-4xl font-Quicksand mt-8 text-center text-[#EDEDED]">
               Client Success Stories
             </p>
-            <p className="text-[24px] sm:text-[30px] lg:text-[24px] font-greatVibes text-center pt-2 text-[#EDEDED]">
+            <p className="text-[24px] sm:text-[30px] lg:text-[24px] font-Allura text-center pt-2 text-[#EDEDED]">
               Hear from Our Satisfied Clients.
             </p>
           </div>
           <div className=" flex justify-center items-end pb-40 w-full px-10 gap-16">
-            <div className=" flex-col w-[22%] gap-8 h-auto justify-start items-start p-3 bg-[#212121] rounded-xl hidden lg:block ">
-              <p className=" font-Montserrat text-sm">
+            <div className=" flex-col w-[22%] gap-8 h-auto justify-start items-start p-3 bg-[#212121] rounded-xl hidden lg:block font-Lato ">
+              <p className=" text-sm">
                 Posuere ultrices amet diam erat in amet nulla tellus nibh.
                 Vulputate cras nunc lectus facilisis. Sapien tempus pellentesque
                 in tellus at. A blandit nullam orci sed eget.
@@ -188,8 +188,8 @@ export const Events = () => {
                 <Star />
               </div>
             </div>
-            <div className="flex flex-col lg:w-[22%] w-[35%] h-auto gap-8 justify-start items-start p-3 bg-[#212121] rounded-xl ">
-              <p className=" font-Montserrat text-sm">
+            <div className="flex flex-col lg:w-[22%] w-[35%] h-auto gap-8 font-Lato justify-start items-start p-3 bg-[#212121] rounded-xl ">
+              <p className=" text-sm">
                 Vulputate volutpat viverra interdum et. Fusce sit habitant
                 mauris arcu pretium.
               </p>
@@ -240,9 +240,9 @@ export const Events = () => {
     },
     {
       content: (
-        <div className="w-5/6 h-5/6 flex items-center justify-center align-items-center justify-content-center">
+        <div className="w-[65%] h-2/4 flex items-center justify-center align-items-center justify-content-center">
           <div className="mx-4 sm:mx-6 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-            <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Playfair leading-tight mb-4">
+            <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Quicksand leading-tight mb-4">
               The Property
             </h2>
             <div className="flex lg:flex-col lg:w-2/5 w-[70%] flex-row lg:justify-center justify-center items-center relative">
@@ -267,10 +267,10 @@ export const Events = () => {
             </div>
 
             <div className="flex-1 mt-8 lg:mt-0 w-[75%]">
-              <h2 className="text-[20px] sm:text-[28px] lg:text-[40px] font-Playfair lg:block hidden leading-tight mb-4">
+              <h2 className="text-xl sm:text-4xl font-Quicksand lg:block hidden leading-tight mb-4">
                 The Property
               </h2>
-              <p className="text-xs w-full lg:text-lg text-justify leading-relaxed font-Montserrat text-white">
+              <p className="text-xs w-full lg:text-base text-justify leading-relaxed font-Lato text-white">
                 May Event Garden is an event center with a natural garden-like
                 setting that accommodates up to 350 guests. The innovative
                 fiberglass roofing allows guests to see and feel the sky, adding
@@ -289,7 +289,7 @@ export const Events = () => {
   ];
 
   return (
-    <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[90vh] overflow-hidden md:block hidden">
+    <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[95vh] overflow-hidden md:block hidden">
       <div
         className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
         ref={slideContainerRef}
@@ -308,7 +308,7 @@ export const Events = () => {
       </div>
 
       {/* Button container with better positioning */}
-      <div className="absolute bottom-6  flex w-[80%] mx-20 justify-between items-center mt-2">
+      <div className="absolute bottom-6 flex w-[80%] mx-20 justify-between items-center mt-2">
         <button
           onClick={prevSlide}
           className=" bg-[#CC5500] p-3 rounded-full z-10"
