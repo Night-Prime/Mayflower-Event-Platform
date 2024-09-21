@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-
-import drumer from "../assets/Images/drumer.png";
-import laugh from "../assets/Images/laugh.png";
-import medusa from "../assets/Images/medusa.png";
-import LeftIcon from "./LeftIcon.jsx";
-import RightIcon from "./RightIcon.jsx";
+import { Navbar } from "./Navbar.jsx";
+import { Footer } from "./Footer.jsx";
+import { ArrowLeft, ArrowRight } from "react-feather";
 
 export const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,13 +21,13 @@ export const About = () => {
             />
             <img
               loading="lazy"
-              src={medusa}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
               alt="Medusa's hair"
               className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
             <img
               loading="lazy"
-              src={laugh}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
               alt="Someone laughing"
               className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
@@ -62,13 +59,13 @@ export const About = () => {
             />
             <img
               loading="lazy"
-              src={medusa}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
               alt="Medusa's hair"
               className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
             <img
               loading="lazy"
-              src={laugh}
+              src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
               alt="Someone laughing"
               className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
             />
@@ -100,32 +97,36 @@ export const About = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-5 mb-10 sm:mx-6 lg:mx-[30px] sm:mt-[150px] lg:mt-[100px] bg-[#212121] rounded-[32px] text-black py-5 lg:py-6">
-      <div className="w-full bg-[#212121] text-white py-2">
-        <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair px-4 lg:px-10 text-center">
-          {slides[currentSlide].title}
-        </p>
-      </div>
-      <div className="relative w-full overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div key={index} className="flex-shrink-0 w-full">
-              {slide.content}
-            </div>
-          ))}
+    <>
+      <Navbar />
+      <div className="flex flex-col items-center gap-5 mb-10 sm:mx-6 lg:mx-[30px] sm:mt-[150px] lg:mt-[100px] bg-[#212121] rounded-[32px] text-black py-5 lg:py-6">
+        <div className="w-full bg-[#212121] text-white py-2">
+          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair px-4 lg:px-10 text-center">
+            {slides[currentSlide].title}
+          </p>
+        </div>
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div key={index} className="flex-shrink-0 w-full">
+                {slide.content}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex gap-4 sm:gap-6 lg:gap-10 justify-center mt-6 sm:mt-8 lg:mt-10">
+          <button onClick={handlePreviousSlide}>
+            <ArrowLeft />
+          </button>
+          <button onClick={handleNextSlide}>
+            <ArrowRight />
+          </button>
         </div>
       </div>
-      <div className="flex gap-4 sm:gap-6 lg:gap-10 justify-center mt-6 sm:mt-8 lg:mt-10">
-        <button onClick={handlePreviousSlide}>
-          <LeftIcon />
-        </button>
-        <button onClick={handleNextSlide}>
-          <RightIcon />
-        </button>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };

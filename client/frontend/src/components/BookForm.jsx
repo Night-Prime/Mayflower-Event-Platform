@@ -20,14 +20,14 @@ const BookForm = ({ closeModal, item }) => {
 
   return (
     <div className="bg-black bg-opacity-90 text-black h-full w-full flex items-center justify-center p-4 sm:p-6">
-      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-[65%] h-full overflow-y-auto">
+      <div className="animate-fade-in bg-white p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-[75%] h-full overflow-y-auto">
         <button
           onClick={closeModal}
           className="text-black text-5xl text-right p-1"
         >
           &times;
         </button>
-        <h2 className="text-2xl sm:text-3xl font-semibold font-Playfair mb-6 text-center border-b-2 border-black">
+        <h2 className="text-2xl sm:text-3xl font-semibold font-Quicksand mb-6 text-center border-b-2 border-black">
           Book a tour
         </h2>
 
@@ -98,7 +98,7 @@ const BookForm = ({ closeModal, item }) => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form>
+            <Form className="font-Quicksand">
               <div className="mb-4">
                 <label
                   className="block text-xs sm:text-sm font-medium mb-1"
@@ -109,7 +109,7 @@ const BookForm = ({ closeModal, item }) => {
                 <Field
                   type="text"
                   name="eventTitle"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="What's the name of your Event"
                 />
                 <ErrorMessage
@@ -128,7 +128,7 @@ const BookForm = ({ closeModal, item }) => {
                 <Field
                   type="text"
                   name="eventDescription"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Describe your Event"
                 />
                 <ErrorMessage
@@ -141,7 +141,7 @@ const BookForm = ({ closeModal, item }) => {
                 <Field
                   component="select"
                   name="packageId"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                 >
                   <option value="">Select a package</option>
                   {item && item.length > 0 ? (
@@ -170,7 +170,7 @@ const BookForm = ({ closeModal, item }) => {
                 <Field
                   type="text"
                   name="clientName"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Enter your name"
                 />
                 <ErrorMessage
@@ -190,7 +190,7 @@ const BookForm = ({ closeModal, item }) => {
                 <Field
                   type="email"
                   name="clientEmail"
-                  className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                   placeholder="Enter your Email address"
                 />
                 <ErrorMessage
@@ -209,7 +209,7 @@ const BookForm = ({ closeModal, item }) => {
                 </label>
                 <div className="flex flex-col sm:flex-row gap-2">
                   <select
-                    className="bg-transparent text-black border-[#4E4E4E] rounded-lg border-[2px] pr-2 focus:outline-none"
+                    className="bg-transparent text-sm md:text-md text-black border-[#4E4E4E] rounded-lg border-[2px] pr-2 focus:outline-none"
                     style={{ width: "100%", maxWidth: "100px" }}
                   >
                     <option value="+234">🇳🇬 +234</option>
@@ -218,7 +218,7 @@ const BookForm = ({ closeModal, item }) => {
                   <Field
                     type="text"
                     name="clientPhone"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                    className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                     placeholder="Enter your Phone number"
                   />
                 </div>
@@ -240,7 +240,7 @@ const BookForm = ({ closeModal, item }) => {
                   <Field
                     type="date"
                     name="eventDate"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                    className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                     placeholder="Select Date"
                   />
                   <ErrorMessage
@@ -252,7 +252,7 @@ const BookForm = ({ closeModal, item }) => {
 
                 <div className="mb-4 flex-1">
                   <label
-                    className="block text-xs sm:text-sm font-medium mb-1"
+                    className="block text-sm md:text-md font-medium mb-1"
                     htmlFor="eventTime"
                   >
                     Time
@@ -260,7 +260,7 @@ const BookForm = ({ closeModal, item }) => {
                   <Field
                     type="time"
                     name="eventTime"
-                    className="w-full p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
+                    className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-black rounded-lg"
                     style={{
                       WebkitAppearance: "none",
                       MozAppearance: "textfield",

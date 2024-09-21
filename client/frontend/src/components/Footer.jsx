@@ -15,7 +15,6 @@ export const Footer = () => {
       <div className="h-full flex flex-col px-4 sm:px-6 lg:px-10 mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-20">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
-            
             <div className="flex flex-col font-Playfair gap-1 sm:gap-2">
               <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 Join our newsletter
@@ -24,7 +23,7 @@ export const Footer = () => {
                 Insider Tips for Planning Your Event
               </p>
             </div>
-            
+
             <div className="flex flex-col font-Playfair gap-1 sm:gap-2">
               <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 May Gardens
@@ -34,7 +33,7 @@ export const Footer = () => {
                 come together to create extraordinary events.
               </p>
             </div>
-          </div> 
+          </div>
           <div className="flex flex-col lg:gap-20 sm:gap-10 mt-4 lg:w-1/2 text-white">
             <div className="flex lg:flex-row border-2 rounded-full border-[#CC5500] p-1">
               <input
@@ -50,7 +49,6 @@ export const Footer = () => {
               </button>
             </div>
             <div className="flex flex-wrap gap-6 sm:gap-8 lg:gap-12 text-center lg:text-left">
-              
               <div className="flex-1">
                 <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
                   Company
@@ -61,7 +59,7 @@ export const Footer = () => {
                   </li>
                   <li className="mb-1 sm:mb-2">
                     <a href="#about" className="hover:text-gray-400">
-                      About
+                      <RouterLink to="/about">About</RouterLink>
                     </a>
                   </li>
                   <li>
@@ -71,7 +69,7 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="flex-1">
                 <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
                   Events
@@ -88,8 +86,8 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-              
-              <div className="flex-1">
+
+              {/* <div className="flex-1">
                 <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
                   Contact
                 </h4>
@@ -113,7 +111,7 @@ export const Footer = () => {
                     (Location)
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

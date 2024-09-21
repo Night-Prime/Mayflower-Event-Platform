@@ -21,10 +21,10 @@ const Vision = ({ leave }) => {
           />
         </div>
         <div className="flex-1 flex flex-col justify-center items-start px-4">
-          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center my-2">
+          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Quicksand text-center my-2">
             Our Commitments
           </p>
-          <p className="text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-start font-Montserrat">
+          <p className="text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-start font-Lato">
             With creativity and excellence at the forefront, we turn your events
             into unforgettable experiences because ordinary just wouldn’t do.
             Happiness is one of the many things we bring to the table so expect
