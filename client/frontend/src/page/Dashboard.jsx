@@ -178,9 +178,7 @@ const Dashboard = () => {
 
   if (error || packageError) {
   return (
-    <div>
-      <p>An unexpected error occurred. Please try again later.</p>
-    </div>
+   <ErrorPage />
   );
 }
 
