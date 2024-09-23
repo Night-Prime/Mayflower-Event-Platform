@@ -41,6 +41,7 @@ passport.use(
       }
       return done(null, user);
     } catch (err) {
+       console.error("Error verifying token:", err);
       return done(err);
     }
   })
