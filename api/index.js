@@ -31,7 +31,7 @@ app.use(
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "https://maygardens.vercel.app",
+    origin: "https://maygardens.vercel.app" || process.env.CLIENT_URL,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     allowedHeaders: ["Authorization", "Content-Type"],
