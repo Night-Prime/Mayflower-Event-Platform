@@ -177,18 +177,12 @@ const Dashboard = () => {
   };
 
   if (error || packageError) {
-    return Swal.fire({
-      text: "An unexpected error occurred",
-      icon: "error",
-      iconColor: "#fff",
-      toast: true,
-      position: "top-right",
-      showConfirmButton: false,
-      timer: 2000,
-      background: "#ff8323",
-      color: "#fff",
-    });
-  }
+  return (
+    <div>
+      <p>An unexpected error occurred. Please try again later.</p>
+    </div>
+  );
+}
 
   if (loading || isLoading || packageLoad) {
     return <Preloader />;
