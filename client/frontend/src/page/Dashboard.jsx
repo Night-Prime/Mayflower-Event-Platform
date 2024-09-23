@@ -177,7 +177,17 @@ const Dashboard = () => {
   };
 
   if (error || packageError) {
-    return <ErrorPage />;
+    return Swal.fire({
+      text: "An unexpected error occurred",
+      icon: "error",
+      iconColor: "#fff",
+      toast: true,
+      position: "top-right",
+      showConfirmButton: false,
+      timer: 2000,
+      background: "#ff8323",
+      color: "#fff",
+    });
   }
 
   if (loading || isLoading || packageLoad) {
