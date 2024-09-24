@@ -49,7 +49,7 @@ const Faq = () => {
   return (
     <div className="w-full h-screen">
       <Navbar />
-      <div className="w-full h-full">
+      <div className="w-full h-auto">
         <div className="mx-auto py-20 w-2/3 h-full flex flex-col justify-start items-start gap-20">
           <h2 className="w-full text-6xl text-center font-bold">
             Frequently Asked Questions
@@ -60,13 +60,13 @@ const Faq = () => {
                 key={faq.id}
                 className={`cursor-pointer w-full rounded-2xl border-2 ${
                   active === faq.id
-                    ? "bg-[#CC5500] border-[#CC5500]"
+                    ? "bg-gradient-to-r from-goldLight to-goldDark border-goldLight"
                     : "bg-white border-white"
                 }`}
               >
                 <div
                   className={`w-full flex justify-between items-center p-3 ${
-                    active === faq.id ? "text-white" : "text-[#CC5500]"
+                    active === faq.id ? "text-white" : "text-goldLight"
                   }`}
                   onClick={() => handleToggle(faq.id)}
                 >

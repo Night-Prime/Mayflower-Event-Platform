@@ -9,7 +9,7 @@ const Mission = ({ leave }) => {
       <div className="animate-fade-in-left w-5/6 h-1/2 rounded-lg bg-[#212121] backdrop-blur-md text-white flex flex-row gap-6">
         <button
           onClick={leave}
-          className=" absolute top-2 right-5 text-[#CC5500] text-right text-2xl animate-fade-in-left"
+          className=" absolute top-2 right-5 text-goldLight text-right text-2xl animate-fade-in-left"
         >
           &times;
         </button>
