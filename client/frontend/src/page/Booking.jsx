@@ -112,7 +112,7 @@ const Booking = () => {
           </h1>
           <button
             onClick={openModal}
-            className="bg-[#CC5500] mt-4 py-2 px-4 sm:py-3 sm:px-5 flex items-center justify-center rounded-lg text-xs sm:text-sm lg:text-md font-bold font-quicksand lg:w-52 sm:w-48"
+            className="bg-gradient-to-r from-goldLight to-goldDark mt-4 py-2 px-4 sm:py-3 sm:px-5 flex items-center justify-center rounded-lg text-xs sm:text-sm lg:text-md font-bold font-quicksand lg:w-52 sm:w-48"
           >
             Schedule Now
             <span className="ml-2">
@@ -125,7 +125,7 @@ const Booking = () => {
       <div className="w-full flex flex-col items-center gap-4 sm:gap-8 bg-white p-4 sm:p-8 rounded-t-3xl">
         <div className="relative w-full">
           <div
-            className="flex items-center border border-[#cc5500] rounded-lg p-2 cursor-pointer"
+            className="flex items-center border border-goldLight rounded-lg p-2 cursor-pointer"
             onClick={handleClick}
             ref={buttonRef}
           >
@@ -166,7 +166,7 @@ const Booking = () => {
             <div
               className="flex justify-center items-center md:w-1/2 w-full p-6 bg-cover bg-center"
               style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(204, 85, 0, 1), rgba(204, 85, 0, 0)), url('/book.jpeg')`,
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 215, 0, 1), rgba(255, 170, 0, 0)), url('/book.jpeg')`,
               }}
             >
               <h1 className="text-3xl lg:text-5xl font-Quicksand italic leading-tight lg:leading-[84px] font-semibold text-white text-left">
@@ -186,7 +186,7 @@ const Booking = () => {
                 </p>
               </div>
               <button
-                className="bg-[#CC5500] py-2 px-4 sm:py-3 sm:px-6 flex items-center justify-center rounded-lg text-sm sm:text-md font-bold font-Quicksand"
+                className="bg-gradient-to-r from-goldLight to-goldDark py-2 px-4 sm:py-3 sm:px-6 flex items-center justify-center rounded-lg text-sm sm:text-md font-bold font-Quicksand"
                 onClick={openModal}
               >
                 Fill our form
@@ -211,7 +211,7 @@ const Booking = () => {
                 backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
               }}
             ></div>
-            <div className="lg:w-1/2 bg-[#CC5500] p-4 sm:p-8 text-white flex flex-col justify-center items-start">
+            <div className="lg:w-1/2 bg-gradient-to-r from-goldLight to-goldDark p-4 sm:p-8 text-white flex flex-col justify-center items-start">
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-Quicksand font-bold mb-4">
                 Offers
               </h3>

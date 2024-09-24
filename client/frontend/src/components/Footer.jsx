@@ -35,13 +35,13 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col lg:gap-20 sm:gap-10 mt-4 lg:w-1/2 text-white">
-            <div className="flex lg:flex-row border-2 rounded-full border-[#CC5500] p-1">
+            <div className="flex lg:flex-row border-2 rounded-full border-goldLight p-1">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="bg-[#212121] text-[12px] sm:text-[14px] lg:text-[18px] font-Montserrat font-normal p-2 sm:p-3 rounded-full flex-grow focus:outline-none"
               />
-              <button className="bg-[#E4572E] text-white p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
+              <button className="bg-gradient-to-r from-goldLight to-goldDark text-white p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
                 Submit
                 <span className="ml-2">
                   <Right />

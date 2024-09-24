@@ -193,7 +193,7 @@ const Dashboard = () => {
           <h1 className="text-5xl">May Gardens Admin System</h1>
           <button
             onClick={handleCreatePackage}
-            className="bg-transparent border-[2px] border-[#CC5500] text-[#CC5500]  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4"
+            className="bg-transparent border-[2px] border-goldLight text-goldLight  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4"
           >
             <span className=" flex items-center justify-center">
               Create Package
@@ -214,19 +214,19 @@ const Dashboard = () => {
             <table className="w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Package Name
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Description
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Capacity
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Price
                   </th>
-                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider"></th>
+                  <th className="px-6 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider"></th>
                 </tr>
               </thead>
               <tbody className="bg-transparent divide-y divide-gray-200">
@@ -275,24 +275,24 @@ const Dashboard = () => {
             <table className="w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Client Name
                   </th>
-                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Client Email
                   </th>
 
-                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Event Title
                   </th>
-                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-4 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Event Date
                   </th>
 
-                  <th className="px-64py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider">
+                  <th className="px-64py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider">
                     Event Description
                   </th>
-                  <th className="px-2 py-3 text-xs leading-4 font-medium text-left text-[#CC5500] uppercase tracking-wider"></th>
+                  <th className="px-2 py-3 text-xs leading-4 font-medium text-left text-goldLight uppercase tracking-wider"></th>
                 </tr>
               </thead>
               <tbody className="bg-transparent divide-y divide-[#CC5500]">
