@@ -12,6 +12,7 @@ export const adminMakeRequest = axios.create({
 
 adminMakeRequest.interceptors.request.use(
   (config) => {
+    console.log("Config:", config)
     return config;
   },
   (error) => {
