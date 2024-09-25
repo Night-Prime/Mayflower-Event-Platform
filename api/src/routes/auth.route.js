@@ -23,7 +23,7 @@ router.get(
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "None",
+      sameSite: "none",
       maxAge: 60 * 60 * 1000,
     });
 
