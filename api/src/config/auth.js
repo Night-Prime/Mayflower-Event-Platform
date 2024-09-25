@@ -13,6 +13,7 @@ passport.use(
       callbackURL: `${process.env.URL}/api/v1/auth/google/callback`,
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log("Token", accessToken)
       try {
         let user = await User.findOne({ where: { googleId: profile.id } });
         if (!user) {
