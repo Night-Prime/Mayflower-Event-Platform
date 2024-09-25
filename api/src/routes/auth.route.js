@@ -19,7 +19,7 @@ router.get(
   }),
   (req, res) => {
     const accessToken = req.authInfo.accessToken;
-
+    console.log("Token:", accessToken);
     res.cookie("accessToken", accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
