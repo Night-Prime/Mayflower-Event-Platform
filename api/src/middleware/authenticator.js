@@ -6,7 +6,15 @@ const { errorResponse } = require("../helper/response");
  */
 
 const isAuth = (req, res, next) => {
-  const token = req.cookies.accessToken;
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader)
+    return errorResponse(res, {
+      statusCode: 401,
+      message: "Unauthorized Header!",
+    });
+
+  const token = authHeader.split(" ")[1];
   if (!token) {
     return errorResponse(res, {
       statusCode: 401,

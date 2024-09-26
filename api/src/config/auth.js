@@ -34,11 +34,20 @@ passport.use(
 passport.use(
   new BearerStrategy(async (token, done) => {
     try {
-      const decoded = jwt.verify(token, process.env.COOKIE_SECRET);
-      const user = await User.findOne({ where: { id: decoded.id } });
+      // Verify the token by making an API request to Google
+      const response = await axios.get(process.env.CLIENT_VERIFY_URL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      console.log("Response: ", response);
+
+      const user = await User.findOne({ where: { accessToken: token } });
       if (!user) {
         return done(null, false);
       }
+
       return done(null, user);
     } catch (err) {
       return done(err);

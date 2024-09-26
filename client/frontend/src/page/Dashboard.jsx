@@ -176,13 +176,35 @@ const Dashboard = () => {
     }
   };
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    let token = params.get("token");
+
+    if (token) {
+      // If a token is found in the URL, store it in localStorage
+      localStorage.setItem("accessToken", token);
+
+      // Clear the URL parameters after storing the token
+      window.history.replaceState({}, document.title, "/dashboard");
+    } else {
+      // If no token in URL, attempt to retrieve it from localStorage
+      token = localStorage.getItem("accessToken");
+
+      if (!token) {
+        // If still no token, navigate to the /admin page
+        console.log("No token found, navigating to /admin");
+        navigate("/admin", { replace: true });
+      }
+    }
+  }, [navigate]);
+
   if (error || packageError) {
-  return (
-    <div>
-      <p>An unexpected error occurred. Please try again later.</p>
-    </div>
-  );
-}
+    return (
+      <div>
+        <p>An unexpected error occurred. Please try again later.</p>
+      </div>
+    );
+  }
 
   if (loading || isLoading || packageLoad) {
     return <Preloader />;
