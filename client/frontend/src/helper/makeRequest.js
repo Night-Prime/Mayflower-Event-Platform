@@ -12,10 +12,16 @@ export const adminMakeRequest = axios.create({
 
 adminMakeRequest.interceptors.request.use(
   (config) => {
-    console.log("Config:", config)
+    const token = localStorage.getItem("accessToken");
+
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
+    console.log("Values: ", config, token);
     return config;
   },
   (error) => {
+    console.log("Error: ", error);
     return Promise.reject(error);
   }
 );

@@ -20,14 +20,18 @@ router.get(
   (req, res) => {
     const accessToken = req.authInfo.accessToken;
 
-    res.cookie("accessToken", accessToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
-      maxAge: 60 * 60 * 1000,
-    });
+    // due to cookies not getting set on live , using localStorage
 
-    res.redirect(`${process.env.CLIENT_URL}/dashboard`);
+    res.redirect(`${process.env.CLIENT_REDIRECT_URL}?token=${accessToken}`);
+
+    // res.cookie("accessToken", accessToken, {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === "production",
+    //   sameSite: "Strict",
+    //   maxAge: 60 * 60 * 1000,
+    // });
+
+    // res.redirect(`${process.env.CLIENT_URL}/dashboard`);
   }
 );
 
