@@ -3,7 +3,7 @@ import React from "react";
 const AdminLogin = () => {
   const handleClick = async () => {
     try {
-      window.location.href = "http://localhost:5000/api/v1/auth/google";
+      window.location.href = "https://maygardens.vercel.app/api/v1/auth/google";
     } catch (error) {
       console.error("Error: ", error);
     }
