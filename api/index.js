@@ -31,13 +31,12 @@ app.use(
 
 app.use(
   cors({
-    origin: "https://maygardens.vercel.app",
+    origin: process.env.CLIENT_URL,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     allowedHeaders: ["Authorization", "Content-Type"],
   })
 );
-
 
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
