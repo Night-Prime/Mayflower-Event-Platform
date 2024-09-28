@@ -3,7 +3,8 @@ import React from "react";
 const AdminLogin = () => {
   const handleClick = async () => {
     try {
-      window.location.href = "http://localhost:5000/api/v1/auth/google";
+      window.location.href =
+        "https://may-garden.onrender.com/api/v1/auth/google";
     } catch (error) {
       console.error("Error: ", error);
     }
@@ -33,7 +34,7 @@ const AdminLogin = () => {
             <span className="border-t border-[#AEAEAE] w-full"></span>
           </div>
           <button
-            className="w-full bg-transparent text-[#CC5500] text-lg font-Montserrat font-semibold py-2 px-4 rounded border border-[#CC5500] hover:bg-[#CC5500] hover:text-white hover:border-black"
+            className="w-full bg-transparent text-goldLight text-lg font-Montserrat font-semibold py-2 px-4 rounded border border-goldLight hover:bg-gradient-to-r from-goldLight to-goldDark hover:text-white hover:border-black"
             onClick={handleClick}
           >
             Login with Google

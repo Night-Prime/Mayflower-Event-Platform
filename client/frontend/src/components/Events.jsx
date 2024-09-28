@@ -88,7 +88,7 @@ export const Events = () => {
                 className=" w-[25%] lg:w-[18%]"
               />
             </div>
-            <button className="bg-[#CC5500] py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Quicksand w-[220px] mt-4">
+            <button className="bg-gradient-to-r from-goldLight to-goldDark py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Quicksand w-[220px] mt-4">
               <RouterLink
                 to="/gallery"
                 className="flex items-center justify-center"
@@ -131,7 +131,7 @@ export const Events = () => {
                   </p>
                 </div>
                 <button
-                  className="bg-[#CC5500] py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-xs md:text-md font-bold font-Montserrat"
+                  className="bg-gradient-to-r from-goldLight to-goldDark py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-xs md:text-md font-bold font-Montserrat"
                   onClick={openModal}
                 >
                   Fill our form
@@ -311,13 +311,13 @@ export const Events = () => {
       <div className="absolute bottom-6 flex w-[80%] mx-20 justify-between items-center mt-2">
         <button
           onClick={prevSlide}
-          className=" bg-[#CC5500] p-3 rounded-full z-10"
+          className=" bg-gradient-to-r from-goldLight to-goldDark p-3 rounded-full z-10"
         >
           <ChevronLeft />
         </button>
         <button
           onClick={nextSlide}
-          className=" bg-[#CC5500] p-3 rounded-full z-10"
+          className=" bg-gradient-to-r from-goldLight to-goldDark p-3 rounded-full z-10"
         >
           <ChevronRight />
         </button>

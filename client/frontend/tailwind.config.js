@@ -9,6 +9,10 @@ module.exports = {
         Lato: ["Lato", "sans-serif"],
         Quicksand: ["Quicksand", "sans-serif"],
       },
+      colors: {
+        goldLight: "#FFBB39",
+        goldDark: "#997022",
+      },
       animation: {
         "fade-in-left": "fade-in-left 0.25s ease-out",
         "fade-in-right": "fade-in-right 0.25s ease-out",

@@ -90,7 +90,7 @@ export const Hero = () => {
             A Place To Cultivate Memorable Experiences.
           </p>
           <div className="flex justify-center items-center">
-            <button className="bg-[#CC5500] py-3 px-6 lg:py-3 lg:px-8 font-Lato rounded-lg text-md lg:text-lg font-bold mt-6 lg:mt-8">
+            <button className="bg-gradient-to-r from-goldLight to-goldDark py-3 px-6 lg:py-3 lg:px-8 font-Lato rounded-lg text-md lg:text-lg font-bold mt-6 lg:mt-8">
               <RouterLink to="/booking">Schedule Now</RouterLink>
             </button>
           </div>
@@ -108,7 +108,7 @@ export const Hero = () => {
             />
             <div
               onClick={missionMouseEnter}
-              className="absolute top-[70%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
+              className="absolute top-[70%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-goldLight to-goldDark w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
             >
               <h1 className="text-white text-xs font-Quicksand lg:text-lg font-bold">
                 Mission
@@ -137,7 +137,7 @@ export const Hero = () => {
             />
             <div
               onClick={valueMouseEnter}
-              className="absolute top-[70%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-[#CC5500] w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
+              className="absolute top-[70%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-goldLight to-goldDark w-[60%] sm:w-[40%] h-[15%] flex items-center justify-center rounded cursor-pointer hover:scale-90 transition duration-300"
             >
               <h1 className="text-white font-Quicksand text-xs lg:text-lg font-bold">
                 Values
@@ -234,7 +234,7 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <button className="bg-[#CC5500] py-2 px-3 sm:py-2 sm:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Quicksand">
+          <button className="bg-gradient-to-r from-goldLight to-goldDark py-2 px-3 sm:py-2 sm:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Quicksand">
             <RouterLink
               to="/gallery"
               className="flex items-center justify-center"
@@ -277,7 +277,7 @@ export const Hero = () => {
               </p>
             </div>
             <button
-              className="bg-[#CC5500] py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Quicksand"
+              className="bg-gradient-to-r from-goldLight to-goldDark py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-sm md:text-md font-bold font-Quicksand"
               onClick={openModal}
             >
               Fill our form

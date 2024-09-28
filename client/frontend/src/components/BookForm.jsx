@@ -276,7 +276,7 @@ const BookForm = ({ closeModal, item }) => {
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-[25%] bg-[#cc5500] text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                className="w-full sm:w-[25%] bg-gradient-to-r from-goldLight to-goldDark text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                 disabled={isSubmitting}
               >
                 Submit
