@@ -8,7 +8,7 @@ import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-auto bg-gardens my-10">
+    <div className="w-full h-auto bg-gardens">
       <div className="h-full flex flex-col px-4 sm:px-6 lg:px-10 mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-20">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
