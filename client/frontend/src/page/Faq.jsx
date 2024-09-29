@@ -60,13 +60,13 @@ const Faq = () => {
                 key={faq.id}
                 className={`cursor-pointer w-full rounded-2xl border-2 ${
                   active === faq.id
-                    ? "bg-gradient-to-r from-goldLight to-goldDark border-goldLight"
+                    ? "bg-maypink border-maypink"
                     : "bg-white border-white"
                 }`}
               >
                 <div
                   className={`w-full flex justify-between items-center p-3 ${
-                    active === faq.id ? "text-white" : "text-goldLight"
+                    active === faq.id ? "text-white" : "text-black"
                   }`}
                   onClick={() => handleToggle(faq.id)}
                 >

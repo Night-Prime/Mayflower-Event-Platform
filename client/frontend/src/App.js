@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader";
 import ErrorBoundary from "./helper/ErrorBoundary";
+import { About } from "./components/About";
 
 const Landingpage = lazy(() => import("./page/Landingpage"));
 const Booking = lazy(() => import("./page/Booking"));
@@ -10,7 +11,7 @@ const Gallery = lazy(() => import("./components/Gallery"));
 const Dashboard = lazy(() => import("./page/Dashboard"));
 const AdminLogin = lazy(() => import("./page/AdminLogin"));
 const Faq = lazy(() => import("./page/Faq"));
-const About = lazy(() => import("./components/About"));
+// const About = lazy(() => import("./components/About"));
 const PageNotFound = lazy(() => import("./page/PageNotFound"));
 
 function App() {

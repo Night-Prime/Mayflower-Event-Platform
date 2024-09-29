@@ -5,7 +5,7 @@ import { Navbar } from "../components/Navbar.jsx";
 
 const Landingpage = () => {
   return (
-    <div className="bg-[#212121] h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
+    <div className="bg-gardens h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
       <Navbar />
       <section id="home" className="h-max scroll-snap-align-start">
         <Hero />

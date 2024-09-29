@@ -106,13 +106,13 @@ const Booking = () => {
           }}
         ></div>
         <div className="relative z-10 p-4 sm:p-6 lg:p-12">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-Quicksand leading-tight lg:leading-[84px] font-normal text-white max-w-full lg:max-w-full">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-Cinzel leading-tight lg:leading-[84px] font-normal text-white max-w-full lg:max-w-full">
             Unforgettable Moments Await: <br />
             Book Your Space
           </h1>
           <button
             onClick={openModal}
-            className="bg-gradient-to-r from-goldLight to-goldDark mt-4 py-2 px-4 sm:py-3 sm:px-5 flex items-center justify-center rounded-lg text-xs sm:text-sm lg:text-md font-bold font-quicksand lg:w-52 sm:w-48"
+            className="bg-maypink text-black shadow-md mt-4 py-2 px-4 sm:py-3 sm:px-5 flex items-center justify-center rounded-lg text-xs sm:text-sm lg:text-md font-bold font-Cinzel lg:w-52 sm:w-48"
           >
             Schedule Now
             <span className="ml-2">
@@ -125,12 +125,12 @@ const Booking = () => {
       <div className="w-full flex flex-col items-center gap-4 sm:gap-8 bg-white p-4 sm:p-8 rounded-t-3xl">
         <div className="relative w-full">
           <div
-            className="flex items-center border border-goldLight rounded-lg p-2 cursor-pointer"
+            className="flex items-center border border-maypink rounded-lg p-2 cursor-pointer"
             onClick={handleClick}
             ref={buttonRef}
           >
             <Calendar className="text-[#4e4e4e] mr-2" />
-            <span className="w-full text-black font-Quicksand text-center text-xs sm:text-sm">
+            <span className="w-full text-black font-Cinzel text-center text-xs sm:text-sm">
               <p>Check Availability</p>
             </span>
             <svg
@@ -166,19 +166,19 @@ const Booking = () => {
             <div
               className="flex justify-center items-center md:w-1/2 w-full p-6 bg-cover bg-center"
               style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(255, 215, 0, 1), rgba(255, 170, 0, 0)), url('/book.jpeg')`,
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 223, 223, 1), rgba(255, 223, 223, 0)), url('/book.jpeg')`,
               }}
             >
-              <h1 className="text-3xl lg:text-5xl font-Quicksand italic leading-tight lg:leading-[84px] font-semibold text-white text-left">
+              <h1 className="text-3xl lg:text-5xl font-Cinzel italic leading-tight lg:leading-[84px] font-semibold text-white text-left">
                 BOOK A TOUR <br />
                 AT <br />
                 MAYGARDENS
               </h1>
             </div>
 
-            <div className="md:w-1/2 w-full bg-[#212121] text-white flex flex-col gap-6 p-4 sm:p-6 justify-center md:items-start items-center">
+            <div className="md:w-1/2 w-full bg-gardens text-white flex flex-col gap-6 p-4 sm:p-6 justify-center md:items-start items-center">
               <div className="w-full flex flex-col justify-center md:items-start items-center">
-                <h3 className="text-2xl lg:text-4xl font-Quicksand font-bold mb-4">
+                <h3 className="text-2xl lg:text-4xl font-Cinzel font-bold mb-4">
                   Unveil the Magic:
                 </h3>
                 <p className="text-sm lg:text-lg font-medium font-Lato text-center">
@@ -186,7 +186,7 @@ const Booking = () => {
                 </p>
               </div>
               <button
-                className="bg-gradient-to-r from-goldLight to-goldDark py-2 px-4 sm:py-3 sm:px-6 flex items-center justify-center rounded-lg text-sm sm:text-md font-bold font-Quicksand"
+                className="bg-maypink text-black py-2 px-4 sm:py-3 sm:px-6 flex items-center justify-center rounded-lg text-sm sm:text-md font-bold font-Cinzel"
                 onClick={openModal}
               >
                 Fill our form
@@ -211,8 +211,8 @@ const Booking = () => {
                 backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
               }}
             ></div>
-            <div className="lg:w-1/2 bg-gradient-to-r from-goldLight to-goldDark p-4 sm:p-8 text-white flex flex-col justify-center items-start">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-Quicksand font-bold mb-4">
+            <div className="lg:w-1/2 bg-maypink p-4 sm:p-8 text-black flex flex-col justify-center items-start">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-Cinzel font-bold mb-4">
                 Offers
               </h3>
               <p className="text-sm sm:text-lg font-medium font-Lato">

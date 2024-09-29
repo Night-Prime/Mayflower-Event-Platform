@@ -58,7 +58,7 @@ export const Events = () => {
     {
       content: (
         <div className="w-full h-5/6 shared-container flex flex-col items-center justify-center gap-16">
-          <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Quicksand text-center mt-2">
+          <p className="text-[30px] sm:text-[36px] lg:text-[40px] font-Cinzel text-center mt-2">
             Event Showcase
           </p>
           <div className="flex flex-col w-full h-full items-center px-2">
@@ -88,7 +88,7 @@ export const Events = () => {
                 className=" w-[25%] lg:w-[18%]"
               />
             </div>
-            <button className="bg-gradient-to-r from-goldLight to-goldDark py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-bold font-Quicksand w-[220px] mt-4">
+            <button className="bg-maypink text-black shadow-md py-3 px-6 flex items-center justify-center rounded-lg text-[16px] sm:text-[18px] lg:text-[20px] font-normal font-Cinzel w-[15%] mt-4">
               <RouterLink
                 to="/gallery"
                 className="flex items-center justify-center"
@@ -107,7 +107,7 @@ export const Events = () => {
       content: (
         <div className="w-full h-5/6 shared-container flex flex-col items-center justify-center">
           <div className="flex flex-col gap-10 items-center justify-center">
-            <p className="text-4xl font-normal  font-Quicksand text-center text-white">
+            <p className="text-4xl font-normal  font-Cinzel text-center text-white">
               Book a Tour
             </p>
             <div className="flex gap-6 items-center justify-center">
@@ -121,9 +121,9 @@ export const Events = () => {
                 alt="A dinner"
                 className=" lg:w-[20%] w-[18%]"
               />
-              <div className="lg:w-[60%] lg:h-[285px] h-[235px] bg-[#212121] text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
+              <div className="lg:w-[60%] lg:h-[285px] h-[235px] bg-gardens text-white flex flex-col gap-6 px-6 justify-center items-start rounded-xl">
                 <div className="w-full flex flex-col justify-center items-start gap-2">
-                  <h3 className="text-xl lg:text-4xl font-Quicksand font-bold">
+                  <h3 className="text-xl lg:text-4xl font-Cinzel font-bold">
                     Unveil the Magic:
                   </h3>
                   <p className="text-sm md:text-lg font-medium font-Lato">
@@ -131,7 +131,7 @@ export const Events = () => {
                   </p>
                 </div>
                 <button
-                  className="bg-gradient-to-r from-goldLight to-goldDark py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-xs md:text-md font-bold font-Montserrat"
+                  className="bg-maypink text-black shadow-md py-2 px-3 lg:py-2 lg:px-4 flex items-center justify-center rounded-lg text-xs md:text-md font-bold font-Montserrat"
                   onClick={openModal}
                 >
                   Fill our form
@@ -156,7 +156,7 @@ export const Events = () => {
       content: (
         <div className="w-full h-3/4 shared-container gap-10 flex flex-col justify-between items-center">
           <div className=" w-full flex flex-col items-center justify-center">
-            <p className="text-3xl md:text-4xl font-Quicksand mt-8 text-center text-[#EDEDED]">
+            <p className="text-3xl md:text-4xl font-Cinzel mt-8 text-center text-[#EDEDED]">
               Client Success Stories
             </p>
             <p className="text-[24px] sm:text-[30px] lg:text-[24px] font-Allura text-center pt-2 text-[#EDEDED]">
@@ -164,7 +164,7 @@ export const Events = () => {
             </p>
           </div>
           <div className=" flex justify-center items-end pb-40 w-full px-10 gap-16">
-            <div className=" flex-col w-[22%] gap-8 h-auto justify-start items-start p-3 bg-[#212121] rounded-xl hidden lg:block font-Lato ">
+            <div className=" flex-col w-[22%] gap-8 h-auto justify-start items-start p-3 bg-gardens rounded-xl hidden lg:block font-Lato ">
               <p className=" text-sm">
                 Posuere ultrices amet diam erat in amet nulla tellus nibh.
                 Vulputate cras nunc lectus facilisis. Sapien tempus pellentesque
@@ -188,7 +188,7 @@ export const Events = () => {
                 <Star />
               </div>
             </div>
-            <div className="flex flex-col lg:w-[22%] w-[35%] h-auto gap-8 font-Lato justify-start items-start p-3 bg-[#212121] rounded-xl ">
+            <div className="flex flex-col lg:w-[22%] w-[35%] h-auto gap-8 font-Lato justify-start items-start p-3 bg-gardens rounded-xl ">
               <p className=" text-sm">
                 Vulputate volutpat viverra interdum et. Fusce sit habitant
                 mauris arcu pretium.
@@ -211,7 +211,7 @@ export const Events = () => {
                 <Star />
               </div>
             </div>
-            <div className="flex flex-col w-[35%] lg:w-[22%] gap-8 justify-start items-start p-3 bg-[#212121] rounded-xl ">
+            <div className="flex flex-col w-[35%] lg:w-[22%] gap-8 justify-start items-start p-3 bg-gardens rounded-xl ">
               <p className=" font-Montserrat text-sm">
                 Feugiat sed urna gravida nibh ipsum euismod orci. Dictum urna
                 tellus purus praesent.
@@ -242,32 +242,32 @@ export const Events = () => {
       content: (
         <div className="w-[65%] h-2/4 flex items-center justify-center align-items-center justify-content-center">
           <div className="mx-4 sm:mx-6 flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8">
-            <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Quicksand leading-tight mb-4">
+            <h2 className="text-[20px] lg:hidden block sm:text-[28px] lg:text-[40px] font-Cinzel leading-tight mb-4">
               The Property
             </h2>
             <div className="flex lg:flex-col lg:w-2/5 w-[70%] flex-row lg:justify-center justify-center items-center relative">
               <img
                 loading="lazy"
-                src="https://ik.imagekit.io/seun/images/drum.jpg?updatedAt=1726144549834"
+                src="https://ik.imagekit.io/seun/images/dinner1.jpg?updatedAt=1726155519826"
                 alt="Someone drumming"
-                className="md:w-[45%] w-[55%] rounded-2xl object-cover translate-x-12 relative lg:top-0 top-[30px] z-10 lg:rotate-0 transform -rotate-12  "
+                className="md:w-[55%] w-[55%] rounded-2xl object-cover translate-x-12 relative lg:top-0 top-[30px] z-10 lg:rotate-0 transform -rotate-12  "
               />
               <img
                 loading="lazy"
-                src="https://ik.imagekit.io/seun/images/laugh.jpg?updatedAt=1726144551189"
+                src="https://ik.imagekit.io/tsfcuw1ce/Images/drinks.png?updatedAt=1725131445657"
                 alt="Medusa's hair"
-                className="md:w-[45%] w-[55%] rounded-2xl object-cover lg:absolute relative lg:top-[25%] lg:left-15 lg:rotate-[-10deg] rotate-0 z-20 "
+                className="md:w-[55%] w-[55%] rounded-2xl object-cover lg:absolute relative lg:top-[25%] lg:left-15 lg:rotate-[-10deg] rotate-0 z-20 "
               />
               <img
                 loading="lazy"
-                src="https://ik.imagekit.io/seun/images/chris.jpg?updatedAt=1726144549869"
+                src="https://ik.imagekit.io/seun/images/chris.png?updatedAt=1726848114345"
                 alt="Someone laughing"
-                className="md:w-[45%] w-[55%] rounded-2xl object-cover lg:rotate-[10deg] relative lg:top-0 top-[30px] -translate-x-12 lg:z-20 z-10 rotate-12"
+                className="md:w-[55%] w-[55%] rounded-2xl object-cover lg:rotate-[10deg] relative lg:top-0 top-[30px] -translate-x-12 lg:z-20 z-10 rotate-12"
               />
             </div>
 
             <div className="flex-1 mt-8 lg:mt-0 w-[75%]">
-              <h2 className="text-xl sm:text-4xl font-Quicksand lg:block hidden leading-tight mb-4">
+              <h2 className="text-xl sm:text-4xl font-Cinzel lg:block hidden leading-tight mb-4">
                 The Property
               </h2>
               <p className="text-xs w-full lg:text-base text-justify leading-relaxed font-Lato text-white">
@@ -289,7 +289,7 @@ export const Events = () => {
   ];
 
   return (
-    <div className="bg-[#4e4e4e] relative lg:flex flex-col items-center w-full lg:h-[95vh] overflow-hidden md:block hidden">
+    <div className="bg-gardenslight relative lg:flex flex-col items-center w-full lg:h-[95vh] overflow-hidden md:block hidden">
       <div
         className="slide-container h-full flex transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
         ref={slideContainerRef}
@@ -308,16 +308,16 @@ export const Events = () => {
       </div>
 
       {/* Button container with better positioning */}
-      <div className="absolute bottom-6 flex w-[80%] mx-20 justify-between items-center mt-2">
+      <div className="absolute top-1/2 flex w-[99%] mx-20 justify-between items-center mt-2">
         <button
           onClick={prevSlide}
-          className=" bg-gradient-to-r from-goldLight to-goldDark p-3 rounded-full z-10"
+          className=" bg-maypink text-black p-3 rounded-full z-10"
         >
           <ChevronLeft />
         </button>
         <button
           onClick={nextSlide}
-          className=" bg-gradient-to-r from-goldLight to-goldDark p-3 rounded-full z-10"
+          className=" bg-maypink text-black p-3 rounded-full z-10"
         >
           <ChevronRight />
         </button>

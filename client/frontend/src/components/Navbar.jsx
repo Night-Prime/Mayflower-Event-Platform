@@ -11,8 +11,8 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full h-20 flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-[#212121] bg-opacity-70 backdrop-blur-md shadow-lg">
-      <p className="font-Quicksand font-bold text-xl lg:text-3xl cursor-pointer">
+    <div className="sticky top-0 z-50 w-full h-20 flex justify-between items-center py-6 px-6 sm:px-8 lg:px-12 bg-gardens bg-opacity-70 backdrop-blur-md shadow-lg">
+      <p className="font-Cinzel font-bold text-xl lg:text-3xl cursor-pointer">
         <RouterLink to="/">May Gardens</RouterLink>
       </p>
 
@@ -29,35 +29,35 @@ export const Navbar = () => {
 
       <div
         className={`fixed inset-y-0 right-0 xl:w-3/4 sm:w-1/3 ${
-          menuOpen ? "bg-[#212121] h-screen" : "bg-transparent"
+          menuOpen ? "bg-gardens h-screen" : "bg-transparent"
         }  ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out md:static md:w-auto md:flex md:transform-none z-40`}
       >
-        <ul className="flex flex-col md:flex-row items-center font-Quicksand justify-end gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0 w-full">
+        <ul className="flex flex-col md:flex-row items-center font-Cinzel justify-end gap-5 tracking-wide text-[#c8c8c8] p-6 md:p-0 w-full">
           <li className="relative pb-1 md:pb-2">
             <RouterLink to="/" onClick={() => menuOpen && toggleMenu()}>
-              <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
+              <span className="cursor-pointer text-[16px] sm:text-[18px] font-normal pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Home
               </span>
             </RouterLink>
           </li>
           <li className="relative pb-1 sm:pb-2">
             <RouterLink to="/gallery" onClick={toggleMenu}>
-              <span className="cursor-pointer text-[16px] sm:text-[18px] font-bold pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
+              <span className="cursor-pointer text-[16px] sm:text-[18px] font-normal pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                 Gallery
               </span>
             </RouterLink>
           </li>
           <li className="relative pb-1 sm:pb-2">
-            <button className="bg-transparent border-[2px] border-goldLight text-goldLight flex items-center justify-center rounded-lg text-md font-semibold w-44 py-2 px-4">
+            <button className="shadow-md bg-maypink text-black flex items-center justify-center rounded-lg text-md font-normal w-44 py-2 px-4">
               <RouterLink
                 to="/booking"
                 className="flex items-center justify-center"
                 onClick={toggleMenu}
               >
                 Book a tour
-                <span className="text-goldLight ml-2">
+                <span className="text-black ml-2">
                   <Right />
                 </span>
               </RouterLink>

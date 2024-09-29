@@ -10,7 +10,7 @@ const AdminLogin = () => {
     }
   };
   return (
-    <main className="min-h-screen w-full px-8 py-7 bg-[#212121] text-white flex flex-col items-start justify-between gap-14">
+    <main className="min-h-screen w-full px-8 py-7 bg-gardens text-white flex flex-col items-start justify-between gap-14">
       <div className="w-full">
         <p className=" text-[32px] font-Playfair text-center font-bold">
           Mayflower
@@ -34,7 +34,7 @@ const AdminLogin = () => {
             <span className="border-t border-[#AEAEAE] w-full"></span>
           </div>
           <button
-            className="w-full bg-transparent text-goldLight text-lg font-Montserrat font-semibold py-2 px-4 rounded border border-goldLight hover:bg-gradient-to-r from-goldLight to-goldDark hover:text-white hover:border-black"
+            className="w-full bg-transparent text-black text-lg font-Montserrat font-semibold py-2 px-4 rounded border border-maypink hover:bg-maypink hover:text-white hover:border-black"
             onClick={handleClick}
           >
             Login with Google

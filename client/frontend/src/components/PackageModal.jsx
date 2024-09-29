@@ -49,7 +49,7 @@ const PackageModal = ({ close, refetch }) => {
                       position: "top-right",
                       showConfirmButton: false,
                       timer: 2000,
-                      background: "#cc5500",
+                      background: "#2D3D26",
                       color: "#fff",
                     });
                     setLoading(false);
@@ -133,7 +133,7 @@ const PackageModal = ({ close, refetch }) => {
                   </div>
                   <button
                     type="submit"
-                    className="w-[25%] bg-gradient-to-r from-goldLight to-goldDark flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                    className="w-[25%] bg-maypink flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                     disabled={isSubmitting}
                   >
                     Submit
