@@ -77,7 +77,7 @@ const BookForm = ({ closeModal, item }) => {
                   position: "top-right",
                   showConfirmButton: false,
                   timer: 2000,
-                  background: "#cc5500",
+                  background: "#2D3D26",
                   color: "#fff",
                 });
                 closeModal();

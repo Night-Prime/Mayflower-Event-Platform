@@ -45,7 +45,7 @@ const Dashboard = () => {
           position: "top-right",
           showConfirmButton: false,
           timer: 2000,
-          background: "#cc5500",
+          background: "#2D3D26",
           color: "#fff",
         });
         packageRefetch();
@@ -95,7 +95,7 @@ const Dashboard = () => {
           position: "top-right",
           showConfirmButton: false,
           timer: 2000,
-          background: "#cc5500",
+          background: "#2D3D26",
           color: "#fff",
         });
       } else {
@@ -143,7 +143,7 @@ const Dashboard = () => {
           position: "top-right",
           showConfirmButton: false,
           timer: 2000,
-          background: "#cc5500",
+          background: "#2D3D26",
           color: "#fff",
         });
       } else {
@@ -315,7 +315,7 @@ const Dashboard = () => {
                   <th className="px-2 py-3 text-xs leading-4 font-medium text-left text-black uppercase tracking-wider"></th>
                 </tr>
               </thead>
-              <tbody className="bg-transparent divide-y divide-[#CC5500]">
+              <tbody className="bg-transparent divide-y divide-[#2D3D26]">
                 {bookings
                   ? bookings.map((booking) => (
                       <tr key={booking.id}>
