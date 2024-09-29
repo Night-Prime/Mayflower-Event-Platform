@@ -8,10 +8,14 @@ module.exports = {
         Allura: ["Allura", "cursive"],
         Lato: ["Lato", "sans-serif"],
         Quicksand: ["Quicksand", "sans-serif"],
+        Cinzel: ["Cinzel", "sans-serif"],
       },
       colors: {
         goldLight: "#FFBB39",
         goldDark: "#997022",
+        gardens: "#2D3D26",
+        gardenslight: "#8FB87D",
+        maypink: "#FFDFDF",
       },
       animation: {
         "fade-in-left": "fade-in-left 0.25s ease-out",

@@ -42,7 +42,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #212121;
+  background-color: #2D3D26;
   color: #ffffff;
   scroll-behavior: smooth;
 }
@@ -103,4 +103,3 @@ input[type="number"] {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
-

@@ -29,10 +29,10 @@ const PackageCard = ({ packageDetails }) => {
       </div>
       <div className="flex flex-col gap-4 justify-start items-start px-4 pb-6">
         <div className="flex flex-col gap-1 justify-start items-start text-black">
-          <p className="text-[24px] font-Playfair font-bold text-goldLight">
+          <p className="text-[24px] font-Playfair font-bold text-black">
             {name}
           </p>
-          <span className="w-full h-[1px] bg-gradient-to-r from-goldLight to-goldDark"></span>
+          <span className="w-full h-[1px] bg-maypink"></span>
           <p className="text-[18px] font-Montserrat font-normal text-start my-2">
             {capacity}
           </p>

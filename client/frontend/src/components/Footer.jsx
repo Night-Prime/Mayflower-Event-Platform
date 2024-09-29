@@ -1,17 +1,14 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { Email } from "../icons/Email.jsx";
 import { Facebook } from "../icons/Facebook.jsx";
 import { Instagram } from "../icons/Instagram.jsx";
 import { Linkedin } from "../icons/Linkedin.jsx";
-import { Location } from "../icons/Location.jsx";
-import { Phone } from "../icons/Phone.jsx";
 import { Right } from "../icons/Right.jsx";
 import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-auto bg-[#212121] my-10">
+    <div className="w-full h-auto bg-gardens my-10">
       <div className="h-full flex flex-col px-4 sm:px-6 lg:px-10 mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-20">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
@@ -35,13 +32,13 @@ export const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col lg:gap-20 sm:gap-10 mt-4 lg:w-1/2 text-white">
-            <div className="flex lg:flex-row border-2 rounded-full border-goldLight p-1">
+            <div className="flex lg:flex-row border-2 rounded-full border-maypink p-1">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-[#212121] text-[12px] sm:text-[14px] lg:text-[18px] font-Montserrat font-normal p-2 sm:p-3 rounded-full flex-grow focus:outline-none"
+                className="bg-gardens text-[12px] sm:text-[14px] lg:text-[18px] font-Montserrat font-normal p-2 sm:p-3 rounded-full flex-grow focus:outline-none"
               />
-              <button className="bg-gradient-to-r from-goldLight to-goldDark text-white p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
+              <button className="bg-maypink text-black p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
                 Submit
                 <span className="ml-2">
                   <Right />

@@ -27,7 +27,7 @@ const BookForm = ({ closeModal, item }) => {
         >
           &times;
         </button>
-        <h2 className="text-2xl sm:text-3xl font-semibold font-Quicksand mb-6 text-center border-b-2 border-black">
+        <h2 className="text-2xl sm:text-3xl font-semibold font-Cinzel mb-6 text-center border-b-2 border-black">
           Book a tour
         </h2>
 
@@ -98,7 +98,7 @@ const BookForm = ({ closeModal, item }) => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form className="font-Quicksand">
+            <Form className="font-Cinzel">
               <div className="mb-4">
                 <label
                   className="block text-xs sm:text-sm font-medium mb-1"
@@ -276,7 +276,7 @@ const BookForm = ({ closeModal, item }) => {
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-[25%] bg-gradient-to-r from-goldLight to-goldDark text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                className="w-full sm:w-[25%] bg-maypink text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                 disabled={isSubmitting}
               >
                 Submit

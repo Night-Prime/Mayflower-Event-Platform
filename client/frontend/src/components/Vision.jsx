@@ -6,10 +6,10 @@ const Vision = ({ leave }) => {
       className="relative w-screen h-screen flex justify-center items-center bg-black bg-opacity-90 z-40"
       onClick={leave}
     >
-      <div className="animate-fade-in-right w-5/6 h-1/2 rounded-lg bg-[#212121] backdrop-blur-md text-white flex flex-row gap-6">
+      <div className="animate-fade-in-right w-5/6 h-1/2 rounded-lg bg-gardens backdrop-blur-md text-white flex flex-row gap-6">
         <button
           onClick={leave}
-          className=" absolute top-2 right-5 text-goldLight text-right text-2xl animate-fade-in-left"
+          className=" absolute top-2 right-5 text-black text-right text-2xl animate-fade-in-left"
         >
           &times;
         </button>
@@ -21,7 +21,7 @@ const Vision = ({ leave }) => {
           />
         </div>
         <div className="flex-1 flex flex-col justify-center items-start px-4">
-          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Quicksand text-center my-2">
+          <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Cinzel text-center my-2">
             Our Commitments
           </p>
           <p className="text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-start font-Lato">

@@ -4,7 +4,7 @@ const SubHero = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <div className="flex flex-col items-center gap-5 my-auto">
-        <div className="w-full bg-[#212121] text-white py-2">
+        <div className="w-full bg-gardens text-white py-2">
           <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair px-4 lg:px-10 text-center">
             The Experience
           </p>
