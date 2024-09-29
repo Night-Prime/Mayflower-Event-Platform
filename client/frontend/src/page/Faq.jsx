@@ -47,7 +47,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full min-h-screen">
       <Navbar />
       <div className="w-full h-auto">
         <div className="mx-auto py-20 w-2/3 h-full flex flex-col justify-start items-start gap-20">
@@ -66,7 +66,7 @@ const Faq = () => {
               >
                 <div
                   className={`w-full flex justify-between items-center p-3 ${
-                    active === faq.id ? "text-white" : "text-black"
+                    active === faq.id ? "text-black" : "text-black"
                   }`}
                   onClick={() => handleToggle(faq.id)}
                 >
@@ -107,7 +107,7 @@ const Faq = () => {
                 </div>
                 {active === faq.id && (
                   <div className="w-full p-3 overflow-hidden transition-all duration-300">
-                    <p className="text-[16px]">{faq.answer}</p>
+                    <p className="text-[16px] text-black">{faq.answer}</p>
                   </div>
                 )}
               </div>

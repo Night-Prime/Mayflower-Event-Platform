@@ -86,7 +86,7 @@ export const Hero = () => {
           <img
             src="https://ik.imagekit.io/0y99xuz0yp/May%20Gardens%20Elements-01.png?updatedAt=1727604763546"
             alt="Main Logo"
-            className="mt-[-20%] lg:mt-[-7.5%] w-[100%] lg:w-[70%] object-contain text"
+            className="mt-[-20%] lg:mt-[-7.5%] w-[100%] lg:w-[70%] object-contain"
           />
           <div className="flex justify-center items-center absolute top-[75%] lg:top-[65%]">
             <button className="bg-maypink text-black shadow-md py-3 px-6 lg:py-3 lg:px-8 font-Lato rounded-lg text-md lg:text-lg mt-6 lg:mt-8">
@@ -164,9 +164,9 @@ export const Hero = () => {
       </div>
 
       {/* Mobile Screen */}
-      <div className="w-full h-[80vh] md:hidden block py-3">
-        <div className=" flex flex-col justify-center items-center gap-5 my-10">
-          <p className="text-2xl sm:text-4xl font-normal leading-[36px] font-Cinzel text-center my-2">
+      <div className="w-full h-auto md:hidden block py-3">
+        <div className=" flex flex-col justify-center items-center gap-5 my-2">
+          <p className="text-2xl sm:text-4xl font-normal leading-[36px] font-Cinzel text-center">
             Our Mission
           </p>
           <div className=" sm:w-[60%] w-[80%]">
@@ -177,7 +177,7 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <div className=" flex flex-col sm:w-[70%] w-[80%] justify-center items-center px-4">
+          <div className=" flex flex-col sm:w-[65%] w-[87%] justify-center items-center px-4">
             <p className="text-white w-full text-sm font-Lato font-normal text-justify font-Montserrat">
               You probably don’t remember your first walk, but you will always
               remember your first event with us, and this is our mission; to
@@ -189,9 +189,9 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-screen md:hidden block py-3 bg-gardens">
+      <div className="w-full h-auto md:hidden block py-3 bg-gardens my-2">
         <div className=" flex flex-col justify-center items-center gap-5">
-          <p className="text-2xl sm:text-4xl font-Cinzel font-normal leading-[36px] text-center my-10">
+          <p className="text-2xl sm:text-4xl font-Cinzel font-normal leading-[36px] text-center">
             Our Vision
           </p>
           <div className=" sm:w-[60%] w-[80%]">
@@ -202,7 +202,7 @@ export const Hero = () => {
               className="w-full object-contain rounded-lg"
             />
           </div>
-          <div className=" flex flex-col sm:w-[70%] w-[80%] justify-center items-center px-4">
+          <div className=" flex flex-col sm:w-[65%] w-[87%] justify-center items-center px-4">
             <p className="text-white w-full text-sm font-normal text-justify  font-Montserrat">
               With creativity and excellence at the forefront, we turn your
               events into unforgettable experiences because ordinary just
