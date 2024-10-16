@@ -61,6 +61,7 @@ exports.createBooking = async (req, res) => {
       message: "Booking created successfully.",
     });
   } catch (error) {
+    console.error("Create Booking Error: ", error);
     return errorResponse(res, {
       statusCode: 500,
       message: "An error occurred while creating the booking.",
@@ -82,6 +83,7 @@ exports.getAllBookings = async (req, res) => {
       message: "Bookings retrieved successfully.",
     });
   } catch (error) {
+    console.error("Get Booking Error: ", error);
     console.error("Error fetching bookings:", error);
     return errorResponse(res, {
       statusCode: 500,
@@ -111,6 +113,7 @@ exports.getBookingById = async (req, res) => {
       message: "Booking retrieved successfully.",
     });
   } catch (error) {
+    console.error("Get BookingID Error: ", error);
     console.error("Error fetching booking:", error);
     return errorResponse(res, {
       statusCode: 500,
@@ -193,6 +196,7 @@ exports.updateBooking = async (req, res) => {
       message: "Booking updated successfully.",
     });
   } catch (error) {
+    console.error("Updating Booking Error: ", error);
     console.error("Error updating booking:", error);
     return errorResponse(res, {
       statusCode: 500,
@@ -241,7 +245,7 @@ exports.createEvents = async (req, res) => {
       });
     }
   } catch (error) {
-    console.error("Error updating booking:", error);
+    console.error("Error create booking events:", error);
     return errorResponse(res, {
       statusCode: 500,
       message: "An error occurred while scheduling event for this booking",
@@ -269,6 +273,7 @@ exports.deleteBooking = async (req, res) => {
       message: "Booking deleted successfully.",
     });
   } catch (error) {
+    console.error("Deleting Booking Error: ", error);
     console.error("Error deleting booking:", error);
     return errorResponse(res, {
       statusCode: 500,
