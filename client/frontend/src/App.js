@@ -7,7 +7,7 @@ import { About } from "./components/About";
 
 const Landingpage = lazy(() => import("./page/Landingpage"));
 const Booking = lazy(() => import("./page/Booking"));
-const Gallery = lazy(() => import("./components/Gallery"));
+const Memories = lazy(() => import("./components/Memories"));
 const Dashboard = lazy(() => import("./page/Dashboard"));
 const AdminLogin = lazy(() => import("./page/AdminLogin"));
 const Faq = lazy(() => import("./page/Faq"));
@@ -25,7 +25,7 @@ function App() {
               <Route path="/">
                 <Route index element={<Landingpage />} />
                 <Route path="booking" element={<Booking />} />
-                <Route path="gallery" element={<Gallery />} />
+                <Route path="memories" element={<Memories />} />
                 <Route path="about" element={<About />} />
                 <Route path="faq" element={<Faq />} />
               </Route>
