@@ -1,6 +1,9 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Right } from "../icons/Right";
+import { motion } from "framer-motion";
+import useScrollAnimation from "../hook/useAnimation";
+import { animations } from "../shared/animation";
 
 const imgSlides = [
   {
@@ -30,43 +33,53 @@ const imgSlides = [
 ];
 
 const Moments = () => {
+  const childReveal = useScrollAnimation(animations.reveal);
   return (
-    <div className="w-full h-auto">
-      <div className="w-full h-[90vh] xl:h-[100vh] flex flex-col items-center justify-between py-4">
-        <div className="w-full h-[86%] bg-gardens">
-          <div className="h-full w-full flex flex-col justify-evenly items-center">
-            <div className="h-full relative overflow-hidden ">
-              <div className="flex flex-row justify-center gap-6 xl:gap-12 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth">
+    <motion.div className="w-full h-auto">
+      <motion.div className="w-full h-[90vh] xl:h-[100vh] flex flex-col items-center justify-between py-4">
+        <motion.div className="w-full h-[86%] bg-gardens">
+          <motion.div className="h-full w-full flex flex-col justify-evenly items-center">
+            <motion.div className="h-full relative overflow-hidden ">
+              <motion.div
+                {...childReveal}
+                className="flex flex-row justify-center gap-6 xl:gap-12 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
+              >
                 {imgSlides.map((image, index) => (
-                  <img
+                  <motion.img
                     className="w-[50%] xl:w-[225px] object-cover"
                     key={index}
                     src={image.url}
                     alt={image.alt}
                   />
                 ))}
-              </div>
-            </div>
-            <div>
+              </motion.div>
+            </motion.div>
+            <motion.div>
               <h1 className="font-Cinzel font-bold text-[30px] text-center xl:text-[60px]">
                 MOMENTS AT <span className="text-gardenslight">MAYGARDENS</span>
               </h1>
-            </div>
-            <div className="h-full relative overflow-hidden ">
-              <div className="flex flex-row justify-center  gap-12 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth">
+            </motion.div>
+            <motion.div className="h-full relative overflow-hidden ">
+              <motion.div
+                {...childReveal}
+                className="flex flex-row justify-center  gap-12 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
+              >
                 {imgSlides.reverse().map((image, index) => (
-                  <img
+                  <motion.img
                     className="w-[50%] xl:w-[225px] object-cover"
                     key={index}
                     src={image.url}
                     alt={image.alt}
                   />
                 ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <button className="bg-gardens text-white p-3 rounded-2xl cursor-pointer">
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+        <motion.button
+          {...childReveal}
+          className="bg-gardens text-white p-3 rounded-2xl cursor-pointer"
+        >
           <RouterLink
             to="/memories"
             className="flex items-center justify-center"
@@ -76,9 +89,9 @@ const Moments = () => {
               <Right />
             </span>
           </RouterLink>
-        </button>
-      </div>
-    </div>
+        </motion.button>
+      </motion.div>
+    </motion.div>
   );
 };
 

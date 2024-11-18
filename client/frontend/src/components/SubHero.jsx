@@ -1,35 +1,45 @@
 import React from "react";
+import { motion } from "framer-motion";
+import useScrollAnimation from "../hook/useAnimation";
+import { animations } from "../shared/animation";
 
 const SubHero = () => {
+  const childReveal = useScrollAnimation(animations.revealChildren);
   return (
-    <div className="w-full h-auto xl:h-screen">
-      <div className="w-full h-5/6 px-5 mt-[10%] flex flex-col  items-start  justify-start ">
-        <h1 className="font-Cinzel text-[20px] xl:text-[40px] text-mayblack">
-          THE <span className="text-gardenslight">EXPERIENCE</span>
-        </h1>
+    <motion.div className="w-full h-auto xl:h-screen">
+      <motion.div
+        {...childReveal}
+        className="w-full h-5/6 px-5 mt-[10%] flex flex-col  items-start  justify-start "
+      >
+        <motion.h1 className="font-Cinzel text-[20px] xl:text-[40px] text-mayblack">
+          THE{" "}
+          <motion.span className="text-gardenslight">EXPERIENCE</motion.span>
+        </motion.h1>
 
-        <div className="flex flex-col xl:flex-row justify-between gap-8">
-          <div className="flex-1 flex flex-row items-start justify-start">
-            <img
+        <motion.div className="flex flex-col xl:flex-row justify-between gap-8">
+          <motion.div className="flex-1 flex flex-row items-start justify-start">
+            <motion.img
               loading="lazy"
               src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%209.jpg?updatedAt=1731510631913"
               alt="Someone drumming"
               className="img rounded-3xl w-[50%] object-contain mt-12"
             />
-            <img
+            <motion.img
               loading="lazy"
               src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%207.png?updatedAt=1731698634083"
               alt="Medusa's hair"
               className="img roundedn-3xl w-[50%] object-contain"
             />
-          </div>
+          </motion.div>
 
-          <div className="flex-1 items-start justify-start">
-            <h1 className="mt-6 text-mayblack font-Cinzel text-[16px] xl:text-[32px]">
+          <motion.div className="flex-1 items-start justify-start">
+            <motion.h1 className="mt-6 text-mayblack font-Cinzel text-[16px] xl:text-[32px]">
               MAY GARDEN <br />{" "}
-              <span className="text-gardenslight">LOVE STORY</span>
-            </h1>
-            <p className="w-[90%] text-mayblack text-justify text-[12px] xl:text-[14px]">
+              <motion.span className="text-gardenslight">
+                LOVE STORY
+              </motion.span>
+            </motion.h1>
+            <motion.p className="w-[90%] text-mayblack text-justify text-[12px] xl:text-[14px]">
               At May Gardens, we believe every love story deserves to be
               celebrated. That’s why we’re excited to announce our bi-annual
               Love Story Contest, exclusively for engaged couples residing
@@ -41,11 +51,11 @@ const SubHero = () => {
               participate and the contest guidelines, please contact our team
               directly. We can’t wait to hear your love story and help you
               create beautiful memories that will last a lifetime.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+            </motion.p>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
