@@ -8,8 +8,13 @@ import BookForm from "../components/BookForm";
 import { clientMakeRequest } from "../helper/makeRequest";
 import Preloader from "../components/Preloader";
 import videoBg from "../assets/video/background.mp4";
+import { motion } from "framer-motion";
+import { animations } from "../shared/animation";
+import useScrollAnimation from "../hook/useAnimation";
 
 const Booking = () => {
+  const reveal = useScrollAnimation(animations.revealChildren);
+
   const [showCalendar, setShowCalendar] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [packages, setPackages] = useState([]);
@@ -64,7 +69,7 @@ const Booking = () => {
   }
 
   return (
-    <div className="h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
+    <motion.div className="h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
       <Navbar />
       <div className="relative xl:mt-24 h-96 xl:h-[75vh] w-full flex items-center justify-center">
         <video
@@ -85,14 +90,17 @@ const Booking = () => {
         </div>
       </div>
 
-      <div className="w-full h-[30vh] xl:h-[100vh]">
-        <div className="w-full h-full p-10 flex flex-col-reverse xl:flex-row justify-center items-center">
-          <div className="flex-1 flex flex-col gap-8 text-mayblack">
-            <h1 className="w-full xl:w-[60%] text-center xl:text-start text-[20px] xl:text-[40px] font-semibold font-Cinzel">
+      <motion.div className="w-full h-[30vh] xl:h-[100vh]">
+        <motion.div className="w-full h-full p-10 flex flex-col-reverse xl:flex-row justify-center items-center">
+          <motion.div
+            {...reveal}
+            className="flex-1 flex flex-col gap-8 text-mayblack"
+          >
+            <motion.h1 className="w-full xl:w-[60%] text-center xl:text-start text-[20px] xl:text-[40px] font-semibold font-Cinzel">
               BOOK A TOUR AT{" "}
               <span className="text-gardenslight">MAYGARDENS</span>
-            </h1>
-            <p className="w-[100%] xl:w-[75%] text-[12px] xl:text-[20px] text-justify">
+            </motion.h1>
+            <motion.p className="w-[100%] xl:w-[75%] text-[12px] xl:text-[20px] text-justify">
               At May Gardens Event Center, we are your intimate escape for
               life’s most cherished celebrations. Our facilities are maintained
               to the highest standards to ensure that every event is a massive
@@ -101,8 +109,8 @@ const Booking = () => {
               your event is brought to life. From our breathtaking space to our
               exceptional hospitality, your guests will have stories of your
               event on their lips for years to come
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="hidden flex-1 xl:flex flex-row justify-center xl:relative px-8 xl:px-0">
             <img
@@ -124,8 +132,8 @@ const Booking = () => {
               className="img w-[55%] object-contain"
             />
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <div className="w-full flex flex-col items-center gap-4 sm:gap-8 bg-white p-4 sm:p-8 rounded-t-3xl">
         <div className="relative w-full">
@@ -168,7 +176,7 @@ const Booking = () => {
         <BookForm />
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
