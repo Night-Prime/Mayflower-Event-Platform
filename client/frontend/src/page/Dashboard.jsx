@@ -202,7 +202,7 @@ const Dashboard = () => {
 
   return (
     <div className="w-full h-auto bg-mayblack text-white">
-      <div className="mx-auto py-10 w-11/12 h-full flex flex-col gap-10 items-start">
+      <div className="h-auto mx-auto py-10 w-11/12 flex flex-col gap-10 items-start">
         <div className="w-full flex flex-row justify-between">
           <h1 className="text-5xl">May Gardens Admin System</h1>
           <button
