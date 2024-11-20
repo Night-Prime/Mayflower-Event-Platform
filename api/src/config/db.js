@@ -22,7 +22,7 @@ const sequelize = new Sequelize(
 
 const initializeDatabase = async () => {
   try {
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ alter: true }); // read about migration (handling changes to the DB)
     console.log("All models were synchronized successfully.");
   } catch (error) {
     console.error("Unable to synchronize models:", error);

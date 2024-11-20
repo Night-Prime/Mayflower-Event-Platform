@@ -31,7 +31,11 @@ app.use(
 
 app.use(
   cors({
-    origin: "https://maygardens.vercel.app",
+    origin: [
+      "http://localhost:3000",
+      "https://maygardens.vercel.app",
+      "https://maygardens.com",
+    ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     allowedHeaders: ["Authorization", "Content-Type"],
@@ -50,16 +54,14 @@ app.use(passport.session());
 app.use("/api/v1", routeHandler);
 
 app.get("/", async (req, res) => {
-  try {
-    const result = await models.sequelize.query("SELECT NOW()");
-    res.send({
-      status: 200,
-      message: "Welcome to Mayflower Event Platform Service",
-      db_time: result[0],
-    });
-  } catch (err) {
-    res.status(500).send("Server error");
-  }
+  res.send({
+    status: 200,
+    message: "Welcome to Mayflower Event Platform Service",
+  });
+});
+
+process.on("uncaughtException", (error) => {
+  console.log("Server Uncaught Exception Error: ", error);
 });
 
 initializeDatabase().then(() => {

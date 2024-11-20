@@ -133,7 +133,7 @@ const PackageModal = ({ close, refetch }) => {
                   </div>
                   <button
                     type="submit"
-                    className="w-[25%] bg-maypink flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                    className="w-[25%] bg-gardenslight flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                     disabled={isSubmitting}
                   >
                     Submit
