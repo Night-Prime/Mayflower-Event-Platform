@@ -1,6 +1,6 @@
 import React from "react";
 
-export const LeftA = () => {
+const Left = () => {
   return (
     <svg
       width="20"
@@ -16,3 +16,5 @@ export const LeftA = () => {
     </svg>
   );
 };
+
+export default Left;

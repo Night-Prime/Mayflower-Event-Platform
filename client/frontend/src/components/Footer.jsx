@@ -8,11 +8,11 @@ import { X } from "../icons/X.jsx";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-auto bg-gardens my-10">
-      <div className="h-full flex flex-col px-4 sm:px-6 lg:px-10 mt-8 justify-end">
+    <div className="w-full xl:h-auto bg-mayblack m-0 rounded-t-3xl">
+      <div className="h-auto xl:h-[70vh] flex flex-col px-4 sm:px-6 lg:px-10 py-6 xl:mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-20">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
-            <div className="flex flex-col font-Playfair gap-1 sm:gap-2">
+            <div className="flex flex-col font-Cinzel gap-1 sm:gap-2">
               <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 Join our newsletter
               </p>
@@ -21,7 +21,7 @@ export const Footer = () => {
               </p>
             </div>
 
-            <div className="flex flex-col font-Playfair gap-1 sm:gap-2">
+            <div className="flex flex-col font-Cinzel gap-1 sm:gap-2">
               <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 May Gardens
               </p>
@@ -36,7 +36,7 @@ export const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-gardens text-[12px] sm:text-[14px] lg:text-[18px] font-Montserrat font-normal p-2 sm:p-3 rounded-full flex-grow focus:outline-none"
+                className="bg-transparent text-[12px] sm:text-[14px] lg:text-[18px] font-Montserrat font-normal p-2 sm:p-3 rounded-full flex-grow focus:outline-none"
               />
               <button className="bg-maypink text-black p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
                 Submit
@@ -73,7 +73,7 @@ export const Footer = () => {
                 </h4>
                 <ul className="font-Montserrat font-medium text-[#AEAEAE] text-[12px] sm:text-[14px] lg:text-[18px]">
                   <li className="mb-1 sm:mb-2">
-                    <RouterLink to="/gallery">Gallery</RouterLink>
+                    <RouterLink to="/memories">Gallery</RouterLink>
                   </li>
                   <li className="mb-1 sm:mb-2">
                     <RouterLink to="/faq">FAQ</RouterLink>
@@ -83,36 +83,9 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-
-              {/* <div className="flex-1">
-                <h4 className="font-Playfair text-[14px] sm:text-[16px] lg:text-[20px] mb-2 sm:mb-4">
-                  Contact
-                </h4>
-                <ul className="w-36 sm:w-44 font-Montserrat font-medium text-[#AEAEAE] text-[12px] lg:text-[18px] flex flex-col justify-center items-center lg:items-start">
-                  <li className="mb-1 sm:mb-2 flex items-center lg:justify-center">
-                    <span className="mr-1">
-                      <Phone />
-                    </span>{" "}
-                    (Number here)
-                  </li>
-                  <li className="mb-1 sm:mb-2 flex items-center lg:justify-center">
-                    <span className="mr-1">
-                      <Email />
-                    </span>{" "}
-                    (Email)
-                  </li>
-                  <li className="mb-1 sm:mb-2 flex items-center lg:justify-center">
-                    <span className="mr-1">
-                      <Location />
-                    </span>{" "}
-                    (Location)
-                  </li>
-                </ul>
-              </div> */}
             </div>
           </div>
         </div>
-        {/* Footer Bottom Section */}
         <div className=" w-full mt-6 lg:mt-2xl flex flex-col md:flex-row md:items-center justify-between border-t border-t-white py-4 ">
           <div className="flex w-full lg:gap-3 gap-4 md:justify-start justify-center text-sm lg:text-lg font-Montserrat">
             <p>&copy; 2024</p>

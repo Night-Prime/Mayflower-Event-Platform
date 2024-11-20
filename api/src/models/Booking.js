@@ -59,6 +59,18 @@ const Booking = sequelize.define(
       onUpdate: "CASCADE",
       onDelete: "CASCADE",
     },
+    hotelbooking: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    specialRequest: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    extraInfo: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     tableName: "bookings",

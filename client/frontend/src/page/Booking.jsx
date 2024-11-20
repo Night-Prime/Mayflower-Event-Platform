@@ -1,19 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
 import { Calendar } from "../icons/Calendar";
 import { Right } from "../icons/Right";
-import PackageCard from "../components/PackageCard";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
-import { ScrollTrigger } from "gsap/all";
 import GoogleCalendar from "../components/GoogleCalendar";
 import BookForm from "../components/BookForm";
 import { clientMakeRequest } from "../helper/makeRequest";
 import Preloader from "../components/Preloader";
+import videoBg from "../assets/video/background.mp4";
+import { motion } from "framer-motion";
+import { animations } from "../shared/animation";
+import useScrollAnimation from "../hook/useAnimation";
 
 const Booking = () => {
+  const reveal = useScrollAnimation(animations.revealChildren);
+
   const [showCalendar, setShowCalendar] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [packages, setPackages] = useState([]);
 
@@ -23,14 +25,6 @@ const Booking = () => {
   const handleClick = (e) => {
     e.stopPropagation();
     setShowCalendar((prev) => !prev);
-  };
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   const handleClickOutside = (event) => {
@@ -57,27 +51,6 @@ const Booking = () => {
   }, [showCalendar]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const container = calendarRef.current;
-
-    if (container) {
-      gsap.fromTo(
-        container.querySelectorAll(".text"),
-        {
-          y: 0,
-          opacity: 0,
-          ease: "power2.in",
-        },
-        {
-          y: -15,
-          opacity: 1,
-          ease: "cubic-bezier(0.280, 0.840, 0.420, 1)",
-          duration: 0.5,
-          stagger: 0.5,
-        }
-      );
-    }
-
     clientMakeRequest
       .get("/package/all")
       .then((res) => {
@@ -96,42 +69,78 @@ const Booking = () => {
   }
 
   return (
-    <div className="h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
-      <Navbar />
-      <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-start">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/gradient.png')`,
-          }}
-        ></div>
-        <div className="relative z-10 p-4 sm:p-6 lg:p-12">
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-Cinzel leading-tight lg:leading-[84px] font-normal text-white max-w-full lg:max-w-full">
-            Unforgettable Moments Await: <br />
-            Book Your Space
-          </h1>
-          <button
-            onClick={openModal}
-            className="bg-maypink text-black shadow-md mt-4 py-2 px-4 sm:py-3 sm:px-5 flex items-center justify-center rounded-lg text-xs sm:text-sm lg:text-md font-bold font-Cinzel lg:w-52 sm:w-48"
-          >
-            Schedule Now
-            <span className="ml-2">
-              <Right />
-            </span>
-          </button>
+    <motion.div className="h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
+      <Navbar booking={true} />
+      <div className="relative mt-16 xl:mt-24 h-96 xl:h-[75vh] w-full flex items-center justify-center">
+        <video
+          src={videoBg}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative flex flex-col items-center text-white p-4 lg:p-10">
+          <img
+            src="https://ik.imagekit.io/0y99xuz0yp/May%20Gardens%20Elements-01.png?updatedAt=1727604763546"
+            alt="Main Logo"
+            className="w-[100%] lg:w-[75%] object-cover"
+          />
         </div>
       </div>
+
+      <motion.div className="w-full h-[30vh] xl:h-[100vh]">
+        <motion.div className="w-full h-full p-10 flex flex-col-reverse xl:flex-row justify-center items-center">
+          <motion.div className="flex-1 flex flex-col gap-8 text-mayblack">
+            <motion.h1 className="w-full xl:w-[60%] text-center xl:text-start text-[20px] xl:text-[40px] font-semibold font-Cinzel">
+              BOOK A TOUR AT{" "}
+              <span className="text-gardenslight">MAYGARDENS</span>
+            </motion.h1>
+            <motion.p className="w-[100%] xl:w-[75%] text-[12px] xl:text-[20px] text-justify">
+              At May Gardens Event Center, we are your intimate escape for
+              life’s most cherished celebrations. Our facilities are maintained
+              to the highest standards to ensure that every event is a massive
+              success. Working closely with top event planners and vendors
+              alike, we ensure that your ideas are valid and your vision for
+              your event is brought to life. From our breathtaking space to our
+              exceptional hospitality, your guests will have stories of your
+              event on their lips for years to come
+            </motion.p>
+          </motion.div>
+
+          <div className="hidden flex-1 xl:flex flex-row justify-center xl:relative px-8 xl:px-0">
+            <img
+              loading="lazy"
+              src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%208.png?updatedAt=1731525634992"
+              alt="Someone drumming"
+              className="img w-[55%] object-contain"
+            />
+            <img
+              loading="lazy"
+              src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%209.png?updatedAt=1731525610543"
+              alt="Laughing & Partying"
+              className="img w-[55%] object-contain xl:absolute xl:top-1/2 xl:transform xl:-translate-y-3/4"
+            />
+            <img
+              loading="lazy"
+              src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%207.png?updatedAt=1731525636949"
+              alt="Medusa Hair"
+              className="img w-[55%] object-contain"
+            />
+          </div>
+        </motion.div>
+      </motion.div>
 
       <div className="w-full flex flex-col items-center gap-4 sm:gap-8 bg-white p-4 sm:p-8 rounded-t-3xl">
         <div className="relative w-full">
           <div
-            className="flex items-center border border-maypink rounded-lg p-2 cursor-pointer"
+            className="flex items-center border border-maygardens rounded-lg p-2 cursor-pointer"
             onClick={handleClick}
-            ref={buttonRef}
           >
             <Calendar className="text-[#4e4e4e] mr-2" />
-            <span className="w-full text-black font-Cinzel text-center text-xs sm:text-sm">
-              <p>Check Availability</p>
+            <span className="w-full text-black font-Cinzel text-start text-xs sm:text-sm ml-6">
+              <p>Dates</p>
             </span>
             <svg
               className={`w-4 h-4 ml-auto transform transition-transform ${
@@ -161,77 +170,10 @@ const Booking = () => {
           )}
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center gap-4 sm:gap-8">
-          <div className="flex flex-col md:flex-row w-full h-full rounded-lg overflow-hidden">
-            <div
-              className="flex justify-center items-center md:w-1/2 w-full p-6 bg-cover bg-center"
-              style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(255, 223, 223, 1), rgba(255, 223, 223, 0)), url('/book.jpeg')`,
-              }}
-            >
-              <h1 className="text-3xl lg:text-5xl font-Cinzel italic leading-tight lg:leading-[84px] font-semibold text-white text-left">
-                BOOK A TOUR <br />
-                AT <br />
-                MAYGARDENS
-              </h1>
-            </div>
-
-            <div className="md:w-1/2 w-full bg-gardens text-white flex flex-col gap-6 p-4 sm:p-6 justify-center md:items-start items-center">
-              <div className="w-full flex flex-col justify-center md:items-start items-center">
-                <h3 className="text-2xl lg:text-4xl font-Cinzel font-bold mb-4">
-                  Unveil the Magic:
-                </h3>
-                <p className="text-sm lg:text-lg font-medium font-Lato text-center">
-                  Book Your May Gardens Tour Today
-                </p>
-              </div>
-              <button
-                className="bg-maypink text-black py-2 px-4 sm:py-3 sm:px-6 flex items-center justify-center rounded-lg text-sm sm:text-md font-bold font-Cinzel"
-                onClick={openModal}
-              >
-                Fill our form
-                <span className="ml-2">
-                  <Right />
-                </span>
-              </button>
-              {isModalOpen && (
-                <div className="fixed inset-0 bg-white bg-opacity-50 flex justify-center items-center z-50">
-                  <div className="p-0 m-0 w-full h-full">
-                    <BookForm closeModal={closeModal} item={packages} />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="flex flex-col lg:flex-row w-full h-full rounded-lg overflow-hidden">
-            <div
-              className="hidden lg:flex justify-center items-center lg:w-1/2 bg-cover bg-center"
-              style={{
-                backgroundImage: `linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/glassLaugh.png')`,
-              }}
-            ></div>
-            <div className="lg:w-1/2 bg-maypink p-4 sm:p-8 text-black flex flex-col justify-center items-start">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-Cinzel font-bold mb-4">
-                Offers
-              </h3>
-              <p className="text-sm sm:text-lg font-medium font-Lato">
-                Promotion, deals and special offers for you
-              </p>
-            </div>
-          </div>
-
-          <div className="shared-container flex flex-col bg-white items-center justify-center">
-            <div className="flex-wrap flex justify-between items-center gap-5 bg-white">
-              {packages.map((packageDetails, index) => (
-                <PackageCard key={index} packageDetails={packageDetails} />
-              ))}
-            </div>
-          </div>
-        </div>
+        <BookForm item={packages} />
       </div>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

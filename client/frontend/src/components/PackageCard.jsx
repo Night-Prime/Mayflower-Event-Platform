@@ -1,43 +1,59 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { Right } from "../icons/Right";
+import PackageDetails from "./PackageDetails";
+import { motion } from "framer-motion";
 
 const PackageCard = ({ packageDetails }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const { name, description, capacity } = packageDetails;
+  const { name } = packageDetails;
+  const [showDetails, setShowDetails] = useState(false);
+
+  const showModal = () => {
+    setShowDetails(true);
+  };
+
+  const closeModal = () => {
+    setShowDetails(false);
+  };
 
   return (
-    <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-lg w-full sm:w-[48%] lg:w-[30%] cursor-pointer relative">
-      <div
-        className="relative overflow-hidden rounded-t-lg"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+    <div className="flex flex-col shadow-2xl gap-4 justify-start items-start bg-white rounded-2xl w-full sm:w-[48%] lg:w-[30%] h-[80%] cursor-pointer relative">
+      <div className="h-full relative overflow-hidden rounded-lg">
         <img
           loading="lazy"
           src="https://ik.imagekit.io/tsfcuw1ce/Images/concert.png?updatedAt=1725131399684"
           alt={name}
-          className={`w-full h-auto rounded-t-lg ${
-            isHovered ? "transform scale-110 rounded-t-lg" : ""
-          } transition-transform duration-400`}
+          className="w-full h-full rounded-2xl"
         />
-        {isHovered && (
-          <div className="rounded-t-lg absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center text-white">
-            <p className="animate-fade-in font-semibold w-3/4 text-[12px] font-Montserrat text-justify">
-              {description}
-            </p>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-col gap-4 justify-start items-start px-4 pb-6">
-        <div className="flex flex-col gap-1 justify-start items-start text-black">
-          <p className="text-[24px] font-Playfair font-bold text-black">
-            {name}
-          </p>
-          <span className="w-full h-[1px] bg-maypink"></span>
-          <p className="text-[18px] font-Montserrat font-normal text-start my-2">
-            {capacity}
-          </p>
+        <div className="rounded-2xl absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-evenly items-start px-5 text-white">
+          <h1 className="font-Cinzel text-[20px] xl:text-[40px]">{name}</h1>
+          <button
+            onClick={() => showModal()}
+            className="bg-transparent border-2 border-white rounded-3xl px-6 py-2 flex flex-row"
+          >
+            Learn more
+            <span className="text-white ml-2">
+              <Right />
+            </span>
+          </button>
         </div>
       </div>
+      {showDetails && (
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: { ease: "easeIn", type: "spring" },
+          }}
+          className="fade-in-left rounded-tl-3xl fixed top-20 left-0 h-[80vh] w-[30%] bg-white z-10 shadow-md flex items-center justify-center p-6"
+        >
+          <PackageDetails
+            packageDetails={packageDetails}
+            closeModal={closeModal}
+          />
+        </motion.div>
+      )}
     </div>
   );
 };
