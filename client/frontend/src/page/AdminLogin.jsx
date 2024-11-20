@@ -3,7 +3,8 @@ import React from "react";
 const AdminLogin = () => {
   const handleClick = async () => {
     try {
-      window.location.href = "http://localhost:5000/api/v1/auth/google";
+      window.location.href =
+        "https://may-garden.onrender.com/api/v1/auth/google";
     } catch (error) {
       console.error("Error: ", error);
     }
