@@ -11,11 +11,24 @@ exports.createBookingValidation = [
     .isNumeric()
     .notEmpty()
     .withMessage("Client phone number is required"),
-  // body("eventDate").isDate().withMessage("Please provide a valid date"),
+  body("eventDate").isDate().withMessage("Please provide a valid date"),
   body("eventDescription")
     .isString()
     .withMessage("Please provide a valid description"),
-  // body("eventTime").isTime().withMessage("Please provide a valid time"),
+
+  body("hotelbooking")
+    .optional()
+    .isString()
+    .withMessage("Please provide a valid answer"),
+  body("specialRequest")
+    .optional()
+    .isString()
+    .withMessage("Please provide a valid answer"),
+
+  body("extraInfo")
+    .optional()
+    .isString()
+    .withMessage("Please provide a valid answer"),
 ];
 
 exports.getIdValidation = [

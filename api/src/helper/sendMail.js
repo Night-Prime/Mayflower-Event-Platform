@@ -38,12 +38,16 @@ const sendMail = async (clientEmail, eventTitle, eventDate, eventTime) => {
     html: `<p>A new booking has been created for ${eventTitle} on ${eventDate} at ${eventTime}.</p>`,
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log("Error Sending mail: ", error);
-    } else {
-      console.log("Email sent: ", info.response);
-    }
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log("Error Sending mail: ", error);
+        return reject(error);
+      } else {
+        console.log("Email sent: ", info.response);
+        return resolve(info);
+      }
+    });
   });
 };
 

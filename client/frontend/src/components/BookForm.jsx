@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "react-phone-input-2/lib/style.css";
@@ -6,7 +6,16 @@ import { Right } from "../icons/Right";
 import { clientMakeRequest } from "../helper/makeRequest";
 import Swal from "sweetalert2";
 
-const BookForm = ({ closeModal, item }) => {
+const BookForm = ({ item }) => {
+  const [nextForm, setNextForm] = useState(false);
+  const nextPage = () => {
+    setNextForm(true);
+  };
+
+  const prevPage = () => {
+    setNextForm(false);
+  };
+
   const validationSchema = Yup.object({
     clientName: Yup.string().required("Name is required"),
     clientEmail: Yup.string()
@@ -19,38 +28,11 @@ const BookForm = ({ closeModal, item }) => {
   });
 
   return (
-    <div className="bg-black bg-opacity-90 text-white h-full w-full flex items-center justify-center p-4 sm:p-6">
-      <div className="animate-fade-in bg-gardens p-4 sm:p-6 md:p-8 rounded-lg font-Montserrat w-[75%] h-full overflow-y-auto">
-        <button
-          onClick={closeModal}
-          className="text-white text-5xl text-right p-1"
-        >
-          &times;
-        </button>
-        <h2 className="text-2xl sm:text-3xl font-semibold font-Cinzel mb-6 text-center border-b-2 border-[#4E4E4E]">
+    <div className="h-auto w-full rounded-2xl shadow-md shadow-gray-300">
+      <div className=" bg-transparent p-4 sm:p-6 md:p-8 font-Montserrat w-full h-full text-mayblack">
+        <h2 className="text-2xl sm:text-3xl font-semibold font-Cinzel mb-6 text-center border-b-2">
           Book a tour
         </h2>
-
-        <div className="flex sm:flex-row gap-2 sm:gap-4 mb-6">
-          <img
-            loading="lazy"
-            src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner.png?updatedAt=1725131402076"
-            alt="Tour 1"
-            className="rounded-lg w-[30%] object-cover"
-          />
-          <img
-            loading="lazy"
-            src="https://ik.imagekit.io/tsfcuw1ce/Images/dinner3.png?updatedAt=1725131405226"
-            alt="Tour 2"
-            className="rounded-lg w-[30%] object-cover mx-0 sm:mx-2"
-          />
-          <img
-            loading="lazy"
-            src="https://ik.imagekit.io/tsfcuw1ce/Images/threeselfie.png?updatedAt=1725131393769"
-            alt="Tour 3"
-            className="rounded-lg w-[30%] object-cover"
-          />
-        </div>
 
         <Formik
           initialValues={{
@@ -62,11 +44,15 @@ const BookForm = ({ closeModal, item }) => {
             clientEmail: "",
             clientPhone: "",
             eventDate: "",
+            hotelbooking: "",
+            specialRequest: "",
+            extraInfo: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={async (values, { setSubmitting }) => {
+          onSubmit={async (values, { setSubmitting, resetForm }) => {
             setSubmitting(false);
             try {
+              console.log("Form: ", values);
               const result = await clientMakeRequest.post("/booking", values);
               if (result.data.status === "success") {
                 Swal.fire({
@@ -80,7 +66,8 @@ const BookForm = ({ closeModal, item }) => {
                   background: "#2D3D26",
                   color: "#fff",
                 });
-                closeModal();
+                setNextForm(false);
+                resetForm();
               }
             } catch (error) {
               Swal.fire({
@@ -97,193 +84,333 @@ const BookForm = ({ closeModal, item }) => {
             }
           }}
         >
-          {({ isSubmitting }) => (
+          {({ isValid, isSubmitting }) => (
             <Form className="font-Cinzel">
-              <div className="mb-4">
-                <label
-                  className="block text-xs sm:text-sm font-medium mb-1"
-                  htmlFor="eventTitle"
-                >
-                  Event Title
-                </label>
-                <Field
-                  type="text"
-                  name="eventTitle"
-                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                  placeholder="What's the name of your Event"
-                />
-                <ErrorMessage
-                  name="eventTitle"
-                  component="div"
-                  className="text-red-500 text-xs sm:text-sm mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  className="block text-xs sm:text-sm font-medium mb-1"
-                  htmlFor="eventDescription"
-                >
-                  Event Description
-                </label>
-                <Field
-                  type="text"
-                  name="eventDescription"
-                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                  placeholder="Describe your Event"
-                />
-                <ErrorMessage
-                  name="eventDescription"
-                  component="div"
-                  className="text-red-500 text-xs sm:text-sm mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <Field
-                  component="select"
-                  name="packageId"
-                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                >
-                  <option value="">Select a package</option>
-                  {item && item.length > 0 ? (
-                    item.map((item) => (
-                      <option key={item.id} value={item.id}>
-                        {item.name} - ({item.capacity})
-                      </option>
-                    ))
-                  ) : (
-                    <option value="">No packages available</option>
-                  )}
-                </Field>
-                <ErrorMessage
-                  name="packageId"
-                  component="div"
-                  className="text-red-500 text-xs sm:text-sm mt-1"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  className="block text-xs sm:text-sm font-medium mb-1"
-                  htmlFor="clientName"
-                >
-                  Name
-                </label>
-                <Field
-                  type="text"
-                  name="clientName"
-                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                  placeholder="Enter your name"
-                />
-                <ErrorMessage
-                  name="clientName"
-                  component="div"
-                  className="text-red-500 text-xs sm:text-sm mt-1"
-                />
-              </div>
+              {!nextForm ? (
+                <div className="flex flex-col w-full h-full">
+                  <div className="mb-4">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="clientName"
+                    >
+                      Name
+                    </label>
+                    <Field
+                      type="text"
+                      name="clientName"
+                      className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-white rounded-lg"
+                      placeholder="Enter your name"
+                    />
+                    <ErrorMessage
+                      name="clientName"
+                      component="div"
+                      className="text-red-500 text-xs sm:text-sm mt-1"
+                    />
+                  </div>
 
-              <div className="mb-4">
-                <label
-                  className="block text-xs sm:text-sm font-medium mb-1"
-                  htmlFor="clientEmail"
-                >
-                  Email address
-                </label>
-                <Field
-                  type="email"
-                  name="clientEmail"
-                  className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                  placeholder="Enter your Email address"
-                />
-                <ErrorMessage
-                  name="clientEmail"
-                  component="div"
-                  className="text-red-500 text-xs sm:text-sm mt-1"
-                />
-              </div>
+                  <div className="mb-4">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="clientEmail"
+                    >
+                      Email address
+                    </label>
+                    <Field
+                      type="email"
+                      name="clientEmail"
+                      className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-white rounded-lg"
+                      placeholder="Enter your Email address"
+                    />
+                    <ErrorMessage
+                      name="clientEmail"
+                      component="div"
+                      className="text-red-500 text-xs sm:text-sm mt-1"
+                    />
+                  </div>
 
-              <div className="mb-4">
-                <label
-                  className="block text-xs sm:text-sm font-medium mb-1"
-                  htmlFor="clientPhone"
-                >
-                  Phone number
-                </label>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <select
-                    className="bg-transparent text-sm md:text-md text-white border-[#4E4E4E] rounded-lg border-[2px] pr-2 focus:outline-none"
-                    style={{ width: "100%", maxWidth: "100px" }}
-                  >
-                    <option value="+234">🇳🇬 +234</option>
-                    {/* Add more country codes as needed */}
-                  </select>
-                  <Field
-                    type="text"
-                    name="clientPhone"
-                    className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                    placeholder="Enter your Phone number"
-                  />
+                  <div className="mb-4">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="clientPhone"
+                    >
+                      Phone number
+                    </label>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <select
+                        className="bg-transparent text-sm md:text-md text-black border-gray-300 rounded-lg border-[2px] pr-2 focus:outline-none"
+                        style={{ width: "100%", maxWidth: "100px" }}
+                      >
+                        <option value="+234">🇳🇬 +234</option>
+                      </select>
+                      <Field
+                        type="text"
+                        name="clientPhone"
+                        className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-white rounded-lg"
+                        placeholder="Enter your Phone number"
+                      />
+                    </div>
+                    <ErrorMessage
+                      name="clientPhone"
+                      component="div"
+                      className="text-red-500 text-xs sm:text-sm mt-1"
+                    />
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row w-full gap-4">
+                    <div className="mb-4 flex-1">
+                      <label
+                        className="block text-xs sm:text-sm font-medium mb-1"
+                        htmlFor="eventDate"
+                      >
+                        Date of arrival
+                      </label>
+
+                      <Field
+                        type="date"
+                        name="eventDate"
+                        className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-black rounded-lg"
+                        placeholder="Select Date"
+                      />
+                      <ErrorMessage
+                        name="eventDate"
+                        component="div"
+                        className="text-red-500 text-xs sm:text-sm mt-1"
+                      />
+                    </div>
+
+                    <div className="mb-4 flex-1">
+                      <label
+                        className="block text-sm md:text-md font-medium mb-1"
+                        htmlFor="eventTime"
+                      >
+                        Time
+                      </label>
+                      <Field
+                        type="time"
+                        name="eventTime"
+                        className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-black rounded-lg"
+                        style={{
+                          WebkitAppearance: "none",
+                          MozAppearance: "textfield",
+                        }}
+                        placeholder="Time of Event"
+                      />
+                      <ErrorMessage
+                        name="eventTime"
+                        component="div"
+                        className="text-red-500 text-xs sm:text-sm mt-1"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="eventTitle"
+                    >
+                      Event Title
+                    </label>
+                    <Field
+                      type="text"
+                      name="eventTitle"
+                      className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-black rounded-lg"
+                      placeholder="What's the name of your Event"
+                    />
+                    <ErrorMessage
+                      name="eventTitle"
+                      component="div"
+                      className="text-red-500 text-xs sm:text-sm mt-1"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="eventDescription"
+                    >
+                      Event Description
+                    </label>
+                    <Field
+                      type="text"
+                      name="eventDescription"
+                      className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-mayblack rounded-lg"
+                      placeholder="Describe your Event"
+                    />
+                    <ErrorMessage
+                      name="eventDescription"
+                      component="div"
+                      className="text-red-500 text-xs sm:text-sm mt-1"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <Field
+                      component="select"
+                      name="packageId"
+                      className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-mayblack rounded-lg"
+                    >
+                      <option value="">Select a package</option>
+                      {item && item.length > 0 ? (
+                        item.map((item) => (
+                          <option key={item.id} value={item.id}>
+                            {item.name} - ({item.capacity})
+                          </option>
+                        ))
+                      ) : (
+                        <option value="">No packages available</option>
+                      )}
+                    </Field>
+                    <ErrorMessage
+                      name="packageId"
+                      component="div"
+                      className="text-red-500 text-xs sm:text-sm mt-1"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <button
+                      type="button"
+                      disabled={!isValid}
+                      onClick={() => nextPage()}
+                      className={`w-full sm:w-[12.5%] ${
+                        isValid
+                          ? "bg-gardens text-white"
+                          : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      } text-xs sm:text-sm flex items-center font-Montserrat justify-center p-2 rounded-lg mt-4`}
+                    >
+                      Next
+                      <span className="text-white ml-2">
+                        <Right />
+                      </span>
+                    </button>
+                  </div>
                 </div>
-                <ErrorMessage
-                  name="clientPhone"
-                  component="div"
-                  className="text-red-500 text-xs sm:text-sm mt-1"
-                />
-              </div>
-              <div className="flex flex-col sm:flex-row w-full gap-4">
-                <div className="mb-4 flex-1">
-                  <label
-                    className="block text-xs sm:text-sm font-medium mb-1"
-                    htmlFor="eventDate"
-                  >
-                    Date of arrival
-                  </label>
+              ) : (
+                <div className="flex flex-col">
+                  <div className="mb-4 flex-1">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="hotelbooking"
+                    >
+                      WOULD YOU LIKE TO BOOK OUR HOTEL ROOMS FOR YOURSELF AND
+                      YOUR GUESTS
+                    </label>
+                    <div className="flex flex-col gap-4">
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="hotelbooking"
+                          value="Yes"
+                          className="mr-2"
+                        />
+                        Yes
+                      </label>
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="hotelbooking"
+                          value="No"
+                          className="mr-2"
+                        />
+                        No
+                      </label>
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="hotelbooking"
+                          value="Maybe"
+                          className="mr-2"
+                        />
+                        Maybe
+                      </label>
+                    </div>
+                  </div>
 
-                  <Field
-                    type="date"
-                    name="eventDate"
-                    className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                    placeholder="Select Date"
-                  />
-                  <ErrorMessage
-                    name="eventDate"
-                    component="div"
-                    className="text-red-500 text-xs sm:text-sm mt-1"
-                  />
-                </div>
+                  <div className="mb-4 flex-1">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="specialRequest"
+                    >
+                      KINDLY STATE ANY REQUESTS?
+                    </label>
+                    <div className="flex flex-col gap-4">
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="specialRequest"
+                          value="Event Planning"
+                          className="mr-2"
+                        />
+                        Event Planning
+                      </label>
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="specialRequest"
+                          value="Vendor Sourcing"
+                          className="mr-2"
+                        />
+                        Vendor Sourcing
+                      </label>
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="specialRequest"
+                          value="Security and Bouncers"
+                          className="mr-2"
+                        />
+                        Security and Bouncers
+                      </label>
 
-                <div className="mb-4 flex-1">
-                  <label
-                    className="block text-sm md:text-md font-medium mb-1"
-                    htmlFor="eventTime"
-                  >
-                    Time
-                  </label>
-                  <Field
-                    type="time"
-                    name="eventTime"
-                    className="w-full text-sm md:text-md p-2 bg-transparent border-[#4E4E4E] border-[2px] focus:outline-none text-white rounded-lg"
-                    style={{
-                      WebkitAppearance: "none",
-                      MozAppearance: "textfield",
-                    }}
-                    placeholder="Time of Event"
-                  />
-                  <ErrorMessage
-                    name="eventTime"
-                    component="div"
-                    className="text-red-500 text-xs sm:text-sm mt-1"
-                  />
+                      <label className="flex items-center text-sm">
+                        <Field
+                          type="radio"
+                          name="specialRequest"
+                          value="None"
+                          className="mr-2"
+                        />
+                        None
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label
+                      className="block text-xs sm:text-sm font-medium mb-1"
+                      htmlFor="extraInfo"
+                    >
+                      ANY OTHER INFORMATION YOU WOULD LIKE US TO HAVE?
+                    </label>
+                    <Field
+                      type="text"
+                      name="extraInfo"
+                      className="w-full text-sm md:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-black rounded-lg"
+                      placeholder="Your Answer"
+                    />
+                  </div>
+
+                  <div className="flex-1">
+                    <button
+                      type="button"
+                      onClick={() => prevPage()}
+                      className="w-full sm:w-[12.5%] bg-gardens text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
+                    >
+                      Prev
+                    </button>
+                  </div>
+
+                  <div className="flex-1">
+                    <button
+                      type="submit"
+                      className="w-full sm:w-[15%] bg-transparent border-2 border-gardens text-xs sm:text-sm flex items-center font-Montserrat justify-center text-black p-2 rounded-lg mt-4"
+                      disabled={isSubmitting}
+                    >
+                      Book a tour
+                      <span className="text-black ml-2">
+                        <Right />
+                      </span>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <button
-                type="submit"
-                className="w-full sm:w-[25%] bg-maypink text-xs sm:text-sm flex items-center font-Montserrat justify-center text-black p-2 rounded-lg mt-4"
-                disabled={isSubmitting}
-              >
-                Submit
-                <span className="text-black ml-2">
-                  <Right />
-                </span>
-              </button>
+              )}
             </Form>
           )}
         </Formik>

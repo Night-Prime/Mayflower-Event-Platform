@@ -129,10 +129,9 @@ const Dashboard = () => {
   };
 
   const declineBookings = async (id) => {
-    const payload = { id, scheduled: false };
     try {
       setLoading(true);
-      const response = await adminMakeRequest.put("booking/event", payload);
+      const response = await adminMakeRequest.delete(`booking/${id}`);
       if (response.status === 200) {
         refetch();
         Swal.fire({
@@ -181,17 +180,12 @@ const Dashboard = () => {
     let token = params.get("token");
 
     if (token) {
-      // If a token is found in the URL, store it in localStorage
       localStorage.setItem("accessToken", token);
-
-      // Clear the URL parameters after storing the token
       window.history.replaceState({}, document.title, "/dashboard");
     } else {
-      // If no token in URL, attempt to retrieve it from localStorage
       token = localStorage.getItem("accessToken");
 
       if (!token) {
-        // If still no token, navigate to the /admin page
         console.log("No token found, navigating to /admin");
         navigate("/admin", { replace: true });
       }
@@ -207,13 +201,13 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-auto bg-mayblack text-white">
       <div className="mx-auto py-10 w-11/12 h-full flex flex-col gap-10 items-start">
         <div className="w-full flex flex-row justify-between">
           <h1 className="text-5xl">May Gardens Admin System</h1>
           <button
             onClick={handleCreatePackage}
-            className="bg-transparent border-[2px] border-maypink text-black  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4"
+            className="bg-transparent border-[2px] border-gardens text-white  flex items-center justify-center rounded-lg text-md font-semibold font-Montserrat w-44 py-2 px-4"
           >
             <span className=" flex items-center justify-center">
               Create Package

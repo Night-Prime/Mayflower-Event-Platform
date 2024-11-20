@@ -16,6 +16,7 @@ module.exports = {
         gardens: "#2D3D26",
         gardenslight: "#8FB87D",
         maypink: "#FFDFDF",
+        mayblack: "#212121",
       },
       animation: {
         "fade-in-left": "fade-in-left 0.25s ease-out",
