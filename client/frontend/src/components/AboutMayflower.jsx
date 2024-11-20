@@ -46,7 +46,7 @@ const AboutMayflower = () => {
         <motion.div className="w-[96%] flex-1 flex flex-wrap xl:flex-nowrap xl:flex-row gap-5 xl:gap-20 mx-auto">
           <motion.div
             {...childReveal}
-            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight rounded-tr-2xl rounded-b-2xl p-2 xl:px-6 xl:py-6"
+            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl rounded-b-2xl p-2 xl:px-6 xl:py-6"
           >
             <motion.h1 className="font-Cinzel text-[16px] xl:text-[24px]">
               Mission
@@ -63,7 +63,7 @@ const AboutMayflower = () => {
           </motion.div>
           <motion.div
             {...childReveal}
-            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight rounded-tr-2xl p-2 rounded-b-2xl xl:px-6 xl:py-6"
+            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl xl:px-6 xl:py-6"
           >
             <motion.h1 className="font-Cinzel text-[16px] xl:text-[24px]">
               Vision
@@ -81,7 +81,7 @@ const AboutMayflower = () => {
           </motion.div>
           <motion.div
             {...childReveal}
-            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight rounded-tr-2xl p-2 rounded-b-2xl p-0 xl:px-6 xl:py-6"
+            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl p-0 xl:px-6 xl:py-6"
           >
             <motion.h1 className="font-Cinzel text-[16px] xl:text-[24px]">
               Values

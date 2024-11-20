@@ -5,7 +5,8 @@ import { Menu, X } from "react-feather";
 import { motion } from "framer-motion";
 import { animations } from "../shared/animation.js";
 
-export const Navbar = () => {
+export const Navbar = ({ booking }) => {
+  console.log(booking);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,7 +22,7 @@ export const Navbar = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="sticky top-0 z-50 w-full h-14 xl:h-24 xl:py-2 bg-transparent m-0 xl:my-2"
+      className="sticky top-0 z-50 w-full h-20 xl:h-24 xl:py-2 bg-transparent m-0 xl:my-2"
     >
       <motion.div className="bg-mayblack rounded-b-2xl xl:rounded-2xl w-[100%] xl:w-[96%] h-full flex justify-between items-center mx-auto xl:py-6 px-2 sm:px-2 lg:px-6 ">
         <motion.p
@@ -93,25 +94,27 @@ export const Navbar = () => {
                 </span>
               </RouterLink>
             </motion.li>
-            <motion.li className="relative">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                variants={childVariants}
-                className="shadow-md bg-transparent border-2 border-gardenslight text-white flex items-center justify-center rounded-lg text-[12px] xl:text-[18px] font-normal w-44 py-2 px-4"
-              >
-                <RouterLink
-                  to="/booking"
-                  className="flex items-center justify-center"
-                  onClick={toggleMenu}
+            {booking ? null : (
+              <motion.li className="relative">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  variants={childVariants}
+                  className="shadow-md bg-transparent border-2 border-gardenslight text-white flex items-center justify-center rounded-lg text-[12px] xl:text-[18px] font-normal w-44 py-2 px-4"
                 >
-                  Book a tour
-                  <span className="text-white ml-2">
-                    <Right />
-                  </span>
-                </RouterLink>
-              </motion.button>
-            </motion.li>
+                  <RouterLink
+                    to="/booking"
+                    className="flex items-center justify-center"
+                    onClick={toggleMenu}
+                  >
+                    Book a tour
+                    <span className="text-white ml-2">
+                      <Right />
+                    </span>
+                  </RouterLink>
+                </motion.button>
+              </motion.li>
+            )}
           </motion.ul>
         </motion.div>
       </motion.div>

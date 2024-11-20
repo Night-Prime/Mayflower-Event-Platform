@@ -70,8 +70,8 @@ const Booking = () => {
 
   return (
     <motion.div className="h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory">
-      <Navbar />
-      <div className="relative xl:mt-24 h-96 xl:h-[75vh] w-full flex items-center justify-center">
+      <Navbar booking={true} />
+      <div className="relative mt-16 xl:mt-24 h-96 xl:h-[75vh] w-full flex items-center justify-center">
         <video
           src={videoBg}
           autoPlay
@@ -92,10 +92,7 @@ const Booking = () => {
 
       <motion.div className="w-full h-[30vh] xl:h-[100vh]">
         <motion.div className="w-full h-full p-10 flex flex-col-reverse xl:flex-row justify-center items-center">
-          <motion.div
-            {...reveal}
-            className="flex-1 flex flex-col gap-8 text-mayblack"
-          >
+          <motion.div className="flex-1 flex flex-col gap-8 text-mayblack">
             <motion.h1 className="w-full xl:w-[60%] text-center xl:text-start text-[20px] xl:text-[40px] font-semibold font-Cinzel">
               BOOK A TOUR AT{" "}
               <span className="text-gardenslight">MAYGARDENS</span>
@@ -173,7 +170,7 @@ const Booking = () => {
           )}
         </div>
 
-        <BookForm />
+        <BookForm item={packages} />
       </div>
       <Footer />
     </motion.div>

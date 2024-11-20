@@ -9,7 +9,11 @@ import Swal from "sweetalert2";
 const BookForm = ({ item }) => {
   const [nextForm, setNextForm] = useState(false);
   const nextPage = () => {
-    setNextForm(!nextForm);
+    setNextForm(true);
+  };
+
+  const prevPage = () => {
+    setNextForm(false);
   };
 
   const validationSchema = Yup.object({
@@ -45,24 +49,26 @@ const BookForm = ({ item }) => {
             extraInfo: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={async (values, { setSubmitting }) => {
+          onSubmit={async (values, { setSubmitting, resetForm }) => {
             setSubmitting(false);
             try {
               console.log("Form: ", values);
-              // const result = await clientMakeRequest.post("/booking", values);
-              // if (result.data.status === "success") {
-              //   Swal.fire({
-              //     text: `${result.data.message}`,
-              //     icon: "success",
-              //     iconColor: "#fff",
-              //     toast: true,
-              //     position: "top-right",
-              //     showConfirmButton: false,
-              //     timer: 2000,
-              //     background: "#2D3D26",
-              //     color: "#fff",
-              //   });
-              // }
+              const result = await clientMakeRequest.post("/booking", values);
+              if (result.data.status === "success") {
+                Swal.fire({
+                  text: `${result.data.message}`,
+                  icon: "success",
+                  iconColor: "#fff",
+                  toast: true,
+                  position: "top-right",
+                  showConfirmButton: false,
+                  timer: 2000,
+                  background: "#2D3D26",
+                  color: "#fff",
+                });
+                setNextForm(false);
+                resetForm();
+              }
             } catch (error) {
               Swal.fire({
                 text: `Unsuccessful, Try Again!`,
@@ -80,7 +86,7 @@ const BookForm = ({ item }) => {
         >
           {({ isValid, isSubmitting }) => (
             <Form className="font-Cinzel">
-              {nextForm ? (
+              {!nextForm ? (
                 <div className="flex flex-col w-full h-full">
                   <div className="mb-4">
                     <label
@@ -384,7 +390,7 @@ const BookForm = ({ item }) => {
                   <div className="flex-1">
                     <button
                       type="button"
-                      onClick={() => nextPage()}
+                      onClick={() => prevPage()}
                       className="w-full sm:w-[12.5%] bg-gardens text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white p-2 rounded-lg mt-4"
                     >
                       Prev

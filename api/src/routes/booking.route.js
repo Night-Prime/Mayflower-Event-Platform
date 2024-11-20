@@ -1,9 +1,9 @@
 const express = require("express");
 const bookingController = require("../controllers/booking.controller");
 const {
-  createBookingValidation,
   getIdValidation,
   updateBookingValidation,
+  createBookingValidation,
 } = require("../middleware/validator");
 const isAuth = require("../middleware/authenticator");
 

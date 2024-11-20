@@ -8,10 +8,11 @@ import Moments from "../components/Moments.jsx";
 import Tour from "../components/Tour.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Team from "../components/Team.jsx";
+import Chat from "../components/Chat.jsx";
 
 const Landingpage = () => {
   return (
-    <div className="bg-white h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory m-0">
+    <div className="bg-white h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory m-0 relative">
       <Navbar />
       <section id="home" className="h-max scroll-snap-align-start m-0">
         <Hero />
@@ -22,6 +23,7 @@ const Landingpage = () => {
         <Testimonials />
         <Team />
       </section>
+      <Chat />
       <Footer />
     </div>
   );

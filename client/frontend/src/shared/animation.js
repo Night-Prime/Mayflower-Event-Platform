@@ -30,7 +30,13 @@ export const animations = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.25, delayChildren: 0.5, staggerChildren: 0.5 },
+
+      transition: {
+        ease: "easeOut",
+        duration: 0.25,
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
+      },
     },
   },
   revealChildren: {
@@ -45,7 +51,12 @@ export const animations = {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 1, delayChildren: 0.5, staggerChildren: 0.5 },
+      transition: {
+        ease: "easeOut",
+        duration: 1,
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
+      },
     },
   },
   scaleRevealChildren: {
@@ -54,7 +65,7 @@ export const animations = {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.5 },
+      transition: { ease: "easeOut", duration: 0.5 },
     },
   },
 };

@@ -5,39 +5,17 @@ import { Link as RouterLink } from "react-router-dom";
 import { Right } from "../icons/Right";
 import Preloader from "./Preloader";
 
-const packageDetails = [
-  {
-    name: "Rose Buds",
-    description:
-      "If intimacy is the heart of your gathering, our Rose Bud package was made just for you. This package is designed for smaller and cozy celebrations, helping you and your guest feel the warmth of close-knit moments that should be cherished forever.",
-    capacity:
-      "(5) tables, (50) chairs, (18) fans, changing rooms and rest rooms, vendor area, sound and 6 hours power supply.",
-  },
-  {
-    name: "Rose Buds",
-    description:
-      "If intimacy is the heart of your gathering, our Rose Bud package was made just for you. This package is designed for smaller and cozy celebrations, helping you and your guest feel the warmth of close-knit moments that should be cherished forever.",
-    capacity:
-      "(5) tables, (50) chairs, (18) fans, changing rooms and rest rooms, vendor area, sound and 6 hours power supply.",
-  },
-  {
-    name: "Rose Buds",
-    description:
-      "If intimacy is the heart of your gathering, our Rose Bud package was made just for you. This package is designed for smaller and cozy celebrations, helping you and your guest feel the warmth of close-knit moments that should be cherished forever.",
-    capacity:
-      "(5) tables, (50) chairs, (18) fans, changing rooms and rest rooms, vendor area, sound and 6 hours power supply.",
-  },
-];
-
 const Tour = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [packages, setPackages] = useState([]);
+
   useEffect(() => {
     clientMakeRequest
       .get("/package/all")
       .then((res) => {
         setIsLoading(true);
         const item = res.data.data;
+        console.log("Package: ", item);
         setPackages(item);
         setIsLoading(false);
       })
@@ -58,7 +36,7 @@ const Tour = () => {
           <br /> AT <span className="text-gardenslight">MAYGARDENS</span>
         </h1>
         <div className="h-full flex-wrap flex flex-row justify-between items-center gap-4">
-          {packageDetails.map((packageDetails, index) => (
+          {packages.map((packageDetails, index) => (
             <PackageCard key={index} packageDetails={packageDetails} />
           ))}
         </div>

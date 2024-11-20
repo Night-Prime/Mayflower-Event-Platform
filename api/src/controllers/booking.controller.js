@@ -27,6 +27,9 @@ exports.createBooking = async (req, res) => {
       clientName,
       clientEmail,
       clientPhone,
+      hotelbooking,
+      specialRequest,
+      extraInfo,
     } = req.body;
 
     // Check if the package exists
@@ -50,7 +53,12 @@ exports.createBooking = async (req, res) => {
       clientName,
       clientEmail,
       clientPhone,
+      hotelbooking,
+      specialRequest,
+      extraInfo,
     });
+
+    console.log("newly created: ", newBooking);
 
     // send mail
     await sendMail(clientEmail, eventTitle, eventDate, eventTime);
@@ -61,6 +69,7 @@ exports.createBooking = async (req, res) => {
       message: "Booking created successfully.",
     });
   } catch (error) {
+    console.error("Error occurred: ", error);
     return errorResponse(res, {
       statusCode: 500,
       message: "An error occurred while creating the booking.",
@@ -251,6 +260,7 @@ exports.createEvents = async (req, res) => {
 
 // Delete a booking
 exports.deleteBooking = async (req, res) => {
+  console.log("Triggered!");
   try {
     const { id } = req.params;
 
