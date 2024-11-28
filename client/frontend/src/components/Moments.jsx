@@ -54,7 +54,7 @@ const Moments = () => {
                 ))}
               </motion.div>
             </motion.div>
-            <motion.div className="w-full flex flex-col md:flex-row justify-evenly py-6 gap-6 md:gap-0">
+            <motion.div className="w-[80%] flex flex-col md:flex-row justify-evenly py-6 gap-6 md:gap-0">
               <h1 className="font-Cinzel font-bold text-[30px] text-center">
                 MOMENTS AT <span className="text-gardenslight">MAYGARDENS</span>
               </h1>

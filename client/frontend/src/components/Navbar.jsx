@@ -34,7 +34,7 @@ export const Navbar = ({ booking }) => {
               variants={childVariants}
               src="https://ik.imagekit.io/0y99xuz0yp/May%20Gardens%20Elements-01.png?updatedAt=1727604763546"
               alt="Main Logo"
-              className="w-[20%] object-contain"
+              className="w-[20%] 2xl:w-[10%] object-contain"
             />
           </RouterLink>
         </motion.p>
