@@ -32,12 +32,12 @@ export const Hero = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-50 overflow-hidden z-10"></div>
         <motion.div className="relative flex flex-col items-center text-white p-4 lg:p-10 snap-start">
           <motion.img
             src="https://ik.imagekit.io/0y99xuz0yp/May%20Gardens%20Elements-01.png?updatedAt=1727604763546"
             alt="Main Logo"
-            className="w-[100%] lg:w-[100%] object-cover"
+            className="w-[100%] lg:w-[100%] object-cover z-20"
           />
         </motion.div>
       </motion.div>
