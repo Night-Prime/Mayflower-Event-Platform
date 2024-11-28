@@ -18,7 +18,7 @@ const PackageDetails = ({ packageDetails, closeModal }) => {
           className="w-full h-auto rounded-lg"
         />
         <div className="text-mayblack text-center">
-          <p className="text-[8px] md:text-xs">{description}</p>{" "}
+          <p className="text-[10px] md:text-xs">{description}</p>{" "}
         </div>
       </div>
     </div>

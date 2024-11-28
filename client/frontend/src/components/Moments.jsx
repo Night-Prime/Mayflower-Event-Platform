@@ -58,7 +58,7 @@ const Moments = () => {
               <h1 className="font-Cinzel font-bold text-[30px] text-center">
                 MOMENTS AT <span className="text-gardenslight">MAYGARDENS</span>
               </h1>
-              {/* <motion.button
+              <motion.button
                 {...childReveal}
                 className="bg-white text-mayblack p-2 rounded-2xl cursor-pointer w-1/2 mx-auto md:w-auto md:px-6"
               >
@@ -71,7 +71,7 @@ const Moments = () => {
                     <Right />
                   </span>
                 </RouterLink>
-              </motion.button> */}
+              </motion.button>
             </motion.div>
             <motion.div className="h-full relative overflow-hidden ">
               <motion.div
