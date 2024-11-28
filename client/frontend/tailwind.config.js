@@ -19,7 +19,7 @@ module.exports = {
         mayblack: "#212121",
       },
       animation: {
-        "fade-in-left": "fade-in-left 0.25s ease-out",
+        "fade-in-left": "fade-in-left 0.25s ease-in",
         "fade-in-right": "fade-in-right 0.25s ease-out",
         "fade-in": "fade-in-bottom 0.3s ease-in",
       },
@@ -31,7 +31,7 @@ module.exports = {
           },
           "100%": {
             opacity: 1,
-            transform: "scale(1, 1) translateX(0) translateY(0)",
+            transform: "scale(1, 1) translateX(-20%) translateY(0)",
           },
         },
         "fade-in-right": {

@@ -13,12 +13,12 @@ const About = () => {
       title: "The May Gardens Origins",
       content: (
         <>
-          <div className="w-full h-11/12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+          <div className="w-full h-auto md:h-11/12 grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
-              className="w-[100%] h-[100%] object-cover rounded-lg"
+              className="w-[100%] md:h-[100%] object-cover rounded-lg"
             />
             <img
               loading="lazy"
@@ -33,7 +33,7 @@ const About = () => {
               className="w-[100%] h-[100%] object-cover rounded-lg"
             />
           </div>
-          <p className="mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-center w-full max-w-[320px] sm:max-w-[720px] lg:max-w-[1375px] leading-5 sm:leading-6 lg:leading-7 px-4 mx-2 font-Montserrat">
+          <p className="md:w-[90%] w-[80%] mx-auto mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-center leading-5 sm:leading-6 lg:leading-7 px-4 font-Montserrat">
             At May Gardens Event Center, we are your intimate escape for life’s
             most cherished celebrations. Our facilities are maintained to the
             highest standards to ensure that every event is a massive success.
@@ -50,27 +50,27 @@ const About = () => {
       title: "Mission to Redefine Event Excellence",
       content: (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mx-2">
+          <div className="w-full h-auto grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center mx-2">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
-              className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
+              className="w-[100%] md:h-[100%] object-cover rounded-lg"
             />
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
               alt="Medusa's hair"
-              className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
+              className="w-[100%] md:h-[100%] object-cover rounded-lg"
             />
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
               alt="Someone laughing"
-              className="w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[450px] h-[200px] sm:h-[250px] lg:h-[350px] object-cover rounded-lg"
+              className="w-[100%] md:h-[100%] object-cover rounded-lg"
             />
           </div>
-          <p className="text-white text-[12px] sm:text-[12px] lg:text-[16px]  font-normal text-center w-full max-w-[320px] sm:max-w-[720px] lg:max-w-[1375px] leading-5 sm:leading-6 lg:leading-7 px-4 mx-2 font-Montserrat">
+          <p className="md:w-[90%] w-[80%] mx-auto text-justify md:text-center mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal leading-5 sm:leading-6 lg:leading-7 px-4 font-Montserrat">
             You probably don’t remember your first walk, but you will always
             remember your first event with us, and this is our mission; to make
             every event an unforgettable and memorable experience. For your
@@ -100,10 +100,10 @@ const About = () => {
   };
 
   return (
-    <div className="h-lvh overflow-y-scroll bg-gardens flex flex-col items-center">
+    <div className="h-auto w-full bg-gardens flex flex-col items-center">
       <Navbar />
       <AboutMayflower />
-      <div className="relative h-full w-11/12 bg-gardens text-black my-6">
+      <div className="relative h-full md:h-screen w-[90%] md:w-11/12 bg-gardens text-black my-6">
         <div className="flex flex-col items-center gap-5">
           <div className="w-full text-white">
             <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center">
@@ -124,16 +124,16 @@ const About = () => {
             </div>
           </div>
 
-          <div className="absolute top-1/2 flex w-[99%] mx-20 mt-10 justify-between items-center">
+          <div className="absolute top-1/2 flex w-[99%] mx-20 mt-10 justify-between md:items-center">
             <button
               onClick={handlePreviousSlide}
-              className=" bg-maypink text-black p-3 rounded-full z-10"
+              className=" bg-maypink text-black p-1 md:p-3 rounded-full z-10"
             >
               <ChevronLeft />
             </button>
             <button
               onClick={handleNextSlide}
-              className=" bg-maypink text-black p-3 rounded-full z-10"
+              className=" bg-maypink text-black p-1 md:p-3 rounded-full z-10"
             >
               <ChevronRight />
             </button>
