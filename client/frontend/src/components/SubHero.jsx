@@ -22,13 +22,13 @@ const SubHero = () => {
               loading="lazy"
               src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%209.jpg?updatedAt=1731510631913"
               alt="Someone drumming"
-              className="img rounded-3xl w-[50%] object-contain mt-12"
+              className="img rounded-3xl w-[50%] object-contain"
             />
             <motion.img
               loading="lazy"
               src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%207.png?updatedAt=1731698634083"
               alt="Medusa's hair"
-              className="img roundedn-3xl w-[50%] object-contain"
+              className="img roundedn-3xl w-[52%] object-contain mx-auto"
             />
           </motion.div>
 

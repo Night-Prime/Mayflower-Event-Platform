@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
 import { Right } from "../icons/Right";
 import PackageDetails from "./PackageDetails";
 import { motion } from "framer-motion";
@@ -46,7 +45,7 @@ const PackageCard = ({ packageDetails }) => {
             x: 0,
             transition: { ease: "easeIn", type: "spring" },
           }}
-          className="fade-in-left rounded-tl-3xl fixed top-20 left-0 h-[80vh] w-[30%] bg-white z-10 shadow-md flex items-center justify-center p-6"
+          className="fade-in-left rounded-tl-3xl fixed top-20 left-0 h-[100vh] md:h-[80vh] w-[75%] md:w-[30%] bg-white z-10 shadow-md flex items-center justify-center p-6"
         >
           <PackageDetails
             packageDetails={packageDetails}
