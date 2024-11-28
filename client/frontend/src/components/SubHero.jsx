@@ -6,12 +6,12 @@ import { animations } from "../shared/animation";
 const SubHero = () => {
   const childReveal = useScrollAnimation(animations.revealChildren);
   return (
-    <motion.div className="w-full h-auto xl:h-screen">
+    <motion.div className="w-full h-auto 2xl:h-screen">
       <motion.div
         {...childReveal}
         className="w-full h-5/6 px-5 mt-[10%] flex flex-col  items-start  justify-start "
       >
-        <motion.h1 className="font-Cinzel text-[20px] xl:text-[40px] text-mayblack">
+        <motion.h1 className="font-Cinzel text-[20px] 2xl:text-6xl text-mayblack">
           THE{" "}
           <motion.span className="text-gardenslight">EXPERIENCE</motion.span>
         </motion.h1>
@@ -32,14 +32,14 @@ const SubHero = () => {
             />
           </motion.div>
 
-          <motion.div className="flex-1 items-start justify-start">
-            <motion.h1 className="mt-6 text-mayblack font-Cinzel text-[16px] xl:text-[32px]">
+          <motion.div className="flex-1 flex flex-col items-start justify-start xl:gap-6">
+            <motion.h1 className="mt-6 text-mayblack font-Cinzel text-[16px] 2xl:text-6xl 2xl:mt-12">
               MAY GARDEN <br />{" "}
               <motion.span className="text-gardenslight">
                 LOVE STORY
               </motion.span>
             </motion.h1>
-            <motion.p className="w-[90%] text-mayblack text-justify text-[12px] xl:text-[14px]">
+            <motion.p className="w-[90%] font-normal text-mayblack text-justify text-[12px] 2xl:text-3xl">
               At May Gardens, we believe every love story deserves to be
               celebrated. That’s why we’re excited to announce our bi-annual
               Love Story Contest, exclusively for engaged couples residing

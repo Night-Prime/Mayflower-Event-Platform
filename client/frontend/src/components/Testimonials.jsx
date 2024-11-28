@@ -40,7 +40,7 @@ const Testimonials = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
   return (
-    <motion.div className="flex w-full h-auto py-6">
+    <motion.div className="flex w-full h-auto xl:h-[50%] py-6">
       <motion.div className="w-full h-full flex flex-col justify-evenly items-center gap-8">
         <motion.h1
           {...childReveal}
@@ -54,12 +54,12 @@ const Testimonials = () => {
         <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
           <motion.div className="w-full h-[85%] flex flex-col xl:flex-row justify-between items-start px-5 mb-6">
             <motion.div className="my-10 h-full w-full xl:w-[40%] flex-col justify-center items-center xl:ml-12">
-              <h1 className="font-Cinzel text-2xl">
+              <h1 className="font-Cinzel text-2xl 2xl:text-6xl">
                 ...DON'T TAKE OUR <br />{" "}
                 <span className="text-gardenslight">WORD</span> FOR IT.
               </h1>
 
-              <h5 className="text-sm">
+              <h5 className="text-sm 2xl:text-xl">
                 Here's what People
                 <br /> have to say about
                 <br />
@@ -69,7 +69,7 @@ const Testimonials = () => {
 
             <motion.div className="py-10 h-full w-full xl:w-[60%] relative overflow-hidden flex flex-col justify-center items-center px-5 space-y-4">
               <div
-                className="w-auto xl:w-full h-[80%] flex transition-transform duration-500 ease-in-out"
+                className="w-auto xl:w-full h-[80%] xl:h-full flex transition-transform duration-500 ease-in-out"
                 style={{
                   transform: `translateX(-${currentSlide * 100}%)`,
                 }}
