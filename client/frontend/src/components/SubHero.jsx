@@ -20,7 +20,7 @@ const SubHero = () => {
           <motion.div className="flex-1 flex flex-row items-start justify-start">
             <motion.img
               loading="lazy"
-              src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%209.jpg?updatedAt=1731510631913"
+              src="https://ik.imagekit.io/0y99xuz0yp/img/Rectangle%209.png?updatedAt=1732792250843"
               alt="Someone drumming"
               className="img rounded-3xl w-[50%] object-contain"
             />
