@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Navbar } from "./Navbar.jsx";
 import { Footer } from "./Footer.jsx";
 import { ChevronLeft, ChevronRight } from "react-feather";
+import AboutMayflower from "./AboutMayflower.jsx";
 
-export const About = () => {
+const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState("");
 
@@ -101,7 +102,8 @@ export const About = () => {
   return (
     <div className="h-lvh overflow-y-scroll bg-gardens flex flex-col items-center">
       <Navbar />
-      <div className="h-full w-11/12 bg-gardens text-black my-6">
+      <AboutMayflower />
+      <div className="relative h-full w-11/12 bg-gardens text-black my-6">
         <div className="flex flex-col items-center gap-5">
           <div className="w-full text-white">
             <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center">
@@ -142,3 +144,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default About;

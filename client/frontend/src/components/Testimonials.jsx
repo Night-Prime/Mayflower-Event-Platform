@@ -40,26 +40,26 @@ const Testimonials = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
   return (
-    <motion.div className="hidden lg:flex w-full h-auto mt-10">
-      <motion.div className="w-full h-full flex flex-col justify-evenly items-center gap-6">
+    <motion.div className="flex w-full h-auto py-6">
+      <motion.div className="w-full h-full flex flex-col justify-evenly items-center gap-8">
         <motion.h1
           {...childReveal}
-          className="w-[90%] text-center font-Cinzel text-[20px] xl:text-[40px] text-mayblack font-semibold"
+          className="w-[90%] py-2 text-center font-Cinzel text-3xl text-white font-semibold"
         >
           OUR COMPANY BOASTS OF LUXURIOUS MIX OF{" "}
           <span className="text-gardenslight">NATURE </span>AND{" "}
           <span className="text-gardenslight">CLASS </span>
           BUT...
         </motion.h1>
-        <motion.div className="w-full h-[100vh] rounded-t-3xl bg-mayblack ">
-          <motion.div className="w-full h-[85%] xl:border-b-2 xl:border-gardenslight flex flex-col xl:flex-row justify-between items-start px-5 mb-6">
-            <motion.div className="h-full w-full xl:w-[40%] xl:border-r-2 xl:border-gardenslight flex flex-col justify-evenly items-start xl:ml-12">
-              <h1 className="font-Cinzel text-[20px] xl:text-[40px]">
+        <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
+          <motion.div className="w-full h-[85%] flex flex-col xl:flex-row justify-between items-start px-5 mb-6">
+            <motion.div className="my-10 h-full w-full xl:w-[40%] flex-col justify-center items-center xl:ml-12">
+              <h1 className="font-Cinzel text-2xl">
                 ...DON'T TAKE OUR <br />{" "}
                 <span className="text-gardenslight">WORD</span> FOR IT.
               </h1>
 
-              <h5 className="text-sm xl:text-[20px]">
+              <h5 className="text-sm">
                 Here's what People
                 <br /> have to say about
                 <br />
@@ -77,7 +77,7 @@ const Testimonials = () => {
                 {slides.map((slide, index) => (
                   <div
                     key={index}
-                    className="rounded-2xl h-full xl:h-[60%] xl:w-1/2 my-auto mx-[10px] xl:mx-[25%] xl:flex-shrink-0 bg-white text-mayblack shadow-lg p-1 xl:p-5"
+                    className="rounded-2xl h-full xl:h-[60%] xl:w-3/4 my-auto mx-[10px] xl:mx-[12.5%] xl:flex-shrink-0 bg-white text-mayblack shadow-lg p-1 xl:p-5"
                   >
                     <motion.div className="px-4 xl:p-0 flex flex-row gap-4 items-center">
                       <img

@@ -76,7 +76,7 @@ export const Navbar = ({ booking }) => {
               variants={childVariants}
               className="relative"
             >
-              <RouterLink to="/memories" onClick={toggleMenu}>
+              <RouterLink to="/about" onClick={toggleMenu}>
                 <span className="cursor-pointer text-[10px] sm:text-[12px] md:text-[18px] font-normal pb-2 hover:border-b border-transparent border-b-white transition-all duration-100">
                   About
                 </span>

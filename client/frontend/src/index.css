@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap");
 
 /* animation */
 @keyframes bounce {
@@ -32,12 +32,10 @@
     transform: translateY(10px);
   }
 
-
   100% {
     transform: translateY(0px);
   }
 }
-
 
 body {
   margin: 0;
@@ -66,14 +64,14 @@ body {
 
 .bounce-secondary {
   animation-name: bounce;
-  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
   animation-duration: 3s;
   animation-iteration-count: 20;
   animation-direction: alternate;
 }
 
 button:hover {
-  transform: scale(.9);
+  transform: scale(0.9);
   transition-property: transform;
   transition-timing-function: ease;
   transition-duration: 800ms;
