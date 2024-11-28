@@ -36,91 +36,85 @@ const imgSlides = [
   },
 ];
 
-const Team = () => {
-  const carouselRef = useRef(null);
+const AccordionItem = ({ item, isOpen, onClick, index }) => {
+  // Calculate the color based on the index
+  const startColor = { r: 143, g: 184, b: 125 }; // #8FB87D
+  const endColor = { r: 64, g: 86, b: 54 };
 
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: -250,
-        behavior: "smooth",
-      });
-    }
+  // Calculate the color based on the index
+  const color = {
+    r: Math.round(
+      startColor.r +
+        ((endColor.r - startColor.r) * index) / (imgSlides.length - 1)
+    ),
+    g: Math.round(
+      startColor.g +
+        ((endColor.g - startColor.g) * index) / (imgSlides.length - 1)
+    ),
+    b: Math.round(
+      startColor.b +
+        ((endColor.b - startColor.b) * index) / (imgSlides.length - 1)
+    ),
   };
 
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: 250,
-        behavior: "smooth",
-      });
-    }
-  };
+  const backgroundColor = `rgb(${color.r}, ${color.g}, ${color.b})`;
+
   return (
-    <div className="relative w-full h-auto xl:h-screen flex items-center justify-evenly">
-      <div className="absolute inset-0 z-10 grid grid-cols-9 grid-rows-9 border-2 border-green-100">
-        {Array.from({ length: 81 }).map((_, index) => (
-          <div
-            key={index}
-            className="border border-green-100 flex items-center justify-center"
-          ></div>
-        ))}
+    <div className="h-auto m-0">
+      <div
+        onClick={onClick}
+        className="w-full border-b-2 border-gardens cursor-pointer p-4"
+        style={{ backgroundColor }} // Apply dynamic background color
+      >
+        <h4 className="font-semibold text-gardens font-Cinzel text-2xl mx-4">
+          {item.title}
+        </h4>
       </div>
-
-      <div className="z-20 h-full w-full flex flex-col gap-6 items-center justify-center py-24">
-        <h1 className="font-Cinzel text-mayblack font-semibold text-[20px] xl:text-[40px] text-center">
-          MEET THE TEAM THAT MAKES THE <br />{" "}
-          <span className="text-gardenslight">MAGIC </span>HAPPENS
-        </h1>
-
-        <div className="h-full w-full relative overflow-hidden">
-          <div
-            ref={carouselRef}
-            className="flex flex-row gap-20 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
-          >
-            {imgSlides.map((image, index) => (
-              <div className="flex-shrink-0" key={index}>
-                <img
-                  className="w-[225px] h-[225px] object-cover"
-                  src={image.url}
-                  alt={image.alt}
-                />
-                <div className="relative">
-                  <div className="bg-white opacity-75 rounded-md absolute bottom-2 left-2 px-2">
-                    <h5 className="text-mayblack font-Cinzel text-xs">
-                      ALICIA ODUNDE, <br />
-                      CEO, MD
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="hidden absolute bottom-0 xl:bottom-5 w-full xl:flex justify-between items-center px-4">
-            <button onClick={scrollLeft} className="p-2 text-mayblack">
-              <ChevronLeft />
-            </button>
-            <div className="h-[3px] w-full bg-mayblack rounded-md"></div>
-            <button onClick={scrollRight} className="p-2 text-mayblack">
-              <ChevronRight />
-            </button>
-          </div>
+      <div
+        className={`overflow-hidden transition-max-height duration-300 ease-in-out ${
+          isOpen ? "max-h-full animate-fade-in-bottom" : "max-h-0"
+        }`}
+      >
+        <div className="p-4">
+          <img src={item.url} alt={item.alt} className="w-3/4 h-auto mb-2" />
+          <p className="text-gray-700 mx-4">{item.alt}</p>
         </div>
-
-        <button className="bg-gardens text-white p-3 rounded-2xl cursor-pointer">
-          <RouterLink
-            to="/memories"
-            className="flex items-center justify-center"
-          >
-            Book a Tour
-            <span className="text-white ml-2">
-              <Right />
-            </span>
-          </RouterLink>
-        </button>
       </div>
     </div>
   );
 };
+
+const Team = () => {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div className="h-[70%] w-full">
+      <div className="h-full flex flex-row justify-between">
+        <div className="flex items-center justify-center w-1/3">
+          {" "}
+          <h1 className="font-Cinzel text-xl transform -rotate-90 whitespace-nowrap">
+            MEET THE TEAM THAT MAKES THE{" "}
+            <span className="text-gardenslight">MAGIC</span> HAPPENS
+          </h1>
+        </div>
+        <div className="w-2/3 h-full rounded-tl-3xl rounded-br-3xl bg-gardenslight">
+          {imgSlides.map((item, index) => (
+            <AccordionItem
+              key={index}
+              item={item}
+              isOpen={openIndex === index}
+              onClick={() => handleToggle(index)}
+              index={index} // Pass index to AccordionItem
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default Team;

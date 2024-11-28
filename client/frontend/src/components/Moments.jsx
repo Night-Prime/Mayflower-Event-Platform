@@ -35,18 +35,18 @@ const imgSlides = [
 const Moments = () => {
   const childReveal = useScrollAnimation(animations.reveal);
   return (
-    <motion.div className="w-full h-auto">
-      <motion.div className="w-full h-[90vh] xl:h-[100vh] flex flex-col items-center justify-between py-4">
-        <motion.div className="w-full h-[86%] bg-gardens">
+    <motion.div className="w-full h-auto border-b-2 border-gardenslight">
+      <motion.div className="w-full h-full flex flex-col items-center justify-between py-4">
+        <motion.div className="w-full h-full bg-transparent">
           <motion.div className="h-full w-full flex flex-col justify-evenly items-center">
             <motion.div className="h-full relative overflow-hidden ">
               <motion.div
                 {...childReveal}
-                className="flex flex-row justify-center gap-6 xl:gap-12 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
+                className="border-b-2 border-white flex flex-row justify-center gap-16 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
               >
                 {imgSlides.map((image, index) => (
                   <motion.img
-                    className="w-[50%] xl:w-[225px] object-cover"
+                    className="w-[12.5%] object-cover"
                     key={index}
                     src={image.url}
                     alt={image.alt}
@@ -54,19 +54,33 @@ const Moments = () => {
                 ))}
               </motion.div>
             </motion.div>
-            <motion.div>
-              <h1 className="font-Cinzel font-bold text-[30px] text-center xl:text-[60px]">
+            <motion.div className="w-full flex flex-row justify-evenly py-6">
+              <h1 className="font-Cinzel font-bold text-[30px] text-center">
                 MOMENTS AT <span className="text-gardenslight">MAYGARDENS</span>
               </h1>
+              <motion.button
+                {...childReveal}
+                className="bg-white text-mayblack p-3 px-6 rounded-2xl cursor-pointer"
+              >
+                <RouterLink
+                  to="/memories"
+                  className="flex items-center justify-center"
+                >
+                  View Moments
+                  <span className="text-mayblack ml-2">
+                    <Right />
+                  </span>
+                </RouterLink>
+              </motion.button>
             </motion.div>
             <motion.div className="h-full relative overflow-hidden ">
               <motion.div
                 {...childReveal}
-                className="flex flex-row justify-center  gap-12 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
+                className="border-t-2 border-white flex flex-row justify-center gap-16 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
               >
                 {imgSlides.reverse().map((image, index) => (
                   <motion.img
-                    className="w-[50%] xl:w-[225px] object-cover"
+                    className="w-[12.5%] object-cover"
                     key={index}
                     src={image.url}
                     alt={image.alt}
@@ -76,20 +90,6 @@ const Moments = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-        <motion.button
-          {...childReveal}
-          className="bg-gardens text-white p-3 rounded-2xl cursor-pointer"
-        >
-          <RouterLink
-            to="/memories"
-            className="flex items-center justify-center"
-          >
-            View Moments
-            <span className="text-white ml-2">
-              <Right />
-            </span>
-          </RouterLink>
-        </motion.button>
       </motion.div>
     </motion.div>
   );

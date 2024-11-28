@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Calendar } from "../icons/Calendar";
-import { Right } from "../icons/Right";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import GoogleCalendar from "../components/GoogleCalendar";
@@ -9,12 +8,9 @@ import { clientMakeRequest } from "../helper/makeRequest";
 import Preloader from "../components/Preloader";
 import videoBg from "../assets/video/background.mp4";
 import { motion } from "framer-motion";
-import { animations } from "../shared/animation";
-import useScrollAnimation from "../hook/useAnimation";
+import Tour from "../components/Tour";
 
 const Booking = () => {
-  const reveal = useScrollAnimation(animations.revealChildren);
-
   const [showCalendar, setShowCalendar] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [packages, setPackages] = useState([]);
@@ -131,6 +127,8 @@ const Booking = () => {
           </div>
         </motion.div>
       </motion.div>
+
+      <Tour />
 
       <div className="w-full flex flex-col items-center gap-4 sm:gap-8 bg-white p-4 sm:p-8 rounded-t-3xl">
         <div className="relative w-full">
