@@ -53,13 +53,13 @@ const Testimonials = () => {
         </motion.h1>
         <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
           <motion.div className="w-full h-auto flex flex-col xl:flex-row justify-between items-start px-5">
-            <motion.div className="my-10 h-full w-full xl:w-[40%] flex-col justify-center items-center xl:ml-12">
-              <h1 className="font-Cinzel text-2xl 2xl:text-6xl">
+            <motion.div className="my-10 h-full w-full xl:w-[20%] flex-col justify-center items-center xl:ml-12 ">
+              <h1 className="font-Cinzel text-xl 2xl:text-6xl">
                 ...DON'T TAKE OUR <br />{" "}
                 <span className="text-gardenslight">WORD</span> FOR IT.
               </h1>
 
-              <h5 className="text-sm 2xl:text-xl">
+              <h5 className="text-xs 2xl:text-xl mt-6">
                 Here's what People
                 <br /> have to say about
                 <br />
@@ -67,7 +67,7 @@ const Testimonials = () => {
               </h5>
             </motion.div>
 
-            <motion.div className="py-6 h-full w-full xl:w-[60%] relative overflow-hidden flex flex-col justify-center items-center px-5 space-y-4">
+            <motion.div className="py-6 h-full w-full xl:w-[80%] relative overflow-hidden flex flex-col justify-center items-start px-5 space-y-4">
               <div
                 className="w-auto xl:w-full h-[80%] xl:h-full flex transition-transform duration-500 ease-in-out"
                 style={{
@@ -96,7 +96,7 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <motion.div className="hidden xl:flex justify-between items-center w-full px-4 sm:px-8">
+              <motion.div className="hidden xl:flex justify-between items-center ml-[5vw] w-[10%]">
                 <button
                   onClick={prevSlide}
                   className="p-2 rounded-full hover:bg-gray-300"
@@ -111,7 +111,7 @@ const Testimonials = () => {
                 </button>
               </motion.div>
 
-              <motion.div className="hidden xl:flex space-x-2">
+              <motion.div className="ml-[6vw] hidden xl:flex space-x-2">
                 {slides.map((_, index) => (
                   <span
                     key={index}

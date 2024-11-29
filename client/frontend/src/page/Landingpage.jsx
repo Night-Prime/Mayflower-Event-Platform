@@ -10,7 +10,7 @@ const Landingpage = () => {
   return (
     <div className="bg-white h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory m-0 relative">
       <Navbar />
-      <section id="home" className="h-max scroll-snap-align-start m-0">
+      <section id="home" className="h-auto scroll-snap-align-start m-0 my-10">
         <Hero />
         <SubHero />
         <Grid />
