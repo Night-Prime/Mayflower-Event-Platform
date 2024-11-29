@@ -13,12 +13,12 @@ const About = () => {
       title: "The May Gardens Origins",
       content: (
         <>
-          <div className="w-full h-auto md:h-11/12 grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
+          <div className="w-full h-auto xl:h-11/12 grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
-              className="w-[100%] md:h-[100%] object-cover rounded-lg"
+              className="w-[100%] xl:h-[100%] object-cover rounded-lg"
             />
             <img
               loading="lazy"
@@ -33,7 +33,7 @@ const About = () => {
               className="w-[100%] h-[100%] object-cover rounded-lg"
             />
           </div>
-          <p className="md:w-[90%] w-[80%] mx-auto mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-center leading-5 sm:leading-6 lg:leading-7 px-4 font-Montserrat">
+          <p className="xl:w-[90%] w-[80%] mx-auto mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal text-center leading-5 sm:leading-6 lg:leading-7 px-4 font-Montserrat">
             At May Gardens Event Center, we are your intimate escape for life’s
             most cherished celebrations. Our facilities are maintained to the
             highest standards to ensure that every event is a massive success.
@@ -55,22 +55,22 @@ const About = () => {
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/drumer.png?updatedAt=1725131393913"
               alt="Someone drumming"
-              className="w-[100%] md:h-[100%] object-cover rounded-lg"
+              className="w-[100%] xl:h-[100%] object-cover rounded-lg"
             />
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/medusa.png?updatedAt=1725131405183"
               alt="Medusa's hair"
-              className="w-[100%] md:h-[100%] object-cover rounded-lg"
+              className="w-[100%] xl:h-[100%] object-cover rounded-lg"
             />
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/laugh.png?updatedAt=1725131393999"
               alt="Someone laughing"
-              className="w-[100%] md:h-[100%] object-cover rounded-lg"
+              className="w-[100%] xl:h-[100%] object-cover rounded-lg"
             />
           </div>
-          <p className="md:w-[90%] w-[80%] mx-auto text-justify md:text-center mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal leading-5 sm:leading-6 lg:leading-7 px-4 font-Montserrat">
+          <p className="xl:w-[90%] w-[80%] mx-auto text-justify xl:text-center mt-2 text-white text-[12px] sm:text-[12px] lg:text-[16px] font-normal leading-5 sm:leading-6 lg:leading-7 px-4 font-Montserrat">
             You probably don’t remember your first walk, but you will always
             remember your first event with us, and this is our mission; to make
             every event an unforgettable and memorable experience. For your
@@ -103,7 +103,7 @@ const About = () => {
     <div className="h-auto w-full bg-gardens flex flex-col items-center">
       <Navbar />
       <AboutMayflower />
-      <div className="relative h-full md:h-screen w-[90%] md:w-11/12 bg-gardens text-black my-6">
+      <div className="relative h-full xl:h-screen w-[90%] xl:w-11/12 bg-gardens text-black my-6">
         <div className="flex flex-col items-center gap-5">
           <div className="w-full text-white">
             <p className="text-[24px] sm:text-[32px] lg:text-[40px] font-normal leading-[36px] sm:leading-[48px] lg:leading-[56px] font-Playfair text-center">
@@ -124,16 +124,16 @@ const About = () => {
             </div>
           </div>
 
-          <div className="absolute top-1/2 flex w-[99%] mx-20 mt-10 justify-between md:items-center">
+          <div className="absolute top-1/2 flex w-[99%] mx-20 mt-10 justify-between xl:items-center">
             <button
               onClick={handlePreviousSlide}
-              className=" bg-maypink text-black p-1 md:p-3 rounded-full z-10"
+              className=" bg-maypink text-black p-1 xl:p-3 rounded-full z-10"
             >
               <ChevronLeft />
             </button>
             <button
               onClick={handleNextSlide}
-              className=" bg-maypink text-black p-1 md:p-3 rounded-full z-10"
+              className=" bg-maypink text-black p-1 xl:p-3 rounded-full z-10"
             >
               <ChevronRight />
             </button>

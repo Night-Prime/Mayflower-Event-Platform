@@ -46,7 +46,7 @@ const Moments = () => {
               >
                 {imgSlides.map((image, index) => (
                   <motion.img
-                    className="w-[25%] md:w-[12.5%] object-cover"
+                    className="w-[25%] xl:w-[12.5%] object-cover"
                     key={index}
                     src={image.url}
                     alt={image.alt}
@@ -54,13 +54,13 @@ const Moments = () => {
                 ))}
               </motion.div>
             </motion.div>
-            <motion.div className="w-[80%] flex flex-col md:flex-row justify-evenly py-6 gap-6 md:gap-0">
+            <motion.div className="w-[80%] flex flex-col xl:flex-row justify-evenly py-6 gap-6 xl:gap-0">
               <h1 className="font-Cinzel text-[30px] text-center">
                 MOMENTS AT <span className="text-gardenslight">MAYGARDENS</span>
               </h1>
               <motion.button
                 {...childReveal}
-                className="bg-white text-mayblack p-2 rounded-2xl cursor-pointer w-1/2 mx-auto md:w-auto md:px-6"
+                className="bg-white text-mayblack p-2 rounded-2xl cursor-pointer w-1/2 mx-auto xl:w-auto xl:px-6"
               >
                 <RouterLink
                   to="/memories"
@@ -80,7 +80,7 @@ const Moments = () => {
               >
                 {imgSlides.reverse().map((image, index) => (
                   <motion.img
-                    className="w-[25%] md:w-[12.5%] object-cover"
+                    className="w-[25%] xl:w-[12.5%] object-cover"
                     key={index}
                     src={image.url}
                     alt={image.alt}

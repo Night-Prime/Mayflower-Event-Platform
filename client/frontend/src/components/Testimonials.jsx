@@ -54,12 +54,12 @@ const Testimonials = () => {
         <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
           <motion.div className="w-full h-[85%] flex flex-col xl:flex-row justify-between items-start px-5 mb-6">
             <motion.div className="my-10 h-full w-full xl:w-[40%] flex-col justify-center items-center xl:ml-12">
-              <h1 className="font-Cinzel text-2xl 2xl:text-6xl">
+              <h1 className="font-Cinzel text-2xl 3xl:text-6xl">
                 ...DON'T TAKE OUR <br />{" "}
                 <span className="text-gardenslight">WORD</span> FOR IT.
               </h1>
 
-              <h5 className="text-sm 2xl:text-xl">
+              <h5 className="text-sm 3xl:text-xl">
                 Here's what People
                 <br /> have to say about
                 <br />

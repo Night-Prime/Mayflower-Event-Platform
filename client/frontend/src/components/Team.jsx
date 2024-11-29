@@ -92,7 +92,7 @@ const Team = () => {
   };
 
   return (
-    <div className="h-[70%] 2xl:h-[60%] w-full ">
+    <div className="h-[70%] 3xl:h-[60%] w-full ">
       <div className="h-full flex flex-row justify-between">
         <div className="flex items-center justify-center w-1/3">
           {" "}

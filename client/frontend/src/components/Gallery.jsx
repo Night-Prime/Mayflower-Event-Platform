@@ -103,8 +103,8 @@ const Content = ({ date }) => {
         <p className="font-Cinzel font-bold text-[32px] leading-[38.4px]">
           Marriage Ceremony
         </p>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+        <div className="w-full grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="col-span-1 xl:col-span-2 lg:col-span-1">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/seun/images/tea.png?updatedAt=1726558041845"
@@ -161,7 +161,7 @@ const Content = ({ date }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
           <div className="col-span-1">
             <img
               loading="lazy"
@@ -195,8 +195,8 @@ const Content = ({ date }) => {
         <p className="font-Cinzel font-bold text-[32px] leading-[38.4px]">
           Tech Events
         </p>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+        <div className="w-full grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="col-span-1 xl:col-span-2 lg:col-span-1">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/laughing.png?updatedAt=1725131406021"
@@ -261,7 +261,7 @@ const Content = ({ date }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
           <div className="col-span-1">
             <img
               loading="lazy"
@@ -295,8 +295,8 @@ const Content = ({ date }) => {
         <p className="font-Cinzel font-bold text-[32px] leading-[38.4px]">
           Tech Events
         </p>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+        <div className="w-full grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="col-span-1 xl:col-span-2 lg:col-span-1">
             <img
               loading="lazy"
               src="https://ik.imagekit.io/tsfcuw1ce/Images/image13.png?updatedAt=1725131400575"
@@ -353,7 +353,7 @@ const Content = ({ date }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
           <div className="col-span-1">
             <img
               loading="lazy"

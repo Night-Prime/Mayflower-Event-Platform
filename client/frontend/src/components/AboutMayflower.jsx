@@ -7,7 +7,7 @@ const AboutMayflower = () => {
   const childReveal = useScrollAnimation(animations.boxReveal);
   return (
     <motion.div className="w-full h-auto">
-      <motion.div className="w-full h-[200%] xl:h-[120vh] rounded-3xl md:rounded-t-3xl  bg-mayblack flex flex-col justify-between items-start px-5 py-12 md:py-2 my-6">
+      <motion.div className="w-full h-[200%] xl:h-[120vh] rounded-3xl xl:rounded-t-3xl  bg-mayblack flex flex-col justify-between items-start px-5 py-12 xl:py-2 my-6">
         <motion.div className="w-full flex-1 flex flex-col xl:flex-row items-start justify-between py-10 px-5 gap-6">
           <motion.div {...childReveal} className="flex-1">
             <motion.h1 className="text-[20px] xl:text-[40px] font-Cinzel">
@@ -20,7 +20,7 @@ const AboutMayflower = () => {
 
           <motion.div
             {...childReveal}
-            className="flex-1 hidden md:flex flex-row justify-center xl:relative px-8 xl:px-0"
+            className="flex-1 hidden xl:flex flex-row justify-center xl:relative px-8 xl:px-0"
           >
             <motion.img
               loading="lazy"
