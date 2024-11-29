@@ -9,7 +9,7 @@ import { X } from "../icons/X.jsx";
 export const Footer = () => {
   return (
     <div className="w-full h-auto bg-mayblack m-0 rounded-t-3xl">
-      <div className="h-auto 2xl:h-[40vh] flex flex-col px-4 sm:px-6 lg:px-10 py-6 xl:mt-8 justify-end">
+      <div className="h-auto 3xl:h-[40vh] flex flex-col px-4 sm:px-6 lg:px-10 py-6 xl:mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-20">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
             <div className="flex flex-col font-Cinzel gap-1 sm:gap-2">
@@ -86,13 +86,13 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full mt-6 lg:mt-2xl flex flex-col md:flex-row md:items-center justify-between border-t border-t-white py-4 ">
-          <div className="flex w-full lg:gap-3 gap-4 md:justify-start justify-center text-sm lg:text-lg font-Montserrat">
+        <div className=" w-full mt-6 lg:mt-2xl flex flex-col xl:flex-row xl:items-center justify-between border-t border-t-white py-4 ">
+          <div className="flex w-full lg:gap-3 gap-4 xl:justify-start justify-center text-sm lg:text-lg font-Montserrat">
             <p>&copy; 2024</p>
             <p className="font-bold">May Gardens</p>
             <p>All rights reserved</p>
           </div>
-          <div className="flex w-full md:justify-end justify-center gap-10 mt-4 lg:mt-0">
+          <div className="flex w-full xl:justify-end justify-center gap-10 mt-4 lg:mt-0">
             <Instagram />
             <Facebook />
             <Linkedin />
