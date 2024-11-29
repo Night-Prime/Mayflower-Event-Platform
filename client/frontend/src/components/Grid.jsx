@@ -5,10 +5,10 @@ import Team from "./Team";
 
 const Grid = () => {
   return (
-    <div className="w-full h-auto 3xl:h-screen my-8 xl:mt-0 bg-mayblack rounded-b-3xl">
+    <div className="w-full h-auto 2xl:h-screen my-8 xl:mt-0 bg-mayblack rounded-b-3xl">
       <div className="w-full h-full xl:grid xl:grid-cols-3">
         <div className="col-span-2">
-          <div className="h-full w-full flex-col">
+          <div className="h-full w-full flex flex-col">
             <div>
               <Moments />
             </div>
@@ -20,10 +20,13 @@ const Grid = () => {
           </div>
         </div>
         <div className="col-span-1 border-l-2 xl:border-gardenslight h-full">
-          <div className="h-full xl:flex xl:items-end">
+          <Team />
+        </div>
+        {/* <div className="col-span-1 border-l-2 xl:border-gardenslight h-full flex flex-col items-end justify-end">
+          <div className="h-auto w-full rounded-br-3xl">
             <Team />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

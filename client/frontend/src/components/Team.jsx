@@ -92,7 +92,7 @@ const Team = () => {
   };
 
   return (
-    <div className="h-[70%] 3xl:h-[60%] w-full ">
+    <div className="h-full w-full ">
       <div className="h-full flex flex-row justify-between">
         <div className="flex items-center justify-center w-1/3">
           {" "}
@@ -101,16 +101,18 @@ const Team = () => {
             <span className="text-gardenslight">MAGIC</span> HAPPENS
           </h1>
         </div>
-        <div className="w-2/3 h-full rounded-tl-3xl rounded-br-3xl bg-gardenslight">
-          {imgSlides.map((item, index) => (
-            <AccordionItem
-              key={index}
-              item={item}
-              isOpen={openIndex === index}
-              onClick={() => handleToggle(index)}
-              index={index} // Pass index to AccordionItem
-            />
-          ))}
+        <div className="h-full flex flex-col items-end justify-end">
+          <div className="w-full h-auto rounded-tl-3xl rounded-br-3xl bg-gardenslight">
+            {imgSlides.map((item, index) => (
+              <AccordionItem
+                key={index}
+                item={item}
+                isOpen={openIndex === index}
+                onClick={() => handleToggle(index)}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
