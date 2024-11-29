@@ -22,11 +22,6 @@ const Grid = () => {
         <div className="col-span-1 border-l-2 xl:border-gardenslight h-full">
           <Team />
         </div>
-        {/* <div className="col-span-1 border-l-2 xl:border-gardenslight h-full flex flex-col items-end justify-end">
-          <div className="h-auto w-full rounded-br-3xl">
-            <Team />
-          </div>
-        </div> */}
       </div>
     </div>
   );

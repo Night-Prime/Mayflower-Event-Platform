@@ -8,9 +8,9 @@ import Grid from "../components/Grid.jsx";
 
 const Landingpage = () => {
   return (
-    <div className="bg-white h-screen overflow-y-scroll overflow-x-hidden scroll-snap-type-y scroll-snap-mandatory m-0 relative">
+    <div className="bg-white min-h-screen m-0">
       <Navbar />
-      <section id="home" className="h-auto scroll-snap-align-start m-0 my-10">
+      <section id="home" className="h-auto mx-0 my-10">
         <Hero />
         <SubHero />
         <Grid />
