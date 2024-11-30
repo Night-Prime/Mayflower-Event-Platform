@@ -12,33 +12,34 @@ export const Footer = () => {
       <div className="h-auto 2xl:h-[50vh] flex flex-col px-4 sm:px-6 xl:px-10 py-2 xl:mt-8 justify-end">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-10">
           <div className="flex flex-col gap-6 sm:gap-8 lg:gap-20 w-full lg:w-1/2">
-            <div className="flex flex-col font-Cinzel gap-1 sm:gap-2">
-              <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
+            <div className="flex flex-col gap-1 sm:gap-2">
+              <p className=" font-Cinzel text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 Join our newsletter
               </p>
-              <p className="text-[14px] sm:text-[16px] lg:text-[24px] font-normal">
-                Insider Tips for Planning Your Event
+              <p className="text-sm font-normal">
+                Get the latest May Gardens update, insider tips for event
+                planning and latest Owambe trends every Friday. Subscribe here!
               </p>
             </div>
 
-            <div className="flex flex-col font-Cinzel gap-1 sm:gap-2">
-              <p className="text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
+            <div className="flex flex-col gap-1 sm:gap-2">
+              <p className="font-Cinzel text-[20px] sm:text-[24px] lg:text-[32px] font-normal">
                 May Gardens
               </p>
-              <p className="text-[12px] sm:text-[14px] lg:text-[18px] font-normal">
+              <p className="text-sm font-normal">
                 Where a harmonious blend of nature's beauty and elegant design
                 come together to create extraordinary events.
               </p>
             </div>
           </div>
           <div className="flex flex-col lg:gap-20 sm:gap-10 mt-4 lg:w-1/2 text-white">
-            <div className="flex lg:flex-row border-2 rounded-full border-maypink p-1">
+            <div className="flex lg:flex-row border-2 rounded-full border-gardenslight p-1">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="bg-transparent text-[12px] sm:text-[14px] lg:text-[18px] font-Montserrat font-normal p-2 sm:p-3 rounded-full flex-grow focus:outline-none"
               />
-              <button className="bg-maypink text-black p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
+              <button className="bg-gardenslight text-white p-1 font-bold font-Montserrat text-[12px] sm:text-[14px] lg:text-[18px] py-1 sm:py-2 px-4 sm:px-6 w-[150px] sm:w-48 lg:px-8 rounded-full flex items-center justify-center lg:mt-0">
                 Submit
                 <span className="ml-2">
                   <Right />

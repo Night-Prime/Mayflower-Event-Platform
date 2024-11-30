@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Preloader from "./components/Preloader";
 import ErrorBoundary from "./helper/ErrorBoundary";
+import TermsConditions from "./page/TermsConditions";
 
 const Landingpage = lazy(() => import("./page/Landingpage"));
 const Booking = lazy(() => import("./page/Booking"));
@@ -27,6 +28,7 @@ function App() {
                 <Route path="memories" element={<Memories />} />
                 <Route path="about" element={<About />} />
                 <Route path="faq" element={<Faq />} />
+                <Route path="terms" element={<TermsConditions />} />
               </Route>
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/dashboard" element={<Dashboard />} />

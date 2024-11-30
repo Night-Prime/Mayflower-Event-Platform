@@ -79,8 +79,10 @@ const AccordionItem = ({ item, isOpen, onClick, index }) => {
           {item.title}
         </h4>
         <div
-          className={`overflow-hidden transition-max-height duration-300 ease-in-out ${
-            isOpen ? "max-h-full animate-fade-in-bottom" : "max-h-0"
+          className={`overflow-hidden transition-max-height duration-500 ease-in-out ${
+            isOpen
+              ? "max-h-full opacity-100 transform scale-100"
+              : "max-h-0 opacity-0 transform scale-95"
           }`}
         >
           <div className="py-6 px-4">
