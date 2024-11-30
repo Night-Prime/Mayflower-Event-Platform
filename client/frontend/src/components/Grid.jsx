@@ -5,7 +5,7 @@ import Team from "./Team";
 
 const Grid = () => {
   return (
-    <div className="w-full h-auto 2xl:h-screen xl:mt-0 bg-mayblack rounded-b-3xl">
+    <div className="w-full h-auto 2xl:h-auto xl:mt-0 bg-mayblack rounded-b-3xl overflow-y-hidden">
       <div className="w-full h-full xl:grid xl:grid-cols-3">
         <div className="col-span-2">
           <div className="h-full w-full flex flex-col">

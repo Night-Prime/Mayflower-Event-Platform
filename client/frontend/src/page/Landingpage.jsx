@@ -5,6 +5,7 @@ import { Navbar } from "../components/Navbar.jsx";
 import SubHero from "../components/SubHero.jsx";
 import Chat from "../components/Chat.jsx";
 import Grid from "../components/Grid.jsx";
+import AboutMayflower from "../components/AboutMayflower.jsx";
 
 const Landingpage = () => {
   return (
@@ -13,6 +14,7 @@ const Landingpage = () => {
       <section id="home" className="h-auto flex flex-col gap-6 mx-0 my-10">
         <Hero />
         <SubHero />
+        <AboutMayflower />
         <Grid />
       </section>
       <Footer />
