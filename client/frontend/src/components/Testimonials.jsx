@@ -54,7 +54,7 @@ const Testimonials = () => {
         <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
           <motion.div className="w-full h-auto flex flex-col xl:flex-row justify-between items-start px-5">
             <motion.div className="my-10 h-full w-full xl:w-[20%] flex-col justify-center items-center xl:ml-12 ">
-              <h1 className="font-Cinzel text-xl 2xl:text-6xl">
+              <h1 className="font-Cinzel text-xl 2xl:text-4xl">
                 ...DON'T TAKE OUR <br />{" "}
                 <span className="text-gardenslight">WORD</span> FOR IT.
               </h1>
