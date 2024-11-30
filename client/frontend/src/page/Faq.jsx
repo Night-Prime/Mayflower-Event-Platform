@@ -10,19 +10,19 @@ const Faq = () => {
       id: 1,
       question: "What types of events can your venue accommodate?",
       answer:
-        "Our event center is perfect for a wide range of events, including weddings, corporate meetings, birthday parties, anniversaries, and more. Whether you’re hosting an intimate gathering or a grand celebration, we have packages and spaces to fit your needs.",
+        "May Gardens event center is perfect for a wide range of events, including weddings, corporate meetings, birthday parties, anniversaries, conventions and more. Whether you’re hosting an intimate gathering or a grand celebration, we have packages and spaces to fit your needs.",
     },
     {
       id: 2,
       question: "How do I book an event at your venue?",
       answer:
-        "Booking with us is easy! Simply contact us through our website’s booking form, email, or phone. Our team will guide you through the process, help you choose the right package, and assist with any special requests to ensure your event is a success.",
+        "Booking with us is easy! Simply contact us through our website’s booking form, email, or phone number. Our team will guide you through the process, help you choose the right package, and assist with any special requests to ensure your event is a success.",
     },
     {
       id: 3,
       question: "Are there any restrictions on decorations or vendors?",
       answer:
-        "We want your event to be uniquely yours! You’re welcome to bring your own decorations, but we do have some guidelines to ensure safety and maintain the venue’s appearance. For vendors, we have a list of preferred partners, but you can also bring your own with prior approval.",
+        "We want your event to be uniquely yours! You’re welcome to bring your own decorations, but we do have some guidelines to ensure safety and maintain the venue’s appearance. For vendors, we have a list of preferred partners, but you can also bring yours with prior approval.",
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen bg-mayblack text-white">
       <Navbar />
       <div className="w-full h-auto">
         <div className="mx-auto py-20 w-2/3 h-full flex flex-col justify-start items-start gap-20">
@@ -60,7 +60,7 @@ const Faq = () => {
                 key={faq.id}
                 className={`cursor-pointer w-full rounded-2xl border-2 ${
                   active === faq.id
-                    ? "bg-maypink border-maypink"
+                    ? "bg-gardenslight border-gardenslight"
                     : "bg-white border-white"
                 }`}
               >

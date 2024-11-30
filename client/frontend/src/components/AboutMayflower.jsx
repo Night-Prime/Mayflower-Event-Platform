@@ -11,10 +11,8 @@ const AboutMayflower = () => {
         <motion.div className="w-full flex-1 flex flex-col xl:flex-row items-start justify-between py-10 px-5 gap-6">
           <motion.div {...childReveal} className="flex-1">
             <motion.h1 className="text-[20px] xl:text-[40px] font-Cinzel">
-              About <br />{" "}
-              <motion.span className="text-gardenslight">
-                MayGardens
-              </motion.span>
+              GET TO
+              <motion.span className="text-gardenslight"> KNOW US!</motion.span>
             </motion.h1>
           </motion.div>
 
@@ -48,54 +46,52 @@ const AboutMayflower = () => {
             {...childReveal}
             className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl rounded-b-2xl p-2 xl:px-6 xl:py-6"
           >
-            <motion.h1 className="font-Cinzel text-[16px] xl:text-[24px]">
-              Mission
+            <motion.h1 className="font-Cinzel text-[16px] xl:text-[20px]">
+              OUR DRIVE (MISSION)
             </motion.h1>
             <motion.p className="text-xs xl:text-sm">
               <br />
               You probably don’t remember your first walk, but you will always
               remember your first event with us, and this is our mission; to
               make every event an unforgettable and memorable experience. For
-              your second event with us, you probably would not have to send out
-              invitation cards, everyone will be begging for one, because who
-              wouldn’t want to relive that epic celebration?
+              your second event with us, invitation cards might not even be
+              necessary—everyone will be eager to secure one. After all, who
+              wouldn’t want to experience another unforgettable celebration?
             </motion.p>
           </motion.div>
           <motion.div
             {...childReveal}
             className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl xl:px-6 xl:py-6"
           >
-            <motion.h1 className="font-Cinzel text-[16px] xl:text-[24px]">
-              Vision
+            <motion.h1 className="font-Cinzel text-[16px] xl:text-[20px]">
+              OUR BLUEPRINTS (VISION)
             </motion.h1>
             <motion.p className="text-xs xl:text-sm">
               <br />
-              With creativity and excellence at the forefront, we turn your
-              events into unforgettable experiences because ordinary just
-              wouldn’t do. Happiness is one of the many things we bring to the
-              table so expect us to make you shine and dance with joy.
-              Collaboration is key here - think of us as your event’s cheer
-              squad, minus the pom-poms. And yes, if it’s not fun, it’s not May
-              Gardens.
+              With creativity and excellence at the forefront, we visualize
+              turning your events into unforgettable experiences because
+              ordinary just wouldn’t do. At May Gardens our vision is for you to
+              step into a space so heavenly that you’ll momentarily forget
+              you’re in Nigeria. With every step, you will enter into your dream
+              event, enjoying every moment, wishing it would never end.
             </motion.p>
           </motion.div>
           <motion.div
             {...childReveal}
             className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl p-0 xl:px-6 xl:py-6"
           >
-            <motion.h1 className="font-Cinzel text-[16px] xl:text-[24px]">
-              Values
+            <motion.h1 className="font-Cinzel text-[16px] xl:text-[20px]">
+              WHO ARE WE? (OUR ORIGIN)
             </motion.h1>
             <motion.p {...childReveal} className="text-xs xl:text-sm">
               <br />
-              At May Gardens Event Center, we are your intimate escape for
-              life’s most cherished celebrations. Our facilities are maintained
-              to the highest standards to ensure that every event is a massive
-              success. Working closely with top event planners and vendors
-              alike, we ensure that your ideas are valid and your vision for
-              your event is brought to life. From our breathtaking space to our
-              exceptional hospitality, your guests will have stories of your
-              event on their lips for years to come.
+              May Event Garden is an event center with a natural garden-like
+              setting that accommodates up to 350 guests. The innovative
+              fiberglass roofing allows guests to see and feel the sky, adding a
+              unique element to your event. Inside the venue, you will find
+              top-quality, state-of-the-art facilities, a waterfall, and 360
+              rotators that make the atmosphere vibrant. We’ve spared no expense
+              in ensuring the highest standards of comfort and luxury.
             </motion.p>
           </motion.div>
         </motion.div>

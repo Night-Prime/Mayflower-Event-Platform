@@ -34,23 +34,22 @@ const SubHero = () => {
 
           <motion.div className="flex-1 flex flex-col items-start justify-start xl:gap-6">
             <motion.h1 className="mt-6 text-mayblack font-Cinzel text-[16px] 2xl:text-4xl 2xl:mt-12">
-              MAY GARDEN <br />{" "}
               <motion.span className="text-gardenslight">
-                LOVE STORY
+                Welcome to May Gardens
               </motion.span>
             </motion.h1>
             <motion.p className="w-[90%] font-normal text-mayblack text-justify text-[12px] 2xl:text-xl">
-              At May Gardens, we believe every love story deserves to be
-              celebrated. That’s why we’re excited to announce our bi-annual
-              Love Story Contest, exclusively for engaged couples residing
-              around Alimosho and the Mainland axis. Join us in making your love
-              story a part of our legacy. Subscribe to our newsletter to get
-              information on when the contest commences. Get ready to submit
-              your entry and let May Gardens be the perfect backdrop for your
-              unforgettable wedding celebration. For more details on how to
-              participate and the contest guidelines, please contact our team
-              directly. We can’t wait to hear your love story and help you
-              create beautiful memories that will last a lifetime.
+              The Lagos Event Center that Feels like Home. Just for You!
+              <br />
+              Imagine stepping into a world without boundaries... where art,
+              architecture, and nature blend seamlessly to create an atmosphere
+              of elegance. Every detail, from our picturesque gardens to our
+              thoughtfully designed sitting areas, has been carefully crafted
+              for your comfort. Time stands still as you bask in the infinite
+              reflections of our Infinity Chamber and the tranquility of our
+              captivating waterfall. Where nature's beauty meets modern
+              sophistication... every inch of this space is a picture-perfect
+              backdrop waiting for your story.
             </motion.p>
           </motion.div>
         </motion.div>

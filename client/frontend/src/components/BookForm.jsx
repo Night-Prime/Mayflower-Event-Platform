@@ -5,6 +5,7 @@ import "react-phone-input-2/lib/style.css";
 import { Right } from "../icons/Right";
 import { clientMakeRequest } from "../helper/makeRequest";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const BookForm = ({ item }) => {
   const [nextForm, setNextForm] = useState(false);
@@ -385,6 +386,16 @@ const BookForm = ({ item }) => {
                       className="w-full text-sm xl:text-md p-2 bg-transparent border-gray-300 border-[2px] focus:outline-none text-black rounded-lg"
                       placeholder="Your Answer"
                     />
+                  </div>
+
+                  <div className="mb-4">
+                    <p className="text-sm">
+                      Read the following
+                      <span className="font-mono text-gardenslight">
+                        <Link to="/terms"> terms & conditions </Link>
+                      </span>
+                      before booking a session.
+                    </p>
                   </div>
 
                   <div className="flex-1">
