@@ -85,7 +85,14 @@ const AccordionItem = ({ item, isOpen, onClick, index }) => {
               : "max-h-0 opacity-0 transform scale-95"
           }`}
         >
-          <div className="py-6 px-4">
+          <div className="py-5">
+            <h4
+              className="text-gardens font-normal text-md px-4"
+              style={{ color: h4Color }}
+            >
+              role description here
+            </h4>
+            <div className="w-full h-[.25px] bg-mayblack"></div>
             <img src={item.url} alt={item.alt} className="w-3/4 h-auto" />
             <p
               className="text-gray-700 mx-4 h-[30%]"
@@ -112,8 +119,8 @@ const Team = () => {
       <div className="h-full flex flex-row justify-between">
         <div className="flex items-center justify-center w-1/3 xl:w-1/6">
           {" "}
-          <h1 className="font-Cinzel text-xl transform -rotate-90 whitespace-nowrap">
-            MEET THE TEAM THAT MAKES THE{" "}
+          <h1 className="font-Cinzel text-2xl transform -rotate-90 whitespace-nowrap">
+            MEET THE TEAM THAT MAKES THE
             <span className="text-gardenslight">MAGIC</span> HAPPENS
           </h1>
         </div>

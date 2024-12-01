@@ -6,7 +6,7 @@ import { animations } from "../shared/animation";
 const AboutMayflower = () => {
   const childReveal = useScrollAnimation(animations.boxReveal);
   return (
-    <motion.div className="w-full h-auto">
+    <motion.div className="w-full h-auto overflow-x-hidden">
       <motion.div className="w-full h-[200%] xl:h-[120vh] rounded-3xl xl:rounded-t-3xl  bg-mayblack flex flex-col justify-between items-start px-5 py-12 xl:py-2 my-6">
         <motion.div className="w-full flex-1 flex flex-col xl:flex-row items-start justify-between py-10 px-5 gap-6">
           <motion.div {...childReveal} className="flex-1">
@@ -44,12 +44,12 @@ const AboutMayflower = () => {
         <motion.div className="w-[96%] flex-1 flex flex-wrap xl:flex-nowrap xl:flex-row gap-5 xl:gap-20 mx-auto">
           <motion.div
             {...childReveal}
-            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl rounded-b-2xl p-2 xl:px-6 xl:py-6"
+            className="w-full xl:w-1/3 xl:h-[75%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl rounded-b-2xl p-2 xl:px-6 xl:py-6"
           >
             <motion.h1 className="font-Cinzel text-[16px] xl:text-[20px]">
-              OUR DRIVE (MISSION)
+              OUR DRIVE
             </motion.h1>
-            <motion.p className="text-xs xl:text-sm">
+            <motion.p className="text-xs xl:text-md">
               <br />
               You probably don’t remember your first walk, but you will always
               remember your first event with us, and this is our mission; to
@@ -61,12 +61,12 @@ const AboutMayflower = () => {
           </motion.div>
           <motion.div
             {...childReveal}
-            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl xl:px-6 xl:py-6"
+            className="w-full xl:w-1/3 xl:h-[75%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl xl:px-6 xl:py-6"
           >
             <motion.h1 className="font-Cinzel text-[16px] xl:text-[20px]">
-              OUR BLUEPRINTS (VISION)
+              OUR BLUEPRINTS
             </motion.h1>
-            <motion.p className="text-xs xl:text-sm">
+            <motion.p className="text-xs xl:text-md">
               <br />
               With creativity and excellence at the forefront, we visualize
               turning your events into unforgettable experiences because
@@ -78,12 +78,12 @@ const AboutMayflower = () => {
           </motion.div>
           <motion.div
             {...childReveal}
-            className="w-full xl:w-1/3 xl:h-[90%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl p-0 xl:px-6 xl:py-6"
+            className="w-full xl:w-1/3 xl:h-[75%] border-2 border-gardenslight hover:bg-white hover:text-mayblack rounded-tr-2xl p-2 rounded-b-2xl p-0 xl:px-6 xl:py-6"
           >
             <motion.h1 className="font-Cinzel text-[16px] xl:text-[20px]">
-              WHO ARE WE? (OUR ORIGIN)
+              WHO ARE WE?
             </motion.h1>
-            <motion.p {...childReveal} className="text-xs xl:text-sm">
+            <motion.p {...childReveal} className="text-xs xl:text-md">
               <br />
               May Event Garden is an event center with a natural garden-like
               setting that accommodates up to 350 guests. The innovative
