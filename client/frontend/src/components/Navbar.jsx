@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { animations } from "../shared/animation.js";
 
 export const Navbar = ({ booking }) => {
-  console.log(booking);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -94,7 +93,26 @@ export const Navbar = ({ booking }) => {
                 </span>
               </RouterLink>
             </motion.li>
-            {booking ? null : (
+            {booking ? (
+              <motion.li className="relative">
+                <motion.button
+                  disabled
+                  variants={childVariants}
+                  className="shadow-md bg-transparent border-2 border-gray-800 text-white flex items-center justify-center rounded-lg text-[12px] xl:text-[18px] font-normal w-44 py-2 px-4"
+                >
+                  <RouterLink
+                    to="/booking"
+                    className="flex items-center justify-center"
+                    onClick={toggleMenu}
+                  >
+                    Book a tour
+                    <span className="text-white ml-2">
+                      <Right />
+                    </span>
+                  </RouterLink>
+                </motion.button>
+              </motion.li>
+            ) : (
               <motion.li className="relative">
                 <motion.button
                   whileHover={{ scale: 1.1 }}

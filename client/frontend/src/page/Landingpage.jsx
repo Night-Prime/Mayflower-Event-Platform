@@ -11,7 +11,10 @@ const Landingpage = () => {
   return (
     <div className="bg-white min-h-screen m-0 flex flex-col">
       <Navbar />
-      <section id="home" className="h-auto flex flex-col gap-6 mx-0 my-10">
+      <section
+        id="home"
+        className="h-auto flex flex-col gap-6 mx-0 my-10 overflow-x-hidden"
+      >
         <Hero />
         <SubHero />
         <AboutMayflower />

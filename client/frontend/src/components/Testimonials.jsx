@@ -44,11 +44,11 @@ const Testimonials = () => {
       <motion.div className="w-full h-full flex flex-col justify-evenly items-center gap-8">
         <motion.h1
           {...childReveal}
-          className="w-[90%] py-2 text-center font-Cinzel text-3xl text-white font-semibold"
+          className="w-[90%] py-2 text-center font-Cinzel text-2xl text-white font-semibold"
         >
           OUR COMPANY BOASTS OF LUXURIOUS MIX OF{" "}
-          <span className="text-gardenslight">NATURE </span>AND{" "}
-          <span className="text-gardenslight">CLASS </span>
+          <span className="text-gardenslight">NATURE </span>AND
+          <span className="text-gardenslight"> CLASS </span>
           BUT...
         </motion.h1>
         <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
