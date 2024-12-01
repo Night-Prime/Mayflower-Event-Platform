@@ -3,6 +3,7 @@ import { Navbar } from "./Navbar.jsx";
 import { Footer } from "./Footer.jsx";
 import { ChevronLeft, ChevronRight } from "react-feather";
 import AboutMayflower from "./AboutMayflower.jsx";
+import videoBg from "../assets/video/May Garden Landscape.mp4";
 
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -102,6 +103,17 @@ const About = () => {
   return (
     <div className="h-auto w-full bg-gardens flex flex-col items-center">
       <Navbar />
+      <div className="relative h-96 xl:h-[75vh] w-full flex items-center justify-center">
+        <video
+          src={videoBg}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-50 overflow-hidden z-10"></div>
+      </div>
       <AboutMayflower />
       <div className="relative h-full xl:h-screen w-[90%] xl:w-11/12 bg-gardens text-black my-6">
         <div className="flex flex-col items-center gap-5">
