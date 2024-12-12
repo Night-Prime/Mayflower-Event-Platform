@@ -1,0 +1,82 @@
+/* FullCalendar container */
+.fc {
+  background-color: #ffffff;
+  /* Background color */
+  border: 2px solid #FFDFDF;
+  /* Border color and width */
+  border-radius: 10px;
+  /* Border radius */
+  padding: 10px;
+  /* Optional padding */
+}
+
+/* Header toolbar (where the navigation buttons are) */
+.fc-toolbar {
+  background-color: #FFDFDF;
+  /* Toolbar background color */
+  border-radius: 10px 10px 0 0;
+  /* Border radius at the top only */
+  padding: 5px;
+}
+
+/* Day cells */
+.fc-daygrid-day {
+  background-color: #ffffff;
+  /* Background color for day cells */
+  border: 1px solid #ffffff;
+  /* Border around day cells */
+  border-radius: 5px;
+  /* Slight rounding for day cells */
+}
+
+/* Event styling */
+.fc-event {
+  background-color: #2D3D26;
+  /* Event background color */
+  color: #ffffff;
+  /* Event text color */
+  border-radius: 5px;
+  /* Rounded corners for events */
+  border: 1px solid #2D3D26;
+  /* Border around events */
+}
+
+/* Current day highlight */
+.fc-day-today {
+  background-color: #2D3D26 !important;
+  color: #ffffff !important;
+  border-radius: 5px;
+  border: 1px solid #2D3D26;
+}
+
+/* Change the color of the weekend days */
+.fc-day-sat,
+.fc-day-sun {
+  background-color: #ffffff;
+  /* Weekend background color */
+  color: #2D3D26;
+}
+
+/* Custom CSS for FullCalendar headerToolbar */
+.fc-toolbar.fc-header-toolbar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.fc-toolbar .fc-button {
+  background-color: #ffffff;
+  color: #2D3D26;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.fc-toolbar .fc-button:hover {
+  background-color: #555;
+}
+
+.fc-toolbar h2 {
+  font-size: 1.5em;
+  color: #2D3D26;
+}
