@@ -6,31 +6,23 @@ import { animations } from "../shared/animation";
 const About = () => {
   const childReveal = useScrollAnimation(animations.revealChildren);
   return (
-    <motion.div className="w-full h-full flex flex-row items-center justify-between text-white">
+    <motion.div className="w-full h-full px-8 flex flex-row items-center justify-between text-mayblack">
       <motion.div className="flex-1">
         <motion.div
           {...childReveal}
-          className="w-[90%] mx-auto h-full grid grid-cols-2 grid-rows-2 gap-4"
+          className="flex-1 flex flex-row items-start justify-start"
         >
           <motion.img
-            src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%209.png?updatedAt=1731525610543"
-            alt="Description 1"
-            className="object-cover w-full h-full"
+            loading="lazy"
+            src="https://ik.imagekit.io/0y99xuz0yp/img/Rectangle%209.png?updatedAt=1732792250843"
+            alt="Someone drumming"
+            className="img rounded-3xl w-[50%] object-contain"
           />
           <motion.img
-            src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%208.png?updatedAt=1731525634992"
-            alt="Description 2"
-            className="object-cover w-full h-full"
-          />
-          <motion.img
-            src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%209.png?updatedAt=1731525610543"
-            alt="Description 4"
-            className="object-cover w-full h-full"
-          />
-          <motion.img
-            src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%208.png?updatedAt=1731525634992"
-            alt="Description 3"
-            className="object-cover w-full h-full"
+            loading="lazy"
+            src="https://ik.imagekit.io/0y99xuz0yp/Rectangle%207.png?updatedAt=1731698634083"
+            alt="Medusa's hair"
+            className="img roundedn-3xl w-[52%] object-contain mx-auto"
           />
         </motion.div>
       </motion.div>

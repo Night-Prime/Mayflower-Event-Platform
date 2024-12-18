@@ -3,8 +3,8 @@ import { Instagram, Facebook, Twitter, Phone } from "react-feather";
 
 const Footer = () => {
   return (
-    <div className="sticky bottom-0 z-50 w-full h-24 xl:py-2 bg-transparent m-0 xl:my-2">
-      <div className="bg-mayblack rounded-2xl w-[100%] xl:w-[96%] h-full flex flex-row justify-between items-center mx-auto px-6 text-white">
+    <div className="sticky bottom-0 z-50 w-full h-20 xl:py-2 bg-mayblack m-0 xl:my-2">
+      <div className="rounded-2xl w-[100%] xl:w-[96%] h-full flex flex-row justify-between items-center mx-auto px-6 text-white">
         <div className="flex-1 flex flex-row justify-center gap-8">
           <Instagram className="cursor-pointer" />
           <Facebook className="cursor-pointer" />

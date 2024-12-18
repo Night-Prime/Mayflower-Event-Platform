@@ -42,62 +42,42 @@ const imgSlides = [
 
 const Moments = () => {
   const childReveal = useScrollAnimation(animations.reveal);
+  const rows = 8; // Number of rows
+  const cols = 8; // Number of columns
+  const totalCells = rows * cols; // Total grid cells
+
+  // Repeat and slice the images to fill the grid
+  const repeatedSlides = Array.from(
+    { length: totalCells },
+    (_, index) => imgSlides[index % imgSlides.length]
+  );
+
   return (
-    <motion.div className="w-full h-auto">
-      <motion.div className="w-full h-full flex flex-col items-center justify-between py-4">
-        <motion.div className="w-full h-full bg-transparent">
-          <motion.div className="h-full w-full flex flex-col justify-evenly items-center">
-            <motion.div className="h-full relative overflow-hidden ">
-              <motion.div
-                {...childReveal}
-                className="border-b-2 border-white flex flex-row justify-center gap-16 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
-              >
-                {imgSlides.map((image, index) => (
-                  <motion.img
-                    className="w-[25%] xl:w-[12.5%] object-cover"
-                    key={index}
-                    src={image.url}
-                    alt={image.alt}
-                  />
-                ))}
-              </motion.div>
-            </motion.div>
-            <motion.div className="w-[80%] flex flex-col xl:flex-row justify-evenly py-6 gap-6 xl:gap-0">
-              <h1 className="font-Cinzel text-[30px] text-center">
-                MOMENTS AT <span className="text-gardenslight">MAYGARDENS</span>
-              </h1>
-              {/* <motion.button
-                {...childReveal}
-                className="bg-white text-mayblack p-2 rounded-2xl cursor-pointer w-1/2 mx-auto xl:w-auto xl:px-6"
-              >
-                <RouterLink
-                  to="/memories"
-                  className="flex items-center justify-center"
-                >
-                  View Moments
-                  <span className="text-mayblack ml-2">
-                    <Right />
-                  </span>
-                </RouterLink>
-              </motion.button> */}
-            </motion.div>
-            <motion.div className="h-full relative overflow-hidden ">
-              <motion.div
-                {...childReveal}
-                className="border-t-2 border-white flex flex-row justify-center gap-16 transition-transform duration-500 ease-in-out overflow-y-hidden overflow-x-scroll scroll-smooth"
-              >
-                {imgSlides.reverse().map((image, index) => (
-                  <motion.img
-                    className="w-[25%] xl:w-[12.5%] object-cover"
-                    key={index}
-                    src={image.url}
-                    alt={image.alt}
-                  />
-                ))}
-              </motion.div>
-            </motion.div>
+    <motion.div className="relative w-full h-screen">
+      <div className="absolute inset-0 bg-black opacity-50 z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
+        <h1 className="text-6xl font-Cinzel text-white opacity-100 shadow-md">
+          Moments at Maygardens
+        </h1>
+        <button
+          type="button"
+          className="w-28 h-12 bg-gardenslight text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white rounded-lg mt-4"
+        >
+          <RouterLink className="font-bold text-xl" to="/memories">
+            Moments
+          </RouterLink>
+        </button>
+      </div>
+      <motion.div className="grid grid-cols-8 grid-rows-8 h-full gap-y-2">
+        {repeatedSlides.map((slide, index) => (
+          <motion.div key={index} className="col-span-1 row-span-1">
+            <img
+              src={slide.url}
+              alt={slide.alt}
+              className="w-full h-full object-cover"
+            />
           </motion.div>
-        </motion.div>
+        ))}
       </motion.div>
     </motion.div>
   );

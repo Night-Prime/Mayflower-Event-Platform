@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "react-feather";
 import { motion } from "framer-motion";
 import useScrollAnimation from "../hooks/useAnimation";
@@ -31,7 +31,15 @@ const Testimonials = () => {
   const childReveal = useScrollAnimation(animations.reveal);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Handler for changing slides
+  // Automatically move to the next slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Adjust the time (5000ms = 5 seconds) as needed
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
@@ -39,19 +47,20 @@ const Testimonials = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
+
   return (
     <motion.div className="flex w-full h-auto xl:h-[70%] py-6">
       <motion.div className="w-full h-full flex flex-col justify-evenly items-center gap-8">
         <motion.h1
           {...childReveal}
-          className="w-[90%] py-2 text-center font-Cinzel text-2xl text-white font-semibold"
+          className="w-[90%] py-2 text-center font-Cinzel text-2xl text-mayblack font-semibold"
         >
           OUR COMPANY BOASTS OF LUXURIOUS MIX OF{" "}
           <span className="text-gardenslight">NATURE </span>AND
           <span className="text-gardenslight"> CLASS </span>
           BUT...
         </motion.h1>
-        <motion.div className="w-full h-full rounded-t-3xl bg-mayblack ">
+        <motion.div className="w-full h-full rounded-t-3xl bg-white text-mayblack">
           <motion.div className="w-full h-full flex flex-col xl:flex-row justify-between items-start px-5">
             <motion.div className="my-10 h-full w-full xl:w-[20%] flex-col justify-center items-center xl:ml-12 ">
               <h1 className="font-Cinzel text-xl 2xl:text-4xl">
@@ -77,7 +86,7 @@ const Testimonials = () => {
                 {slides.map((slide, index) => (
                   <div
                     key={index}
-                    className="rounded-2xl h-full xl:h-[60%] xl:w-3/4 my-auto mx-[10px] xl:mx-[12.5%] xl:flex-shrink-0 bg-white text-mayblack shadow-lg p-1 xl:p-5"
+                    className="rounded-2xl h-full xl:h-[60%] xl:w-3/4 my-auto mx-[10px] xl:mx-[12.5%] xl:flex-shrink-0 text-white bg-gardenslight shadow-lg p-1 xl:p-5"
                   >
                     <motion.div className="px-4 xl:p-0 flex flex-row gap-4 items-center">
                       <img
@@ -96,6 +105,7 @@ const Testimonials = () => {
                 ))}
               </div>
 
+              {/* Optional Controls for Manual Navigation */}
               <motion.div className="hidden xl:flex justify-between items-center w-full">
                 <button
                   onClick={prevSlide}
@@ -116,7 +126,7 @@ const Testimonials = () => {
                   <span
                     key={index}
                     className={`w-2 h-2 rounded-full ${
-                      index === currentSlide ? "bg-white" : "bg-gray-300"
+                      index === currentSlide ? "bg-gardens" : "bg-gray-300"
                     }`}
                   ></span>
                 ))}
