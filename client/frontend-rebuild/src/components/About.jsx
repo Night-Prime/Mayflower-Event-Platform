@@ -6,8 +6,8 @@ import { animations } from "../shared/animation";
 const About = () => {
   const childReveal = useScrollAnimation(animations.revealChildren);
   return (
-    <motion.div className="w-full h-full px-8 flex flex-row items-center justify-between text-mayblack">
-      <motion.div className="flex-1">
+    <motion.div className="w-full h-auto lg:h-full lg:py-0 px-8 flex flex-col lg:flex-row items-center lg:justify-between text-mayblack">
+      <motion.div className="hidden lg:flex flex-1">
         <motion.div
           {...childReveal}
           className="flex-1 flex flex-row items-start justify-start"

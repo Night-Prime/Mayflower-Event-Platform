@@ -32,13 +32,13 @@ const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Automatically move to the next slide
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Adjust the time (5000ms = 5 seconds) as needed
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
+  //   }, 5000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  //   return () => clearInterval(interval); // Cleanup on unmount
+  // }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -86,7 +86,7 @@ const Testimonials = () => {
                 {slides.map((slide, index) => (
                   <div
                     key={index}
-                    className="rounded-2xl h-full xl:h-[60%] xl:w-3/4 my-auto mx-[10px] xl:mx-[12.5%] xl:flex-shrink-0 text-white bg-gardenslight shadow-lg p-1 xl:p-5"
+                    className="rounded-2xl h-full xl:h-[60%] w-full lg:w-3/4 my-auto mx-[10px] lg:mx-[12.5%] lg:flex-shrink-0 text-white bg-gardenslight shadow-lg p-1 xl:p-5"
                   >
                     <motion.div className="px-4 xl:p-0 flex flex-row gap-4 items-center">
                       <img

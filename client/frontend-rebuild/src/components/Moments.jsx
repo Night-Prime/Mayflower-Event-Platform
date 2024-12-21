@@ -56,12 +56,12 @@ const Moments = () => {
     <motion.div className="relative w-full h-screen">
       <div className="absolute inset-0 bg-black opacity-50 z-10 pointer-events-none"></div>
       <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-        <h1 className="text-6xl font-Cinzel text-white opacity-100 shadow-md">
+        <h1 className=" text-5xl lg:text-6xl text-center font-Cinzel text-white opacity-100 shadow-md">
           Moments at Maygardens
         </h1>
         <button
           type="button"
-          className="w-28 h-12 bg-gardenslight text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white rounded-lg mt-4"
+          className="hidden w-28 h-12 bg-gardenslight text-xs sm:text-sm flex items-center font-Montserrat justify-center text-white rounded-lg mt-4"
         >
           <RouterLink className="font-bold text-xl" to="/memories">
             Moments

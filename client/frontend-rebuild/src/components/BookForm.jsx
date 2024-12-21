@@ -29,7 +29,7 @@ const BookForm = () => {
   return (
     <div className="h-[100vh] w-full border-2 border-mayblack">
       <div className="w-full h-full flex flex-row items-start justify-between gap-2">
-        <div className="flex-1 h-full border-r-2 border-mayblack">
+        <div className="hidden lg:flex flex-1 h-full border-r-2 border-mayblack">
           <div className="h-[80%] w-[80%] mx-auto flex flex-col justify-center items-center gap-6">
             <h1 className="font-Cinzel text-4xl text-center">Contact Us</h1>
             <p className="font-bold">info@maygardens.com</p>
@@ -37,7 +37,7 @@ const BookForm = () => {
           </div>
         </div>
         <div className="flex-1 h-full border-r-2 border-mayblack">
-          <div className="h-[80%] my-[20%] w-[90%] mx-auto text-mayblack">
+          <div className="h-[80%] my-[35%] lg:my-[20%] w-[90%] mx-auto text-mayblack">
             <h2 className="text-2xl sm:text-3xl font-semibold font-Cinzel mb-6 text-center border-b-2">
               Book a tour
             </h2>
@@ -235,7 +235,8 @@ const BookForm = () => {
                       <div className="flex-1">
                         <button
                           type="button"
-                          disabled={!isValid}
+                          // disabled={!isValid}
+                          disabled
                           onClick={() => nextPage()}
                           className={`w-full sm:w-24 ${
                             isValid

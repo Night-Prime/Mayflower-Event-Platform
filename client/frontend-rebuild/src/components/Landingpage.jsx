@@ -70,7 +70,7 @@ const LandingPage = () => {
 
         <section
           ref={TestimonialRef}
-          className="full-page flex items-center justify-center"
+          className="hidden full-page flex items-center justify-center"
         >
           <Testimonials />
         </section>
