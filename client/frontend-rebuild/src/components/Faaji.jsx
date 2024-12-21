@@ -6,7 +6,7 @@ const Faaji = () => {
     <div className="w-full h-full flex flex-col lg:flex-row items-center justify-between text-mayblack">
       <div className="flex-1 h-full my-[10%] hover:-translate-y-4 transition-transform duration-1000">
         <RouterLink
-          to="/memories"
+          to="/"
           className="w-full h-full hidden lg:flex flex-col items-center justify-center cursor-pointer"
         >
           <div className="rounded-xl h-[60%] w-[75%] border-gardenslight shadow-xl">
@@ -31,7 +31,7 @@ const Faaji = () => {
 
       <div className="flex-1 h-full my-[10%] hover:-translate-y-4 transition-transform duration-1000">
         <RouterLink
-          to="/memories"
+          to="/"
           className="w-full h-full flex flex-col items-center justify-center cursor-pointer"
         >
           <div className="rounded-xl h-[60%] w-full lg:w-[75%] border-gardenslight shadow-xl">
@@ -56,7 +56,7 @@ const Faaji = () => {
 
       <div className="flex-1 h-full my-[10%] hover:-translate-y-4 transition-transform duration-1000">
         <RouterLink
-          to="/memories"
+          to="/"
           className="w-full h-full hidden lg:flex flex-col items-center justify-center cursor-pointer"
         >
           <div className="rounded-xl h-[60%] w-[75%] border-gardenslight shadow-xl">
