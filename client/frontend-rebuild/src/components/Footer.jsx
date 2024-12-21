@@ -5,16 +5,21 @@ const Footer = () => {
   return (
     <div className="sticky bottom-0 z-50 w-full h-20 xl:py-2 bg-mayblack m-0 xl:my-2">
       <div className="rounded-2xl w-[100%] xl:w-[96%] h-full flex flex-row justify-between items-center mx-auto px-6 text-white">
-        <div className="flex-1 flex flex-row justify-center gap-8">
+        {/* Social Media Icons */}
+        <div className="hidden flex-1 lg:flex flex-row justify-center gap-8">
           <Instagram className="cursor-pointer" />
           <Facebook className="cursor-pointer" />
           <Twitter className="cursor-pointer" />
         </div>
-        <div className="flex-1 flex flex-row gap-4">
+
+        {/* Phone Number - Now Centered */}
+        <div className="flex-1 flex flex-row justify-center items-center gap-4">
           <Phone />
           <h5>08116256294</h5>
         </div>
-        <div className="flex-1 flex flex-row">
+
+        {/* Newsletter Subscribe */}
+        <div className="hidden flex-1 lg:flex flex-row justify-end">
           <div className="flex lg:flex-row border-2 rounded-full border-gardenslight">
             <input
               type="email"
